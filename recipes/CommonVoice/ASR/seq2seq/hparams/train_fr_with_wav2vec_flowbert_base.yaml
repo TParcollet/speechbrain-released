@@ -7,13 +7,13 @@
 # Seed needs to be set at top of yaml, before objects with parameters are made
 seed: 1234
 __set_seed: !!python/object/apply:torch.manual_seed [!ref <seed>]
-output_folder: !ref results/wav2vec2_ctcatt_fr/<seed>
+output_folder: !ref results/wav2vec2_ctcatt_fr_base/<seed>
 wer_file: !ref <output_folder>/wer.txt
 save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
 
 # URL for the biggest HuggingFace english wav2vec2 model.
-wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/wav2vec2-FR-M-large
+wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/wav2vec2-FR-M-base
 
 # Data files
 data_folder: !PLACEHOLDER  # e.g, /localscratch/cv-corpus-5.1-2020-06-22/fr
