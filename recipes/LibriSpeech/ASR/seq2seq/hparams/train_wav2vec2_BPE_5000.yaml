@@ -58,7 +58,7 @@ sample_rate: 16000
 n_fft: 400
 n_mels: 40
 
-opt_class: !name:torch.optim.Adadelta
+model_opt_class: !name:torch.optim.Adadelta
    lr: !ref <lr>
    rho: 0.95
    eps: 1.e-8
