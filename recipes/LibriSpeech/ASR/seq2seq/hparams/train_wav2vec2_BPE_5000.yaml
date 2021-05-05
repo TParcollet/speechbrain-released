@@ -27,7 +27,7 @@ train_log: !ref <output_folder>/train_log.txt
 pretrained_lm_tokenizer_path: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/asr-crdnn-transformerlm-librispeech
 
 # URL for the biggest Fairseq english wav2vec2 model.
-wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/wav2vec2-large-lv60
+wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/wav2vec2-large-100k-voxpopuli
 
 # Data files
 data_folder: !PLACEHOLDER # e,g./path/to/LibriSpeech
@@ -51,7 +51,7 @@ batch_size: 4
 lr: 1.0
 lr_wav2vec: 0.0001
 ctc_weight: 0.3
-sorting: descending
+sorting: ascending
 
 # Feature parameters
 sample_rate: 16000
