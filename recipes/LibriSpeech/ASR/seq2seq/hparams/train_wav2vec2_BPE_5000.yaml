@@ -261,6 +261,9 @@ error_rate_computer: !name:speechbrain.utils.metric_stats.ErrorRateStats
 cer_computer: !name:speechbrain.utils.metric_stats.ErrorRateStats
    split_tokens: True
 
+wav2vec_opt_class: !name:torch.optim.Adam
+   lr: !ref <lr_wav2vec>
+
 # The pretrainer allows a mapping between pretrained files and instances that
 # are declared in the yaml. E.g here, we will download the file lm.ckpt
 # and it will be loaded into "lm" which is pointing to the <lm_model> defined
