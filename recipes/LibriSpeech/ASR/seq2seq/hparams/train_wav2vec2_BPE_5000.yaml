@@ -76,7 +76,7 @@ test_dataloader_opts:
 # Model parameters
 activation: !name:torch.nn.LeakyReLU
 dropout: 0.15
-dnn_blocks: 1
+dnn_layers: 2
 dnn_neurons: 1024
 emb_size: 1024
 dec_neurons: 1024
