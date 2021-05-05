@@ -47,10 +47,10 @@ test_csv:
 # Training parameters
 number_of_epochs: 25
 number_of_ctc_epochs: 25
-batch_size: 4
+batch_size: 12
 lr: 1.0
 lr_wav2vec: 0.0001
-ctc_weight: 0.5
+ctc_weight: 0.3
 sorting: ascending
 
 # Feature parameters
