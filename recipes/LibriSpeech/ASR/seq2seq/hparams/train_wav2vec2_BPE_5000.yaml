@@ -51,7 +51,7 @@ batch_size: 12
 lr: 1.0
 lr_wav2vec: 0.0001
 ctc_weight: 0.3
-sorting: ascending
+sorting: descending
 
 # Feature parameters
 sample_rate: 16000
