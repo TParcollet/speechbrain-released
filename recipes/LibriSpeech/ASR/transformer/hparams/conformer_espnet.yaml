@@ -65,6 +65,7 @@ n_mels: 80
 # Dataloader options
 train_dataloader_opts:
     batch_size: !ref <batch_size>
+    num_workers: 4
     shuffle: True
 
 valid_dataloader_opts:
@@ -75,11 +76,11 @@ test_dataloader_opts:
 
 ####################### Model parameters ###########################
 # Transformer
-d_model: 768
+d_model: 512
 nhead: 8
 num_encoder_layers: 12
 num_decoder_layers: 6
-d_ffn: 3072
+d_ffn: 2048
 transformer_dropout: 0.0
 activation: !name:torch.nn.GELU
 output_neurons: 5000
