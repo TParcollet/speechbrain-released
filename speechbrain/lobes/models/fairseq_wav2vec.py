@@ -109,10 +109,6 @@ class FairseqWav2Vec2(nn.Module):
         if not (pretrain):
             self.reset_layer(self.model)
 
-        print(self.freeze)
-        print(self.normalize)
-        print(self.pretrain)
-
     def forward(self, wav):
         """Takes an input waveform and return its corresponding wav2vec encoding.
 
