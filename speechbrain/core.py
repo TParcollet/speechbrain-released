@@ -432,6 +432,7 @@ class Brain:
             "data_parallel_backend": False,
             "distributed_launch": False,
             "distributed_backend": "nccl",
+            "find_unused_parameters": True,
             "jit_module_keys": None,
             "auto_mix_prec": False,
             "max_grad_norm": 5.0,
