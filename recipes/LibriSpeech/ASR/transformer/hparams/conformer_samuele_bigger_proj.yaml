@@ -83,7 +83,7 @@ num_encoder_layers: 14
 num_decoder_layers: 6
 d_ffn: 3072
 transformer_dropout: 0.1
-activation: !name:speechbrain.nnet.activations.Swich
+activation: !name:speechbrain.nnet.activations.Swish
 output_neurons: 5000
 vocab_size: 5000
 
