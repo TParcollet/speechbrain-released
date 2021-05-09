@@ -4,6 +4,7 @@ Authors
  * Jianyuan Zhong 2020
 """
 import torch
+import speechbrain as sb
 from speechbrain.nnet.CNN import Conv2d
 from speechbrain.nnet.containers import Sequential
 from speechbrain.nnet.normalization import BatchNorm2d
@@ -59,6 +60,7 @@ class ConvolutionFrontEnd(Sequential):
         activation=torch.nn.LeakyReLU,
         norm=BatchNorm2d,
         dropout=0.1,
+        proj_dim=None,
     ):
         super().__init__(input_shape=input_shape)
         for i in range(num_blocks):
@@ -76,6 +78,16 @@ class ConvolutionFrontEnd(Sequential):
                 dropout=dropout,
                 layer_name=f"convblock_{i}",
             )
+
+        if proj_dim is not None:
+            self.append(
+                sb.nnet.linear.Linear,
+                n_neurons=proj_dim,
+                bias=True,
+                combine_dims=True,
+                layer_name="convblock_proj_linear",
+            )
+            self.append(activation(), layer_name="proj_act")
 
 
 class ConvBlock(torch.nn.Module):
