@@ -84,7 +84,7 @@ class ConvolutionFrontEnd(Sequential):
                 sb.nnet.linear.Linear,
                 n_neurons=proj_dim,
                 bias=True,
-                combine_dims=False,
+                combine_dims=True,
                 layer_name="convblock_proj_linear",
             )
             self.append(activation(), layer_name="proj_act")
