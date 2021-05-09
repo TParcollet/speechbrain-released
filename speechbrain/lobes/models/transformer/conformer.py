@@ -309,7 +309,6 @@ class ConformerEncoder(nn.Module):
         """
         output = src
         attention_lst = []
-        print(src.shape)
         for enc_layer in self.layers:
             output, attention = enc_layer(
                 output,
