@@ -118,7 +118,7 @@ CNN: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     activation: !ref <activation>
 
 Transformer: !new:speechbrain.lobes.models.transformer.TransformerASR.TransformerASR # yamllint disable-line rule:line-length
-    input_size: 2560
+    input_size: !ref <d_model>
     tgt_vocab: !ref <output_neurons>
     d_model: !ref <d_model>
     nhead: !ref <nhead>
