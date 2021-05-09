@@ -186,7 +186,9 @@ class ConformerEncoderLayer(nn.Module):
         pos_embs: Optional[torch.Tensor] = None,
     ):
         # ffn module
+        print(x.shape)
         x = x + 0.5 * self.ffn_module1(x)
+        print(x.shape)
         # muti-head attention module
         skip = x
         x = self.norm1(x)
