@@ -134,10 +134,6 @@ def prepare_librispeech(
     # Merging csv file if needed
     if merge_lst and merge_name is not None:
         merge_files = [split_libri + ".csv" for split_libri in merge_lst]
-        print("hello")
-        print(merge_files)
-        print(save_folder)
-        print(merge_name)
         merge_csvs(
             data_folder=save_folder, csv_lst=merge_files, merged_csv=merge_name,
         )
