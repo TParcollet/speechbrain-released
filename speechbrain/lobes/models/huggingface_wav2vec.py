@@ -76,6 +76,9 @@ class HuggingFaceWav2Vec2(nn.Module):
         if not (pretrain):
             config = Wav2Vec2Config.from_pretrained(source, cache_dir=save_path)
             self.model = Wav2Vec2Model(config)
+
+            # We deactivate spec augment on HF side as we manage it with SB.
+            config["apply_spec_augment"] = False
         else:
             self.model = Wav2Vec2Model.from_pretrained(
                 source, cache_dir=save_path
