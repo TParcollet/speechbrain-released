@@ -7,7 +7,6 @@ import torchaudio
 from hyperpyyaml import load_hyperpyyaml
 from speechbrain.tokenizers.SentencePiece import SentencePiece
 from speechbrain.utils.data_utils import undo_padding
-from speechbrain.utils.distributed import run_on_main
 
 """Recipe for training a sequence-to-sequence ASR system with CommonVoice.
 The system employs an encoder, a decoder, and an attention mechanism
@@ -58,7 +57,6 @@ class ASR(sb.core.Brain):
 
         # Compute outputs
         if stage == sb.Stage.TRAIN:
-            current_epoch = self.hparams.epoch_counter.current
             return p_seq, wav_lens
         else:
             p_tokens, scores = self.hparams.beam_searcher(x, wav_lens)
@@ -67,7 +65,6 @@ class ASR(sb.core.Brain):
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss (CTC+NLL) given predictions and targets."""
 
-        current_epoch = self.hparams.epoch_counter.current
         if stage == sb.Stage.TRAIN:
             p_seq, wav_lens = predictions
         else:
@@ -160,8 +157,8 @@ def dataio_prepare(hparams):
     # 1. Define datasets
     data_folder = hparams["data_folder"]
 
-    train_data = sb.dataio.dataset.DynamicItemDataset.from_csv(
-        csv_path=hparams["train_csv"], replacements={"data_root": data_folder},
+    train_data = sb.dataio.dataset.DynamicItemDataset.from_json(
+        json_path=hparams["train_csv"], replacements={"data_root": data_folder},
     )
 
     if hparams["sorting"] == "ascending":
@@ -190,14 +187,14 @@ def dataio_prepare(hparams):
             "sorting must be random, ascending or descending"
         )
 
-    valid_data = sb.dataio.dataset.DynamicItemDataset.from_csv(
-        csv_path=hparams["valid_csv"], replacements={"data_root": data_folder},
+    valid_data = sb.dataio.dataset.DynamicItemDataset.from_json(
+        json_path=hparams["valid_csv"], replacements={"data_root": data_folder},
     )
     # We also sort the validation data so it is faster to validate
     valid_data = valid_data.filtered_sorted(sort_key="duration")
 
-    test_data = sb.dataio.dataset.DynamicItemDataset.from_csv(
-        csv_path=hparams["test_csv"], replacements={"data_root": data_folder},
+    test_data = sb.dataio.dataset.DynamicItemDataset.from_json(
+        json_path=hparams["test_csv"], replacements={"data_root": data_folder},
     )
 
     # We also sort the validation data so it is faster to validate
