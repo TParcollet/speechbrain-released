@@ -89,7 +89,9 @@ class ASR(sb.core.Brain):
             # Convert indices to words
             target_words = undo_padding(tokens, tokens_lens)
             target_words = self.tokenizer(target_words, task="decode_from_list")
-
+            print("---")
+            print(predicted_words)
+            print(target_words)
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)
 
@@ -180,7 +182,11 @@ def dataio_prepare(hparams):
         hparams["dataloader_options"]["shuffle"] = False
 
     elif hparams["sorting"] == "random":
-        pass
+        train_data = train_data.filtered_sorted(
+            key_max_value={"duration": hparams["avoid_if_longer_than"]},
+            key_min_value={"duration": hparams["avoid_if_smaller_than"]},
+        )
+        hparams["dataloader_options"]["shuffle"] = True
 
     else:
         raise NotImplementedError(
