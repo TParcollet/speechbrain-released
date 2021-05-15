@@ -213,11 +213,14 @@ def dataio_prepare(hparams):
     )
 
     # 2. Define audio pipeline:
-    @sb.utils.data_pipeline.takes("wav")
+    @sb.utils.data_pipeline.takes("wav", "start_seg", "end_seg")
     @sb.utils.data_pipeline.provides("sig")
-    def audio_pipeline(wav):
+    def audio_pipeline(wav, start_seg, end_seg):
         info = torchaudio.info(wav)
-        sig = sb.dataio.dataio.read_audio(wav)
+        start = int(float(start_seg) * hparams["sample_rate"])
+        stop = int(float(end_seg) * hparams["sample_rate"])
+        speech_segment = {"file": wav, "start": start, "stop": stop}
+        sig = sb.dataio.dataio.read_audio(speech_segment)
         if info.num_channels > 1:
             sig = torch.mean(sig, dim=1)
         resampled = torchaudio.transforms.Resample(
