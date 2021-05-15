@@ -14,15 +14,15 @@ save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
 
 # Data files
-data_folder: !PLACEHOLDER  # e.g, /localscratch/cv-corpus-5.1-2020-06-22/fr
+data_folder: /gpfsscratch/rech/zfg/commun/data/scratch/mustcv1-mustcv2-how2-europarl-detok/data  # e.g, /localscratch/cv-corpus-5.1-2020-06-22/fr
 train_tsv_file: !ref <data_folder>/train.tsv  # Standard CommonVoice .tsv files
 dev_tsv_file: !ref <data_folder>/dev.tsv  # Standard CommonVoice .tsv files
 test_tsv_file: !ref <data_folder>/test.tsv  # Standard CommonVoice .tsv files
 accented_letters: True
 language: fr # use 'it' for Italian, 'rw' for Kinyarwanda, 'en' for english
-train_csv: !ref <save_folder>/train.csv
-valid_csv: !ref <save_folder>/dev.csv
-test_csv: !ref <save_folder>/test.csv
+train_csv: !ref <save_folder>/train_v1.json
+valid_csv: !ref <save_folder>/dev.en-de-v1.csv
+test_csv: !ref <save_folder>/dev.en-de-v1.csv
 skip_prep: False # Skip data preparation
 
 # We remove utterance slonger than 10s in the train/dev/test sets as

@@ -276,19 +276,19 @@ if __name__ == "__main__":
     )
 
     # Due to DDP, we do the preparation ONLY on the main python process
-    run_on_main(
-        prepare_common_voice,
-        kwargs={
-            "data_folder": hparams["data_folder"],
-            "save_folder": hparams["save_folder"],
-            "train_tsv_file": hparams["train_tsv_file"],
-            "dev_tsv_file": hparams["dev_tsv_file"],
-            "test_tsv_file": hparams["test_tsv_file"],
-            "accented_letters": hparams["accented_letters"],
-            "language": hparams["language"],
-            "skip_prep": hparams["skip_prep"],
-        },
-    )
+    # run_on_main(
+    #    prepare_common_voice,
+    #    kwargs={
+    #        "data_folder": hparams["data_folder"],
+    #        "save_folder": hparams["save_folder"],
+    #        "train_tsv_file": hparams["train_tsv_file"],
+    #        "dev_tsv_file": hparams["dev_tsv_file"],
+    #        "test_tsv_file": hparams["test_tsv_file"],
+    #        "accented_letters": hparams["accented_letters"],
+    #        "language": hparams["language"],
+    #        "skip_prep": hparams["skip_prep"],
+    #    },
+    # )
 
     # Create the datasets objects as well as tokenization and encoding :-D
     train_data, valid_data, test_data, tokenizer = dataio_prepare(hparams)
