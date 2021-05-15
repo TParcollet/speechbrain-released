@@ -24,6 +24,7 @@ train_csv: !ref <data_folder>/train_v1.json
 valid_csv: !ref <data_folder>/dev.en-de-v1.json
 test_csv: !ref <data_folder>/dev.en-de-v1.json
 skip_prep: False # Skip data preparation
+ckpt_interval_minutes: 30 # save checkpoint every N min
 
 # We remove utterance slonger than 10s in the train/dev/test sets as
 # longer sentences certainly correspond to "open microphones".
