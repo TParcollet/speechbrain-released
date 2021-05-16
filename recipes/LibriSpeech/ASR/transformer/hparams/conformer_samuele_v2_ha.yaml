@@ -147,10 +147,6 @@ Transformer: !new:speechbrain.lobes.models.transformer.TransformerASR.Transforme
 
 tokenizer: !new:sentencepiece.SentencePieceProcessor
 
-ctc_lin: !new:speechbrain.nnet.linear.Linear
-    input_size: !ref <d_model>
-    n_neurons: !ref <output_neurons>
-
 seq_lin: !new:speechbrain.nnet.linear.Linear
     input_size: !ref <d_model>
     n_neurons: !ref <output_neurons>
@@ -159,10 +155,9 @@ modules:
     CNN: !ref <CNN>
     Transformer: !ref <Transformer>
     seq_lin: !ref <seq_lin>
-    ctc_lin: !ref <ctc_lin>
 
 model: !new:torch.nn.ModuleList
-    - [!ref <CNN>, !ref <Transformer>, !ref <seq_lin>, !ref <ctc_lin>]
+    - [!ref <CNN>, !ref <Transformer>, !ref <seq_lin>]
 
 # define two optimizers here for two-stage training
 Adam: !name:torch.optim.Adam
@@ -176,29 +171,25 @@ SGD: !name:torch.optim.SGD
     nesterov: True
 
 valid_search: !new:speechbrain.decoders.S2STransformerBeamSearch
-    modules: [!ref <Transformer>, !ref <seq_lin>, !ref <ctc_lin>]
+    modules: [!ref <Transformer>, !ref <seq_lin>]
     bos_index: !ref <bos_index>
     eos_index: !ref <eos_index>
     blank_index: !ref <blank_index>
     min_decode_ratio: !ref <min_decode_ratio>
     max_decode_ratio: !ref <max_decode_ratio>
     beam_size: !ref <valid_beam_size>
-    ctc_weight: !ref <ctc_weight_decode>
     using_eos_threshold: False
     length_normalization: False
 
 
 test_search: !new:speechbrain.decoders.S2STransformerBeamSearch
-    modules: [!ref <Transformer>, !ref <seq_lin>, !ref <ctc_lin>]
+    modules: [!ref <Transformer>, !ref <seq_lin>]
     bos_index: !ref <bos_index>
     eos_index: !ref <eos_index>
     blank_index: !ref <blank_index>
     min_decode_ratio: !ref <min_decode_ratio>
     max_decode_ratio: !ref <max_decode_ratio>
     beam_size: !ref <test_beam_size>
-    ctc_weight: !ref <ctc_weight_decode>
-    lm_weight: !ref <lm_weight>
-    lm_modules: !ref <lm_model>
     temperature: 1.15
     temperature_lm: 1.15
     using_eos_threshold: False
@@ -206,10 +197,6 @@ test_search: !new:speechbrain.decoders.S2STransformerBeamSearch
 
 log_softmax: !new:torch.nn.LogSoftmax
     dim: -1
-
-ctc_cost: !name:speechbrain.nnet.losses.ctc_loss
-    blank_index: !ref <blank_index>
-    reduction: !ref <loss_reduction>
 
 seq_cost: !name:speechbrain.nnet.losses.kldiv_loss
     label_smoothing: !ref <label_smoothing>
