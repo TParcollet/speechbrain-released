@@ -361,8 +361,8 @@ def dataio_prepare(hparams):
         vocab_size=hparams["output_neurons"],
         annotation_train=hparams["train_csv"],
         annotation_read="wrd",
-        model_type=hparams["token_type"],
-        character_coverage=hparams["character_coverage"],
+        model_type="bpe",
+        character_coverage=1.0,
     )
 
     # 2. Define audio pipeline:
