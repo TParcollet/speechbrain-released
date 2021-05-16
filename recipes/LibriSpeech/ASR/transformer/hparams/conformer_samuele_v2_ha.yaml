@@ -30,7 +30,7 @@ dev_tsv_file: !ref <data_folder>/dev.tsv  # Standard CommonVoice .tsv files
 test_tsv_file: !ref <data_folder>/test.tsv  # Standard CommonVoice .tsv files
 accented_letters: True
 language: fr # use 'it' for Italian, 'rw' for Kinyarwanda, 'en' for english
-train_csv: !ref <data_folder>/dev.en-de-v1.json
+train_csv: !ref <data_folder>/train_v1.json
 valid_csv: !ref <data_folder>/dev.en-de-v1.json
 test_csv: !ref <data_folder>/dev.en-de-v1.json
 skip_prep: False # Skip data preparation
