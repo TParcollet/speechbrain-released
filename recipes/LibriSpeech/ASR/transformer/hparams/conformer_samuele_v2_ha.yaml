@@ -52,6 +52,7 @@ ckpt_interval_minutes: 25 # save checkpoint every N min
 # We remove utterance slonger than 10s in the train/dev/test sets as
 # longer sentences certainly correspond to "open microphones".
 avoid_if_longer_than: 10.0
+avoid_if_smaller_than: 1.0
 
 # stages related parameters
 stage_one_epochs: 90
