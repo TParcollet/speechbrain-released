@@ -41,9 +41,9 @@ skip_prep: False # Skip data preparation
 # Empirically, we found that this value should be >= 128.
 # Please, set your parameters accordingly.
 number_of_epochs: 110
-batch_size: 16 # This works for 2x GPUs with 32GB
+batch_size: 20 # This works for 2x GPUs with 32GB
 ctc_weight: 0.3
-gradient_accumulation: 4
+gradient_accumulation: 3
 gradient_clipping: 5.0
 loss_reduction: 'batchmean'
 sorting: random
