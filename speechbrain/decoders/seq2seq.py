@@ -1249,7 +1249,7 @@ class S2STransformerBeamSearch(S2SBeamSearcher):
 
         self.model = modules[0]
         self.fc = modules[1]
-        # self.ctc_fc = modules[2]
+        self.ctc_fc = modules[2]
         self.softmax = torch.nn.LogSoftmax(dim=-1)
 
         self.temperature = temperature
