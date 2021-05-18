@@ -1,0 +1,1232 @@
+2021-05-04 12:17:24,728 - speechbrain.core - INFO - Beginning experiment!
+2021-05-04 12:17:24,758 - speechbrain.core - INFO - Experiment folder: BestVC_MRMR
+2021-05-04 12:17:27,956 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-05-04 12:21:04,694 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-05-04 12:21:06,101 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-05-04 15:10:08,827 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-05-04 15:10:11,731 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-05-04 15:10:11,909 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2021-05-04 15:10:11,937 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2021-05-04 15:25:34,022 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+15-25-15+00
+2021-05-04 15:40:11,305 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+15-39-54+00
+2021-05-04 15:40:12,815 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+15-25-15+00
+2021-05-04 15:40:51,550 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+15-40-34+00
+2021-05-04 15:56:12,849 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+15-55-56+00
+2021-05-04 15:56:16,801 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+15-40-34+00
+2021-05-04 16:11:35,575 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-11-19+00
+2021-05-04 16:11:40,058 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+15-55-56+00
+2021-05-04 16:13:12,767 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-12-56+00
+2021-05-04 16:13:17,222 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-11-19+00
+2021-05-04 16:13:17,505 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+15-39-54+00
+2021-05-04 16:26:56,567 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-26-40+00
+2021-05-04 16:42:20,427 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-42-03+00
+2021-05-04 16:42:27,802 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-26-40+00
+2021-05-04 16:46:51,745 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-46-34+00
+2021-05-04 16:46:58,876 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-42-03+00
+2021-05-04 16:46:59,174 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-12-56+00
+2021-05-04 16:57:44,792 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-57-28+00
+2021-05-04 17:13:07,369 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-12-50+00
+2021-05-04 17:13:16,055 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-57-28+00
+2021-05-04 17:21:20,597 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-21-04+00
+2021-05-04 17:21:29,908 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+16-46-34+00
+2021-05-04 17:21:30,207 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-12-50+00
+2021-05-04 17:28:36,944 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-28-20+00
+2021-05-04 17:44:06,529 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-43-50+00
+2021-05-04 17:44:18,312 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-28-20+00
+2021-05-04 17:56:17,489 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-56-00+00
+2021-05-04 17:56:29,538 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-43-50+00
+2021-05-04 17:56:29,815 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-21-04+00
+2021-05-04 17:59:34,495 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-59-19+00
+2021-05-04 18:14:58,330 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+18-14-43+00
+2021-05-04 18:15:10,643 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-59-19+00
+2021-05-04 18:30:26,722 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+18-30-10+00
+2021-05-04 18:30:41,321 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+18-14-43+00
+2021-05-04 18:32:29,320 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+18-32-12+00
+2021-05-04 18:32:46,204 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+17-56-00+00
+2021-05-04 18:32:46,541 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+18-30-10+00
+2021-05-04 18:46:00,238 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+18-45-44+00
+2021-05-04 19:01:26,107 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-01-11+00
+2021-05-04 19:01:41,152 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+18-45-44+00
+2021-05-04 19:08:02,908 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-07-48+00
+2021-05-04 19:08:18,295 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-01-11+00
+2021-05-04 19:08:18,569 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+18-32-12+00
+2021-05-04 19:16:58,063 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-16-41+00
+2021-05-04 19:32:26,164 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-32-11+00
+2021-05-04 19:32:44,432 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-16-41+00
+2021-05-04 19:41:47,018 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-41-32+00
+2021-05-04 19:42:03,175 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-07-48+00
+2021-05-04 19:42:03,397 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-32-11+00
+2021-05-04 19:48:04,037 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-47-48+00
+2021-05-04 20:03:32,856 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-03-17+00
+2021-05-04 20:03:50,553 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-47-48+00
+2021-05-04 20:18:15,118 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-17-59+00
+2021-05-04 20:18:33,468 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+19-41-32+00
+2021-05-04 20:18:33,745 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-03-17+00
+2021-05-04 20:19:08,586 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-18-54+00
+2021-05-04 20:34:45,768 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-34-26+00
+2021-05-04 20:35:07,879 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-18-54+00
+2021-05-04 20:50:28,000 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-50-11+00
+2021-05-04 20:50:50,645 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-34-26+00
+2021-05-04 20:58:08,497 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-57-52+00
+2021-05-04 20:58:32,159 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-17-59+00
+2021-05-04 20:58:32,476 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-50-11+00
+2021-05-04 21:06:05,236 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-05-51+00
+2021-05-04 21:21:40,401 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-21-24+00
+2021-05-04 21:22:07,711 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-05-51+00
+2021-05-04 21:37:21,976 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-37-08+00
+2021-05-04 21:37:47,356 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-21-24+00
+2021-05-04 21:39:15,398 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-39-00+00
+2021-05-04 21:39:46,979 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+20-57-52+00
+2021-05-04 21:39:47,247 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-37-08+00
+2021-05-04 21:53:07,930 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-52-52+00
+2021-05-04 22:08:44,959 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+22-08-29+00
+2021-05-04 22:09:13,746 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-52-52+00
+2021-05-04 22:41:53,473 - speechbrain.utils.train_logger - INFO - epoch: 1, lr: 1.00e+00 - train loss: 7.84e-01 - valid loss: 7.84e-01
+2021-05-04 22:42:08,271 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+22-41-53+00
+2021-05-04 22:42:36,454 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+22-08-29+00
+2021-05-04 22:42:36,772 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+21-39-00+00
+2021-05-04 22:42:36,800 - speechbrain.utils.epoch_loop - INFO - Going into epoch 2
+2021-05-04 22:48:48,691 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+22-48-30+00
+2021-05-04 22:49:08,016 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+22-41-53+00
+2021-05-04 22:57:54,135 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+22-57-38+00
+2021-05-04 23:13:30,018 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-13-13+00
+2021-05-04 23:14:01,081 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+22-57-38+00
+2021-05-04 23:15:52,394 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-15-38+00
+2021-05-04 23:16:18,974 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+22-48-30+00
+2021-05-04 23:16:19,196 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-13-13+00
+2021-05-04 23:29:14,157 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-29-01+00
+2021-05-04 23:42:52,125 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-42-39+00
+2021-05-04 23:43:22,835 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-15-38+00
+2021-05-04 23:43:23,048 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-29-01+00
+2021-05-04 23:44:48,991 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-44-34+00
+2021-05-05 00:00:26,402 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-00-11+00
+2021-05-05 00:00:59,933 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-44-34+00
+2021-05-05 00:07:46,452 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-07-35+00
+2021-05-05 00:08:09,280 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-00-11+00
+2021-05-05 00:08:09,380 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-04+23-42-39+00
+2021-05-05 00:16:11,959 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-16-00+00
+2021-05-05 00:26:26,825 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-26-15+00
+2021-05-05 00:26:52,926 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-07-35+00
+2021-05-05 00:26:53,114 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-16-00+00
+2021-05-05 00:31:40,894 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-31-29+00
+2021-05-05 00:45:32,687 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-45-24+00
+2021-05-05 00:45:38,656 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-31-29+00
+2021-05-05 00:45:38,878 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-26-15+00
+2021-05-05 00:47:05,737 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-46-55+00
+2021-05-05 01:02:29,135 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-02-22+00
+2021-05-05 01:02:55,074 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-46-55+00
+2021-05-05 01:04:27,286 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-04-18+00
+2021-05-05 01:04:46,725 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-02-22+00
+2021-05-05 01:04:46,915 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+00-45-24+00
+2021-05-05 01:18:02,241 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-17-55+00
+2021-05-05 01:22:51,463 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-22-40+00
+2021-05-05 01:23:18,898 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-04-18+00
+2021-05-05 01:23:19,068 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-17-55+00
+2021-05-05 01:33:14,635 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-33-04+00
+2021-05-05 01:41:58,433 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-41-48+00
+2021-05-05 01:42:26,777 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-22-40+00
+2021-05-05 01:42:26,944 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-33-04+00
+2021-05-05 01:48:42,511 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-48-31+00
+2021-05-05 02:02:07,731 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-02-00+00
+2021-05-05 02:02:37,195 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-41-48+00
+2021-05-05 02:02:37,376 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+01-48-31+00
+2021-05-05 02:04:05,836 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-04-01+00
+2021-05-05 02:19:35,674 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-19-25+00
+2021-05-05 02:20:07,170 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-04-01+00
+2021-05-05 02:23:09,014 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-22-58+00
+2021-05-05 02:23:38,605 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-19-25+00
+2021-05-05 02:23:38,779 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-02-00+00
+2021-05-05 02:35:18,735 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-35-07+00
+2021-05-05 02:44:39,254 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-44-28+00
+2021-05-05 02:45:05,174 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-35-07+00
+2021-05-05 02:45:05,208 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-22-58+00
+2021-05-05 02:50:51,164 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-50-41+00
+2021-05-05 03:14:28,544 - speechbrain.utils.train_logger - INFO - epoch: 2, lr: 1.00e+00 - train loss: 4.89e-01 - valid loss: 4.89e-01
+2021-05-05 03:14:39,435 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+03-14-28+00
+2021-05-05 03:15:12,519 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-44-28+00
+2021-05-05 03:15:12,667 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+02-50-41+00
+2021-05-05 03:15:12,683 - speechbrain.utils.epoch_loop - INFO - Going into epoch 3
+2021-05-05 03:23:04,447 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+03-22-53+00
+2021-05-05 03:23:25,352 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+03-14-28+00
+2021-05-05 03:30:25,117 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+03-30-14+00
+2021-05-05 03:38:11,826 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "train.py", line 436, in <module>
+    valid_loader_kwargs=hparams["test_dataloader_options"],
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/core.py", line 1011, in fit
+    loss = self.fit_batch(batch)
+  File "train.py", line 256, in fit_batch
+    predictions, feats,  mfcc, gammatone = self.compute_forward(batch, sb.Stage.TRAIN)
+  File "train.py", line 171, in compute_forward
+    z = self.modules.enc(feats.detach())
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/nnet/containers.py", line 119, in forward
+    x = layer(x)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/nnet/RNN.py", line 219, in forward
+    output, hn = self.rnn(x)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/rnn.py", line 582, in forward
+    self.dropout, self.training, self.bidirectional, self.batch_first)
+RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED
+2021-05-05 17:56:22,789 - speechbrain.core - INFO - Beginning experiment!
+2021-05-05 17:56:22,836 - speechbrain.core - INFO - Experiment folder: BestVC_MRMR
+2021-05-05 17:56:24,955 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-05-05 17:58:39,596 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-05-05 17:58:40,528 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-05-05 19:05:41,114 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-05-05 19:05:43,209 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-05-05 19:05:43,686 - speechbrain.utils.checkpoints - INFO - Loading a checkpoint from BestVC_MRMR/workers_save/CKPT+2021-05-05+03-30-14+00
+2021-05-05 19:06:45,696 - speechbrain.utils.epoch_loop - INFO - Going into epoch 3
+2021-05-05 19:21:58,608 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-21-45+00
+2021-05-05 19:21:59,617 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+03-30-14+00
+2021-05-05 19:27:37,212 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-27-25+00
+2021-05-05 19:27:38,475 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+03-22-53+00
+2021-05-05 19:27:38,674 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-21-45+00
+2021-05-05 19:37:11,876 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-36-59+00
+2021-05-05 19:48:29,452 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-48-18+00
+2021-05-05 19:48:32,070 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-36-59+00
+2021-05-05 19:48:32,260 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-27-25+00
+2021-05-05 19:52:25,445 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-52-13+00
+2021-05-05 20:07:40,187 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-07-28+00
+2021-05-05 20:07:43,418 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-52-13+00
+2021-05-05 20:08:46,083 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-08-35+00
+2021-05-05 20:08:49,782 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+19-48-18+00
+2021-05-05 20:08:49,956 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-07-28+00
+2021-05-05 20:22:55,745 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-22-43+00
+2021-05-05 20:29:53,701 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-29-44+00
+2021-05-05 20:29:58,613 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-08-35+00
+2021-05-05 20:29:58,798 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-22-43+00
+2021-05-05 20:38:11,219 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-37-59+00
+2021-05-05 20:50:26,385 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-50-15+00
+2021-05-05 20:50:32,020 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-37-59+00
+2021-05-05 20:50:32,206 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-29-44+00
+2021-05-05 20:53:24,748 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-53-15+00
+2021-05-05 21:08:43,130 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-08-30+00
+2021-05-05 21:08:51,295 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-53-15+00
+2021-05-05 21:13:42,413 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-13-31+00
+2021-05-05 21:13:50,432 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+20-50-15+00
+2021-05-05 21:13:50,651 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-08-30+00
+2021-05-05 21:24:02,979 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-23-51+00
+2021-05-05 21:38:23,085 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-38-12+00
+2021-05-05 21:38:31,346 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-23-51+00
+2021-05-05 21:38:31,578 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-13-31+00
+2021-05-05 21:39:20,521 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-39-09+00
+2021-05-05 21:54:38,820 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-54-26+00
+2021-05-05 21:54:49,128 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-39-09+00
+2021-05-05 22:02:12,120 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-02-00+00
+2021-05-05 22:02:23,143 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-38-12+00
+2021-05-05 22:02:23,354 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+21-54-26+00
+2021-05-05 22:10:02,200 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-09-49+00
+2021-05-05 22:25:22,707 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-25-10+00
+2021-05-05 22:25:33,294 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-09-49+00
+2021-05-05 22:26:15,540 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-26-04+00
+2021-05-05 22:26:26,864 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-02-00+00
+2021-05-05 22:26:27,027 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-25-10+00
+2021-05-05 22:40:46,647 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-40-34+00
+2021-05-05 22:47:08,579 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-46-59+00
+2021-05-05 22:47:17,138 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-26-04+00
+2021-05-05 22:47:17,146 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-40-34+00
+2021-05-05 22:55:58,702 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-55-52+00
+2021-05-05 23:22:40,126 - speechbrain.utils.train_logger - INFO - epoch: 3, lr: 1.00e+00 - train loss: 4.35e-01 - valid loss: 4.35e-01
+2021-05-05 23:22:50,739 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-22-40+00
+2021-05-05 23:23:03,763 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-46-59+00
+2021-05-05 23:23:03,937 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+22-55-52+00
+2021-05-05 23:23:03,953 - speechbrain.utils.epoch_loop - INFO - Going into epoch 4
+2021-05-05 23:25:55,384 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-25-46+00
+2021-05-05 23:26:03,153 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-22-40+00
+2021-05-05 23:38:14,021 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-38-04+00
+2021-05-05 23:43:18,348 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-43-06+00
+2021-05-05 23:43:33,586 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-38-04+00
+2021-05-05 23:43:33,774 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-25-46+00
+2021-05-05 23:53:32,567 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-53-24+00
+2021-05-05 23:59:48,898 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-59-37+00
+2021-05-06 00:00:03,913 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-53-24+00
+2021-05-06 00:00:04,086 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-43-06+00
+2021-05-06 00:08:54,177 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-08-43+00
+2021-05-06 00:16:33,016 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-16-22+00
+2021-05-06 00:16:49,426 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-08-43+00
+2021-05-06 00:16:49,626 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-05+23-59-37+00
+2021-05-06 00:24:17,362 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-24-06+00
+2021-05-06 00:33:48,042 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-33-37+00
+2021-05-06 00:34:02,447 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-16-22+00
+2021-05-06 00:34:02,616 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-24-06+00
+2021-05-06 00:39:39,722 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-39-28+00
+2021-05-06 00:51:09,989 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-50-59+00
+2021-05-06 00:51:28,608 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-39-28+00
+2021-05-06 00:51:28,812 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-33-37+00
+2021-05-06 00:55:04,639 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-54-53+00
+2021-05-06 01:10:22,552 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-10-11+00
+2021-05-06 01:10:41,521 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-54-53+00
+2021-05-06 01:10:41,730 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+00-50-59+00
+2021-05-06 01:10:53,898 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-10-43+00
+2021-05-06 01:26:19,869 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-26-08+00
+2021-05-06 01:26:37,961 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-10-43+00
+2021-05-06 01:30:04,632 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-29-54+00
+2021-05-06 01:30:25,289 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-26-08+00
+2021-05-06 01:30:25,477 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-10-11+00
+2021-05-06 01:41:49,053 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-41-38+00
+2021-05-06 01:48:13,454 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-48-02+00
+2021-05-06 01:48:35,061 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-41-38+00
+2021-05-06 01:48:35,250 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-29-54+00
+2021-05-06 01:57:15,012 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-57-04+00
+2021-05-06 02:07:22,963 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-07-12+00
+2021-05-06 02:07:41,163 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-57-04+00
+2021-05-06 02:07:41,184 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+01-48-02+00
+2021-05-06 02:12:32,470 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-12-21+00
+2021-05-06 02:26:52,486 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-26-43+00
+2021-05-06 02:27:17,058 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-07-12+00
+2021-05-06 02:27:17,260 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-12-21+00
+2021-05-06 02:27:58,006 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-27-47+00
+2021-05-06 02:43:25,920 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-43-14+00
+2021-05-06 02:43:51,062 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-27-47+00
+2021-05-06 02:48:15,879 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-48-04+00
+2021-05-06 02:48:42,667 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-43-14+00
+2021-05-06 02:48:42,852 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-26-43+00
+2021-05-06 02:59:02,307 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-58-51+00
+2021-05-06 03:19:07,704 - speechbrain.nnet.schedulers - INFO - Changing lr from 1 to 0.75
+2021-05-06 03:19:07,922 - speechbrain.utils.train_logger - INFO - epoch: 4, lr: 1.00e+00 - train loss: 4.53e-01 - valid loss: 4.53e-01
+2021-05-06 03:19:18,517 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-19-07+00
+2021-05-06 03:19:44,643 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-48-04+00
+2021-05-06 03:19:44,815 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+02-58-51+00
+2021-05-06 03:19:44,832 - speechbrain.utils.epoch_loop - INFO - Going into epoch 5
+2021-05-06 03:26:08,758 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-25-57+00
+2021-05-06 03:26:26,805 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-19-07+00
+2021-05-06 03:34:56,422 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-34-46+00
+2021-05-06 03:42:32,195 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-42-22+00
+2021-05-06 03:42:59,918 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-25-57+00
+2021-05-06 03:43:00,120 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-34-46+00
+2021-05-06 03:50:25,394 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-50-15+00
+2021-05-06 03:59:14,073 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-59-03+00
+2021-05-06 03:59:42,973 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-42-22+00
+2021-05-06 03:59:43,149 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-50-15+00
+2021-05-06 04:05:55,177 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-05-44+00
+2021-05-06 04:16:16,930 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-16-05+00
+2021-05-06 04:16:45,486 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-05-44+00
+2021-05-06 04:16:45,653 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+03-59-03+00
+2021-05-06 04:21:24,255 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-21-13+00
+2021-05-06 04:33:18,719 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-33-08+00
+2021-05-06 04:33:42,870 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-16-05+00
+2021-05-06 04:33:43,033 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-21-13+00
+2021-05-06 04:36:54,114 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-36-44+00
+2021-05-06 04:50:32,067 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-50-21+00
+2021-05-06 04:51:02,393 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-33-08+00
+2021-05-06 04:51:02,522 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-36-44+00
+2021-05-06 04:52:24,487 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-52-14+00
+2021-05-06 05:07:54,686 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-07-44+00
+2021-05-06 05:08:28,663 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-52-14+00
+2021-05-06 05:08:28,864 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+04-50-21+00
+2021-05-06 05:08:38,869 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-08-30+00
+2021-05-06 05:24:12,921 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-24-01+00
+2021-05-06 05:24:39,968 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-08-30+00
+2021-05-06 05:27:57,012 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-27-46+00
+2021-05-06 05:28:29,960 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-24-01+00
+2021-05-06 05:28:30,149 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-07-44+00
+2021-05-06 05:39:50,303 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-39-40+00
+2021-05-06 05:47:04,319 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-46-53+00
+2021-05-06 05:47:11,712 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-39-40+00
+2021-05-06 05:47:11,767 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-27-46+00
+2021-05-06 05:55:19,533 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-55-08+00
+2021-05-06 06:05:31,248 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-05-24+00
+2021-05-06 06:06:01,142 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-55-08+00
+2021-05-06 06:06:01,316 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+05-46-53+00
+2021-05-06 06:10:35,069 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-10-25+00
+2021-05-06 06:25:31,350 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-25-19+00
+2021-05-06 06:26:06,218 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-05-24+00
+2021-05-06 06:26:07,577 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-10-25+00
+2021-05-06 06:26:20,649 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-26-09+00
+2021-05-06 06:41:55,448 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-41-44+00
+2021-05-06 06:42:31,658 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-26-09+00
+2021-05-06 06:47:26,800 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-47-18+00
+2021-05-06 06:47:46,152 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-41-44+00
+2021-05-06 06:47:46,330 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-25-19+00
+2021-05-06 07:10:46,822 - speechbrain.utils.train_logger - INFO - epoch: 5, lr: 7.50e-01 - train loss: 4.16e-01 - valid loss: 4.16e-01
+2021-05-06 07:10:52,354 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-10-46+00
+2021-05-06 07:10:56,824 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+06-47-18+00
+2021-05-06 07:10:56,825 - speechbrain.utils.epoch_loop - INFO - Going into epoch 6
+2021-05-06 07:20:42,511 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-20-35+00
+2021-05-06 07:21:05,270 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-10-46+00
+2021-05-06 07:26:07,204 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-25-56+00
+2021-05-06 07:37:09,318 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-36-58+00
+2021-05-06 07:37:40,638 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-20-35+00
+2021-05-06 07:37:40,808 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-25-56+00
+2021-05-06 07:41:48,028 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-41-37+00
+2021-05-06 07:53:54,379 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-53-42+00
+2021-05-06 07:54:34,414 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-36-58+00
+2021-05-06 07:54:34,597 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-41-37+00
+2021-05-06 07:57:21,254 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-57-10+00
+2021-05-06 08:11:42,137 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-11-29+00
+2021-05-06 08:12:23,165 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-53-42+00
+2021-05-06 08:12:23,331 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+07-57-10+00
+2021-05-06 08:12:55,499 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-12-47+00
+2021-05-06 08:28:34,372 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-28-23+00
+2021-05-06 08:29:16,325 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-12-47+00
+2021-05-06 08:30:31,444 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-30-21+00
+2021-05-06 08:31:11,870 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-11-29+00
+2021-05-06 08:31:11,983 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-28-23+00
+2021-05-06 08:44:27,345 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-44-16+00
+2021-05-06 08:48:52,484 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-48-43+00
+2021-05-06 08:49:33,418 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-44-16+00
+2021-05-06 08:49:33,616 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-30-21+00
+2021-05-06 09:00:03,749 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-59-53+00
+2021-05-06 09:07:57,447 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-07-45+00
+2021-05-06 09:08:47,827 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-59-53+00
+2021-05-06 09:08:48,013 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+08-48-43+00
+2021-05-06 09:15:39,857 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-15-27+00
+2021-05-06 09:30:11,928 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-29-59+00
+2021-05-06 09:31:04,044 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-15-27+00
+2021-05-06 09:31:04,258 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-07-45+00
+2021-05-06 09:31:25,593 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-31-16+00
+2021-05-06 09:47:14,847 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-47-02+00
+2021-05-06 09:48:07,631 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-31-16+00
+2021-05-06 09:53:27,091 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-53-14+00
+2021-05-06 09:54:21,678 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-47-02+00
+2021-05-06 09:54:21,883 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-29-59+00
+2021-05-06 10:03:20,896 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-03-08+00
+2021-05-06 10:18:14,899 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-18-06+00
+2021-05-06 10:19:01,544 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-03-08+00
+2021-05-06 10:19:01,758 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+09-53-14+00
+2021-05-06 10:19:15,466 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-19-03+00
+2021-05-06 10:35:02,707 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-34-51+00
+2021-05-06 10:35:49,853 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-19-03+00
+2021-05-06 10:42:26,348 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-42-14+00
+2021-05-06 10:43:21,933 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-34-51+00
+2021-05-06 10:43:22,130 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-18-06+00
+2021-05-06 10:51:02,489 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-50-51+00
+2021-05-06 11:05:27,079 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-05-14+00
+2021-05-06 11:06:06,182 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-42-14+00
+2021-05-06 11:06:06,405 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+10-50-51+00
+2021-05-06 11:06:49,411 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-06-37+00
+2021-05-06 11:29:32,251 - speechbrain.utils.train_logger - INFO - epoch: 6, lr: 7.50e-01 - train loss: 3.48e-01 - valid loss: 3.48e-01
+2021-05-06 11:29:43,542 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-29-32+00
+2021-05-06 11:30:32,522 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-05-14+00
+2021-05-06 11:30:32,698 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-06-37+00
+2021-05-06 11:30:32,711 - speechbrain.utils.epoch_loop - INFO - Going into epoch 7
+2021-05-06 11:45:44,915 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-45-33+00
+2021-05-06 11:47:55,028 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-47-43+00
+2021-05-06 11:48:54,343 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-29-32+00
+2021-05-06 11:48:54,568 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-45-33+00
+2021-05-06 12:01:26,942 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-01-13+00
+2021-05-06 12:13:15,169 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-12-58+00
+2021-05-06 12:14:42,134 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-01-13+00
+2021-05-06 12:14:42,412 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+11-47-43+00
+2021-05-06 12:17:30,241 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-17-15+00
+2021-05-06 12:33:37,322 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-33-25+00
+2021-05-06 12:34:24,493 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-17-15+00
+2021-05-06 12:38:38,702 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-38-27+00
+2021-05-06 12:39:37,339 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-12-58+00
+2021-05-06 12:39:37,518 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-33-25+00
+2021-05-06 12:49:37,291 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-49-25+00
+2021-05-06 12:59:00,956 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-58-48+00
+2021-05-06 13:00:01,286 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-49-25+00
+2021-05-06 13:00:01,528 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-38-27+00
+2021-05-06 13:05:34,855 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-05-19+00
+2021-05-06 13:21:39,748 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-21-24+00
+2021-05-06 13:22:48,439 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-05-19+00
+2021-05-06 13:26:09,669 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-25-57+00
+2021-05-06 13:27:09,167 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-21-24+00
+2021-05-06 13:27:09,415 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+12-58-48+00
+2021-05-06 13:38:04,932 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-37-50+00
+2021-05-06 13:53:21,606 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-53-06+00
+2021-05-06 13:54:39,742 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-25-57+00
+2021-05-06 13:54:39,988 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-37-50+00
+2021-05-06 13:54:53,038 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-54-41+00
+2021-05-06 14:11:01,178 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+14-10-46+00
+2021-05-06 14:12:21,369 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-54-41+00
+2021-05-06 14:27:25,078 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+14-27-09+00
+2021-05-06 14:29:07,421 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+13-53-06+00
+2021-05-06 14:29:07,692 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+14-10-46+00
+2021-05-06 14:29:25,229 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+14-29-08+00
+2021-05-06 14:45:45,225 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+14-45-30+00
+2021-05-06 14:47:04,778 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+14-29-08+00
+2021-05-06 15:02:19,752 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-02-05+00
+2021-05-06 15:03:41,747 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+14-45-30+00
+2021-05-06 15:04:10,120 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-03-55+00
+2021-05-06 15:05:40,160 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+14-27-09+00
+2021-05-06 15:05:40,402 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-02-05+00
+2021-05-06 15:18:58,100 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-18-42+00
+2021-05-06 15:35:18,688 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-34-57+00
+2021-05-06 15:36:59,382 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-18-42+00
+2021-05-06 15:44:14,981 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-43-58+00
+2021-05-06 15:46:06,103 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-03-55+00
+2021-05-06 15:46:06,403 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-34-57+00
+2021-05-06 15:52:23,988 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-52-05+00
+2021-05-06 16:08:59,627 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-08-44+00
+2021-05-06 16:10:35,838 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-52-05+00
+2021-05-06 16:25:53,911 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-25-36+00
+2021-05-06 16:27:33,060 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-08-44+00
+2021-05-06 16:27:48,665 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-27-33+00
+2021-05-06 16:29:21,849 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+15-43-58+00
+2021-05-06 16:29:22,159 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-25-36+00
+2021-05-06 16:42:50,276 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-42-35+00
+2021-05-06 16:59:25,309 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-59-09+00
+2021-05-06 17:01:04,170 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-42-35+00
+2021-05-06 17:11:15,541 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+17-10-58+00
+2021-05-06 17:13:05,339 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-59-09+00
+2021-05-06 17:13:05,673 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+16-27-33+00
+2021-05-06 17:16:21,157 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+17-16-04+00
+2021-05-06 17:32:55,678 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+17-32-40+00
+2021-05-06 17:34:39,282 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+17-16-04+00
+2021-05-06 17:49:57,414 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+17-49-41+00
+2021-05-06 17:51:34,376 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+17-32-40+00
+2021-05-06 18:28:46,647 - speechbrain.utils.train_logger - INFO - epoch: 7, lr: 7.50e-01 - train loss: 3.18e-01 - valid loss: 3.18e-01
+2021-05-06 18:29:04,741 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+18-28-46+00
+2021-05-06 18:30:58,565 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+17-10-58+00
+2021-05-06 18:30:58,824 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+17-49-41+00
+2021-05-06 18:30:58,848 - speechbrain.utils.epoch_loop - INFO - Going into epoch 8
+2021-05-06 18:34:24,495 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+18-34-09+00
+2021-05-06 18:35:22,962 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+18-28-46+00
+2021-05-06 18:46:18,396 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+18-46-02+00
+2021-05-06 19:02:48,329 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-02-33+00
+2021-05-06 19:04:40,304 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+18-46-02+00
+2021-05-06 19:07:01,249 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-06-46+00
+2021-05-06 19:08:47,488 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-02-33+00
+2021-05-06 19:08:47,763 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+18-34-09+00
+2021-05-06 19:19:55,340 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-19-40+00
+2021-05-06 19:36:23,630 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-36-09+00
+2021-05-06 19:38:06,856 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-19-40+00
+2021-05-06 19:41:04,293 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-40-48+00
+2021-05-06 19:42:43,315 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-06-46+00
+2021-05-06 19:42:43,590 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-36-09+00
+2021-05-06 19:53:23,128 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-53-07+00
+2021-05-06 20:09:52,900 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-09-35+00
+2021-05-06 20:11:36,929 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-53-07+00
+2021-05-06 20:15:51,517 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-15-36+00
+2021-05-06 20:17:40,529 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-09-35+00
+2021-05-06 20:17:40,833 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+19-40-48+00
+2021-05-06 20:26:51,434 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-26-37+00
+2021-05-06 20:43:18,502 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-43-05+00
+2021-05-06 20:45:13,649 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-26-37+00
+2021-05-06 20:51:37,459 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-51-21+00
+2021-05-06 20:53:30,908 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-15-36+00
+2021-05-06 20:53:31,161 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-43-05+00
+2021-05-06 21:00:28,966 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-00-14+00
+2021-05-06 21:16:58,287 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-16-43+00
+2021-05-06 21:18:57,005 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-00-14+00
+2021-05-06 21:29:42,915 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-29-28+00
+2021-05-06 21:31:44,269 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-16-43+00
+2021-05-06 21:31:44,535 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+20-51-21+00
+2021-05-06 21:34:12,500 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-33-57+00
+2021-05-06 21:50:50,037 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-50-35+00
+2021-05-06 21:52:51,999 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-33-57+00
+2021-05-06 22:07:06,062 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-06-50+00
+2021-05-06 22:09:05,833 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-29-28+00
+2021-05-06 22:09:06,130 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+21-50-35+00
+2021-05-06 22:09:23,184 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-09-07+00
+2021-05-06 22:26:00,152 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-25-44+00
+2021-05-06 22:27:58,796 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-09-07+00
+2021-05-06 22:43:14,972 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-42-59+00
+2021-05-06 22:45:16,575 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-25-44+00
+2021-05-06 22:46:17,691 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-46-03+00
+2021-05-06 22:48:23,334 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-06-50+00
+2021-05-06 22:48:23,636 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-42-59+00
+2021-05-06 23:00:32,602 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-00-17+00
+2021-05-06 23:17:03,136 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-16-48+00
+2021-05-06 23:19:14,663 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-00-17+00
+2021-05-06 23:23:35,088 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-23-19+00
+2021-05-06 23:25:36,351 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+22-46-03+00
+2021-05-06 23:25:36,648 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-16-48+00
+2021-05-06 23:34:30,798 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-34-15+00
+2021-05-06 23:51:07,628 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-50-52+00
+2021-05-06 23:53:09,431 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-34-15+00
+2021-05-07 00:02:16,557 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-02-01+00
+2021-05-07 00:04:10,256 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-50-52+00
+2021-05-07 00:04:10,539 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-06+23-23-19+00
+2021-05-07 00:08:27,009 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-08-12+00
+2021-05-07 00:25:13,107 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-24-57+00
+2021-05-07 00:27:18,194 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-08-12+00
+2021-05-07 00:41:25,322 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-41-10+00
+2021-05-07 00:43:29,772 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-24-57+00
+2021-05-07 00:43:30,085 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-02-01+00
+2021-05-07 00:43:47,138 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-43-31+00
+2021-05-07 01:00:27,607 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-00-13+00
+2021-05-07 01:02:32,736 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-43-31+00
+2021-05-07 01:17:50,619 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-17-34+00
+2021-05-07 01:19:54,740 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-00-13+00
+2021-05-07 01:25:41,708 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-25-26+00
+2021-05-07 01:27:25,090 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-17-34+00
+2021-05-07 01:27:25,371 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+00-41-10+00
+2021-05-07 01:35:10,956 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-34-56+00
+2021-05-07 01:51:53,207 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-51-38+00
+2021-05-07 01:53:57,220 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-34-56+00
+2021-05-07 02:26:14,830 - speechbrain.nnet.schedulers - INFO - Changing lr from 0.75 to 0.56
+2021-05-07 02:26:15,061 - speechbrain.utils.train_logger - INFO - epoch: 8, lr: 7.50e-01 - train loss: 3.22e-01 - valid loss: 3.22e-01
+2021-05-07 02:26:29,813 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+02-26-15+00
+2021-05-07 02:28:36,621 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-51-38+00
+2021-05-07 02:28:36,944 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+01-25-26+00
+2021-05-07 02:28:36,970 - speechbrain.utils.epoch_loop - INFO - Going into epoch 9
+2021-05-07 02:38:30,204 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+02-38-15+00
+2021-05-07 02:39:55,685 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+02-26-15+00
+2021-05-07 02:43:54,793 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+02-43-39+00
+2021-05-07 03:00:42,827 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-00-28+00
+2021-05-07 03:02:53,386 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+02-43-39+00
+2021-05-07 03:10:21,257 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-10-06+00
+2021-05-07 03:12:31,849 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-00-28+00
+2021-05-07 03:12:32,111 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+02-38-15+00
+2021-05-07 03:18:08,889 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-17-53+00
+2021-05-07 03:34:54,275 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-34-39+00
+2021-05-07 03:37:06,131 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-17-53+00
+2021-05-07 03:43:46,404 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-43-30+00
+2021-05-07 03:46:02,763 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-10-06+00
+2021-05-07 03:46:02,979 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-34-39+00
+2021-05-07 03:52:18,723 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-52-06+00
+2021-05-07 04:09:00,824 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-08-46+00
+2021-05-07 04:11:13,179 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-52-06+00
+2021-05-07 04:18:49,729 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-18-36+00
+2021-05-07 04:21:07,938 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-08-46+00
+2021-05-07 04:21:08,242 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+03-43-30+00
+2021-05-07 04:26:30,161 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-26-15+00
+2021-05-07 04:43:15,173 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-42-59+00
+2021-05-07 04:45:24,567 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-26-15+00
+2021-05-07 04:54:30,312 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-54-15+00
+2021-05-07 04:56:49,588 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-18-36+00
+2021-05-07 04:56:49,769 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-42-59+00
+2021-05-07 05:00:43,458 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-00-28+00
+2021-05-07 05:17:33,313 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-17-20+00
+2021-05-07 05:19:58,865 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-00-28+00
+2021-05-07 05:30:51,795 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-30-36+00
+2021-05-07 05:33:01,600 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-17-20+00
+2021-05-07 05:33:01,838 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+04-54-15+00
+2021-05-07 05:35:18,467 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-35-03+00
+2021-05-07 05:52:10,146 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-51-54+00
+2021-05-07 05:54:36,015 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-35-03+00
+2021-05-07 06:07:57,628 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-07-42+00
+2021-05-07 06:10:23,508 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-51-54+00
+2021-05-07 06:10:23,768 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+05-30-36+00
+2021-05-07 06:10:39,713 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-10-24+00
+2021-05-07 06:27:35,869 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-27-20+00
+2021-05-07 06:30:04,743 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-10-24+00
+2021-05-07 06:45:18,786 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-45-04+00
+2021-05-07 06:47:46,389 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-27-20+00
+2021-05-07 06:48:45,183 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-48-29+00
+2021-05-07 06:51:07,330 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-07-42+00
+2021-05-07 06:51:07,614 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-45-04+00
+2021-05-07 07:03:02,179 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-02-47+00
+2021-05-07 07:20:00,627 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-19-45+00
+2021-05-07 07:22:30,547 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-02-47+00
+2021-05-07 07:27:25,660 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-27-10+00
+2021-05-07 07:29:54,654 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-19-45+00
+2021-05-07 07:29:55,063 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+06-48-29+00
+2021-05-07 07:37:48,824 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-37-33+00
+2021-05-07 07:54:46,611 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-54-31+00
+2021-05-07 07:57:08,784 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-37-33+00
+2021-05-07 08:08:27,066 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-08-12+00
+2021-05-07 08:10:58,185 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-27-10+00
+2021-05-07 08:10:58,388 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+07-54-31+00
+2021-05-07 08:12:25,408 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-12-10+00
+2021-05-07 08:29:17,467 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-29-03+00
+2021-05-07 08:31:42,041 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-12-10+00
+2021-05-07 08:47:02,247 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-46-46+00
+2021-05-07 08:49:32,565 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-29-03+00
+2021-05-07 08:51:42,961 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-51-28+00
+2021-05-07 08:54:19,046 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-46-46+00
+2021-05-07 08:54:19,401 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-08-12+00
+2021-05-07 09:04:50,401 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+09-04-32+00
+2021-05-07 09:21:53,736 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+09-21-39+00
+2021-05-07 09:24:36,958 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+09-04-32+00
+2021-05-07 09:33:55,871 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+09-33-40+00
+2021-05-07 09:36:39,770 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+08-51-28+00
+2021-05-07 09:36:40,022 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+09-21-39+00
+2021-05-07 09:39:56,231 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+09-39-40+00
+2021-05-07 10:16:07,822 - speechbrain.utils.train_logger - INFO - epoch: 9, lr: 5.62e-01 - train loss: 3.19e-01 - valid loss: 3.19e-01
+2021-05-07 10:16:20,965 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+10-16-07+00
+2021-05-07 10:18:47,221 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+09-39-40+00
+2021-05-07 10:18:47,468 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+09-33-40+00
+2021-05-07 10:18:47,490 - speechbrain.utils.epoch_loop - INFO - Going into epoch 10
+2021-05-07 10:32:45,135 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+10-32-31+00
+2021-05-07 10:34:29,419 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+10-16-07+00
+2021-05-07 10:34:43,844 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+10-34-30+00
+2021-05-07 10:52:02,710 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+10-51-47+00
+2021-05-07 10:54:54,916 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+10-34-30+00
+2021-05-07 11:08:37,548 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-08-23+00
+2021-05-07 11:11:22,248 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+10-51-47+00
+2021-05-07 11:11:22,558 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+10-32-31+00
+2021-05-07 11:11:39,327 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-11-23+00
+2021-05-07 11:28:47,613 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-28-32+00
+2021-05-07 11:31:36,077 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-11-23+00
+2021-05-07 11:46:15,075 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-46-00+00
+2021-05-07 11:49:10,292 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-08-23+00
+2021-05-07 11:49:10,568 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-28-32+00
+2021-05-07 11:49:27,069 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-49-11+00
+2021-05-07 12:06:40,933 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+12-06-25+00
+2021-05-07 12:09:39,267 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-49-11+00
+2021-05-07 12:24:56,081 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+12-24-39+00
+2021-05-07 12:27:53,278 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+12-06-25+00
+2021-05-07 12:28:15,539 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+12-27-58+00
+2021-05-07 12:31:11,577 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+11-46-00+00
+2021-05-07 12:31:11,870 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+12-24-39+00
+2021-05-07 12:43:11,277 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+12-42-55+00
+2021-05-07 13:00:28,942 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-00-13+00
+2021-05-07 13:03:33,255 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+12-42-55+00
+2021-05-07 13:07:42,743 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-07-28+00
+2021-05-07 13:10:31,915 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-00-13+00
+2021-05-07 13:10:32,225 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+12-27-58+00
+2021-05-07 13:18:53,944 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-18-37+00
+2021-05-07 13:36:16,325 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-36-00+00
+2021-05-07 13:39:15,896 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-18-37+00
+2021-05-07 13:47:35,627 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-47-19+00
+2021-05-07 13:50:26,912 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-36-00+00
+2021-05-07 13:50:27,218 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-07-28+00
+2021-05-07 13:54:34,304 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-54-18+00
+2021-05-07 14:11:58,911 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+14-11-41+00
+2021-05-07 14:15:06,247 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-54-18+00
+2021-05-07 14:27:42,239 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "train.py", line 436, in <module>
+    valid_loader_kwargs=hparams["test_dataloader_options"],
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/core.py", line 1011, in fit
+    loss = self.fit_batch(batch)
+  File "train.py", line 256, in fit_batch
+    predictions, feats,  mfcc, gammatone = self.compute_forward(batch, sb.Stage.TRAIN)
+  File "train.py", line 171, in compute_forward
+    z = self.modules.enc(feats.detach())
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/nnet/containers.py", line 119, in forward
+    x = layer(x)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/nnet/RNN.py", line 219, in forward
+    output, hn = self.rnn(x)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/rnn.py", line 582, in forward
+    self.dropout, self.training, self.bidirectional, self.batch_first)
+RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED
+2021-05-07 16:25:33,157 - speechbrain.core - INFO - Beginning experiment!
+2021-05-07 16:25:33,200 - speechbrain.core - INFO - Experiment folder: BestVC_MRMR
+2021-05-07 16:25:36,172 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-05-07 16:28:56,581 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-05-07 16:28:57,934 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-05-07 20:00:21,332 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-05-07 20:00:24,241 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-05-07 20:00:24,931 - speechbrain.utils.checkpoints - INFO - Loading a checkpoint from BestVC_MRMR/workers_save/CKPT+2021-05-07+14-11-41+00
+2021-05-07 20:04:37,330 - speechbrain.utils.epoch_loop - INFO - Going into epoch 10
+2021-05-07 20:19:55,285 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+20-19-38+00
+2021-05-07 20:19:56,687 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+14-11-41+00
+2021-05-07 20:35:13,702 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+20-34-57+00
+2021-05-07 20:35:15,580 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+20-19-38+00
+2021-05-07 20:42:52,200 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+20-42-35+00
+2021-05-07 20:42:55,114 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+20-34-57+00
+2021-05-07 20:42:55,465 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+13-47-19+00
+2021-05-07 20:50:34,986 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+20-50-19+00
+2021-05-07 21:05:56,992 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-05-40+00
+2021-05-07 21:06:01,285 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+20-50-19+00
+2021-05-07 21:21:27,220 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-21-10+00
+2021-05-07 21:21:32,291 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-05-40+00
+2021-05-07 21:23:53,657 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-23-36+00
+2021-05-07 21:23:59,718 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-21-10+00
+2021-05-07 21:24:00,043 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+20-42-35+00
+2021-05-07 21:36:50,190 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-36-33+00
+2021-05-07 21:52:13,746 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-51-57+00
+2021-05-07 21:52:21,637 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-36-33+00
+2021-05-07 22:07:36,595 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-07-19+00
+2021-05-07 22:07:45,379 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-51-57+00
+2021-05-07 22:07:45,665 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+21-23-36+00
+2021-05-07 22:08:03,423 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-07-47+00
+2021-05-07 22:23:28,497 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-23-12+00
+2021-05-07 22:23:37,630 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-07-47+00
+2021-05-07 22:38:56,840 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-38-39+00
+2021-05-07 22:39:08,038 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-23-12+00
+2021-05-07 22:52:10,801 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-51-53+00
+2021-05-07 22:52:22,964 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-38-39+00
+2021-05-07 22:52:23,251 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-07-19+00
+2021-05-07 22:54:29,687 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-54-12+00
+2021-05-07 23:09:55,644 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-09-39+00
+2021-05-07 23:10:07,566 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-54-12+00
+2021-05-07 23:25:23,509 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-25-07+00
+2021-05-07 23:25:38,333 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-09-39+00
+2021-05-07 23:39:27,784 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-39-10+00
+2021-05-07 23:39:43,688 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+22-51-53+00
+2021-05-07 23:39:44,015 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-25-07+00
+2021-05-07 23:40:56,942 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-40-40+00
+2021-05-07 23:56:24,400 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-56-10+00
+2021-05-07 23:56:39,519 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-40-40+00
+2021-05-08 00:45:14,890 - speechbrain.nnet.schedulers - INFO - Changing lr from 0.56 to 0.42
+2021-05-08 00:45:15,156 - speechbrain.utils.train_logger - INFO - epoch: 10, lr: 5.62e-01 - train loss: 3.19e-01 - valid loss: 3.19e-01
+2021-05-08 00:45:29,778 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-08+00-45-15+00
+2021-05-08 00:45:45,790 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-56-10+00
+2021-05-08 00:45:46,061 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in BestVC_MRMR/workers_save/CKPT+2021-05-07+23-39-10+00

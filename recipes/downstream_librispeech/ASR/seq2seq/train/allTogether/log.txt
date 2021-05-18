@@ -1,0 +1,1642 @@
+2021-04-22 11:14:51,862 - speechbrain.core - INFO - Beginning experiment!
+2021-04-22 11:14:51,880 - speechbrain.core - INFO - Experiment folder: allTogether
+2021-04-22 11:14:53,857 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-04-22 11:16:54,269 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-04-22 11:16:55,159 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-04-22 12:05:49,596 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-04-22 12:05:50,837 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-04-22 12:05:50,923 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2021-04-22 12:05:50,925 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2021-04-22 12:05:51,427 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "train.py", line 436, in <module>
+    valid_loader_kwargs=hparams["test_dataloader_options"],
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/core.py", line 1009, in fit
+    for batch in t:
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/tqdm/std.py", line 1167, in __iter__
+    for obj in iterable:
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/dataio/dataloader.py", line 175, in __iter__
+    iterator = super().__iter__()
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 352, in __iter__
+    return self._get_iterator()
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 294, in _get_iterator
+    return _MultiProcessingDataLoaderIter(self)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 801, in __init__
+    w.start()
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/multiprocessing/process.py", line 112, in start
+    self._popen = self._Popen(self)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/multiprocessing/context.py", line 223, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/multiprocessing/popen_fork.py", line 70, in _launch
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+2021-04-22 15:37:11,362 - speechbrain.core - INFO - Beginning experiment!
+2021-04-22 15:37:11,383 - speechbrain.core - INFO - Experiment folder: allTogether
+2021-04-22 15:37:12,516 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-04-22 15:38:49,297 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-04-22 15:38:50,206 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-04-22 16:32:47,166 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-04-22 16:32:48,605 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-04-22 16:32:48,696 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2021-04-22 16:32:48,708 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2021-04-22 16:32:51,514 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "train.py", line 436, in <module>
+    valid_loader_kwargs=hparams["test_dataloader_options"],
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/core.py", line 1009, in fit
+    for batch in t:
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/tqdm/std.py", line 1167, in __iter__
+    for obj in iterable:
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 435, in __next__
+    data = self._next_data()
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1085, in _next_data
+    return self._process_data(data)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1111, in _process_data
+    data.reraise()
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/_utils.py", line 428, in reraise
+    raise self.exc_type(msg)
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py", line 198, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/dataio/dataset.py", line 161, in __getitem__
+    return self.pipeline.compute_outputs(data_point)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/utils/data_pipeline.py", line 458, in compute_outputs
+    return self._compute(data, self._exec_order, self.output_mapping)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/utils/data_pipeline.py", line 471, in _compute
+    "Some keys are still unaccounted for! Cannot " "compute output."
+RuntimeError: Some keys are still unaccounted for! Cannot compute output.
+
+2021-04-23 11:22:50,555 - speechbrain.core - INFO - Beginning experiment!
+2021-04-23 11:22:50,571 - speechbrain.core - INFO - Experiment folder: allTogether
+2021-04-23 11:22:52,105 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-04-23 11:24:44,207 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-04-23 11:24:44,855 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-04-23 11:24:46,241 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-04-23 11:24:47,016 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-04-23 11:24:47,064 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2021-04-23 11:24:47,079 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2021-04-23 11:24:47,957 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "train.py", line 436, in <module>
+    valid_loader_kwargs=hparams["test_dataloader_options"],
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/core.py", line 1009, in fit
+    for batch in t:
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/tqdm/std.py", line 1167, in __iter__
+    for obj in iterable:
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 435, in __next__
+    data = self._next_data()
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1085, in _next_data
+    return self._process_data(data)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1111, in _process_data
+    data.reraise()
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/_utils.py", line 428, in reraise
+    raise self.exc_type(msg)
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py", line 198, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/dataio/dataset.py", line 161, in __getitem__
+    return self.pipeline.compute_outputs(data_point)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/utils/data_pipeline.py", line 458, in compute_outputs
+    return self._compute(data, self._exec_order, self.output_mapping)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/utils/data_pipeline.py", line 472, in _compute
+    "Some keys are still unaccounted for! Cannot " "compute output."
+RuntimeError: Some keys are still unaccounted for! Cannot compute output.
+
+2021-04-23 12:22:31,729 - speechbrain.core - INFO - Beginning experiment!
+2021-04-23 12:22:31,760 - speechbrain.core - INFO - Experiment folder: allTogether
+2021-04-23 12:22:34,046 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-04-23 12:25:16,148 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-04-23 12:25:17,242 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-04-23 13:47:39,170 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-04-23 13:47:41,642 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-04-23 13:47:41,771 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2021-04-23 13:47:41,793 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2021-04-23 13:47:45,416 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "train.py", line 436, in <module>
+    valid_loader_kwargs=hparams["test_dataloader_options"],
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/core.py", line 1009, in fit
+    for batch in t:
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/tqdm/std.py", line 1167, in __iter__
+    for obj in iterable:
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 435, in __next__
+    data = self._next_data()
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1085, in _next_data
+    return self._process_data(data)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/dataloader.py", line 1111, in _process_data
+    data.reraise()
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/_utils.py", line 428, in reraise
+    raise self.exc_type(msg)
+RuntimeError: Caught RuntimeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/_utils/worker.py", line 198, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/ldaphome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/dataio/dataset.py", line 161, in __getitem__
+    return self.pipeline.compute_outputs(data_point)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/utils/data_pipeline.py", line 458, in compute_outputs
+    return self._compute(data, self._exec_order, self.output_mapping)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/utils/data_pipeline.py", line 472, in _compute
+    "Some keys are still unaccounted for! Cannot " "compute output."
+RuntimeError: Some keys are still unaccounted for! Cannot compute output.
+
+2021-04-23 18:53:53,764 - speechbrain.core - INFO - Beginning experiment!
+2021-04-23 18:53:53,777 - speechbrain.core - INFO - Experiment folder: allTogether
+2021-04-23 18:53:54,453 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-04-23 18:55:06,202 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-04-23 18:55:06,297 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-04-23 19:36:24,726 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-04-23 19:36:26,084 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-04-23 19:36:26,140 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2021-04-23 19:36:26,144 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2021-04-23 19:50:10,912 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+19-50-02+00
+2021-04-23 19:51:32,497 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+19-51-26+00
+2021-04-23 20:04:04,238 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-04-01+00
+2021-04-23 20:04:04,558 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+19-51-26+00
+2021-04-23 20:04:04,585 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+19-50-02+00
+2021-04-23 20:06:39,198 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-06-33+00
+2021-04-23 20:18:20,328 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-18-12+00
+2021-04-23 20:18:22,884 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-06-33+00
+2021-04-23 20:18:23,050 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-04-01+00
+2021-04-23 20:21:47,219 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-21-39+00
+2021-04-23 20:33:11,554 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-33-02+00
+2021-04-23 20:33:15,133 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-18-12+00
+2021-04-23 20:33:15,312 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-21-39+00
+2021-04-23 20:36:53,036 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-36-48+00
+2021-04-23 20:48:37,135 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-48-28+00
+2021-04-23 20:48:41,584 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-36-48+00
+2021-04-23 20:48:41,760 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-33-02+00
+2021-04-23 20:52:03,219 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-51-53+00
+2021-04-23 21:04:30,851 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-04-21+00
+2021-04-23 21:04:32,375 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-51-53+00
+2021-04-23 21:04:32,382 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+20-48-28+00
+2021-04-23 21:07:11,979 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-07-04+00
+2021-04-23 21:21:26,816 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-21-24+00
+2021-04-23 21:21:27,137 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-07-04+00
+2021-04-23 21:21:27,149 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-04-21+00
+2021-04-23 21:22:25,116 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-22-14+00
+2021-04-23 21:37:37,249 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-37-26+00
+2021-04-23 21:37:44,351 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-22-14+00
+2021-04-23 21:39:22,474 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-39-11+00
+2021-04-23 21:39:30,446 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-21-24+00
+2021-04-23 21:39:30,637 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-37-26+00
+2021-04-23 21:52:52,171 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-52-44+00
+2021-04-23 21:57:36,593 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-57-26+00
+2021-04-23 21:57:45,967 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-39-11+00
+2021-04-23 21:57:46,152 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-52-44+00
+2021-04-23 22:08:02,904 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-07-56+00
+2021-04-23 22:16:44,948 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-16-35+00
+2021-04-23 22:16:53,019 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+21-57-26+00
+2021-04-23 22:16:53,177 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-07-56+00
+2021-04-23 22:23:16,270 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-23-09+00
+2021-04-23 22:37:06,646 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-36-56+00
+2021-04-23 22:37:15,189 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-23-09+00
+2021-04-23 22:37:15,340 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-16-35+00
+2021-04-23 22:38:34,346 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-38-23+00
+2021-04-23 23:08:40,758 - speechbrain.utils.train_logger - INFO - epoch: 1, lr: 1.00e+00 - train loss: 1.67 - valid loss: 1.67
+2021-04-23 23:08:46,986 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-08-40+00
+2021-04-23 23:08:51,714 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-38-23+00
+2021-04-23 23:08:51,741 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+22-36-56+00
+2021-04-23 23:08:51,749 - speechbrain.utils.epoch_loop - INFO - Going into epoch 2
+2021-04-23 23:12:20,668 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-12-11+00
+2021-04-23 23:12:23,641 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-08-40+00
+2021-04-23 23:24:04,487 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-23-52+00
+2021-04-23 23:28:42,851 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-28-31+00
+2021-04-23 23:28:57,853 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-23-52+00
+2021-04-23 23:28:58,057 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-12-11+00
+2021-04-23 23:39:23,332 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-39-12+00
+2021-04-23 23:48:03,301 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-47-53+00
+2021-04-23 23:48:18,931 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-28-31+00
+2021-04-23 23:48:19,102 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-39-12+00
+2021-04-23 23:54:45,402 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-54-32+00
+2021-04-24 00:07:52,685 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-07-40+00
+2021-04-24 00:08:10,597 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-47-53+00
+2021-04-24 00:08:10,792 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-23+23-54-32+00
+2021-04-24 00:10:11,177 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-09-58+00
+2021-04-24 00:25:37,751 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-25-24+00
+2021-04-24 00:25:58,323 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-09-58+00
+2021-04-24 00:28:04,665 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-27-54+00
+2021-04-24 00:28:26,774 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-25-24+00
+2021-04-24 00:28:27,002 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-07-40+00
+2021-04-24 00:41:11,798 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-41-00+00
+2021-04-24 00:49:00,659 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-48-47+00
+2021-04-24 00:49:21,488 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-27-54+00
+2021-04-24 00:49:21,756 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-41-00+00
+2021-04-24 00:56:39,348 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-56-26+00
+2021-04-24 01:07:59,912 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-07-52+00
+2021-04-24 01:08:12,978 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-56-26+00
+2021-04-24 01:08:13,111 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+00-48-47+00
+2021-04-24 01:12:05,036 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-11-54+00
+2021-04-24 01:25:04,332 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-24-54+00
+2021-04-24 01:25:23,558 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-11-54+00
+2021-04-24 01:25:23,683 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-07-52+00
+2021-04-24 01:27:26,933 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-27-16+00
+2021-04-24 01:42:48,201 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-42-39+00
+2021-04-24 01:43:03,061 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-24-54+00
+2021-04-24 01:43:03,192 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-27-16+00
+2021-04-24 01:43:11,562 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-43-04+00
+2021-04-24 01:58:25,893 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-58-18+00
+2021-04-24 01:58:48,446 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-43-04+00
+2021-04-24 02:01:44,437 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-01-36+00
+2021-04-24 02:02:02,686 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-42-39+00
+2021-04-24 02:02:02,886 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+01-58-18+00
+2021-04-24 02:13:58,815 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-13-49+00
+2021-04-24 02:21:28,022 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-21-18+00
+2021-04-24 02:21:40,319 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-01-36+00
+2021-04-24 02:21:40,519 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-13-49+00
+2021-04-24 02:29:22,551 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-29-15+00
+2021-04-24 02:44:46,547 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-44-31+00
+2021-04-24 02:45:20,767 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-29-15+00
+2021-04-24 02:46:34,364 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-46-20+00
+2021-04-24 02:47:10,532 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-21-18+00
+2021-04-24 02:47:10,782 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-44-31+00
+2021-04-24 03:00:34,622 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+03-00-22+00
+2021-04-24 03:28:38,840 - speechbrain.utils.train_logger - INFO - epoch: 2, lr: 1.00e+00 - train loss: 1.47 - valid loss: 1.47
+2021-04-24 03:28:53,072 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+03-28-38+00
+2021-04-24 03:29:31,770 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+03-00-22+00
+2021-04-24 03:29:32,083 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+02-46-20+00
+2021-04-24 03:29:32,107 - speechbrain.utils.epoch_loop - INFO - Going into epoch 3
+2021-04-24 03:41:03,645 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+03-40-50+00
+2021-04-24 03:41:26,348 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+03-28-38+00
+2021-04-24 03:44:49,132 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+03-44-34+00
+2021-04-24 04:00:30,398 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-00-15+00
+2021-04-24 04:01:09,484 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+03-44-34+00
+2021-04-24 04:06:44,279 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-06-29+00
+2021-04-24 04:07:23,760 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+03-40-50+00
+2021-04-24 04:07:24,020 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-00-15+00
+2021-04-24 04:16:24,507 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-16-09+00
+2021-04-24 04:31:24,361 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-31-10+00
+2021-04-24 04:32:04,411 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-06-29+00
+2021-04-24 04:32:04,662 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-16-09+00
+2021-04-24 04:32:19,773 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-32-05+00
+2021-04-24 04:48:05,538 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-47-50+00
+2021-04-24 04:48:49,230 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-32-05+00
+2021-04-24 04:58:15,893 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-58-01+00
+2021-04-24 04:58:59,700 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-47-50+00
+2021-04-24 04:58:59,957 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-31-10+00
+2021-04-24 05:04:04,649 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-03-50+00
+2021-04-24 05:19:50,899 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-19-36+00
+2021-04-24 05:20:36,850 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-03-50+00
+2021-04-24 05:25:48,350 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-25-33+00
+2021-04-24 05:26:35,076 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-19-36+00
+2021-04-24 05:26:35,367 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+04-58-01+00
+2021-04-24 05:35:52,920 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-35-37+00
+2021-04-24 05:51:39,664 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-51-25+00
+2021-04-24 05:52:27,808 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-35-37+00
+2021-04-24 05:53:31,990 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-53-18+00
+2021-04-24 05:54:16,064 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-51-25+00
+2021-04-24 05:54:16,323 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-25-33+00
+2021-04-24 06:07:42,101 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-07-27+00
+2021-04-24 06:20:57,936 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-20-45+00
+2021-04-24 06:21:40,657 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+05-53-18+00
+2021-04-24 06:21:40,848 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-07-27+00
+2021-04-24 06:23:25,057 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-23-10+00
+2021-04-24 06:39:12,213 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-38-59+00
+2021-04-24 06:39:41,770 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-23-10+00
+2021-04-24 06:49:45,950 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-49-33+00
+2021-04-24 06:50:37,256 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-20-45+00
+2021-04-24 06:50:37,521 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-38-59+00
+2021-04-24 06:54:56,473 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-54-42+00
+2021-04-24 07:10:43,036 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-10-28+00
+2021-04-24 07:11:32,461 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-54-42+00
+2021-04-24 07:19:02,199 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-18-47+00
+2021-04-24 07:19:56,604 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+06-49-33+00
+2021-04-24 07:19:56,851 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-10-28+00
+2021-04-24 07:26:48,781 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-26-34+00
+2021-04-24 07:42:34,193 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-42-20+00
+2021-04-24 07:43:24,614 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-26-34+00
+2021-04-24 07:48:32,603 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-48-18+00
+2021-04-24 07:49:25,299 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-42-20+00
+2021-04-24 07:49:25,572 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-18-47+00
+2021-04-24 07:58:38,120 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-58-24+00
+2021-04-24 08:14:30,818 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-14-16+00
+2021-04-24 08:15:23,570 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-58-24+00
+2021-04-24 08:19:39,834 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-19-25+00
+2021-04-24 08:20:34,298 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-14-16+00
+2021-04-24 08:20:34,500 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+07-48-18+00
+2021-04-24 08:30:38,729 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-30-24+00
+2021-04-24 08:46:31,940 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-46-17+00
+2021-04-24 08:47:27,437 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-30-24+00
+2021-04-24 08:52:15,465 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-52-01+00
+2021-04-24 08:53:11,289 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-19-25+00
+2021-04-24 08:53:11,554 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-46-17+00
+2021-04-24 09:29:04,989 - speechbrain.utils.train_logger - INFO - epoch: 3, lr: 1.00e+00 - train loss: 1.33 - valid loss: 1.33
+2021-04-24 09:29:18,501 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+09-29-05+00
+2021-04-24 09:29:53,717 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+08-52-01+00
+2021-04-24 09:29:53,744 - speechbrain.utils.epoch_loop - INFO - Going into epoch 4
+2021-04-24 09:45:08,987 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+09-44-54+00
+2021-04-24 09:48:04,672 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+09-47-49+00
+2021-04-24 09:49:04,986 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+09-29-05+00
+2021-04-24 09:49:05,272 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+09-44-54+00
+2021-04-24 10:01:04,145 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-00-50+00
+2021-04-24 10:14:31,121 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-14-16+00
+2021-04-24 10:15:34,174 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+09-47-49+00
+2021-04-24 10:15:34,431 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-00-50+00
+2021-04-24 10:16:53,429 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-16-38+00
+2021-04-24 10:32:49,194 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-32-34+00
+2021-04-24 10:33:45,752 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-16-38+00
+2021-04-24 10:42:26,193 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-42-11+00
+2021-04-24 10:43:32,834 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-32-34+00
+2021-04-24 10:43:33,103 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-14-16+00
+2021-04-24 10:49:01,370 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-48-47+00
+2021-04-24 11:04:56,638 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-04-43+00
+2021-04-24 11:05:57,281 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-48-47+00
+2021-04-24 11:11:18,855 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-11-05+00
+2021-04-24 11:12:14,330 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-04-43+00
+2021-04-24 11:12:14,593 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+10-42-11+00
+2021-04-24 11:21:13,629 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-20-59+00
+2021-04-24 11:37:10,649 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-36-55+00
+2021-04-24 11:38:13,964 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-20-59+00
+2021-04-24 11:41:05,222 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-40-50+00
+2021-04-24 11:42:15,943 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-36-55+00
+2021-04-24 11:42:16,151 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-11-05+00
+2021-04-24 11:53:27,905 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-53-14+00
+2021-04-24 12:09:25,058 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-09-11+00
+2021-04-24 12:10:30,731 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-53-14+00
+2021-04-24 12:11:21,897 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-11-07+00
+2021-04-24 12:12:11,789 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-09-11+00
+2021-04-24 12:12:11,930 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+11-40-50+00
+2021-04-24 12:25:45,881 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-25-31+00
+2021-04-24 12:40:09,339 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-39-59+00
+2021-04-24 12:41:17,614 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-25-31+00
+2021-04-24 12:41:17,868 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-11-07+00
+2021-04-24 12:41:47,221 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-41-34+00
+2021-04-24 12:57:48,649 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-57-35+00
+2021-04-24 12:59:03,128 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-41-34+00
+2021-04-24 13:10:55,501 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-10-40+00
+2021-04-24 13:11:59,743 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-57-35+00
+2021-04-24 13:11:59,985 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+12-39-59+00
+2021-04-24 13:14:18,175 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-14-03+00
+2021-04-24 13:30:27,062 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-30-10+00
+2021-04-24 13:31:35,082 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-14-03+00
+2021-04-24 13:41:37,843 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-41-22+00
+2021-04-24 13:42:55,790 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-30-10+00
+2021-04-24 13:42:56,012 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-10-40+00
+2021-04-24 13:46:50,493 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-46-35+00
+2021-04-24 14:03:00,910 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-02-46+00
+2021-04-24 14:04:18,426 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-46-35+00
+2021-04-24 14:13:43,562 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-13-28+00
+2021-04-24 14:14:58,223 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+13-41-22+00
+2021-04-24 14:14:58,404 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-02-46+00
+2021-04-24 14:19:32,184 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-19-19+00
+2021-04-24 14:35:20,282 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-35-08+00
+2021-04-24 14:36:37,695 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-19-19+00
+2021-04-24 14:46:26,706 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-46-12+00
+2021-04-24 14:47:45,648 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-13-28+00
+2021-04-24 14:47:45,911 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-35-08+00
+2021-04-24 14:51:51,582 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-51-37+00
+2021-04-24 15:07:59,290 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+15-07-45+00
+2021-04-24 15:09:23,667 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-51-37+00
+2021-04-24 15:20:49,204 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+15-20-34+00
+2021-04-24 15:22:10,602 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+14-46-12+00
+2021-04-24 15:22:10,804 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+15-07-45+00
+2021-04-24 15:50:48,359 - speechbrain.utils.train_logger - INFO - epoch: 4, lr: 1.00e+00 - train loss: 9.83e-01 - valid loss: 9.83e-01
+2021-04-24 15:51:02,608 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+15-50-48+00
+2021-04-24 15:51:55,076 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+15-20-34+00
+2021-04-24 15:51:55,094 - speechbrain.utils.epoch_loop - INFO - Going into epoch 5
+2021-04-24 16:07:11,782 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-06-56+00
+2021-04-24 16:16:48,010 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-16-33+00
+2021-04-24 16:18:15,334 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+15-50-48+00
+2021-04-24 16:18:15,552 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-06-56+00
+2021-04-24 16:23:26,112 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-23-12+00
+2021-04-24 16:39:33,477 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-39-19+00
+2021-04-24 16:40:44,511 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-23-12+00
+2021-04-24 16:46:14,925 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-46-01+00
+2021-04-24 16:47:40,769 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-39-19+00
+2021-04-24 16:47:41,069 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-16-33+00
+2021-04-24 16:55:59,465 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-55-45+00
+2021-04-24 17:12:16,015 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-12-01+00
+2021-04-24 17:13:45,797 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-55-45+00
+2021-04-24 17:16:35,996 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-16-21+00
+2021-04-24 17:18:03,691 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+16-46-01+00
+2021-04-24 17:18:03,957 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-12-01+00
+2021-04-24 17:29:00,242 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-28-46+00
+2021-04-24 17:44:39,888 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-44-24+00
+2021-04-24 17:46:14,776 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-16-21+00
+2021-04-24 17:46:15,042 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-28-46+00
+2021-04-24 17:46:31,069 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-46-15+00
+2021-04-24 18:02:50,197 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-02-36+00
+2021-04-24 18:04:18,536 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-46-15+00
+2021-04-24 18:16:49,347 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-16-34+00
+2021-04-24 18:18:27,154 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+17-44-24+00
+2021-04-24 18:18:27,401 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-02-36+00
+2021-04-24 18:19:31,523 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-19-18+00
+2021-04-24 18:35:16,192 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-35-02+00
+2021-04-24 18:36:50,030 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-19-18+00
+2021-04-24 18:47:29,323 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-47-14+00
+2021-04-24 18:49:07,387 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-35-02+00
+2021-04-24 18:49:07,718 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-16-34+00
+2021-04-24 18:52:06,066 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-51-53+00
+2021-04-24 19:08:25,303 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-08-11+00
+2021-04-24 19:10:00,748 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-51-53+00
+2021-04-24 19:18:59,042 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-18-46+00
+2021-04-24 19:20:37,580 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-08-11+00
+2021-04-24 19:20:37,864 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+18-47-14+00
+2021-04-24 19:25:16,600 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-25-02+00
+2021-04-24 19:41:38,353 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-41-23+00
+2021-04-24 19:43:21,437 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-25-02+00
+2021-04-24 19:51:22,205 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-51-08+00
+2021-04-24 19:53:01,121 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-41-23+00
+2021-04-24 19:53:01,382 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-18-46+00
+2021-04-24 19:58:39,160 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-58-23+00
+2021-04-24 20:15:07,012 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-14-51+00
+2021-04-24 20:16:52,587 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-58-23+00
+2021-04-24 20:23:59,377 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-23-46+00
+2021-04-24 20:25:44,059 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+19-51-08+00
+2021-04-24 20:25:44,324 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-14-51+00
+2021-04-24 20:32:10,437 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-31-55+00
+2021-04-24 20:48:42,874 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-48-27+00
+2021-04-24 20:50:03,067 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-31-55+00
+2021-04-24 20:58:36,158 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-58-21+00
+2021-04-24 21:00:26,542 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-23-46+00
+2021-04-24 21:00:26,792 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-48-27+00
+2021-04-24 21:05:20,240 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-05-04+00
+2021-04-24 21:21:45,325 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-21-30+00
+2021-04-24 21:23:30,492 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-05-04+00
+2021-04-24 21:34:08,805 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-33-54+00
+2021-04-24 21:35:53,027 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-21-30+00
+2021-04-24 21:35:53,291 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+20-58-21+00
+2021-04-24 21:38:42,688 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-38-31+00
+2021-04-24 21:55:06,144 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-54-52+00
+2021-04-24 21:56:13,150 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-38-31+00
+2021-04-24 22:28:43,562 - speechbrain.nnet.schedulers - INFO - Changing lr from 1 to 0.75
+2021-04-24 22:28:43,876 - speechbrain.utils.train_logger - INFO - epoch: 5, lr: 1.00e+00 - train loss: 1.04 - valid loss: 1.04
+2021-04-24 22:28:56,930 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+22-28-43+00
+2021-04-24 22:30:46,126 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-54-52+00
+2021-04-24 22:30:46,400 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+21-33-54+00
+2021-04-24 22:30:46,428 - speechbrain.utils.epoch_loop - INFO - Going into epoch 6
+2021-04-24 22:35:32,252 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+22-35-19+00
+2021-04-24 22:36:46,059 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+22-28-43+00
+2021-04-24 22:45:52,991 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+22-45-46+00
+2021-04-24 23:02:09,538 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-01-54+00
+2021-04-24 23:04:00,732 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+22-45-46+00
+2021-04-24 23:04:01,017 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+22-35-19+00
+2021-04-24 23:04:16,300 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-04-01+00
+2021-04-24 23:20:32,650 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-20-18+00
+2021-04-24 23:22:20,192 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-04-01+00
+2021-04-24 23:32:27,153 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-32-17+00
+2021-04-24 23:34:13,576 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-20-18+00
+2021-04-24 23:34:13,862 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-01-54+00
+2021-04-24 23:37:33,755 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-37-20+00
+2021-04-24 23:53:58,027 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-53-44+00
+2021-04-24 23:55:45,075 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-37-20+00
+2021-04-25 00:03:19,990 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-03-04+00
+2021-04-25 00:05:10,902 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-53-44+00
+2021-04-25 00:05:11,121 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-24+23-32-17+00
+2021-04-25 00:10:54,210 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-10-45+00
+2021-04-25 00:27:23,745 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-27-10+00
+2021-04-25 00:29:17,512 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-10-45+00
+2021-04-25 00:34:09,428 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-33-53+00
+2021-04-25 00:36:03,980 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-03-04+00
+2021-04-25 00:36:04,240 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-27-10+00
+2021-04-25 00:44:31,991 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-44-17+00
+2021-04-25 01:01:04,838 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-00-50+00
+2021-04-25 01:03:01,265 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-44-17+00
+2021-04-25 01:05:49,070 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-05-36+00
+2021-04-25 01:07:39,821 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-00-50+00
+2021-04-25 01:07:39,977 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+00-33-53+00
+2021-04-25 01:18:16,769 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-18-01+00
+2021-04-25 01:34:12,590 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-33-58+00
+2021-04-25 01:36:10,602 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-18-01+00
+2021-04-25 01:36:44,359 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-36-29+00
+2021-04-25 01:38:33,638 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-05-36+00
+2021-04-25 01:38:33,858 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-33-58+00
+2021-04-25 01:51:28,496 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-51-13+00
+2021-04-25 02:06:59,576 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-06-44+00
+2021-04-25 02:08:58,934 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-36-29+00
+2021-04-25 02:08:59,208 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+01-51-13+00
+2021-04-25 02:09:13,277 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-09-00+00
+2021-04-25 02:25:51,702 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-25-38+00
+2021-04-25 02:27:57,897 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-09-00+00
+2021-04-25 02:40:02,430 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-39-49+00
+2021-04-25 02:41:48,394 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-06-44+00
+2021-04-25 02:41:48,605 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-25-38+00
+2021-04-25 02:43:14,427 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-42-59+00
+2021-04-25 02:59:55,052 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-59-40+00
+2021-04-25 03:01:49,720 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-42-59+00
+2021-04-25 03:12:41,472 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-12-26+00
+2021-04-25 03:14:38,015 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-59-40+00
+2021-04-25 03:14:38,304 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+02-39-49+00
+2021-04-25 03:17:06,922 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-16-52+00
+2021-04-25 03:33:49,101 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-33-34+00
+2021-04-25 03:35:58,677 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-16-52+00
+2021-04-25 03:46:41,039 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-46-26+00
+2021-04-25 03:48:41,141 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-12-26+00
+2021-04-25 03:48:41,403 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-33-34+00
+2021-04-25 03:51:14,598 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-50-58+00
+2021-04-25 04:07:52,872 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+04-07-44+00
+2021-04-25 04:09:35,876 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-50-58+00
+2021-04-25 04:20:13,699 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+04-19-59+00
+2021-04-25 04:22:19,353 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+04-07-44+00
+2021-04-25 04:22:19,621 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+03-46-26+00
+2021-04-25 04:24:52,573 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+04-24-38+00
+2021-04-25 05:06:31,319 - speechbrain.utils.train_logger - INFO - epoch: 6, lr: 7.50e-01 - train loss: 8.18e-01 - valid loss: 8.18e-01
+2021-04-25 05:06:43,467 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-06-31+00
+2021-04-25 05:08:52,483 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+04-19-59+00
+2021-04-25 05:08:52,751 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+04-24-38+00
+2021-04-25 05:08:52,774 - speechbrain.utils.epoch_loop - INFO - Going into epoch 7
+2021-04-25 05:19:42,919 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-19-29+00
+2021-04-25 05:21:09,464 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-06-31+00
+2021-04-25 05:24:08,957 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-23-54+00
+2021-04-25 05:40:50,622 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-40-37+00
+2021-04-25 05:43:03,012 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-23-54+00
+2021-04-25 05:49:08,411 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-48-53+00
+2021-04-25 05:51:18,611 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-19-29+00
+2021-04-25 05:51:18,809 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-40-37+00
+2021-04-25 05:58:17,868 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-58-03+00
+2021-04-25 06:14:33,767 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-14-20+00
+2021-04-25 06:16:43,398 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-58-03+00
+2021-04-25 06:19:18,731 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-19-04+00
+2021-04-25 06:21:33,245 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-14-20+00
+2021-04-25 06:21:33,481 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+05-48-53+00
+2021-04-25 06:31:57,709 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-31-44+00
+2021-04-25 06:48:05,605 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-47-50+00
+2021-04-25 06:50:19,008 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-31-44+00
+2021-04-25 06:50:19,215 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-19-04+00
+2021-04-25 06:50:32,631 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-50-20+00
+2021-04-25 07:07:20,321 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-07-07+00
+2021-04-25 07:09:32,942 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-50-20+00
+2021-04-25 07:19:45,806 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-19-33+00
+2021-04-25 07:22:00,983 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-07-07+00
+2021-04-25 07:22:01,245 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+06-47-50+00
+2021-04-25 07:24:45,739 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-24-33+00
+2021-04-25 07:41:32,103 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-41-18+00
+2021-04-25 07:43:47,979 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-24-33+00
+2021-04-25 07:52:21,183 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-52-06+00
+2021-04-25 07:54:30,661 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-19-33+00
+2021-04-25 07:54:30,853 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-41-18+00
+2021-04-25 07:59:00,311 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-58-48+00
+2021-04-25 08:15:47,255 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-15-32+00
+2021-04-25 08:18:07,571 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-58-48+00
+2021-04-25 08:25:51,402 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-25-36+00
+2021-04-25 08:28:04,411 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+07-52-06+00
+2021-04-25 08:28:04,651 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-15-32+00
+2021-04-25 08:33:23,801 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-33-09+00
+2021-04-25 08:50:12,054 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-49-57+00
+2021-04-25 08:52:22,255 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-33-09+00
+2021-04-25 08:58:41,467 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-58-26+00
+2021-04-25 09:00:55,746 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-49-57+00
+2021-04-25 09:00:55,997 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-25-36+00
+2021-04-25 09:07:40,596 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-07-25+00
+2021-04-25 09:24:31,781 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-24-18+00
+2021-04-25 09:27:02,572 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-07-25+00
+2021-04-25 09:31:59,505 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-31-44+00
+2021-04-25 09:34:18,656 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+08-58-26+00
+2021-04-25 09:34:18,836 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-24-18+00
+2021-04-25 09:42:17,917 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-42-03+00
+2021-04-25 09:59:06,288 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-58-53+00
+2021-04-25 10:01:17,435 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-42-03+00
+2021-04-25 10:06:16,190 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-06-02+00
+2021-04-25 10:08:02,561 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-31-44+00
+2021-04-25 10:08:02,825 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+09-58-53+00
+2021-04-25 10:16:30,071 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-16-17+00
+2021-04-25 10:33:09,266 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-32-56+00
+2021-04-25 10:35:32,076 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-16-17+00
+2021-04-25 10:39:37,763 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-39-23+00
+2021-04-25 10:42:01,474 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-32-56+00
+2021-04-25 10:42:01,718 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-06-02+00
+2021-04-25 10:50:47,368 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-50-33+00
+2021-04-25 11:07:37,834 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+11-07-26+00
+2021-04-25 11:10:05,912 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-50-33+00
+2021-04-25 11:14:45,972 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+11-14-32+00
+2021-04-25 11:17:15,271 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+11-07-26+00
+2021-04-25 11:17:15,515 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+10-39-23+00
+2021-04-25 11:25:20,659 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+11-25-06+00
+2021-04-25 11:53:31,237 - speechbrain.nnet.schedulers - INFO - Changing lr from 0.75 to 0.56
+2021-04-25 11:53:31,415 - speechbrain.utils.train_logger - INFO - epoch: 7, lr: 7.50e-01 - train loss: 8.61e-01 - valid loss: 8.61e-01
+2021-04-25 11:53:43,992 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+11-53-31+00
+2021-04-25 11:56:13,576 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+11-25-06+00
+2021-04-25 11:56:13,830 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+11-14-32+00
+2021-04-25 11:56:13,855 - speechbrain.utils.epoch_loop - INFO - Going into epoch 8
+2021-04-25 12:11:27,580 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-11-14+00
+2021-04-25 12:13:57,195 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-13-42+00
+2021-04-25 12:16:29,641 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+11-53-31+00
+2021-04-25 12:16:29,889 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-11-14+00
+2021-04-25 12:28:23,553 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-28-10+00
+2021-04-25 12:42:14,453 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-42-00+00
+2021-04-25 12:44:41,960 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-28-10+00
+2021-04-25 12:44:42,190 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-13-42+00
+2021-04-25 12:45:14,171 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-44-59+00
+2021-04-25 13:02:03,827 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-01-50+00
+2021-04-25 13:04:45,383 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-44-59+00
+2021-04-25 13:13:15,746 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-13-02+00
+2021-04-25 13:15:47,746 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+12-42-00+00
+2021-04-25 13:15:47,997 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-01-50+00
+2021-04-25 13:20:00,748 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-19-46+00
+2021-04-25 13:37:01,994 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-36-47+00
+2021-04-25 13:39:38,988 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-19-46+00
+2021-04-25 13:45:22,852 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-45-08+00
+2021-04-25 13:48:00,887 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-36-47+00
+2021-04-25 13:48:01,105 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-13-02+00
+2021-04-25 13:54:54,012 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-54-41+00
+2021-04-25 14:11:53,947 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-11-40+00
+2021-04-25 14:14:36,213 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-54-41+00
+2021-04-25 14:17:44,890 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-17-37+00
+2021-04-25 14:20:33,019 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-11-40+00
+2021-04-25 14:20:33,298 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+13-45-08+00
+2021-04-25 14:29:51,468 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-29-36+00
+2021-04-25 14:46:58,344 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-46-43+00
+2021-04-25 14:49:46,395 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-29-36+00
+2021-04-25 14:51:06,448 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-50-54+00
+2021-04-25 14:53:41,929 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-46-43+00
+2021-04-25 14:53:41,986 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-17-37+00
+2021-04-25 15:04:59,264 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-04-46+00
+2021-04-25 15:21:47,181 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-21-34+00
+2021-04-25 15:24:27,762 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-04-46+00
+2021-04-25 15:24:27,965 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+14-50-54+00
+2021-04-25 15:24:43,041 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-24-29+00
+2021-04-25 15:41:50,452 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-41-37+00
+2021-04-25 15:44:39,736 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-24-29+00
+2021-04-25 15:55:37,368 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-55-23+00
+2021-04-25 15:58:21,732 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-21-34+00
+2021-04-25 15:58:22,001 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-41-37+00
+2021-04-25 15:59:57,062 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-59-42+00
+2021-04-25 16:17:05,712 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+16-16-50+00
+2021-04-25 16:20:00,488 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-59-42+00
+2021-04-25 16:30:26,667 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+16-30-17+00
+2021-04-25 16:33:08,015 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+15-55-23+00
+2021-04-25 16:33:08,270 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+16-16-50+00
+2021-04-25 16:35:14,639 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+16-35-01+00
+2021-04-25 16:52:25,886 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+16-52-13+00
+2021-04-25 16:55:24,527 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+16-35-01+00
+2021-04-25 17:05:53,872 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-05-39+00
+2021-04-25 17:08:31,080 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+16-30-17+00
+2021-04-25 17:08:31,349 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+16-52-13+00
+2021-04-25 17:10:39,512 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-10-25+00
+2021-04-25 17:27:49,972 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-27-36+00
+2021-04-25 17:30:43,499 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-10-25+00
+2021-04-25 17:41:19,617 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-41-04+00
+2021-04-25 17:44:00,494 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-27-36+00
+2021-04-25 17:44:00,758 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-05-39+00
+2021-04-25 17:45:58,500 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-45-43+00
+2021-04-25 18:03:08,316 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+18-02-55+00
+2021-04-25 18:06:08,957 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-45-43+00
+2021-04-25 18:17:53,907 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+18-17-39+00
+2021-04-25 18:20:02,062 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+18-02-55+00
+2021-04-25 18:20:02,291 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+17-41-04+00
+2021-04-25 18:21:22,081 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+18-21-09+00
+2021-04-25 18:50:53,746 - speechbrain.utils.train_logger - INFO - epoch: 8, lr: 5.62e-01 - train loss: 7.57e-01 - valid loss: 7.57e-01
+2021-04-25 18:51:07,990 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+18-50-53+00
+2021-04-25 18:54:03,045 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+18-21-09+00
+2021-04-25 18:54:03,311 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+18-17-39+00
+2021-04-25 18:54:03,337 - speechbrain.utils.epoch_loop - INFO - Going into epoch 9
+2021-04-25 19:09:18,108 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-09-04+00
+2021-04-25 19:18:05,112 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-17-50+00
+2021-04-25 19:20:55,557 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-09-04+00
+2021-04-25 19:20:55,803 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+18-50-53+00
+2021-04-25 19:26:32,782 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-26-18+00
+2021-04-25 19:43:46,051 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-43-31+00
+2021-04-25 19:46:45,712 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-26-18+00
+2021-04-25 19:50:48,547 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-50-36+00
+2021-04-25 19:53:48,777 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-17-50+00
+2021-04-25 19:53:49,049 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-43-31+00
+2021-04-25 20:01:59,918 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-01-45+00
+2021-04-25 20:19:13,560 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-19-00+00
+2021-04-25 20:22:18,687 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-01-45+00
+2021-04-25 20:24:02,337 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-23-47+00
+2021-04-25 20:26:46,671 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+19-50-36+00
+2021-04-25 20:26:46,937 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-19-00+00
+2021-04-25 20:37:34,554 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-37-19+00
+2021-04-25 20:53:41,861 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-53-28+00
+2021-04-25 20:56:22,861 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-37-19+00
+2021-04-25 20:56:23,184 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-23-47+00
+2021-04-25 20:56:37,452 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-56-24+00
+2021-04-25 21:14:03,443 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+21-13-48+00
+2021-04-25 21:17:12,353 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-56-24+00
+2021-04-25 21:28:41,569 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+21-28-29+00
+2021-04-25 21:31:37,679 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+21-13-48+00
+2021-04-25 21:31:37,810 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+20-53-28+00
+2021-04-25 21:32:27,593 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+21-32-13+00
+2021-04-25 21:49:46,667 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+21-49-31+00
+2021-04-25 21:52:26,334 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+21-32-13+00
+2021-04-25 22:03:24,064 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-03-10+00
+2021-04-25 22:06:38,057 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+21-28-29+00
+2021-04-25 22:06:38,302 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+21-49-31+00
+2021-04-25 22:07:41,784 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-07-28+00
+2021-04-25 22:24:21,640 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-24-06+00
+2021-04-25 22:27:29,871 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-07-28+00
+2021-04-25 22:38:58,065 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-38-44+00
+2021-04-25 22:42:23,082 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-03-10+00
+2021-04-25 22:42:23,373 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-24-06+00
+2021-04-25 22:42:46,005 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-42-30+00
+2021-04-25 23:00:10,427 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-59-55+00
+2021-04-25 23:03:27,563 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-42-30+00
+2021-04-25 23:16:29,478 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-16-14+00
+2021-04-25 23:19:53,762 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-38-44+00
+2021-04-25 23:19:53,973 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+22-59-55+00
+2021-04-25 23:20:09,581 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-19-55+00
+2021-04-25 23:37:34,550 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-37-18+00
+2021-04-25 23:40:46,641 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-19-55+00
+2021-04-25 23:55:00,734 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-54-47+00
+2021-04-25 23:58:03,681 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-37-18+00
+2021-04-25 23:58:03,874 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-16-14+00
+2021-04-25 23:58:19,838 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-58-05+00
+2021-04-26 00:15:49,849 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+00-15-37+00
+2021-04-26 00:19:07,016 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-58-05+00
+2021-04-26 00:32:13,238 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+00-32-02+00
+2021-04-26 00:35:17,524 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-25+23-54-47+00
+2021-04-26 00:35:17,799 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+00-15-37+00
+2021-04-26 00:35:33,385 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+00-35-19+00
+2021-04-26 00:53:03,261 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+00-52-48+00
+2021-04-26 00:56:17,787 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+00-35-19+00
+2021-04-26 01:09:59,746 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+01-09-45+00
+2021-04-26 01:13:14,556 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+00-32-02+00
+2021-04-26 01:13:14,837 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+00-52-48+00
+2021-04-26 01:13:31,739 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+01-13-16+00
+2021-04-26 01:31:04,623 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+01-30-51+00
+2021-04-26 01:34:36,040 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+01-13-16+00
+2021-04-26 02:11:24,319 - speechbrain.utils.train_logger - INFO - epoch: 9, lr: 5.62e-01 - train loss: 7.33e-01 - valid loss: 7.33e-01
+2021-04-26 02:11:37,692 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-11-24+00
+2021-04-26 02:14:58,386 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+01-30-51+00
+2021-04-26 02:14:58,687 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+01-09-45+00
+2021-04-26 02:14:58,712 - speechbrain.utils.epoch_loop - INFO - Going into epoch 10
+2021-04-26 02:18:49,335 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-18-36+00
+2021-04-26 02:21:05,321 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-11-24+00
+2021-04-26 02:30:14,809 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-30-00+00
+2021-04-26 02:47:46,183 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-47-33+00
+2021-04-26 02:51:14,472 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-30-00+00
+2021-04-26 02:51:29,114 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-51-14+00
+2021-04-26 02:54:10,338 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-47-33+00
+2021-04-26 02:54:10,369 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-18-36+00
+2021-04-26 03:06:32,451 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-06-17+00
+2021-04-26 03:21:17,591 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-21-03+00
+2021-04-26 03:24:45,989 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-06-17+00
+2021-04-26 03:24:46,314 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+02-51-14+00
+2021-04-26 03:25:01,824 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-24-47+00
+2021-04-26 03:42:31,326 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-42-16+00
+2021-04-26 03:45:45,918 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-24-47+00
+2021-04-26 03:55:46,516 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-55-31+00
+2021-04-26 03:58:39,639 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-42-16+00
+2021-04-26 03:58:39,935 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-21-03+00
+2021-04-26 04:00:58,688 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-00-46+00
+2021-04-26 04:18:33,601 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-18-20+00
+2021-04-26 04:21:58,514 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-00-46+00
+2021-04-26 04:31:15,069 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-31-00+00
+2021-04-26 04:34:40,478 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+03-55-31+00
+2021-04-26 04:34:40,639 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-18-20+00
+2021-04-26 04:37:12,037 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-36-59+00
+2021-04-26 04:54:43,599 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-54-28+00
+2021-04-26 04:58:10,951 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-36-59+00
+2021-04-26 05:06:34,483 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-06-20+00
+2021-04-26 05:10:07,112 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-31-00+00
+2021-04-26 05:10:07,317 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+04-54-28+00
+2021-04-26 05:13:25,618 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-13-11+00
+2021-04-26 05:30:54,546 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-30-44+00
+2021-04-26 05:34:20,801 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-13-11+00
+2021-04-26 05:43:10,177 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-42-54+00
+2021-04-26 05:46:47,580 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-30-44+00
+2021-04-26 05:46:47,825 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-06-20+00
+2021-04-26 05:49:33,590 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-49-21+00
+2021-04-26 06:07:04,961 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-06-50+00
+2021-04-26 06:10:16,377 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-49-21+00
+2021-04-26 06:19:30,636 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-19-17+00
+2021-04-26 06:23:02,250 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+05-42-54+00
+2021-04-26 06:23:02,447 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-06-50+00
+2021-04-26 06:25:30,543 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-25-17+00
+2021-04-26 06:42:27,085 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-42-13+00
+2021-04-26 06:45:26,561 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-25-17+00
+2021-04-26 06:55:51,521 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-55-39+00
+2021-04-26 06:59:24,325 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-42-13+00
+2021-04-26 06:59:24,613 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-19-17+00
+2021-04-26 07:00:41,464 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-00-27+00
+2021-04-26 07:18:18,382 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-18-05+00
+2021-04-26 07:22:03,099 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-00-27+00
+2021-04-26 07:33:42,181 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-33-27+00
+2021-04-26 07:37:08,090 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-18-05+00
+2021-04-26 07:37:08,406 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+06-55-39+00
+2021-04-26 07:37:24,718 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-37-09+00
+2021-04-26 07:55:16,987 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-55-03+00
+2021-04-26 07:58:56,333 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-37-09+00
+2021-04-26 08:11:58,245 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-11-45+00
+2021-04-26 08:15:41,233 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-33-27+00
+2021-04-26 08:15:41,502 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+07-55-03+00
+2021-04-26 08:15:56,557 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-15-43+00
+2021-04-26 08:33:24,701 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-33-09+00
+2021-04-26 08:37:21,595 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-15-43+00
+2021-04-26 08:52:33,554 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-52-19+00
+2021-04-26 08:56:06,589 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-33-09+00
+2021-04-26 08:56:06,769 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-11-45+00
+2021-04-26 08:56:22,108 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-56-08+00
+2021-04-26 09:14:02,501 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+09-13-49+00
+2021-04-26 09:17:32,175 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-56-08+00
+2021-04-26 09:47:31,584 - speechbrain.utils.train_logger - INFO - epoch: 10, lr: 5.62e-01 - train loss: 7.15e-01 - valid loss: 7.15e-01
+2021-04-26 09:47:45,554 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in allTogether/workers_save/CKPT+2021-04-26+09-47-31+00
+2021-04-26 09:51:23,204 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+09-13-49+00
+2021-04-26 09:51:23,461 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in allTogether/workers_save/CKPT+2021-04-26+08-52-19+00

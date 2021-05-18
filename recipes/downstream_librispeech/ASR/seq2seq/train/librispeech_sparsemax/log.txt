@@ -1,0 +1,1162 @@
+2021-05-11 16:38:27,200 - speechbrain.core - INFO - Beginning experiment!
+2021-05-11 16:38:27,230 - speechbrain.core - INFO - Experiment folder: librispeech_sparsemax
+2021-05-11 16:38:30,009 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-05-11 16:41:51,204 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-05-11 16:41:52,857 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-05-11 19:39:23,305 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-05-11 19:39:25,850 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-05-11 19:39:26,012 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2021-05-11 19:39:26,035 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2021-05-14 01:06:15,275 - speechbrain.core - INFO - Beginning experiment!
+2021-05-14 01:06:15,307 - speechbrain.core - INFO - Experiment folder: librispeech_sparsemax
+2021-05-14 01:06:16,843 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-05-14 01:09:21,808 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-05-14 01:09:22,980 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-05-14 03:10:06,140 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-05-14 03:10:06,295 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-05-14 03:10:06,446 - speechbrain.utils.checkpoints - INFO - Would load a checkpoint here, but none found yet.
+2021-05-14 03:10:06,474 - speechbrain.utils.epoch_loop - INFO - Going into epoch 1
+2021-05-14 03:25:21,920 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-25-08+00
+2021-05-14 03:33:04,619 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-32-49+00
+2021-05-14 03:33:05,921 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-25-08+00
+2021-05-14 03:40:37,025 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-40-22+00
+2021-05-14 03:55:57,758 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-55-42+00
+2021-05-14 03:56:01,201 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-40-22+00
+2021-05-14 03:58:04,138 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-57-48+00
+2021-05-14 03:58:08,242 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-55-42+00
+2021-05-14 03:58:08,537 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-32-49+00
+2021-05-14 04:11:18,724 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-11-04+00
+2021-05-14 04:24:59,292 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-24-45+00
+2021-05-14 04:25:05,110 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+03-57-48+00
+2021-05-14 04:25:05,401 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-11-04+00
+2021-05-14 04:26:39,496 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-26-25+00
+2021-05-14 04:42:01,206 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-41-46+00
+2021-05-14 04:42:08,520 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-26-25+00
+2021-05-14 04:52:43,715 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-52-29+00
+2021-05-14 04:52:50,877 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-24-45+00
+2021-05-14 04:52:51,162 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-41-46+00
+2021-05-14 04:57:23,382 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-57-08+00
+2021-05-14 05:12:44,811 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-12-30+00
+2021-05-14 05:12:52,526 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-57-08+00
+2021-05-14 05:22:16,238 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-22-01+00
+2021-05-14 05:22:25,336 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+04-52-29+00
+2021-05-14 05:22:25,495 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-12-30+00
+2021-05-14 05:28:10,758 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-27-55+00
+2021-05-14 05:43:32,998 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-43-18+00
+2021-05-14 05:43:44,027 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-27-55+00
+2021-05-14 05:52:08,912 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-51-53+00
+2021-05-14 05:52:22,244 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-43-18+00
+2021-05-14 05:52:22,545 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-22-01+00
+2021-05-14 05:59:00,532 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-58-44+00
+2021-05-14 06:14:24,226 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-14-08+00
+2021-05-14 06:14:37,990 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-58-44+00
+2021-05-14 06:22:45,406 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-22-28+00
+2021-05-14 06:22:58,389 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-14-08+00
+2021-05-14 06:22:58,592 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+05-51-53+00
+2021-05-14 06:29:53,607 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-29-40+00
+2021-05-14 06:45:18,876 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-45-04+00
+2021-05-14 06:45:33,611 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-29-40+00
+2021-05-14 06:53:56,285 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-53-40+00
+2021-05-14 06:54:14,107 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-45-04+00
+2021-05-14 06:54:14,415 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-22-28+00
+2021-05-14 07:00:51,807 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-00-36+00
+2021-05-14 07:16:19,717 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-16-04+00
+2021-05-14 07:16:36,122 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-00-36+00
+2021-05-14 07:25:37,695 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-25-21+00
+2021-05-14 07:25:57,396 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-16-04+00
+2021-05-14 07:25:57,731 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+06-53-40+00
+2021-05-14 07:31:52,157 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-31-36+00
+2021-05-14 07:47:22,631 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-47-06+00
+2021-05-14 07:47:42,019 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-31-36+00
+2021-05-14 07:58:06,100 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-57-51+00
+2021-05-14 07:58:26,008 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-47-06+00
+2021-05-14 07:58:26,260 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-25-21+00
+2021-05-14 08:02:56,329 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-02-42+00
+2021-05-14 08:18:24,722 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-18-10+00
+2021-05-14 08:18:45,919 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-02-42+00
+2021-05-14 08:32:24,201 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-32-09+00
+2021-05-14 08:32:45,478 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-18-10+00
+2021-05-14 08:32:45,696 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+07-57-51+00
+2021-05-14 08:34:02,501 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-33-46+00
+2021-05-14 08:49:36,026 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-49-19+00
+2021-05-14 08:49:59,034 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-33-46+00
+2021-05-14 09:30:49,070 - speechbrain.utils.train_logger - INFO - epoch: 1, lr: 1.00e+00 - train loss: 3.39e-01 - valid loss: 3.39e-01
+2021-05-14 09:31:04,216 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+09-30-49+00
+2021-05-14 09:31:28,842 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-32-09+00
+2021-05-14 09:31:29,095 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+08-49-19+00
+2021-05-14 09:31:29,118 - speechbrain.utils.epoch_loop - INFO - Going into epoch 2
+2021-05-14 09:37:32,800 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+09-37-17+00
+2021-05-14 09:37:50,772 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+09-30-49+00
+2021-05-14 09:46:46,110 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+09-46-32+00
+2021-05-14 10:02:18,214 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-02-02+00
+2021-05-14 10:02:45,265 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+09-46-32+00
+2021-05-14 10:04:12,409 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-03-56+00
+2021-05-14 10:04:42,864 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-02-02+00
+2021-05-14 10:04:43,156 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+09-37-17+00
+2021-05-14 10:18:02,226 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-17-45+00
+2021-05-14 10:30:13,777 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-29-58+00
+2021-05-14 10:30:39,212 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-17-45+00
+2021-05-14 10:30:39,332 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-03-56+00
+2021-05-14 10:33:39,578 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-33-23+00
+2021-05-14 10:49:15,637 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-49-01+00
+2021-05-14 10:49:43,787 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-33-23+00
+2021-05-14 10:57:50,071 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-57-34+00
+2021-05-14 10:58:21,804 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-29-58+00
+2021-05-14 10:58:22,072 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-49-01+00
+2021-05-14 11:04:59,896 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-04-44+00
+2021-05-14 11:20:36,219 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-20-21+00
+2021-05-14 11:21:10,816 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-04-44+00
+2021-05-14 11:25:24,027 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-25-10+00
+2021-05-14 11:25:58,851 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-20-21+00
+2021-05-14 11:25:59,136 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+10-57-34+00
+2021-05-14 11:36:27,758 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-36-12+00
+2021-05-14 11:52:09,369 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-51-54+00
+2021-05-14 11:52:44,017 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-36-12+00
+2021-05-14 11:54:29,113 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-54-14+00
+2021-05-14 11:55:00,653 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-51-54+00
+2021-05-14 11:55:00,943 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-25-10+00
+2021-05-14 12:08:00,409 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-07-44+00
+2021-05-14 12:23:43,797 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-23-30+00
+2021-05-14 12:24:22,619 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-07-44+00
+2021-05-14 12:24:47,341 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-24-32+00
+2021-05-14 12:25:27,183 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-23-30+00
+2021-05-14 12:25:27,555 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+11-54-14+00
+2021-05-14 12:39:37,925 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-39-22+00
+2021-05-14 12:53:51,141 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-53-35+00
+2021-05-14 12:54:31,955 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-24-32+00
+2021-05-14 12:54:32,214 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-39-22+00
+2021-05-14 12:55:21,254 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-55-06+00
+2021-05-14 13:11:04,579 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-10-49+00
+2021-05-14 13:11:46,085 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-55-06+00
+2021-05-14 13:25:02,696 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-24-47+00
+2021-05-14 13:25:44,811 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-10-49+00
+2021-05-14 13:25:45,080 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+12-53-35+00
+2021-05-14 13:27:01,003 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-26-46+00
+2021-05-14 13:42:43,193 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-42-26+00
+2021-05-14 13:43:31,074 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-26-46+00
+2021-05-14 13:57:50,673 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-57-35+00
+2021-05-14 13:58:32,728 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-42-26+00
+2021-05-14 13:58:33,030 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-24-47+00
+2021-05-14 13:58:49,800 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-58-34+00
+2021-05-14 14:14:34,987 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+14-14-20+00
+2021-05-14 14:15:18,991 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-58-34+00
+2021-05-14 14:30:35,331 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+14-30-19+00
+2021-05-14 14:31:21,367 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+14-14-20+00
+2021-05-14 14:31:54,758 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+14-31-40+00
+2021-05-14 14:32:47,790 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+14-30-19+00
+2021-05-14 14:32:48,066 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+13-57-35+00
+2021-05-14 14:46:39,479 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+14-46-23+00
+2021-05-14 15:02:25,760 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+15-02-11+00
+2021-05-14 15:03:11,107 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+14-46-23+00
+2021-05-14 15:05:36,815 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+15-05-23+00
+2021-05-14 15:06:29,300 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+14-31-40+00
+2021-05-14 15:06:29,588 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+15-02-11+00
+2021-05-14 15:18:26,634 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+15-18-12+00
+2021-05-14 15:54:00,214 - speechbrain.utils.train_logger - INFO - epoch: 2, lr: 1.00e+00 - train loss: 2.60e-01 - valid loss: 2.60e-01
+2021-05-14 15:54:16,097 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+15-54-00+00
+2021-05-14 15:55:05,910 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+15-05-23+00
+2021-05-14 15:55:06,201 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+15-18-12+00
+2021-05-14 15:55:06,226 - speechbrain.utils.epoch_loop - INFO - Going into epoch 3
+2021-05-14 16:07:07,927 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+16-06-51+00
+2021-05-14 16:07:36,527 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+15-54-00+00
+2021-05-14 16:10:23,667 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+16-10-07+00
+2021-05-14 16:26:13,667 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+16-25-58+00
+2021-05-14 16:27:05,737 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+16-10-07+00
+2021-05-14 16:33:05,080 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "weighted_train.py", line 440, in <module>
+    valid_loader_kwargs=hparams["test_dataloader_options"],
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/core.py", line 1011, in fit
+    loss = self.fit_batch(batch)
+  File "weighted_train.py", line 260, in fit_batch
+    predictions, feats,  mfcc, gammatone = self.compute_forward(batch, sb.Stage.TRAIN)
+  File "weighted_train.py", line 171, in compute_forward
+    z = self.modules.enc(feats.detach())
+  File "/tsi/clusterhome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/nnet/containers.py", line 119, in forward
+    x = layer(x)
+  File "/tsi/clusterhome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/nnet/RNN.py", line 219, in forward
+    output, hn = self.rnn(x)
+  File "/tsi/clusterhome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/tsi/clusterhome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/rnn.py", line 582, in forward
+    self.dropout, self.training, self.bidirectional, self.batch_first)
+RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED
+2021-05-14 17:12:01,113 - speechbrain.core - INFO - Beginning experiment!
+2021-05-14 17:12:01,175 - speechbrain.core - INFO - Experiment folder: librispeech_sparsemax
+2021-05-14 17:12:02,707 - speechbrain.core - DEBUG - Commit hash: '747ac91'
+2021-05-14 17:15:06,036 - speechbrain.utils.superpowers - DEBUG - absl-py==0.11.0
+aiohttp==3.7.3
+alabaster==0.7.12
+appdirs==1.4.4
+asteroid==0.4.1
+asteroid-filterbanks==0.3.2
+async-timeout==3.0.1
+attrs==20.3.0
+audeer==1.8.0
+audiofile==0.4.0
+audioread==2.1.9
+Babel==2.9.0
+backcall==0.2.0
+black==19.10b0
+cached-property==1.5.2
+cachetools==4.2.1
+certifi==2020.11.8
+cffi==1.14.4
+cfgv==3.2.0
+chardet==3.0.4
+click==7.1.2
+cmake==3.18.4.post1
+cycler==0.10.0
+dataclasses==0.6
+DateTime==4.3
+decorator==4.4.2
+deepspeech==0.9.1
+distlib==0.3.1
+docutils==0.16
+einops==0.3.0
+entrypoints==0.3
+filelock==3.0.12
+flake8==3.7.9
+fsspec==0.8.5
+future==0.18.2
+Gammatone @ git+https://github.com/detly/gammatone.git@0626328ef7c31d3b33214db2fdcd52e8601eb4c5
+google-auth==1.27.0
+google-auth-oauthlib==0.4.2
+grpcio==1.35.0
+h5features==1.3.2
+h5py @ file:///tmp/build/80754af9/h5py_1593454119955/work
+htk-io==0.5
+HyperPyYAML==0.0.1
+identify==1.5.10
+idna==2.10
+imagesize==1.2.0
+importlib-metadata==3.1.1
+infotheory==1.0.1
+ipykernel==5.3.4
+ipython==7.19.0
+ipython-genutils==0.2.0
+jedi==0.17.2
+Jinja2==2.11.2
+joblib @ file:///tmp/build/80754af9/joblib_1601912903842/work
+json-tricks==3.13.2
+jupyter-client==6.1.7
+jupyter-core==4.7.0
+kiwisolver==1.3.1
+librosa==0.8.0
+llvmlite==0.35.0
+Markdown==3.3.3
+MarkupSafe==1.1.1
+matplotlib==3.3.3
+mccabe==0.6.1
+mcd==0.4
+mir-eval==0.6
+mock==4.0.3
+more-itertools==8.6.0
+multidict==5.1.0
+nnAudio @ git+https://github.com/KinWaiCheuk/nnAudio.git@d1797f0bf4693db51f9c76af17547bc761def526#subdirectory=Installation
+nodeenv==1.5.0
+nose==1.3.7
+numba==0.52.0
+numpy @ file:///tmp/build/80754af9/numpy_and_numpy_base_1603480881706/work
+oauthlib==3.1.0
+opensmile==1.0.1
+packaging==20.7
+pandas==1.1.4
+parso==0.7.1
+pathspec==0.8.1
+pb-bss-eval==0.0.2
+pesq==0.0.2
+pexpect==4.8.0
+pickle5==0.0.11
+pickleshare==0.7.5
+Pillow==8.0.1
+pluggy==0.13.1
+pooch==1.3.0
+pre-commit==2.9.2
+prompt-toolkit==3.0.8
+protobuf==3.14.0
+psutil==5.6.6
+ptyprocess==0.6.0
+py==1.9.0
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycodestyle==2.5.0
+pycparser==2.20
+pyflakes==2.1.1
+Pygments==2.7.2
+pykaldi==0.1.0
+pyparsing==2.4.7
+pystoi==0.3.3
+pytest==5.4.1
+python-dateutil==2.8.1
+pytorch-lightning==1.1.8
+pytorch-ranger==0.1.1
+pytz==2020.4
+PyYAML==5.3.1
+pyzmq==20.0.0
+regex==2020.11.13
+requests==2.25.0
+requests-oauthlib==1.3.0
+resampy==0.2.2
+rsa==4.7.1
+ruamel.yaml==0.16.12
+ruamel.yaml.clib==0.2.2
+scikit-learn==0.23.2
+scipy @ file:///tmp/build/80754af9/scipy_1597686661256/work
+sentencepiece==0.1.94
+shennong==0.1.1
+six @ file:///tmp/build/80754af9/six_1605205313296/work
+snowballstemmer==2.0.0
+SoundFile==0.10.3.post1
+sox==1.4.1
+-e git+https://gitlab.telecom-paris.fr/salah.zaiem/diagnostic_measures.git@747ac91e8c4aff5430eacffe73665db0126de896#egg=SpeechBrain&subdirectory=new_sb/speechbrain
+sphfile==1.0.3
+Sphinx==3.3.1
+sphinx-rtd-theme==0.4.3
+sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-devhelp==1.0.2
+sphinxcontrib-htmlhelp==1.0.3
+sphinxcontrib-jsmath==1.0.1
+sphinxcontrib-qthelp==1.0.3
+sphinxcontrib-serializinghtml==1.1.4
+tensorboard==2.4.1
+tensorboard-plugin-wit==1.8.0
+threadpoolctl==2.1.0
+toml==0.10.2
+torch==1.7.0+cu92
+torch-optimizer==0.1.0
+torch-stoi==0.1.2
+torchaudio==0.7.0
+torchvision==0.8.1+cu92
+tornado==6.1
+tqdm==4.54.0
+traitlets==5.0.5
+typed-ast==1.4.1
+typing-extensions==3.7.4.3
+urllib3==1.26.2
+virtualenv==20.2.1
+wcwidth==0.2.5
+Werkzeug==1.0.1
+yamllint==1.23.0
+yarl==1.6.3
+zipp==3.4.0
+zope.interface==5.2.0
+
+
+2021-05-14 17:15:07,090 - speechbrain.utils.superpowers - DEBUG - 747ac91
+
+
+2021-05-14 19:34:22,568 - speechbrain.core - INFO - Info: device arg overridden by command line input
+2021-05-14 19:34:22,720 - speechbrain.core - INFO - 14.3M trainable parameters in ASR
+2021-05-14 19:34:23,291 - speechbrain.utils.checkpoints - INFO - Loading a checkpoint from librispeech_sparsemax/workers_save/CKPT+2021-05-14+16-25-58+00
+2021-05-14 19:36:26,726 - speechbrain.utils.epoch_loop - INFO - Going into epoch 3
+2021-05-14 19:51:39,269 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+19-51-26+00
+2021-05-14 19:51:39,981 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+16-25-58+00
+2021-05-14 20:07:05,002 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-06-43+00
+2021-05-14 20:07:06,841 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+19-51-26+00
+2021-05-14 20:09:26,190 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-09-09+00
+2021-05-14 20:09:29,538 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-06-43+00
+2021-05-14 20:09:29,847 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+16-06-51+00
+2021-05-14 20:22:23,267 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-22-07+00
+2021-05-14 20:37:45,928 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-37-29+00
+2021-05-14 20:37:50,217 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-22-07+00
+2021-05-14 20:43:42,215 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-43-28+00
+2021-05-14 20:43:45,960 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-37-29+00
+2021-05-14 20:43:46,225 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-09-09+00
+2021-05-14 20:53:10,946 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-52-52+00
+2021-05-14 21:08:30,924 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-08-16+00
+2021-05-14 21:08:40,584 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-52-52+00
+2021-05-14 21:19:05,404 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-18-49+00
+2021-05-14 21:19:11,206 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-08-16+00
+2021-05-14 21:19:11,402 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+20-43-28+00
+2021-05-14 21:23:59,956 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-23-41+00
+2021-05-14 21:39:26,043 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-39-05+00
+2021-05-14 21:39:35,777 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-23-41+00
+2021-05-14 21:54:18,752 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-54-00+00
+2021-05-14 21:54:27,581 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-18-49+00
+2021-05-14 21:54:27,884 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-39-05+00
+2021-05-14 21:54:51,265 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-54-36+00
+2021-05-14 22:10:16,608 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-10-00+00
+2021-05-14 22:10:28,231 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-54-36+00
+2021-05-14 22:25:47,477 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-25-29+00
+2021-05-14 22:25:59,079 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-10-00+00
+2021-05-14 22:31:00,006 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-30-42+00
+2021-05-14 22:31:13,284 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+21-54-00+00
+2021-05-14 22:31:13,576 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-25-29+00
+2021-05-14 22:41:17,980 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-41-00+00
+2021-05-14 22:56:45,834 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-56-27+00
+2021-05-14 22:56:56,288 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-41-00+00
+2021-05-14 23:07:24,984 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-07-10+00
+2021-05-14 23:07:42,419 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-30-42+00
+2021-05-14 23:07:42,687 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+22-56-27+00
+2021-05-14 23:12:16,050 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-11-56+00
+2021-05-14 23:27:43,264 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-27-28+00
+2021-05-14 23:27:58,189 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-11-56+00
+2021-05-14 23:43:19,916 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-42-58+00
+2021-05-14 23:43:38,389 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-27-28+00
+2021-05-14 23:45:23,292 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-45-07+00
+2021-05-14 23:45:40,944 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-07-10+00
+2021-05-14 23:45:41,238 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-42-58+00
+2021-05-14 23:58:56,439 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-58-40+00
+2021-05-15 00:14:29,142 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+00-14-12+00
+2021-05-15 00:14:53,396 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-58-40+00
+2021-05-15 00:23:56,935 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+00-23-39+00
+2021-05-15 00:24:14,779 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+00-14-12+00
+2021-05-15 00:24:15,072 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-14+23-45-07+00
+2021-05-15 00:30:14,551 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+00-29-57+00
+2021-05-15 00:45:52,218 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+00-45-35+00
+2021-05-15 00:46:16,390 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+00-29-57+00
+2021-05-15 01:01:37,505 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-01-20+00
+2021-05-15 01:02:01,227 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+00-45-35+00
+2021-05-15 01:03:25,799 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-03-08+00
+2021-05-15 01:03:52,150 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-01-20+00
+2021-05-15 01:03:52,450 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+00-23-39+00
+2021-05-15 01:17:18,490 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-17-01+00
+2021-05-15 01:32:48,383 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-32-34+00
+2021-05-15 01:33:05,265 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-17-01+00
+2021-05-15 01:40:24,082 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-40-11+00
+2021-05-15 01:40:55,941 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-03-08+00
+2021-05-15 01:40:56,205 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-32-34+00
+2021-05-15 01:48:20,613 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-48-08+00
+2021-05-15 02:37:38,648 - speechbrain.utils.train_logger - INFO - epoch: 3, lr: 1.00e+00 - train loss: 2.34e-01 - valid loss: 2.34e-01
+2021-05-15 02:37:53,499 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+02-37-38+00
+2021-05-15 02:38:20,235 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-40-11+00
+2021-05-15 02:38:20,552 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+01-48-08+00
+2021-05-15 02:38:20,580 - speechbrain.utils.epoch_loop - INFO - Going into epoch 4
+2021-05-15 02:51:42,534 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+02-51-21+00
+2021-05-15 02:51:59,872 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+02-37-38+00
+2021-05-15 02:53:40,247 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+02-53-22+00
+2021-05-15 03:09:15,461 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-08-59+00
+2021-05-15 03:09:45,856 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+02-53-22+00
+2021-05-15 03:24:00,095 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-23-42+00
+2021-05-15 03:24:32,775 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+02-51-21+00
+2021-05-15 03:24:33,021 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-08-59+00
+2021-05-15 03:25:02,415 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-24-46+00
+2021-05-15 03:40:39,018 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-40-25+00
+2021-05-15 03:41:10,114 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-24-46+00
+2021-05-15 03:56:30,955 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-56-13+00
+2021-05-15 03:57:01,252 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-40-25+00
+2021-05-15 03:57:47,054 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-57-28+00
+2021-05-15 03:58:20,415 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-56-13+00
+2021-05-15 03:58:20,784 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-23-42+00
+2021-05-15 04:12:22,838 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-12-03+00
+2021-05-15 04:28:05,202 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-27-49+00
+2021-05-15 04:28:35,213 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-12-03+00
+2021-05-15 04:32:37,660 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-32-21+00
+2021-05-15 04:33:12,719 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-27-49+00
+2021-05-15 04:33:13,063 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+03-57-28+00
+2021-05-15 04:43:57,163 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-43-37+00
+2021-05-15 04:59:36,106 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-59-22+00
+2021-05-15 05:00:06,877 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-43-37+00
+2021-05-15 05:08:19,173 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-08-00+00
+2021-05-15 05:08:59,016 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-59-22+00
+2021-05-15 05:08:59,304 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+04-32-21+00
+2021-05-15 05:15:24,748 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-15-08+00
+2021-05-15 05:31:11,029 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-30-56+00
+2021-05-15 05:31:50,505 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-15-08+00
+2021-05-15 05:44:30,623 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-44-14+00
+2021-05-15 05:45:12,828 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-30-56+00
+2021-05-15 05:45:13,062 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-08-00+00
+2021-05-15 05:47:07,046 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-46-51+00
+2021-05-15 06:02:54,579 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-02-39+00
+2021-05-15 06:03:29,843 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-46-51+00
+2021-05-15 06:18:49,654 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-18-32+00
+2021-05-15 06:19:36,604 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-02-39+00
+2021-05-15 06:22:10,923 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-21-57+00
+2021-05-15 06:22:58,713 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-18-32+00
+2021-05-15 06:22:58,992 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+05-44-14+00
+2021-05-15 06:34:52,773 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-34-38+00
+2021-05-15 06:50:42,402 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-50-25+00
+2021-05-15 06:51:22,222 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-34-38+00
+2021-05-15 06:59:15,026 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-58-56+00
+2021-05-15 07:00:03,417 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-21-57+00
+2021-05-15 07:00:03,694 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-50-25+00
+2021-05-15 07:06:37,927 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-06-23+00
+2021-05-15 07:22:25,241 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-22-10+00
+2021-05-15 07:23:18,819 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-06-23+00
+2021-05-15 07:36:29,844 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-36-14+00
+2021-05-15 07:37:24,597 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-22-10+00
+2021-05-15 07:37:24,920 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+06-58-56+00
+2021-05-15 07:38:37,972 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-38-19+00
+2021-05-15 07:54:31,089 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-54-14+00
+2021-05-15 07:55:31,301 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-38-19+00
+2021-05-15 08:10:56,276 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-10-39+00
+2021-05-15 08:11:48,553 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-54-14+00
+2021-05-15 08:16:06,185 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-15-51+00
+2021-05-15 08:17:03,363 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-10-39+00
+2021-05-15 08:17:03,636 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+07-36-14+00
+2021-05-15 08:27:06,304 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-26-52+00
+2021-05-15 08:43:03,516 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-42-45+00
+2021-05-15 08:43:50,364 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-26-52+00
+2021-05-15 08:56:46,019 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-56-27+00
+2021-05-15 08:57:30,150 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-42-45+00
+2021-05-15 08:57:30,398 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-15-51+00
+2021-05-15 08:59:06,532 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-58-51+00
+2021-05-15 09:15:07,950 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+09-14-50+00
+2021-05-15 09:16:07,081 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-58-51+00
+2021-05-15 09:31:25,113 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+09-31-09+00
+2021-05-15 09:32:21,135 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+09-14-50+00
+2021-05-15 09:38:09,497 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+09-37-54+00
+2021-05-15 09:39:06,524 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+09-31-09+00
+2021-05-15 09:39:06,814 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+08-56-27+00
+2021-05-15 09:47:52,246 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+09-47-35+00
+2021-05-15 10:23:52,353 - speechbrain.utils.train_logger - INFO - epoch: 4, lr: 1.00e+00 - train loss: 2.04e-01 - valid loss: 2.04e-01
+2021-05-15 10:24:03,777 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+10-23-52+00
+2021-05-15 10:25:02,000 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+09-47-35+00
+2021-05-15 10:25:02,301 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+09-37-54+00
+2021-05-15 10:25:02,327 - speechbrain.utils.epoch_loop - INFO - Going into epoch 5
+2021-05-15 10:40:19,251 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+10-40-03+00
+2021-05-15 10:43:51,521 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+10-43-37+00
+2021-05-15 10:44:41,331 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+10-23-52+00
+2021-05-15 10:44:41,590 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+10-40-03+00
+2021-05-15 10:56:13,986 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+10-55-58+00
+2021-05-15 11:12:11,985 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-11-58+00
+2021-05-15 11:13:13,724 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+10-55-58+00
+2021-05-15 11:14:38,109 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-14-22+00
+2021-05-15 11:15:34,364 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-11-58+00
+2021-05-15 11:15:34,670 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+10-43-37+00
+2021-05-15 11:28:28,792 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-28-15+00
+2021-05-15 11:44:26,539 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-44-14+00
+2021-05-15 11:45:24,137 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-28-15+00
+2021-05-15 11:46:15,476 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-45-58+00
+2021-05-15 11:47:15,962 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-44-14+00
+2021-05-15 11:47:16,230 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-14-22+00
+2021-05-15 12:00:41,786 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-00-28+00
+2021-05-15 12:16:35,907 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-16-20+00
+2021-05-15 12:17:36,695 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-00-28+00
+2021-05-15 12:18:46,542 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-18-31+00
+2021-05-15 12:19:51,212 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-16-20+00
+2021-05-15 12:19:51,541 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+11-45-58+00
+2021-05-15 12:32:53,230 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-32-38+00
+2021-05-15 12:48:56,327 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-48-38+00
+2021-05-15 12:50:01,818 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-32-38+00
+2021-05-15 12:51:17,289 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-51-02+00
+2021-05-15 12:52:24,677 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-18-31+00
+2021-05-15 12:52:24,960 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-48-38+00
+2021-05-15 13:05:15,373 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-05-02+00
+2021-05-15 13:21:17,706 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-21-03+00
+2021-05-15 13:22:25,670 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-05-02+00
+2021-05-15 13:24:20,102 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-24-05+00
+2021-05-15 13:25:29,631 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+12-51-02+00
+2021-05-15 13:25:29,925 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-21-03+00
+2021-05-15 13:37:40,585 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-37-26+00
+2021-05-15 13:53:39,510 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-53-25+00
+2021-05-15 13:54:45,854 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-37-26+00
+2021-05-15 13:58:52,849 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-58-36+00
+2021-05-15 14:00:06,497 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-24-05+00
+2021-05-15 14:00:06,761 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-53-25+00
+2021-05-15 14:10:01,988 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-09-46+00
+2021-05-15 14:26:05,951 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-25-49+00
+2021-05-15 14:27:20,396 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-09-46+00
+2021-05-15 14:32:01,442 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-31-48+00
+2021-05-15 14:33:17,783 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+13-58-36+00
+2021-05-15 14:33:18,048 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-25-49+00
+2021-05-15 14:42:37,833 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-42-22+00
+2021-05-15 14:58:44,374 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-58-29+00
+2021-05-15 15:00:00,441 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-42-22+00
+2021-05-15 15:07:09,653 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-06-54+00
+2021-05-15 15:08:23,388 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-58-29+00
+2021-05-15 15:08:23,689 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+14-31-48+00
+2021-05-15 15:15:15,274 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-15-01+00
+2021-05-15 15:31:20,031 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-31-05+00
+2021-05-15 15:32:36,113 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-15-01+00
+2021-05-15 15:42:46,662 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-42-34+00
+2021-05-15 15:44:02,667 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-31-05+00
+2021-05-15 15:44:02,997 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-06-54+00
+2021-05-15 15:47:54,135 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-47-39+00
+2021-05-15 16:04:03,001 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-03-49+00
+2021-05-15 16:05:23,090 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-47-39+00
+2021-05-15 16:20:09,092 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-19-54+00
+2021-05-15 16:21:34,642 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+15-42-34+00
+2021-05-15 16:21:34,880 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-03-49+00
+2021-05-15 16:21:50,944 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-21-36+00
+2021-05-15 16:37:49,696 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-37-33+00
+2021-05-15 16:39:08,827 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-21-36+00
+2021-05-15 16:54:24,106 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-54-09+00
+2021-05-15 16:55:45,336 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-37-33+00
+2021-05-15 17:00:11,264 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-59-56+00
+2021-05-15 17:01:30,433 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-19-54+00
+2021-05-15 17:01:30,595 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-54-09+00
+2021-05-15 17:35:48,867 - speechbrain.utils.train_logger - INFO - epoch: 5, lr: 1.00e+00 - train loss: 1.70e-01 - valid loss: 1.70e-01
+2021-05-15 17:36:06,419 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+17-35-48+00
+2021-05-15 17:37:06,010 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+16-59-56+00
+2021-05-15 17:37:06,037 - speechbrain.utils.epoch_loop - INFO - Going into epoch 6
+2021-05-15 17:52:18,087 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+17-52-09+00
+2021-05-15 18:03:22,792 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-03-08+00
+2021-05-15 18:04:52,177 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+17-35-48+00
+2021-05-15 18:04:52,448 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+17-52-09+00
+2021-05-15 18:08:32,348 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-08-16+00
+2021-05-15 18:24:48,383 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-24-31+00
+2021-05-15 18:26:24,498 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-08-16+00
+2021-05-15 18:37:28,864 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-37-15+00
+2021-05-15 18:38:59,932 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-24-31+00
+2021-05-15 18:39:00,328 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-03-08+00
+2021-05-15 18:41:42,423 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-41-27+00
+2021-05-15 18:58:04,038 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-57-48+00
+2021-05-15 18:59:39,258 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-41-27+00
+2021-05-15 19:11:11,759 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-10-57+00
+2021-05-15 19:12:45,172 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-57-48+00
+2021-05-15 19:12:45,456 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+18-37-15+00
+2021-05-15 19:14:55,053 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-14-39+00
+2021-05-15 19:31:21,524 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-31-06+00
+2021-05-15 19:32:43,291 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-14-39+00
+2021-05-15 19:45:50,690 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-45-30+00
+2021-05-15 19:47:17,679 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-31-06+00
+2021-05-15 19:47:17,993 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-10-57+00
+2021-05-15 19:47:59,241 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-47-44+00
+2021-05-15 20:04:13,982 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-03-57+00
+2021-05-15 20:05:45,947 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-47-44+00
+2021-05-15 20:21:03,914 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-20-48+00
+2021-05-15 20:22:37,391 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-03-57+00
+2021-05-15 20:23:14,709 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-23-01+00
+2021-05-15 20:24:51,784 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-20-48+00
+2021-05-15 20:24:52,132 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+19-45-30+00
+2021-05-15 20:37:55,092 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-37-37+00
+2021-05-15 20:54:18,108 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-54-00+00
+2021-05-15 20:56:01,701 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-37-37+00
+2021-05-15 21:00:02,039 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-59-48+00
+2021-05-15 21:01:30,324 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-23-01+00
+2021-05-15 21:01:30,616 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-54-00+00
+2021-05-15 21:11:20,715 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+21-11-03+00
+2021-05-15 21:27:58,134 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+21-27-38+00
+2021-05-15 21:29:42,398 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+21-11-03+00
+2021-05-15 21:36:58,037 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+21-36-45+00
+2021-05-15 21:38:36,803 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+21-27-38+00
+2021-05-15 21:38:37,131 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+20-59-48+00
+2021-05-15 21:45:02,394 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+21-44-46+00
+2021-05-15 22:01:30,810 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-01-15+00
+2021-05-15 22:04:19,998 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+21-44-46+00
+2021-05-15 22:17:01,701 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-16-45+00
+2021-05-15 22:18:42,617 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+21-36-45+00
+2021-05-15 22:18:42,923 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-01-15+00
+2021-05-15 22:19:43,669 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-19-27+00
+2021-05-15 22:36:08,092 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-35-53+00
+2021-05-15 22:37:55,084 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-19-27+00
+2021-05-15 22:53:34,263 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-53-07+00
+2021-05-15 22:55:43,720 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-35-53+00
+2021-05-15 23:02:30,021 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-02-14+00
+2021-05-15 23:04:21,432 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-16-45+00
+2021-05-15 23:04:21,721 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+22-53-07+00
+2021-05-15 23:11:03,093 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-10-45+00
+2021-05-15 23:27:33,517 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-27-19+00
+2021-05-15 23:29:22,074 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-10-45+00
+2021-05-15 23:40:23,616 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-40-07+00
+2021-05-15 23:42:17,025 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-27-19+00
+2021-05-15 23:42:17,262 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-02-14+00
+2021-05-15 23:44:45,891 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-44-28+00
+2021-05-16 00:01:22,678 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-01-07+00
+2021-05-16 00:03:26,858 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-44-28+00
+2021-05-16 00:18:43,789 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-18-27+00
+2021-05-16 00:20:23,434 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-01-07+00
+2021-05-16 00:21:53,473 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-21-37+00
+2021-05-16 00:23:55,864 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-18-27+00
+2021-05-16 00:23:56,124 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-15+23-40-07+00
+2021-05-16 00:35:42,203 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-35-24+00
+2021-05-16 00:52:24,445 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-52-08+00
+2021-05-16 00:54:28,178 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-35-24+00
+2021-05-16 01:29:02,758 - speechbrain.nnet.schedulers - INFO - Changing lr from 1 to 0.75
+2021-05-16 01:29:03,098 - speechbrain.utils.train_logger - INFO - epoch: 6, lr: 1.00e+00 - train loss: 2.01e-01 - valid loss: 2.01e-01
+2021-05-16 01:29:15,086 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+01-29-03+00
+2021-05-16 01:31:05,501 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-52-08+00
+2021-05-16 01:31:05,805 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+00-21-37+00
+2021-05-16 01:31:05,831 - speechbrain.utils.epoch_loop - INFO - Going into epoch 7
+2021-05-16 01:35:32,153 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+01-35-17+00
+2021-05-16 01:36:47,509 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+01-29-03+00
+2021-05-16 01:46:21,716 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+01-46-06+00
+2021-05-16 02:03:05,718 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-02-48+00
+2021-05-16 02:05:13,709 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+01-46-06+00
+2021-05-16 02:09:18,092 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-09-02+00
+2021-05-16 02:11:30,067 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-02-48+00
+2021-05-16 02:11:30,433 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+01-35-17+00
+2021-05-16 02:20:29,389 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-20-14+00
+2021-05-16 02:37:16,233 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-36-53+00
+2021-05-16 02:39:17,604 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-20-14+00
+2021-05-16 02:45:16,594 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-45-01+00
+2021-05-16 02:47:25,487 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-09-02+00
+2021-05-16 02:47:25,762 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-36-53+00
+2021-05-16 02:54:37,593 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-54-21+00
+2021-05-16 03:11:22,989 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+03-11-08+00
+2021-05-16 03:13:24,722 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-54-21+00
+2021-05-16 03:23:17,000 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+03-22-58+00
+2021-05-16 03:25:28,710 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+03-11-08+00
+2021-05-16 03:25:28,977 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+02-45-01+00
+2021-05-16 03:28:41,067 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+03-28-25+00
+2021-05-16 03:45:35,220 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+03-45-13+00
+2021-05-16 03:47:45,437 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+03-28-25+00
+2021-05-16 04:01:29,415 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-01-14+00
+2021-05-16 04:03:35,837 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+03-22-58+00
+2021-05-16 04:03:36,124 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+03-45-13+00
+2021-05-16 04:03:52,507 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-03-37+00
+2021-05-16 04:20:28,895 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-20-12+00
+2021-05-16 04:22:41,219 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-03-37+00
+2021-05-16 04:37:56,821 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-37-42+00
+2021-05-16 04:39:58,756 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-20-12+00
+2021-05-16 04:44:22,448 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-44-06+00
+2021-05-16 04:46:21,419 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-01-14+00
+2021-05-16 04:46:21,697 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-37-42+00
+2021-05-16 04:55:16,940 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-55-01+00
+2021-05-16 05:12:01,887 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+05-11-46+00
+2021-05-16 05:14:08,905 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-55-01+00
+2021-05-16 05:24:05,804 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+05-23-49+00
+2021-05-16 05:26:26,982 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+05-11-46+00
+2021-05-16 05:26:27,277 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+04-44-06+00
+2021-05-16 05:29:23,305 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+05-29-09+00
+2021-05-16 05:46:16,604 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+05-45-59+00
+2021-05-16 05:48:38,318 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+05-29-09+00
+2021-05-16 06:03:54,414 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-03-38+00
+2021-05-16 06:06:01,414 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+05-45-59+00
+2021-05-16 06:07:29,886 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-07-14+00
+2021-05-16 06:09:42,691 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-03-38+00
+2021-05-16 06:09:43,032 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+05-23-49+00
+2021-05-16 06:21:12,866 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-21-02+00
+2021-05-16 06:38:01,014 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-37-45+00
+2021-05-16 06:40:19,361 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-21-02+00
+2021-05-16 06:48:35,959 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-48-20+00
+2021-05-16 06:50:55,515 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-37-45+00
+2021-05-16 06:50:55,792 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-07-14+00
+2021-05-16 06:55:35,979 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-55-20+00
+2021-05-16 07:12:28,068 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+07-12-20+00
+2021-05-16 07:14:51,557 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-55-20+00
+2021-05-16 07:30:11,269 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+07-29-56+00
+2021-05-16 07:32:39,103 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+07-12-20+00
+2021-05-16 07:33:36,902 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+07-33-17+00
+2021-05-16 07:35:54,691 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+06-48-20+00
+2021-05-16 07:35:54,944 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+07-29-56+00
+2021-05-16 07:48:00,285 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+07-47-44+00
+2021-05-16 08:04:50,158 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-04-36+00
+2021-05-16 08:07:25,865 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+07-47-44+00
+2021-05-16 08:16:58,555 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-16-39+00
+2021-05-16 08:19:15,833 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+07-33-17+00
+2021-05-16 08:19:16,191 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-04-36+00
+2021-05-16 08:22:41,836 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-22-26+00
+2021-05-16 08:39:51,102 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-39-33+00
+2021-05-16 08:42:18,077 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-22-26+00
+2021-05-16 08:57:34,664 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-57-20+00
+2021-05-16 09:00:09,087 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-39-33+00
+2021-05-16 09:05:04,677 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+09-04-48+00
+2021-05-16 09:07:30,577 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-57-20+00
+2021-05-16 09:07:30,842 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+08-16-39+00
+2021-05-16 09:15:29,763 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+09-15-13+00
+2021-05-16 09:32:35,807 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+09-32-21+00
+2021-05-16 09:34:55,865 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+09-15-13+00
+2021-05-16 10:11:52,893 - speechbrain.utils.train_logger - INFO - epoch: 7, lr: 7.50e-01 - train loss: 1.68e-01 - valid loss: 1.68e-01
+2021-05-16 10:12:07,102 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+10-11-52+00
+2021-05-16 10:14:37,634 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+09-04-48+00
+2021-05-16 10:14:37,917 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+09-32-21+00
+2021-05-16 10:14:37,943 - speechbrain.utils.epoch_loop - INFO - Going into epoch 8
+2021-05-16 10:26:43,047 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+10-26-28+00
+2021-05-16 10:28:23,778 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+10-11-52+00
+2021-05-16 10:29:56,783 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+10-29-41+00
+2021-05-16 10:47:02,270 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+10-46-46+00
+2021-05-16 10:49:16,492 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+10-29-41+00
+2021-05-16 11:04:36,534 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-04-19+00
+2021-05-16 11:07:09,337 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+10-46-46+00
+2021-05-16 11:07:57,455 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-07-41+00
+2021-05-16 11:10:17,120 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-04-19+00
+2021-05-16 11:10:17,399 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+10-26-28+00
+2021-05-16 11:22:27,009 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-22-11+00
+2021-05-16 11:39:30,829 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-39-17+00
+2021-05-16 11:42:10,633 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-22-11+00
+2021-05-16 11:48:16,994 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-48-01+00
+2021-05-16 11:51:00,581 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-07-41+00
+2021-05-16 11:51:00,896 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-39-17+00
+2021-05-16 11:57:26,626 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-57-10+00
+2021-05-16 12:14:32,315 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+12-14-14+00
+2021-05-16 12:17:00,461 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-57-10+00
+2021-05-16 12:29:41,668 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+12-29-24+00
+2021-05-16 12:32:15,184 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+11-48-01+00
+2021-05-16 12:32:15,448 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+12-14-14+00
+2021-05-16 12:32:32,908 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+12-32-16+00
+2021-05-16 12:49:42,849 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+12-49-24+00
+2021-05-16 12:52:31,187 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+12-32-16+00
+2021-05-16 13:07:47,835 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-07-31+00
+2021-05-16 13:10:05,436 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+12-49-24+00
+2021-05-16 13:15:07,547 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-14-46+00
+2021-05-16 13:17:40,111 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+12-29-24+00
+2021-05-16 13:17:40,379 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-07-31+00
+2021-05-16 13:25:26,081 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-25-08+00
+2021-05-16 13:42:43,885 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-42-30+00
+2021-05-16 13:45:45,401 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-25-08+00
+2021-05-16 13:58:30,218 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-58-13+00
+2021-05-16 14:01:25,233 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-42-30+00
+2021-05-16 14:01:25,503 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-14-46+00
+2021-05-16 14:01:42,693 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-01-26+00
+2021-05-16 14:18:42,007 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-18-25+00
+2021-05-16 14:21:34,358 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-01-26+00
+2021-05-16 14:36:56,901 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-36-37+00
+2021-05-16 14:39:25,339 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-18-25+00
+2021-05-16 14:45:55,633 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-45-40+00
+2021-05-16 14:48:40,517 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+13-58-13+00
+2021-05-16 14:48:40,822 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-36-37+00
+2021-05-16 14:54:44,878 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-54-29+00
+2021-05-16 15:12:04,156 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+15-11-46+00
+2021-05-16 15:15:04,141 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-54-29+00
+2021-05-16 15:30:08,325 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+15-29-49+00
+2021-05-16 15:32:58,633 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+15-11-46+00
+2021-05-16 15:32:58,957 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+14-45-40+00
+2021-05-16 15:33:18,777 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+15-33-00+00
+2021-05-16 15:50:28,366 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+15-50-10+00
+2021-05-16 15:53:27,314 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+15-33-00+00
+2021-05-16 16:08:45,654 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+16-08-31+00
+2021-05-16 16:11:42,019 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+15-50-10+00
+2021-05-16 16:17:24,151 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+16-17-08+00
+2021-05-16 16:20:21,255 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+16-08-31+00
+2021-05-16 16:20:21,580 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+15-29-49+00
+2021-05-16 16:26:54,643 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+16-26-42+00
+2021-05-16 16:44:17,595 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+16-44-01+00
+2021-05-16 16:47:10,634 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+16-26-42+00
+2021-05-16 17:02:27,658 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+17-02-14+00
+2021-05-16 17:05:30,808 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+16-44-01+00
+2021-05-16 17:06:15,186 - speechbrain.utils.checkpoints - INFO - Saved an end-of-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+17-05-57+00
+2021-05-16 17:09:16,009 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+16-17-08+00
+2021-05-16 17:09:16,284 - speechbrain.utils.checkpoints - INFO - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+17-02-14+00
+2021-05-16 17:20:47,129 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+17-20-32+00
+2021-05-16 17:38:14,143 - speechbrain.utils.checkpoints - DEBUG - Saved an intra-epoch checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+17-38-00+00
+2021-05-16 17:41:07,223 - speechbrain.utils.checkpoints - DEBUG - Deleted checkpoint in librispeech_sparsemax/workers_save/CKPT+2021-05-16+17-20-32+00
+2021-05-16 17:48:17,254 - speechbrain.core - ERROR - Exception:
+Traceback (most recent call last):
+  File "weighted_train.py", line 440, in <module>
+    valid_loader_kwargs=hparams["test_dataloader_options"],
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/core.py", line 1011, in fit
+    loss = self.fit_batch(batch)
+  File "weighted_train.py", line 260, in fit_batch
+    predictions, feats,  mfcc, gammatone = self.compute_forward(batch, sb.Stage.TRAIN)
+  File "weighted_train.py", line 171, in compute_forward
+    z = self.modules.enc(feats.detach())
+  File "/tsi/clusterhome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/nnet/containers.py", line 119, in forward
+    x = layer(x)
+  File "/tsi/clusterhome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/ids-cluster-storage/storage/szaiem/github_backup/new_sb/speechbrain/speechbrain/nnet/RNN.py", line 219, in forward
+    output, hn = self.rnn(x)
+  File "/tsi/clusterhome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/tsi/clusterhome/szaiem/.conda/envs/sb/lib/python3.7/site-packages/torch/nn/modules/rnn.py", line 582, in forward
+    self.dropout, self.training, self.bidirectional, self.batch_first)
+RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED

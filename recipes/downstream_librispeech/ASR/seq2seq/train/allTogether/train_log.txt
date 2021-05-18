@@ -1,0 +1,10 @@
+epoch: 1, lr: 1.00e+00 - train loss: 1.67 - valid loss: 1.67
+epoch: 2, lr: 1.00e+00 - train loss: 1.47 - valid loss: 1.47
+epoch: 3, lr: 1.00e+00 - train loss: 1.33 - valid loss: 1.33
+epoch: 4, lr: 1.00e+00 - train loss: 9.83e-01 - valid loss: 9.83e-01
+epoch: 5, lr: 1.00e+00 - train loss: 1.04 - valid loss: 1.04
+epoch: 6, lr: 7.50e-01 - train loss: 8.18e-01 - valid loss: 8.18e-01
+epoch: 7, lr: 7.50e-01 - train loss: 8.61e-01 - valid loss: 8.61e-01
+epoch: 8, lr: 5.62e-01 - train loss: 7.57e-01 - valid loss: 7.57e-01
+epoch: 9, lr: 5.62e-01 - train loss: 7.33e-01 - valid loss: 7.33e-01
+epoch: 10, lr: 5.62e-01 - train loss: 7.15e-01 - valid loss: 7.15e-01
