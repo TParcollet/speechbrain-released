@@ -17,7 +17,6 @@ import inspect
 import pathlib
 import argparse
 import tempfile
-import subprocess
 import speechbrain as sb
 from datetime import date
 from enum import Enum, auto
@@ -104,9 +103,7 @@ def create_experiment_directory(
             # Log beginning of experiment!
             logger.info("Beginning experiment!")
             logger.info(f"Experiment folder: {experiment_directory}")
-            commit_hash = subprocess.check_output(
-                ["git", "describe", "--always"]
-            )
+            commit_hash = "1234"
             logger.debug(
                 "Commit hash: '%s'" % commit_hash.decode("utf-8").strip()
             )
