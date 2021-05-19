@@ -39,18 +39,18 @@ test_csv:
 # Training parameters
 number_of_epochs: 15
 number_of_ctc_epochs: 5
-batch_size: 1
+batch_size: 8
 lr: 1.0
 ctc_weight: 0.5
 sorting: ascending
-dynamic_batching: True
+#dynamic_batching: True
 baseline: False
-dynamic_batch_sampler:
-   feats_hop_size: 0.01
-   max_batch_len: 4000 # in terms of frames
-   left_bucket_len: 200
-   multiplier: 1.1
-   shuffle: False # if true re-creates batches at each epoch shuffling examples.
+#dynamic_batch_sampler:
+#   feats_hop_size: 0.01
+#   max_batch_len: 4000 # in terms of frames
+#   left_bucket_len: 200
+#   multiplier: 1.1
+#   shuffle: False # if true re-creates batches at each epoch shuffling examples.
 
 # Feature parameters
 sample_rate: 16000
@@ -137,9 +137,9 @@ compute_features: !new:speechbrain.lobes.features.Fbank
 #   noise_snr_low: 0
 #   noise_snr_high: 15
 
-augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
-   sample_rate: !ref <sample_rate>
-   speeds: [95, 100, 105]
+#augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
+#   sample_rate: !ref <sample_rate>
+#   speeds: [95, 100, 105]
 
 enc: !new:speechbrain.lobes.models.CRDNN.CRDNN
    input_shape: [null, null, 256]
