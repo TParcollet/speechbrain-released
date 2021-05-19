@@ -11,7 +11,7 @@
 # Seed needs to be set at top of yaml, before objects with parameters are instantiated
 seed: 2602
 __set_seed: !apply:torch.manual_seed [!ref <seed>]
-output_folder: !ref results/librispeech_softmax/<seed>
+output_folder: !ref results/librispeech_softmax_nocnn/<seed>
 wer_file: !ref <output_folder>/wer.txt
 save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
@@ -79,11 +79,11 @@ test_dataloader_opts:
 # Model parameters
 activation: !name:torch.nn.LeakyReLU
 dropout: 0.15
-cnn_blocks: 3
+cnn_blocks: 0
 cnn_channels: (64, 100, 128)
 inter_layer_pooling_size: (2, 2, 2)
 cnn_kernelsize: (3, 3)
-time_pooling_size: 4
+time_pooling_size: 2
 rnn_class: !name:speechbrain.nnet.RNN.LSTM
 rnn_layers: 4
 rnn_neurons: 1024
