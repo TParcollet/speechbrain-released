@@ -82,7 +82,7 @@ dropout: 0.15
 cnn_blocks: 3
 cnn_channels: (128, 200, 256)
 inter_layer_pooling_size: (2, 2, 2)
-cnn_kernelsize: (3, 3, 3)
+cnn_kernelsize: (3, 3)
 time_pooling_size: 4
 rnn_class: !name:speechbrain.nnet.RNN.LSTM
 rnn_layers: 4
