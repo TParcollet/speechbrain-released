@@ -39,7 +39,7 @@ test_csv:
 # Training parameters
 number_of_epochs: 15
 number_of_ctc_epochs: 5
-batch_size: 1
+batch_size: 4
 lr: 1.0
 ctc_weight: 0.5
 sorting: ascending
@@ -66,12 +66,15 @@ opt_class: !name:torch.optim.Adadelta
 # Dataloader options
 train_dataloader_opts:
    batch_size: !ref <batch_size>
+   num_workers: 4
 
 valid_dataloader_opts:
    batch_size: !ref <batch_size>
+   num_workers: 4
 
 test_dataloader_opts:
    batch_size: !ref <batch_size>
+   num_workers: 4
 
 # Model parameters
 activation: !name:torch.nn.LeakyReLU
