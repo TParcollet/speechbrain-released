@@ -85,6 +85,7 @@ class ASR(sb.Brain):
             with torch.no_grad():
                 embeddings = PASE_brain.modules.enc(feats)
 
+        print(feats.shape)
         x = self.modules.enc(embeddings.detach())
 
         e_in = self.modules.emb(tokens_bos)  # y_in bos + tokens
