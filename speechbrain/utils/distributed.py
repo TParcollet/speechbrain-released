@@ -43,7 +43,7 @@ def run_on_main(
     post_kwargs : dict, None
         Keyword args to pass to post_func.
     run_post_on_main : bool
-        Whether to run post_func on main process as well. (default: False)
+        Whether to run post_func on main process as well. By default False.
     """
     # Handle the mutable data types' default args:
     if args is None:
@@ -105,7 +105,8 @@ def ddp_barrier():
 
 
 def ddp_init_group(run_opts):
-    """This function will initialize the ddp group if
+    """
+    This function will initialize the ddp group if
     distributed_launch=True bool is given in the python command line.
 
     The ddp group will use distributed_backend arg for setting the
@@ -115,13 +116,13 @@ def ddp_init_group(run_opts):
     Arguments
     ---------
     run_opts: list
-        A list of arguments to parse, most often from `sys.argv[1:]`.
+        a list of arguments to parse, most often from `sys.argv[1:]`
     """
     if run_opts["distributed_launch"]:
         if "local_rank" not in run_opts:
             raise ValueError(
                 "To use DDP backend, start your script with:\n\t"
-                "python -m torch.distributed.launch [args]\n\t"
+                "python -m torch.distributed.lunch [args]\n\t"
                 "experiment.py hyperparams.yaml --distributed_launch=True "
                 "--distributed_backend=nccl"
             )
@@ -130,14 +131,14 @@ def ddp_init_group(run_opts):
                 raise ValueError(
                     "Killing process " + str() + "\n"
                     "To use DDP backend, start your script with:\n\t"
-                    "python -m torch.distributed.launch [args]\n\t"
+                    "python -m torch.distributed.lunch [args]\n\t"
                     "experiment.py hyperparams.yaml --distributed_launch=True "
                     "--distributed_backend=nccl"
                 )
         if "RANK" in os.environ is None or os.environ["RANK"] == "":
             raise ValueError(
                 "To use DDP backend, start your script with:\n\t"
-                "python -m torch.distributed.launch [args]\n\t"
+                "python -m torch.distributed.lunch [args]\n\t"
                 "experiment.py hyperparams.yaml --distributed_launch=True "
                 "--distributed_backend=nccl"
             )

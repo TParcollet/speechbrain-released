@@ -3,13 +3,12 @@
 Authors
  * Titouan Parcollet 2020
 """
-
 import torch
 import torch.nn as nn
 import logging
 import torch.nn.functional as F
 from speechbrain.nnet.CNN import get_padding_elem
-from speechbrain.nnet.quaternion_networks.q_ops import (
+from speechbrain.nnet.quaternion_networks.quaternion_ops import (
     unitary_init,
     quaternion_init,
     affect_conv_init,
@@ -21,71 +20,80 @@ from typing import Tuple
 logger = logging.getLogger(__name__)
 
 
-class QConv1d(torch.nn.Module):
+class QuaternionConv1d(torch.nn.Module):
     """This function implements quaternion-valued 1d convolution.
 
     Arguments
     ---------
     input_shape : tuple
         The shape of the input.
-    out_channels : int
+    out_channels: int
         Number of output channels. Please note
         that these are quaternion-valued neurons. If 256
         channels are specified, the output dimension
         will be 1024.
-    kernel_size : int
+    kernel_size: int
         Kernel size of the convolutional filters.
-    stride : int, optional
-        Stride factor of the convolutional filters (default 1).
-    dilation : int, optional
-        Dilation factor of the convolutional filters (default 1).
-    padding : str, optional
+    stride: int, optional
+        Default: 1.
+        Stride factor of the convolutional filters.
+    dilation: int, optional
+        Default: 1.
+        Dilation factor of the convolutional filters.
+    padding: str, optional
+        Default: same.
         (same, valid, causal). If "valid", no padding is performed.
         If "same" and stride is 1, output shape is same as input shape.
-        "causal" results in causal (dilated) convolutions (default "same").
-    padding_mode : str, optional
+        "causal" results in causal (dilated) convolutions.
+    padding_mode: str, optional
+        Default: reflect.
         This flag specifies the type of padding. See torch.nn documentation
-        for more information (default "reflect").
-    groups : int, optional
+        for more information.
+    groups: int, optional
         Default: 1
         This option specifies the convolutional groups. See torch.nn
-        documentation for more information (default 1).
-    bias : bool, optional
-        If True, the additive bias b is adopted (default True).
-    init_criterion : str , optional
+        documentation for more information.
+    bias: bool, optional
+        Default: True.
+        If True, the additive bias b is adopted.
+    init_criterion: str , optional
+        Default: glorot.
         (glorot, he).
         This parameter controls the initialization criterion of the weights.
         It is combined with weights_init to build the initialization method of
-        the quaternion-valued weights (default "glorot").
-    weight_init : str, optional
+        the quaternion-valued weights.
+    weight_init: str, optional
+        Default: quaternion.
         (quaternion, unitary).
         This parameter defines the initialization procedure of the
         quaternion-valued weights. "quaternion" will generate random quaternion
         weights following the init_criterion and the quaternion polar form.
-        "unitary" will normalize the weights to lie on the unit circle (default "quaternion").
+        "unitary" will normalize the weights to lie on the unit circle.
         More details in: "Quaternion Recurrent Neural Networks",
         Parcollet T. et al.
-    spinor : bool, optional
+    spinor: bool, optional
+        Default: False.
         When True, the layer will be turned into a spinor layer. More precisely
         W*x will be turned into W*x*W-1. The input x will be rotated by W such
         as in a spinor neural network. However, x MUST be a quaternion with
         the real part equal to zero. (0 + xi + yj + zk). Indeed, the rotation
         operation only acts on the vector part. Note that W will always be
-        normalized before the rotation to ensure the quaternion algebra (default False).
+        normalized before the rotation to ensure the quaternion algebra.
         More details in: "Quaternion neural networks", Parcollet T.
-    vector_scale : bool, optional
+    vector_scale: bool, optional
+        Default: False.
         The vector_scale is only used when spinor = True. In the context of a
         spinor neural network, multiple rotations of the input vector x are
         performed and summed. Hence, the norm of the output vector always
         increases with the number of layers, making the neural network instable
         with deep configurations. The vector_scale parameters are learnable
         parameters that acts like gates by multiplying the output vector with
-        a small trainable parameter (default False).
+        a small trainable parameter.
 
     Example
     -------
     >>> inp_tensor = torch.rand([10, 16, 40])
-    >>> cnn_1d = QConv1d(
+    >>> cnn_1d = QuaternionConv1d(
     ...     input_shape=inp_tensor.shape, out_channels=12, kernel_size=3
     ... )
     >>> out_tensor = cnn_1d(inp_tensor)
@@ -184,7 +192,7 @@ class QConv1d(torch.nn.Module):
         Arguments
         ---------
         x : torch.Tensor (batch, time, channel)
-            Input to convolve. 3d or 4d tensors are expected.
+            input to convolve. 3d or 4d tensors are expected.
 
         """
         # (batch, channel, time)
@@ -257,13 +265,9 @@ class QConv1d(torch.nn.Module):
         Arguments
         ---------
         x : torch.Tensor
-            Input tensor.
         kernel_size : int
-            Kernel size.
         dilation : int
-            Dialation.
         stride: int
-            Stride.
         """
 
         # Detecting input shape
@@ -278,7 +282,8 @@ class QConv1d(torch.nn.Module):
         return x
 
     def _check_input(self, input_shape):
-        """Checks the input and returns the number of input channels.
+        """
+        Checks the input and returns the number of input channels.
         """
 
         if len(input_shape) == 3:
@@ -305,69 +310,79 @@ class QConv1d(torch.nn.Module):
         return in_channels
 
 
-class QConv2d(torch.nn.Module):
+class QuaternionConv2d(torch.nn.Module):
     """This function implements quaternion-valued 1d convolution.
 
     Arguments
     ---------
     input_shape : tuple
         The shape of the input.
-    out_channels : int
+    out_channels: int
         Number of output channels. Please note
         that these are quaternion-valued neurons. If 256
         channels are specified, the output dimension
         will be 1024.
-    kernel_size : int
+    kernel_size: int
         Kernel size of the convolutional filters.
-    stride : int, optional
-        Stride factor of the convolutional filters (default 1).
-    dilation : int, optional
-        Dilation factor of the convolutional filters (default 1).
-    padding : str, optional
+    stride: int, optional
+        Default: 1.
+        Stride factor of the convolutional filters.
+    dilation: int, optional
+        Default: 1.
+        Dilation factor of the convolutional filters.
+    padding: str, optional
+        Default: same.
         (same, causal). If "valid", no padding is performed.
-        If "same" and stride is 1, output shape is same as input shape (default "same").
-    padding_mode : str, optional
+        If "same" and stride is 1, output shape is same as input shape.
+    padding_mode: str, optional
+        Default: reflect.
         This flag specifies the type of padding. See torch.nn documentation
-        for more information. (default "reflect")
-    groups : int, optional
+        for more information.
+    groups: int, optional
+        Default: 1
         This option specifies the convolutional groups. See torch.nn
-        documentation for more information. (default 1).
-    bias : bool, optional
-        If True, the additive bias b is adopted (default True).
-    init_criterion : str , optional
+        documentation for more information.
+    bias: bool, optional
+        Default: True.
+        If True, the additive bias b is adopted.
+    init_criterion: str , optional
+        Default: glorot.
         (glorot, he).
         This parameter controls the initialization criterion of the weights.
         It is combined with weights_init to build the initialization method of
-        the quaternion-valued weights (default "glorot").
-    weight_init : str, optional
+        the quaternion-valued weights.
+    weight_init: str, optional
+        Default: quaternion.
         (quaternion, unitary).
         This parameter defines the initialization procedure of the
         quaternion-valued weights. "quaternion" will generate random quaternion
         weights following the init_criterion and the quaternion polar form.
-        "unitary" will normalize the weights to lie on the unit circle (default "quaternion").
+        "unitary" will normalize the weights to lie on the unit circle.
         More details in: "Quaternion Recurrent Neural Networks",
         Parcollet T. et al.
-    spinor : bool, optional
+    spinor: bool, optional
+        Default: False.
         When True, the layer will be turned into a spinor layer. More precisely
         W*x will be turned into W*x*W-1. The input x will be rotated by W such
         as in a spinor neural network. However, x MUST be a quaternion with
         the real part equal to zero. (0 + xi + yj + zk). Indeed, the rotation
         operation only acts on the vector part. Note that W will always be
-        normalized before the rotation to ensure the quaternion algebra (default False).
+        normalized before the rotation to ensure the quaternion algebra.
         More details in: "Quaternion neural networks", Parcollet T.
-    vector_scale : bool, optional
+    vector_scale: bool, optional
+        Default: False.
         The vector_scale is only used when spinor = True. In the context of a
         spinor neural network, multiple rotations of the input vector x are
         performed and summed. Hence, the norm of the output vector always
         increases with the number of layers, making the neural network instable
         with deep configurations. The vector_scale parameters are learnable
         parameters that acts like gates by multiplying the output vector with
-        a small trainable parameter (default False).
+        a small trainable parameter.
 
     Example
     -------
     >>> inp_tensor = torch.rand([10, 4, 16, 40])
-    >>> cnn_1d = QConv2d(
+    >>> cnn_1d = QuaternionConv2d(
     ...     input_shape=inp_tensor.shape, out_channels=12, kernel_size=3
     ... )
     >>> out_tensor = cnn_1d(inp_tensor)
@@ -473,7 +488,8 @@ class QConv2d(torch.nn.Module):
         Arguments
         ---------
         x : torch.Tensor (batch, time, channel)
-            Input to convolve. 3d or 4d tensors are expected.
+            input to convolve. 3d or 4d tensors are expected.
+
         """
 
         # (batch, channel, time)
@@ -528,7 +544,8 @@ class QConv2d(torch.nn.Module):
         return out
 
     def _check_input(self, input_shape):
-        """Checks the input and returns the number of input channels.
+        """
+        Checks the input and returns the number of input channels.
         """
 
         if len(input_shape) == 4:
@@ -557,7 +574,6 @@ class QConv2d(torch.nn.Module):
     def _get_kernel_and_weight_shape(self):
         """ Returns the kernel size and weight shape for convolutional layers.
         """
-
         ks = (self.kernel_size[0], self.kernel_size[1])
         w_shape = (self.out_channels, self.in_channels) + (*ks,)
         return ks, w_shape
@@ -575,15 +591,10 @@ class QConv2d(torch.nn.Module):
         Arguments
         ---------
         x : torch.Tensor
-            Input tensor.
         kernel_size : int
-            Kernel size.
         dilation : int
-            Dilation.
         stride: int
-            Stride.
         """
-
         # Detecting input shape
         L_in = x.shape[-1]
 

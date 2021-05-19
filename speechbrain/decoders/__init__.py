@@ -1,4 +1,4 @@
-""" Package containing the different decoders (ctc, beamsearch ...)
+"""Decoders
 """
 from .seq2seq import *  # noqa
 from .ctc import *  # noqa

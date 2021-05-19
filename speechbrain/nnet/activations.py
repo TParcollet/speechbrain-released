@@ -20,7 +20,7 @@ class Softmax(torch.nn.Module):
     apply_log : bool
         Whether to apply the log function before softmax.
     dim : int
-        If the dimension where softmax is applied.
+        if the dimension where softmax is applied.
 
     Example
     -------
@@ -45,7 +45,6 @@ class Softmax(torch.nn.Module):
         Arguments
         ---------
         x : torch.Tensor
-            Input tensor.
         """
         # Reshaping the tensors
         dims = x.shape
@@ -70,8 +69,7 @@ class Softmax(torch.nn.Module):
 
 class GumbelSoftmax(torch.nn.Module):
     """Samples from the Gumbel-Softmax distribution and optionally discretizes.
-
-    Reference: https://arxiv.org/abs/1611.00712, https://arxiv.org/abs/1611.01144
+    reference: https://arxiv.org/abs/1611.00712, https://arxiv.org/abs/1611.01144
 
     Arguments
     ----------
@@ -80,7 +78,7 @@ class GumbelSoftmax(torch.nn.Module):
     hard: bool
         if True, the returned samples will be discretized as one-hot vectors, but will be differentiated as if it is the soft sample in autograd
     dim: int
-        A dimension along which softmax will be computed (default: -1).
+        A dimension along which softmax will be computed. Default: -1.
 
     Example
     -------
@@ -110,7 +108,6 @@ class Swish(torch.nn.Module):
     Arguments
     ---------
     beta: float
-        Beta value.
 
     Example
     -------
@@ -130,6 +127,5 @@ class Swish(torch.nn.Module):
         Arguments
         ---------
         x : torch.Tensor
-            Input tensor.
         """
         return x * self.sigmoid(self.beta * x)

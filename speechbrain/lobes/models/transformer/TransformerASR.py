@@ -1,4 +1,4 @@
-"""Transformer for ASR in the SpeechBrain sytle.
+"""Transformer for ASR in the SpeechBrain sytle
 
 Authors
 * Jianyuan Zhong 2020
@@ -22,29 +22,29 @@ from speechbrain.dataio.dataio import length_to_mask
 
 
 class TransformerASR(TransformerInterface):
-    """This is an implementation of transformer model for ASR.
+    """This is an implementation of transformer model for ASR
 
     The architecture is based on the paper "Attention Is All You Need":
     https://arxiv.org/pdf/1706.03762.pdf
 
     Arguments
     ----------
-    d_model : int
-        The number of expected features in the encoder/decoder inputs
+    d_model: int
+        the number of expected features in the encoder/decoder inputs
         (default=512).
-    nhead : int
-        The number of heads in the multi-head attention models (default=8).
-    num_encoder_layers : int
-        The number of sub-encoder-layers in the encoder (default=6).
-    num_decoder_layers : int
-        The number of sub-decoder-layers in the decoder (default=6).
-    dim_ffn : int
-        The dimension of the feedforward network model (default=2048).
-    dropout : int
-        The dropout value (default=0.1).
-    activation : torch class
-        The activation function of encoder/decoder intermediate layer.
-        Recommended: relu or gelu (default=relu).
+    nhead: int
+        the number of heads in the multiheadattention models (default=8).
+    num_encoder_layers: int
+        the number of sub-encoder-layers in the encoder (default=6).
+    num_decoder_layers: int
+        the number of sub-decoder-layers in the decoder (default=6).
+    dim_ffn: int
+        the dimension of the feedforward network model (default=2048).
+    dropout: int
+        the dropout value (default=0.1).
+    activation: torch class
+        the activation function of encoder/decoder intermediate layer,
+        recommended: relu or gelu (default=relu)
 
     Example
     -------
@@ -71,15 +71,12 @@ class TransformerASR(TransformerInterface):
         d_ffn=2048,
         dropout=0.1,
         activation=nn.ReLU,
-        positional_encoding="fixed_abs_sine",
+        positional_encoding=True,
         normalize_before=False,
         kernel_size: Optional[int] = 31,
         bias: Optional[bool] = True,
         encoder_module: Optional[str] = "transformer",
         conformer_activation: Optional[nn.Module] = Swish,
-        attention_type: Optional[str] = "regularMHA",
-        max_length: Optional[int] = 2500,
-        causal: Optional[bool] = True,
     ):
         super().__init__(
             d_model=d_model,
@@ -95,9 +92,6 @@ class TransformerASR(TransformerInterface):
             bias=bias,
             encoder_module=encoder_module,
             conformer_activation=conformer_activation,
-            attention_type=attention_type,
-            max_length=max_length,
-            causal=causal,
         )
 
         self.custom_src_module = ModuleList(
@@ -120,14 +114,14 @@ class TransformerASR(TransformerInterface):
         self, src, tgt, wav_len=None, pad_idx=0,
     ):
         """
-        Arguments
+        Arguements
         ----------
-        src : tensor
-            The sequence to the encoder (required).
-        tgt : tensor
-            The sequence to the decoder (required).
-        pad_idx : int
-            The index for <pad> token (default=0).
+        src: tensor
+            the sequence to the encoder (required).
+        tgt: tensor
+            the sequence to the decoder (required).
+        pad_idx: int
+            the index for <pad> token (default=0).
         """
 
         # reshpae the src vector to [Batch, Time, Fea] is a 4d vector is given
@@ -143,59 +137,36 @@ class TransformerASR(TransformerInterface):
         ) = self.make_masks(src, tgt, wav_len, pad_idx=pad_idx)
 
         src = self.custom_src_module(src)
-        # add pos encoding to queries if are sinusoidal ones else
-        if self.attention_type == "RelPosMHAXL":
-            pos_embs_encoder = self.positional_encoding(src)
-        elif self.positional_encoding_type == "fixed_abs_sine":
-            src = src + self.positional_encoding(src)  # add the encodings here
-            pos_embs_encoder = None	
-
-
+        src = src + self.positional_encoding(src)
         encoder_out, _ = self.encoder(
             src=src,
             src_mask=src_mask,
             src_key_padding_mask=src_key_padding_mask,
-            pos_embs=pos_embs_encoder,
         )
 
         tgt = self.custom_tgt_module(tgt)
-
-        if self.attention_type == "RelPosMHAXL":
-            # use standard sinusoidal pos encoding in decoder 
-            tgt = tgt + self.positional_encoding_decoder(tgt)
-            src = src + self.positional_encoding_decoder(src)
-            pos_embs_encoder = None #self.positional_encoding(src)
-            pos_embs_target = None
-        elif self.positional_encoding_type == "fixed_abs_sine":
-            tgt = tgt + self.positional_encoding(tgt)  
-            pos_embs_target = None
-            pos_embs_encoder = None
-
-
+        tgt = tgt + self.positional_encoding(tgt)
         decoder_out, _, _ = self.decoder(
             tgt=tgt,
             memory=encoder_out,
-            memory_mask=src_mask,
             tgt_mask=tgt_mask,
             tgt_key_padding_mask=tgt_key_padding_mask,
             memory_key_padding_mask=src_key_padding_mask,
-            pos_embs_tgt=pos_embs_target,
-            pos_embs_src=pos_embs_encoder,
         )
 
         return encoder_out, decoder_out
 
     def make_masks(self, src, tgt, wav_len=None, pad_idx=0):
-        """This method generates the masks for training the transformer model.
+        """This method generates the masks for training the transformer model
 
-        Arguments
-        ---------
-        src : tensor
-            The sequence to the encoder (required).
-        tgt : tensor
-            The sequence to the decoder (required).
-        pad_idx : int
-            The index for <pad> token (default=0).
+        Arguements
+        ----------
+        src: tensor
+            the sequence to the encoder (required).
+        tgt: tensor
+            the sequence to the decoder (required).
+        pad_idx: int
+            the index for <pad> token (default=0).
         """
         src_key_padding_mask = None
         if wav_len is not None and self.training:
@@ -210,72 +181,20 @@ class TransformerASR(TransformerInterface):
     def decode(self, tgt, encoder_out):
         """This method implements a decoding step for the transformer model.
 
-        Arguments
-        ---------
-        tgt : tensor
-            The sequence to the decoder (required).
-        encoder_out : tensor
-            Hidden output of the encoder (required).
+        Arguements
+        ----------
+        tgt: tensor
+            the sequence to the decoder (required).
+        encoder_out: tensor
+            hidden output of the encoder (required).
         """
         tgt_mask = get_lookahead_mask(tgt)
         tgt = self.custom_tgt_module(tgt)
-        if self.attention_type == "RelPosMHAXL":
-            # we use fixed positional encodings in the decoder
-            tgt = tgt + self.positional_encoding_decoder(tgt)
-            encoder_out = encoder_out + self.positional_encoding_decoder(encoder_out)
-            #pos_embs_target = self.positional_encoding(tgt)
-            pos_embs_encoder= None #self.positional_encoding(src)
-            pos_embs_target = None
-        elif self.positional_encoding_type == "fixed_abs_sine":
-            tgt = tgt + self.positional_encoding(tgt)  # add the encodings here
-            pos_embs_target = None
-            pos_embs_encoder = None
-
+        tgt = tgt + self.positional_encoding(tgt)
         prediction, self_attns, multihead_attns = self.decoder(
-            tgt,
-            encoder_out,
-            tgt_mask=tgt_mask,
-            pos_embs_tgt=pos_embs_target,
-            pos_embs_src=pos_embs_encoder,
-
+            tgt, encoder_out, tgt_mask=tgt_mask
         )
         return prediction, multihead_attns[-1]
-
-    def encode(
-        self, src, wav_len=None,
-    ):
-        """
-        forward the encoder with source input
-
-        Arguments
-        ----------
-        src : tensor
-            The sequence to the encoder (required).
-        """
-        # reshape the src vector to [Batch, Time, Fea] if a 4d vector is given
-        if src.dim() == 4:
-            bz, t, ch1, ch2 = src.shape
-            src = src.reshape(bz, t, ch1 * ch2)
-
-        src_key_padding_mask = None
-        if wav_len is not None and self.training:
-            abs_len = torch.round(wav_len * src.shape[1])
-            src_key_padding_mask = (1 - length_to_mask(abs_len)).bool()
-
-        src = self.custom_src_module(src)
-        if self.attention_type == "RelPosMHAXL":
-            pos_embs_source = self.positional_encoding(src)
-
-        elif self.positional_encoding_type == "fixed_abs_sine":
-            src = src + self.positional_encoding(src)  
-            pos_embs_source = None
-
-        encoder_out, _ = self.encoder(
-            src=src,
-            src_key_padding_mask=src_key_padding_mask,
-            pos_embs=pos_embs_source,
-        )
-        return encoder_out
 
     def _init_params(self):
         for p in self.parameters():

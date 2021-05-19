@@ -17,6 +17,7 @@ import inspect
 import pathlib
 import argparse
 import tempfile
+import subprocess
 import speechbrain as sb
 from datetime import date
 from enum import Enum, auto
@@ -57,15 +58,15 @@ def create_experiment_directory(
         The place where the experiment directory should be created.
     hyperparams_to_save : str
         A filename of a yaml file representing the parameters for this
-        experiment. If passed, references are resolved, and the result is
-        written to a file in the experiment directory called "hyperparams.yaml".
+        experiment. If passed, references are resolved and the result is
+        written to a file in the experiment directory called "hyperparams.yaml"
     overrides : dict
         A mapping of replacements made in the yaml file, to save in yaml.
     log_config : str
         A yaml filename containing configuration options for the logger.
     save_env_desc : bool
         If True, an environment state description is saved to the experiment
-        directory, in a file called env.log in the experiment directory.
+        directory, in a file called env.log in the experiment directory
     """
     try:
         # all writing command must be done with the main_process
@@ -103,6 +104,12 @@ def create_experiment_directory(
             # Log beginning of experiment!
             logger.info("Beginning experiment!")
             logger.info(f"Experiment folder: {experiment_directory}")
+            commit_hash = subprocess.check_output(
+                ["git", "describe", "--always"]
+            )
+            logger.debug(
+                "Commit hash: '%s'" % commit_hash.decode("utf-8").strip()
+            )
 
             # Save system description:
             if save_env_desc:
@@ -126,8 +133,8 @@ def parse_arguments(arg_list):
 
     Arguments
     ---------
-    arg_list : list
-        A list of arguments to parse, most often from `sys.argv[1:]`.
+    arg_list: list
+        a list of arguments to parse, most often from `sys.argv[1:]`
 
     Returns
     -------
@@ -155,7 +162,7 @@ def parse_arguments(arg_list):
     parser.add_argument(
         "param_file",
         type=str,
-        help="A yaml-formatted file using the extended YAML syntax. "
+        help="a yaml-formatted file using the extended YAML syntax "
         "defined by SpeechBrain.",
     )
     parser.add_argument(
@@ -201,16 +208,15 @@ def parse_arguments(arg_list):
     )
     parser.add_argument(
         "--data_parallel_backend",
+        type=bool,
         default=False,
-        action="store_true",
-        help="This flag enables training with data_parallel.",
+        help="If True, data_parallel is used.",
     )
     parser.add_argument(
         "--distributed_launch",
+        type=bool,
         default=False,
-        action="store_true",
-        help="This flag enables training with DDP. Assumes script run with "
-        "`torch.distributed.launch`",
+        help="if True, use DDP",
     )
     parser.add_argument(
         "--distributed_backend",
@@ -226,9 +232,8 @@ def parse_arguments(arg_list):
     )
     parser.add_argument(
         "--auto_mix_prec",
-        default=False,
-        action="store_true",
-        help="This flag enables training with automatic mixed-precision.",
+        type=bool,
+        help="If True, automatic mixed-precision is used.",
     )
     parser.add_argument(
         "--max_grad_norm",
@@ -242,10 +247,9 @@ def parse_arguments(arg_list):
         help="Max number of batches per epoch to skip if loss is nonfinite.",
     )
     parser.add_argument(
-        "--noprogressbar",
-        default=False,
-        action="store_true",
-        help="This flag disables the data loop progressbars.",
+        "--progressbar",
+        type=bool,
+        help="If True, displays a progressbar indicating dataset progress.",
     )
     parser.add_argument(
         "--ckpt_interval_minutes",
@@ -269,12 +273,12 @@ def parse_arguments(arg_list):
     if run_opts["data_parallel_backend"]:
         if run_opts["data_parallel_count"] == 0:
             raise ValueError(
-                "data_parallel_count must be > 1."
+                "data_parellel_count must be > 1."
                 "if data_parallel_count = -1, then use all gpus."
             )
         if run_opts["data_parallel_count"] > torch.cuda.device_count():
             raise ValueError(
-                "data_parallel_count must be <= "
+                "data_parellel_count must be <= "
                 + str(torch.cuda.device_count())
                 + "if data_parallel_count = -1, then use all gpus."
             )
@@ -331,7 +335,7 @@ class Brain:
 
     In order to use the ``fit()`` method, one should sub-class the ``Brain``
     class and override any methods for which the default behavior does not
-    match the use case. For a simple use case (e.g., training a single model
+    match the use case. For a simple use case (e.g. training a single model
     with a single dataset) the only methods that need to be overridden are:
 
     * ``compute_forward()``
@@ -349,7 +353,7 @@ class Brain:
     ---------
     modules : dict of str:torch.nn.Module pairs
         These modules are passed to the optimizer by default if they have
-        trainable parameters, and will have ``train()``/``eval()`` called on them.
+        trainable parameters, and will have train()/eval() called on them.
     opt_class : torch.optim class
         A torch optimizer constructor that has takes only the list of
         parameters (e.g. a lambda or partial function definition). By default,
@@ -360,40 +364,39 @@ class Brain:
         Each key:value pair should consist of a string key and a hyperparameter
         that is used within the overridden methods. These will
         be accessible via an ``hparams`` attribute, using "dot" notation:
-        e.g., self.hparams.model(x).
+        e.g. self.hparams.model(x)
     run_opts : dict
         A set of options to change the runtime environment, including
-
-        debug (bool)
-            If ``True``, this will only iterate a few batches for all
-            datasets, to ensure code runs without crashing.
-        debug_batches (int)
-            Number of batches to run in debug mode, Default ``2``.
-        debug_epochs (int)
-            Number of epochs to run in debug mode, Default ``2``.
-            If a non-positive number is passed, all epochs are run.
-        jit_module_keys (list of str)
-            List of keys in ``modules`` that should be jit compiled.
-        distributed_count (int)
-            Number of devices to run on.
-        distributed_backend (str)
-            One of ``ddp_nccl``, ``ddp_gloo``, ``ddp_mpi``, ``data_parallel``.
-        device (str)
-            The location for performing computations.
-        auto_mix_prec (bool)
-            If ``True``, automatic mixed-precision is used.
-            Activate it only with cuda.
-        max_grad_norm (float)
-            Default implementation of ``fit_batch()`` uses
-            ``clip_grad_norm_`` with this value. Default: ``5``.
-        nonfinite_patience (int)
-            Number of times to ignore non-finite losses before stopping.
-            Default: ``3``.
-        noprogressbar (bool)
-            Whether to turn off progressbar when training. Default: ``False``.
-        ckpt_interval_minutes (float)
-            Amount of time between saving intra-epoch checkpoints,
-            in minutes, default: ``15.0``. If non-positive, these are not saved.
+            debug : bool
+                If true, this will only iterate a few batches for all
+                datasets, to ensure code runs without crashing.
+            debug_batches : int
+                Number of batches to run in debug mode, Default 2.
+            debug_epochs : int
+                Number of epochs to run in debug mode, Default 2.
+                If a non-positive number is passed, all epochs are run.
+            jit_module_keys : list of str
+                List of keys in modules that should be jit compiled.
+            distributed_count : int
+                Number of devices to run on.
+            distributed_backend : str
+                One of {"ddp_nccl", "ddp_gloo", "ddp_mpi", "data_parallel"}
+            device : str
+                The location for performing computations.
+            auto_mix_prec : bool
+                If True, automatic mixed-precision is used.
+                Activate it only with cuda.
+            max_grad_norm : float
+                Default implementation of ``fit_batch()`` uses
+                ``clip_grad_norm_`` with this value. Default: 5.
+            nonfinite_patience : int
+                Number of times to ignore non-finite losses before stopping.
+                Default: 3.
+            progressbar : bool
+                Whether to display a progressbar when training. Default: True.
+            ckpt_interval_minutes : float
+                Amount of time between saving intra-epoch checkpoints,
+                in minutes, default: 15.0. If non-positive, these are not saved.
     checkpointer : speechbrain.Checkpointer
         By default, this will be used to load checkpoints, and will have the
         optimizer added to continue training if interrupted.
@@ -436,8 +439,8 @@ class Brain:
             "auto_mix_prec": False,
             "max_grad_norm": 5.0,
             "nonfinite_patience": 3,
-            "noprogressbar": False,
-            "ckpt_interval_minutes": 0,
+            "progressbar": True,
+            "ckpt_interval_minutes": 15.0,
         }
         for arg, default in run_opt_defaults.items():
             if run_opts is not None and arg in run_opts:
@@ -459,7 +462,7 @@ class Brain:
 
         if self.data_parallel_backend and self.distributed_launch:
             sys.exit(
-                "To use data_parallel backend, start your script with:\n\t"
+                "To use data_parallel backend, start you script with:\n\t"
                 "python experiment.py hyperparams.yaml "
                 "--data_parallel_backend=True --data_parallel_count=2"
                 "To use DDP backend, start your script with:\n\t"
@@ -547,41 +550,39 @@ class Brain:
         if self.checkpointer is not None:
             self.checkpointer.add_recoverable("brain", self)
 
-    def compute_forward(self, batch, stage):
+    def compute_forward(self, x, stage):
         """Forward pass, to be overridden by sub-classes.
 
         Arguments
         ---------
-        batch : torch.Tensor or tensors
-            An element from the dataloader, including inputs for processing.
+        x : torch.Tensor or list of tensors
+            The input tensor or tensors for processing.
         stage : Stage
             The stage of the experiment: Stage.TRAIN, Stage.VALID, Stage.TEST
 
         Returns
         -------
-        torch.Tensor or Tensors
-            The outputs after all processing is complete.
-            Directly passed to ``compute_objectives()``.
+        torch.Tensor
+            A tensor representing the outputs after all processing is complete.
         """
         raise NotImplementedError
 
-    def compute_objectives(self, predictions, batch, stage):
+    def compute_objectives(self, predictions, targets, stage):
         """Compute loss, to be overridden by sub-classes.
 
         Arguments
         ---------
-        predictions : torch.Tensor or Tensors
+        predictions : torch.Tensor or list of tensors
             The output tensor or tensors to evaluate.
-            Comes directly from ``compute_forward()``.
-        batch : torch.Tensor or tensors
-            An element from the dataloader, including targets for comparison.
+        targets : torch.Tensor or list of tensors
+            The gold standard to use for evaluation.
         stage : Stage
             The stage of the experiment: Stage.TRAIN, Stage.VALID, Stage.TEST
 
         Returns
         -------
         loss : torch.Tensor
-            A tensor with the computed loss.
+            A tensor with the computed loss
         """
         raise NotImplementedError
 
@@ -602,8 +603,6 @@ class Brain:
     def on_stage_end(self, stage, stage_loss, epoch=None):
         """Gets called at the end of a stage.
 
-        Useful for computing stage statistics, saving checkpoints, etc.
-
         Arguments
         ---------
         stage : Stage
@@ -618,7 +617,7 @@ class Brain:
     def make_dataloader(
         self, dataset, stage, ckpt_prefix="dataloader-", **loader_kwargs,
     ):
-        """Creates DataLoaders for Datasets.
+        """Creates DataLoaders for Datasets
 
         This is used by ``fit()`` and ``evaluate()`` if they just receive
         Datasets.
@@ -634,15 +633,15 @@ class Brain:
         NOTE
         ----
         Some important DataLoader arguments are passed via **loader_kwargs,
-        e.g., batch_size, num_workers, pin_memory.
+        e.g. batch_size, num_workers, pin_memory
 
         NOTE
         ----
         By default, ``evaluate()`` specifies ckpt_prefix=None to stop the test
         DataLoader being added to the checkpointer. If you need to add a
-        recoverable after saving checkpoints (e.g., at test time, after
+        recoverable after saving checkpoints (e.g. at test time, after
         checkpointing the training), and still be able to recover reasonably,
-        you should probably specify ``allow_partial_load=True``.
+        you should probably specify allow_partial_load=True.
 
         Arguments
         ---------
@@ -652,13 +651,13 @@ class Brain:
             unless specified in loader_kwargs.
         stage : Stage
             The stage of the experiment: Stage.TRAIN, Stage.VALID, Stage.TEST
-        ckpt_prefix : str, None
+        ckpt_prefix: str, None
             Prefix to use for SaveableDataLoader Checkpoint name. The Stage
             name is added to this to create the full key. Set to None to not
             save the DataLoader.
         **loader_kwargs : dict
             Additional keyword arguments to the DataLoader.
-            E.g., batch_size, num_workers, pin_memory.
+            E.G. batch_size, num_workers, pin_memory
         """
         # TRAIN stage is handled specially.
         if stage == sb.Stage.TRAIN:
@@ -735,13 +734,13 @@ class Brain:
         elif self.distributed_launch and isinstance(dataset, IterableDataset):
             logger.warning(
                 "Cannot automatically solve distributed sampling "
-                "for IterableDataset."
+                "for IterableDataset"
             )
         return loader_kwargs
 
     def on_fit_start(self):
         """Gets called at the beginning of ``fit()``, on multiple processes
-        if ``distributed_count > 0`` and backend is ddp.
+        if distributed_count is more than 0 and backend is ddp.
 
         Default implementation compiles the jit modules, initializes
         optimizers, and loads the latest checkpoint to resume training.
@@ -768,7 +767,7 @@ class Brain:
 
         The default implementation of this method depends on an optimizer
         class being passed at initialization that takes only a list
-        of parameters (e.g., a lambda or a partial function definition).
+        of parameters (e.g. a lambda or a partial function definition).
         This creates a single optimizer that optimizes all trainable params.
 
         Override this class if there are multiple optimizers.
@@ -806,7 +805,7 @@ class Brain:
     def fit_batch(self, batch):
         """Fit one batch, override to do multiple updates.
 
-        The default implementation depends on a few methods being defined
+        The default impementation depends on a few methods being defined
         with a particular behavior:
 
         * ``compute_forward()``
@@ -817,7 +816,7 @@ class Brain:
         Arguments
         ---------
         batch : list of torch.Tensors
-            Batch of data to use for training. Default implementation assumes
+            batch of data to use for training. Default implementation assumes
             this batch has two elements: inputs and targets.
 
         Returns
@@ -826,15 +825,14 @@ class Brain:
         """
         # Managing automatic mixed precision
         if self.auto_mix_prec:
-            self.optimizer.zero_grad()
             with torch.cuda.amp.autocast():
                 outputs = self.compute_forward(batch, Stage.TRAIN)
                 loss = self.compute_objectives(outputs, batch, Stage.TRAIN)
-            self.scaler.scale(loss).backward()
-            self.scaler.unscale_(self.optimizer)
-            if self.check_gradients(loss):
-                self.scaler.step(self.optimizer)
-            self.scaler.update()
+                self.scaler.scale(loss).backward()
+                if self.check_gradients(loss):
+                    self.scaler.step(self.optimizer)
+                self.optimizer.zero_grad()
+                self.scaler.update()
         else:
             outputs = self.compute_forward(batch, Stage.TRAIN)
             loss = self.compute_objectives(outputs, batch, Stage.TRAIN)
@@ -892,7 +890,7 @@ class Brain:
     def evaluate_batch(self, batch, stage):
         """Evaluate one batch, override for different procedure than train.
 
-        The default implementation depends on two methods being defined
+        The default impementation depends on two methods being defined
         with a particular behavior:
 
         * ``compute_forward()``
@@ -901,7 +899,7 @@ class Brain:
         Arguments
         ---------
         batch : list of torch.Tensors
-            Batch of data to use for evaluation. Default implementation assumes
+            batch of data to use for evaluation. Default implementation assumes
             this batch has two elements: inputs and targets.
         stage : Stage
             The stage of the experiment: Stage.VALID, Stage.TEST
@@ -942,7 +940,7 @@ class Brain:
         Arguments
         ---------
         epoch_counter : iterable
-            Each call should return an integer indicating the epoch count.
+            each call should return an integer indicating the epoch count.
         train_set : Dataset, DataLoader
             A set of data to use for training. If a Dataset is given, a
             DataLoader is automatically created. If a DataLoader is given, it is
@@ -959,7 +957,7 @@ class Brain:
         valid_loader_kwargs : dict
             Kwargs passed to `make_dataloader()` for making the valid_loader
             (if valid_set is a Dataset, not DataLoader).
-            E.g., batch_size, num_workers.
+            E.G. batch_size, num_workers.
             DataLoader kwargs are all valid.
         progressbar : bool
             Whether to display the progress of each epoch in a progressbar.
@@ -980,7 +978,7 @@ class Brain:
         self.on_fit_start()
 
         if progressbar is None:
-            progressbar = not self.noprogressbar
+            progressbar = self.progressbar
 
         # Iterate epochs
         for epoch in epoch_counter:
@@ -1065,7 +1063,7 @@ class Brain:
                 break
 
     def _save_intra_epoch_ckpt(self):
-        """Saves a CKPT with specific intra-epoch flag."""
+        """Saves a CKPT with specific intra-epoch flag"""
         self.checkpointer.save_and_keep_only(
             end_of_epoch=False,
             num_to_keep=1,
@@ -1075,7 +1073,9 @@ class Brain:
         )
 
     def _compile_jit(self):
-        """Compile requested modules with ``torch.jit.script``."""
+        """This should be run *after* mp.spawn, since jit modules
+        cannot be pickled.
+        """
         if self.jit_module_keys is None:
             return
 
@@ -1088,7 +1088,7 @@ class Brain:
             self.modules[name] = module.to(self.device)
 
     def _wrap_distributed(self):
-        """Wrap modules with distributed wrapper when requested."""
+        """Wrap modules with distributed wrapper when requested"""
         if not self.distributed_launch and not self.data_parallel_backend:
             return
         elif self.distributed_launch:
@@ -1128,27 +1128,25 @@ class Brain:
         ---------
         test_set : Dataset, DataLoader
             If a DataLoader is given, it is iterated directly. Otherwise passed
-            to ``self.make_dataloader()``.
+            to self.make_dataloader()
         max_key : str
-            Key to use for finding best checkpoint, passed to
-            ``on_evaluate_start()``.
+            Key to use for finding best checkpoint, passed to on_evaluate_start
         min_key : str
-            Key to use for finding best checkpoint, passed to
-            ``on_evaluate_start()``.
+            Key to use for finding best checkpoint, passed to on_evaluate_start
         progressbar : bool
             Whether to display the progress in a progressbar.
         test_loader_kwargs : dict
-            Kwargs passed to ``make_dataloader()`` if ``test_set`` is not a
-            DataLoader. NOTE: ``loader_kwargs["ckpt_prefix"]`` gets
-            automatically overwritten to ``None`` (so that the test DataLoader
-            is not added to the checkpointer).
+            Kwargs passed to `make_dataloader()` if test_set is a Dataset, not
+            DataLoader. NOTE: loader_kwargs["ckpt_prefix"] gets automatically
+            overwritten to None (so that the test DataLoader is not added to
+            the checkpointer).
 
         Returns
         -------
         average test loss
         """
         if progressbar is None:
-            progressbar = not self.noprogressbar
+            progressbar = self.progressbar
 
         if not isinstance(test_set, DataLoader):
             test_loader_kwargs["ckpt_prefix"] = None
@@ -1189,12 +1187,12 @@ class Brain:
 
         Returns
         -------
-        avg_loss : float
-            The average loss.
+        float
+            The average loss
         """
         if torch.isfinite(loss):
-            avg_loss -= avg_loss / self.step
-            avg_loss += float(loss) / self.step
+            avg_loss -= avg_loss / (self.step + 1)
+            avg_loss += float(loss) / (self.step + 1)
         return avg_loss
 
     @sb.utils.checkpoints.mark_as_saver

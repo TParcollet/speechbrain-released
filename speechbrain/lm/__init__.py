@@ -1,2 +1,2 @@
-""" Package defining language models
+"""Language modelling tools
 """

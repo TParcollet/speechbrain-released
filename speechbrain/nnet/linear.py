@@ -17,12 +17,12 @@ class Linear(torch.nn.Module):
     Arguments
     ---------
     n_neurons : int
-        It is the number of output neurons (i.e, the dimensionality of the
-        output).
+        it is the number of output neurons (i.e, the dimensionality of the
+        output)
     bias : bool
-        If True, the additive bias b is adopted.
+        if True, the additive bias b is adopted.
     combine_dims : bool
-        If True and the input is 4D, combine 3rd and 4th dimensions of input.
+        if True and the input is 4D, combine 3rd and 4th dimensions of input.
 
     Example
     -------
@@ -61,7 +61,7 @@ class Linear(torch.nn.Module):
         Arguments
         ---------
         x : torch.Tensor
-            Input to transform linearly.
+            input to transform linearly.
         """
         if x.ndim == 4 and self.combine_dims:
             x = x.reshape(x.shape[0], x.shape[1], x.shape[2] * x.shape[3])

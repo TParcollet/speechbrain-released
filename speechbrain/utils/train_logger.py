@@ -1,4 +1,5 @@
-"""Loggers for experiment monitoring.
+"""
+Loggers for experiment monitoring
 
 Authors
  * Peter Plantinga 2020
@@ -24,7 +25,7 @@ class TrainLogger:
         Arguments
         ---------
         stats_meta : dict of str:scalar pairs
-            Meta information about the stats (e.g., epoch, learning-rate, etc.).
+            Meta information about the stats (e.g. epoch, learning-rate, etc.)
         train_stats : dict of str:list pairs
             Each loss type is represented with a str : list pair including
             all the values for the training pass.
@@ -41,14 +42,14 @@ class TrainLogger:
 
 
 class FileTrainLogger(TrainLogger):
-    """Text logger of training information.
+    """Text logger of training information
 
     Arguments
     ---------
     save_file : str
         The file to use for logging train information.
     precision : int
-        Number of decimal places to display. Default 2, example: 1.35e-5.
+        Number of decimal places to display. Default 2, example: 1.35e-5
     summary_fns : dict of str:function pairs
         Each summary function should take a list produced as output
         from a training/validation pass and summarize it to a single scalar.
@@ -104,7 +105,7 @@ class TensorboardLogger(TrainLogger):
     Arguments
     ---------
     save_dir : str
-        A directory for storing all the relevant logs.
+        A directory for storing all the relevant logs
 
     Raises
     ------
@@ -144,15 +145,7 @@ class TensorboardLogger(TrainLogger):
                 if stat not in self.global_step[dataset]:
                     self.global_step[dataset][stat] = 0
                 tag = f"{stat}/{dataset}"
-
-                # Both single value (per Epoch) and list (Per batch) logging is supported
-                if isinstance(value_list, list):
-                    for value in value_list:
-                        new_global_step = self.global_step[dataset][stat] + 1
-                        self.writer.add_scalar(tag, value, new_global_step)
-                        self.global_step[dataset][stat] = new_global_step
-                else:
-                    value = value_list
+                for value in value_list:
                     new_global_step = self.global_step[dataset][stat] + 1
                     self.writer.add_scalar(tag, value, new_global_step)
                     self.global_step[dataset][stat] = new_global_step

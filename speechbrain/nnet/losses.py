@@ -27,21 +27,21 @@ logger = logging.getLogger(__name__)
 def transducer_loss(
     log_probs, targets, input_lens, target_lens, blank_index, reduction="mean"
 ):
-    """Transducer loss, see `speechbrain/nnet/transducer/transducer_loss.py`.
+    """Transducer loss, see `speechbrain/nnet/transducer/transducer_loss.py`
 
     Arguments
     ---------
     predictions : torch.Tensor
         Predicted tensor, of shape [batch, time, chars].
     targets : torch.Tensor
-        Target tensor, without any blanks, of shape [batch, target_len].
+        Target tensor, without any blanks, of shape [batch, target_len]
     input_lens : torch.Tensor
         Length of each utterance.
     target_lens : torch.Tensor
         Length of each target sequence.
     blank_index : int
         The location of the blank symbol among the character indexes.
-    reduction : str
+    reduction: str
         Specifies the reduction to apply to the output: 'mean' | 'batchmean' | 'sum'.
     """
     from speechbrain.nnet.loss.transducer_loss import Transducer
@@ -57,7 +57,6 @@ class PitWrapper(nn.Module):
     """
     Permutation Invariant Wrapper to allow Permutation Invariant Training
     (PIT) with existing losses.
-
     Permutation invariance is calculated over the sources/classes axis which is
     assumed to be the rightmost dimension: predictions and targets tensors are
     assumed to have shape [batch, ..., channels, sources].
@@ -65,7 +64,7 @@ class PitWrapper(nn.Module):
     Arguments
     ---------
     base_loss : function
-        Base loss function, e.g. torch.nn.MSELoss. It is assumed that it takes
+        base loss function, e.g. torch.nn.MSELoss. It is assumed that it takes
         two arguments:
         predictions and targets and no reduction is performed.
         (if a pytorch loss is used, the user must specify reduction="none").
@@ -73,7 +72,7 @@ class PitWrapper(nn.Module):
     Returns
     ---------
     pit_loss : torch.nn.Module
-        Torch module supporting forward method for PIT.
+        torch module supporting forward method for PIT.
 
     Example
     -------
@@ -94,17 +93,17 @@ class PitWrapper(nn.Module):
         """
         Arguments
         ----------
-        loss_mat : torch.Tensor
-            Tensor of shape [sources, source] containing loss values for each
+        loss_mat: torch.Tensor
+            tensor of shape [sources, source] containing loss values for each
             possible permutation of predictions.
 
         Returns
         -------
-        loss : torch.Tensor
-            Permutation invariant loss for the current batch, tensor of shape [1]
+        loss: torch.Tensor
+            permutation invariant loss for the current batch, tensor of shape [1]
 
-        assigned_perm : tuple
-            Indexes for optimal permutation of the input over sources which
+        assigned_perm: tuple
+            indexes for optimal permutation of the input over sources which
             minimizes the loss.
         """
 
@@ -119,21 +118,21 @@ class PitWrapper(nn.Module):
 
     def _opt_perm_loss(self, pred, target):
         """
-        Arguments
-        ---------
-        pred : torch.Tensor
-            Network prediction for the current example, tensor of
+        Parameters
+        ----------
+        pred: torch.Tensor
+            network prediction for the current example, tensor of
             shape [..., sources].
-        target : torch.Tensor
-            Target for the current example, tensor of shape [..., sources].
+        target: torch.Tensor
+            target for the current example, tensor of shape [..., sources].
 
         Returns
         -------
-        loss : torch.Tensor
-            Permutation invariant loss forthe  current example, tensor of shape [1]
+        loss: torch.Tensor
+            permutation invariant loss forthe  current example, tensor of shape [1]
 
-        assigned_perm : tuple
-            Indexes for optimal permutation of the input over sources which
+        assigned_perm: tuple
+            indexes for optimal permutation of the input over sources which
             minimizes the loss.
 
         """
@@ -158,19 +157,19 @@ class PitWrapper(nn.Module):
 
     def reorder_tensor(self, tensor, p):
         """
-        Arguments
-        ---------
-        tensor : torch.Tensor
-            Tensor to reorder given the optimal permutation, of shape
-            [batch, ..., sources].
-        p : list of tuples
-            List of optimal permutations, e.g. for batch=2 and n_sources=3
-            [(0, 1, 2), (0, 2, 1].
+            Arguments
+            ---------
+            tensor : torch.Tensor
+                tensor to reorder given the optimal permutation, of shape
+                [batch, ..., sources].
+            p : list of tuples
+                list of optimal permutations, e.g. for batch=2 and n_sources=3
+                [(0, 1, 2), (0, 2, 1].
 
-        Returns
-        -------
-        reordered : torch.Tensor
-            Reordered tensor given permutation p.
+            Returns
+            -------
+            reordered: torch.Tensor
+                reordered tensor given permutation p.
         """
 
         reordered = torch.zeros_like(tensor, device=tensor.device)
@@ -190,14 +189,14 @@ class PitWrapper(nn.Module):
 
             Returns
             -------
-            loss : torch.Tensor
-                Permutation invariant loss for current examples, tensor of
+            loss: torch.Tensor
+                permutation invariant loss for current examples, tensor of
                 shape [batch]
 
-            perms : list
-                List of indexes for optimal permutation of the inputs over
+            perms: list
+                list of indexes for optimal permutation of the inputs over
                 sources.
-                e.g., [(0, 1, 2), (2, 1, 0)] for three sources and 2 examples
+                e.g. [(0, 1, 2), (2, 1, 0)] for three sources and 2 examples
                 per batch.
         """
         losses = []
@@ -213,7 +212,7 @@ class PitWrapper(nn.Module):
 def ctc_loss(
     log_probs, targets, input_lens, target_lens, blank_index, reduction="mean"
 ):
-    """CTC loss.
+    """CTC loss
 
     Arguments
     ---------
@@ -383,9 +382,9 @@ def nll_loss(
     ---------
     log_probabilities : torch.Tensor
         The probabilities after log has been applied.
-        Format is [batch, log_p] or [batch, frames, log_p].
+        Format is [batch, log_p] or [batch, frames, log_p]
     targets : torch.Tensor
-        The targets, of shape [batch] or [batch, frames].
+        The targets, of shape [batch] or [batch, frames]
     length : torch.Tensor
         Length of each utterance, if frame-level loss is desired.
     allowed_len_diff : int
@@ -419,7 +418,7 @@ def nll_loss(
     )
 
 
-def bce_loss(
+def BCE_loss(
     inputs,
     targets,
     length=None,
@@ -436,17 +435,16 @@ def bce_loss(
     ---------
     inputs : torch.Tensor
         The output before applying the final softmax
-        Format is [batch[, 1]?] or [batch, frames[, 1]?].
-        (Works with or without a singleton dimension at the end).
+        Format is [batch, 1] or [batch, frames, 1]
     targets : torch.Tensor
-        The targets, of shape [batch] or [batch, frames].
+        The targets, of shape [batch] or [batch, frames]
     length : torch.Tensor
         Length of each utterance, if frame-level loss is desired.
-    weight : torch.Tensor
-        A manual rescaling weight if provided it’s repeated to match input
+    weight: torch.Tensor
+        a manual rescaling weight if provided it’s repeated to match input
         tensor shape.
     pos_weight : torch.Tensor
-        A weight of positive examples. Must be a vector with length equal to
+        a weight of positive examples. Must be a vector with length equal to
         the number of classes.
     allowed_len_diff : int
         Length difference that will be tolerated before raising an exception.
@@ -459,18 +457,12 @@ def bce_loss(
     -------
     >>> inputs = torch.tensor([10.0, -6.0])
     >>> targets = torch.tensor([1, 0])
-    >>> bce_loss(inputs, targets)
+    >>> BCE_loss(inputs, targets)
     tensor(0.0013)
     """
-    # Squeeze singleton dimension so inputs + targets match
-    if len(inputs.shape) == len(targets.shape) + 1:
-        inputs = inputs.squeeze(-1)
-
-    # Make sure tensor lengths match
-    if len(inputs.shape) >= 2:
+    if len(inputs.shape) == 3:
         inputs, targets = truncate(inputs, targets, allowed_len_diff)
-    elif length is not None:
-        raise ValueError("length can be passed only for >= 2D inputs.")
+        inputs = inputs.transpose(1, -1)
 
     # Pass the loss function but apply reduction="none" first
     loss = functools.partial(
@@ -505,9 +497,9 @@ def kldiv_loss(
     ---------
     probabilities : torch.Tensor
         The posterior probabilities of shape
-        [batch, prob] or [batch, frames, prob].
+        [batch, prob] or [batch, frames, prob]
     targets : torch.Tensor
-        The targets, of shape [batch] or [batch, frames].
+        The targets, of shape [batch] or [batch, frames]
     length : torch.Tensor
         Length of each utterance, if frame-level loss is desired.
     allowed_len_diff : int
@@ -601,7 +593,7 @@ def compute_masked_loss(
     ---------
     loss_fn : function
         A function for computing the loss taking just predictions and targets.
-        Should return all the losses, not a reduction (e.g. reduction="none").
+        Should return all the losses, not a reduction (e.g. reduction="none")
     predictions : torch.Tensor
         First argument to loss function.
     targets : torch.Tensor
@@ -655,17 +647,18 @@ def compute_masked_loss(
 
 
 def get_si_snr_with_pitwrapper(source, estimate_source):
-    """This function wraps si_snr calculation with the speechbrain pit-wrapper.
+    """
+    This function wraps si_snr calculation with the speechbrain pit-wrapper
 
     Arguments:
     ---------
-    source: [B, T, C],
-        Where B is the batch size, T is the length of the sources, C is
-        the number of sources the ordering is made so that this loss is
-        compatible with the class PitWrapper.
+        source: [B, T, C],
+            where B is the batch size, T is the length of the sources, C is
+            the number of sources the ordering is made so that this loss is
+            compatible with the class PitWrapper
 
-    estimate_source: [B, T, C]
-        The estimated source.
+        estimate_source: [B, T, C]
+            the estimated source
 
     Example:
     ---------
@@ -683,16 +676,16 @@ def get_si_snr_with_pitwrapper(source, estimate_source):
 
 
 def cal_si_snr(source, estimate_source):
-    """Calculate SI-SNR.
+    """Calculate SI-SNR
 
     Arguments:
     ---------
-    source: [T, B, C],
-        Where B is batch size, T is the length of the sources, C is the number of sources
-        the ordering is made so that this loss is compatible with the class PitWrapper.
+        source: [T, B, C],
+            where B is batch size, T is the length of the sources, C is the number of sources
+            the ordering is made so that this loss is compatible with the class PitWrapper
 
-    estimate_source: [T, B, C]
-        The estimated source.
+        estimate_source: [T, B, C]
+            the estimated source
 
     Example:
     ---------
@@ -752,14 +745,13 @@ def cal_si_snr(source, estimate_source):
 
 def get_mask(source, source_lengths):
     """
-    Arguments
+    Arguments:
     ---------
-    source : [T, B, C]
-    source_lengths : [B]
-
-    Returns
-    -------
-    mask : [T, B, 1]
+        source: [T, B, C]
+        source_lengths: [B]
+    Returns:
+    ---------
+        mask: [T, B, 1]
 
     Example:
     ---------
@@ -800,7 +792,7 @@ class AngularMargin(nn.Module):
     ---------
     margin : float
         The margin for cosine similiarity
-    scale : float
+    scale: float
         The scale for cosine similiarity
 
     Return
@@ -823,14 +815,15 @@ class AngularMargin(nn.Module):
         self.scale = scale
 
     def forward(self, outputs, targets):
-        """Compute AM between two tensors
+        """
+        Compute AM between two tensors
 
         Arguments
         ---------
         outputs : torch.Tensor
-            The outputs of shape [N, C], cosine simiarity is required.
+            The outputs of shape [N, C], cosine simiarity is required
         targets : torch.Tensor
-            The targets of shape [N, C], where the margin is applied for.
+            The targets of shape [N, C], where the margin is applied for
 
         Return
         ---------
@@ -850,14 +843,13 @@ class AdditiveAngularMargin(AngularMargin):
     Arguments
     ---------
     margin : float
-        The margin for cosine similiarity.
+        The margin for cosine similiarity
     scale: float
-        The scale for cosine similiarity.
+        The scale for cosine similiarity
 
-    Returns
-    -------
+    Return
+    ---------
     predictions : torch.Tensor
-        Tensor.
     Example
     -------
     >>> outputs = torch.tensor([ [1., -1.], [-1., 1.], [0.9, 0.1], [0.1, 0.9] ])
@@ -884,9 +876,9 @@ class AdditiveAngularMargin(AngularMargin):
         Arguments
         ---------
         outputs : torch.Tensor
-            The outputs of shape [N, C], cosine simiarity is required.
+            The outputs of shape [N, C], cosine simiarity is required
         targets : torch.Tensor
-            The targets of shape [N, C], where the margin is applied for.
+            The targets of shape [N, C], where the margin is applied for
 
         Return
         ---------
@@ -940,18 +932,17 @@ class LogSoftmaxWrapper(nn.Module):
 
     def forward(self, outputs, targets, length=None):
         """
-        Arguments
-        ---------
-        outputs : torch.Tensor
-            Network output tensor, of shape
-            [batch, 1, outdim].
-        targets : torch.Tensor
-            Target tensor, of shape [batch, 1].
-
-        Returns
-        -------
-        loss: torch.Tensor
-            Loss for current examples.
+            Arguments
+            ---------
+            outputs : torch.Tensor
+                Network output tensor, of shape
+                [batch, 1, outdim].
+            targets : torch.Tensor
+                Target tensor, of shape [batch, 1].
+            Returns
+            -------
+            loss: torch.Tensor
+                loss for current examples
         """
         outputs = outputs.squeeze(1)
         targets = targets.squeeze(1)
@@ -967,7 +958,7 @@ class LogSoftmaxWrapper(nn.Module):
 
 
 def ctc_loss_kd(log_probs, targets, input_lens, blank_index, device):
-    """Knowledge distillation for CTC loss.
+    """Knowledge distillation for CTC loss
 
     Reference
     ---------
@@ -985,7 +976,7 @@ def ctc_loss_kd(log_probs, targets, input_lens, blank_index, device):
     blank_index : int
         The location of the blank symbol among the character indexes.
     device : str
-        Device for computing.
+        device for computing.
     """
     scores, predictions = torch.max(targets, dim=-1)
 
@@ -1030,7 +1021,7 @@ def ctc_loss_kd(log_probs, targets, input_lens, blank_index, device):
 
 
 def ce_kd(inp, target):
-    """Simple version of distillation for cross-entropy loss.
+    """Simple version of distillation fro cross-entropy loss.
 
     Arguments
     ---------

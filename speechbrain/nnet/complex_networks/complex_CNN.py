@@ -8,7 +8,7 @@ import torch.nn as nn
 import logging
 import torch.nn.functional as F
 from speechbrain.nnet.CNN import get_padding_elem
-from speechbrain.nnet.complex_networks.c_ops import (
+from speechbrain.nnet.complex_networks.complex_ops import (
     unitary_init,
     complex_init,
     affect_conv_init,
@@ -18,51 +18,59 @@ from speechbrain.nnet.complex_networks.c_ops import (
 logger = logging.getLogger(__name__)
 
 
-class CConv1d(torch.nn.Module):
+class ComplexConv1d(torch.nn.Module):
     """This function implements complex-valued 1d convolution.
 
     Arguments
     ---------
-    out_channels : int
+    out_channels: int
         Number of output channels. Please note
         that these are complex-valued neurons. If 256
         channels are specified, the output dimension
         will be 512.
-    kernel_size : int
+    kernel_size: int
         Kernel size of the convolutional filters.
-    stride : int, optional
-        Stride factor of the convolutional filters (default 1).
-    dilation : int, optional
-        Dilation factor of the convolutional filters (default 1).
-    padding : str, optional
+    stride: int, optional
+        Default: 1.
+        Stride factor of the convolutional filters.
+    dilation: int, optional
+        Default: 1.
+        Dilation factor of the convolutional filters.
+    padding: str, optional
+        Default: same.
         (same, valid, causal). If "valid", no padding is performed.
         If "same" and stride is 1, output shape is same as input shape.
-        "causal" results in causal (dilated) convolutions. (default "same")
-    padding_mode : str, optional
+        "causal" results in causal (dilated) convolutions.
+    padding_mode: str, optional
+        Default: reflect.
         This flag specifies the type of padding. See torch.nn documentation
-        for more information (default "reflect").
-    groups : int, optional
+        for more information.
+    groups: int, optional
+        Default: 1
         This option specifies the convolutional groups. See torch.nn
-        documentation for more information (default 1).
-    bias : bool, optional
-        If True, the additive bias b is adopted (default True).
-    init_criterion : str, optional
+        documentation for more information.
+    bias: bool, optional
+        Default: True.
+        If True, the additive bias b is adopted.
+    init_criterion: str , optional
+        Default: he.
         (glorot, he).
         This parameter controls the initialization criterion of the weights.
         It is combined with weights_init to build the initialization method of
-        the complex-valued weights. (default "glorot")
-    weight_init : str, optional
+        the complex-valued weights.
+    weight_init: str, optional
+        Default: complex.
         (complex, unitary).
         This parameter defines the initialization procedure of the
         complex-valued weights. "complex" will generate random complex-valued
         weights following the init_criterion and the complex polar form.
-        "unitary" will normalize the weights to lie on the unit circle. (default "complex")
+        "unitary" will normalize the weights to lie on the unit circle.
         More details in: "Deep Complex Networks", Trabelsi C. et al.
 
     Example
     -------
     >>> inp_tensor = torch.rand([10, 16, 30])
-    >>> cnn_1d = CConv1d(
+    >>> cnn_1d = ComplexConv1d(
     ...     input_shape=inp_tensor.shape, out_channels=12, kernel_size=5
     ... )
     >>> out_tensor = cnn_1d(inp_tensor)
@@ -130,9 +138,8 @@ class CConv1d(torch.nn.Module):
 
         Arguments
         ---------
-        x : torch.Tensor
-            (batch, time, channel).
-            Input to convolve. 3d or 4d tensors are expected.
+        x : torch.Tensor (batch, time, channel)
+            input to convolve. 3d or 4d tensors are expected.
 
         """
         # (batch, channel, time)
@@ -176,13 +183,9 @@ class CConv1d(torch.nn.Module):
         Arguments
         ---------
         x : torch.Tensor
-            Input tensor.
         kernel_size : int
-            Kernel size.
         dilation : int
-            Dilation.
-        stride : int
-            Stride.
+        stride: int
         """
 
         # Detecting input shape
@@ -197,7 +200,8 @@ class CConv1d(torch.nn.Module):
         return x
 
     def _check_input(self, input_shape):
-        """Checks the input and returns the number of input channels.
+        """
+        Checks the input and returns the number of input channels.
         """
 
         if len(input_shape) == 3:
@@ -229,49 +233,56 @@ class CConv1d(torch.nn.Module):
     def _get_kernel_and_weight_shape(self):
         """ Returns the kernel size and weight shape for convolutional layers.
         """
-
         ks = self.kernel_size
         w_shape = (self.out_channels, self.in_channels) + tuple((ks,))
         return ks, w_shape
 
 
-class CConv2d(nn.Module):
+class ComplexConv2d(nn.Module):
     """This function implements complex-valued 1d convolution.
 
     Arguments
     ---------
-    out_channels : int
+    out_channels: int
         Number of output channels. Please note
         that these are complex-valued neurons. If 256
         channels are specified, the output dimension
         will be 512.
-    kernel_size : int
+    kernel_size: int
         Kernel size of the convolutional filters.
-    stride : int, optional
-        Stride factor of the convolutional filters (default 1).
-    dilation : int, optional
-        Dilation factor of the convolutional filters (default 1).
-    padding : str, optional
+    stride: int, optional
+        Default: 1.
+        Stride factor of the convolutional filters.
+    dilation: int, optional
+        Default: 1.
+        Dilation factor of the convolutional filters.
+    padding: str, optional
+        Default: same.
         (same, valid, causal). If "valid", no padding is performed.
         If "same" and stride is 1, output shape is same as input shape.
-        "causal" results in causal (dilated) convolutions. (default "same")
-    padding_mode : str, optional
-        This flag specifies the type of padding (default "reflect").
-        See torch.nn documentation for more information.
-    groups : int, optional
-        This option specifies the convolutional groups (default 1). See torch.nn
+        "causal" results in causal (dilated) convolutions.
+    padding_mode: str, optional
+        Default: reflect.
+        This flag specifies the type of padding. See torch.nn documentation
+        for more information.
+    groups: int, optional
+        Default: 1
+        This option specifies the convolutional groups. See torch.nn
         documentation for more information.
-    bias : bool, optional
-        If True, the additive bias b is adopted (default True).
-    init_criterion : str , optional
+    bias: bool, optional
+        Default: True.
+        If True, the additive bias b is adopted.
+    init_criterion: str , optional
+        Default: he.
         (glorot, he).
-        This parameter controls the initialization criterion of the weights (default "glorot").
+        This parameter controls the initialization criterion of the weights.
         It is combined with weights_init to build the initialization method of
         the complex-valued weights.
-    weight_init : str, optional
+    weight_init: str, optional
+        Default: complex.
         (complex, unitary).
         This parameter defines the initialization procedure of the
-        complex-valued weights (default complex). "complex" will generate random complex-valued
+        complex-valued weights. "complex" will generate random complex-valued
         weights following the init_criterion and the complex polar form.
         "unitary" will normalize the weights to lie on the unit circle.
         More details in: "Deep Complex Networks", Trabelsi C. et al.
@@ -279,7 +290,7 @@ class CConv2d(nn.Module):
     Example
     -------
     >>> inp_tensor = torch.rand([10, 16, 30, 30])
-    >>> cnn_2d = CConv2d(
+    >>> cnn_2d = ComplexConv2d(
     ...     input_shape=inp_tensor.shape, out_channels=12, kernel_size=5
     ... )
     >>> out_tensor = cnn_2d(inp_tensor)
@@ -357,11 +368,10 @@ class CConv2d(nn.Module):
 
         Arguments
         ---------
-        x : torch.Tensor
-            (batch, time, feature, channels).
-            Input to convolve. 3d or 4d tensors are expected.
-        """
+        x : torch.Tensor (batch, time, feature, channels)
+            input to convolve. 3d or 4d tensors are expected.
 
+        """
         if init_params:
             self.init_params(x)
 
@@ -404,7 +414,6 @@ class CConv2d(nn.Module):
     def _get_kernel_and_weight_shape(self):
         """ Returns the kernel size and weight shape for convolutional layers.
         """
-
         ks = (self.kernel_size[0], self.kernel_size[1])
         w_shape = (self.out_channels, self.in_channels) + (*ks,)
         return ks, w_shape
@@ -416,13 +425,9 @@ class CConv2d(nn.Module):
         Arguments
         ---------
         x : torch.Tensor
-            Input tensor.
         kernel_size : int
-            Kernel size.
         dilation : int
-            Dilation.
         stride: int
-            Stride.
         """
         # Detecting input shape
         L_in = x.shape[-1]
@@ -443,7 +448,8 @@ class CConv2d(nn.Module):
         return x
 
     def _check_input(self, input_shape):
-        """Checks the input and returns the number of input channels.
+        """
+        Checks the input and returns the number of input channels.
         """
         if len(input_shape) == 3:
             self.unsqueeze = True

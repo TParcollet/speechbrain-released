@@ -14,27 +14,18 @@ import speechbrain as sb
 class CRDNN(sb.nnet.containers.Sequential):
     """This model is a combination of CNNs, RNNs, and DNNs.
 
-    This model expects 3-dimensional input [batch, time, feats] and
-    by default produces output of the size [batch, time, dnn_neurons].
-
-    One exception is if ``using_2d_pooling`` or ``time_pooling`` is True.
-    In this case, the time dimension will be downsampled.
-
     Arguments
     ---------
-    input_size : int
-        The length of the expected input at the third dimension.
     input_shape : tuple
-        While input_size will suffice, this option can allow putting
-        CRDNN into a sequential with other classes.
+        The shape of an example expected input.
     activation : torch class
-        A class used for constructing the activation layers for CNN and DNN.
+        A class used for constructing the activation layers. For cnn and dnn.
     dropout : float
-        Neuron dropout rate as applied to CNN, RNN, and DNN.
+        Neuron dropout rate, applied to cnn, rnn, and dnn.
     cnn_blocks : int
         The number of convolutional neural blocks to include.
     cnn_channels : list of ints
-        A list of the number of output channels for each CNN block.
+        A list of the number of output channels for each cnn block.
     cnn_kernelsize : tuple of ints
         The size of the convolutional kernels.
     time_pooling : bool
@@ -44,17 +35,17 @@ class CRDNN(sb.nnet.containers.Sequential):
     time_pooling_stride : int
         The number of elements to increment by when iterating the time axis.
     using_2d_pooling: bool
-        Whether using a 2D or 1D pooling after each CNN block.
+        Whether using a 2D or 1D pooling after each cnn block.
     inter_layer_pooling_size : list of ints
-        A list of the pooling sizes for each CNN block.
+        A list of the pooling sizes for each cnn block.
     rnn_class : torch class
-        The type of RNN to use in CRDNN network (LiGRU, LSTM, GRU, RNN)
+        The type of rnn to use in CRDNN network (LiGRU, LSTM, GRU, RNN)
     rnn_layers : int
         The number of recurrent RNN layers to include.
     rnn_neurons : int
         Number of neurons in each layer of the RNN.
     rnn_bidirectional : bool
-        Whether this model will process just forward or in both directions.
+        Whether this model will process just forward or both directions.
     rnn_re_init : bool,
         If True, an orthogonal initialization will be applied to the recurrent
         weights.
@@ -62,8 +53,6 @@ class CRDNN(sb.nnet.containers.Sequential):
         The number of linear neural blocks to include.
     dnn_neurons : int
         The number of neurons in the linear layers.
-    use_rnnp: bool
-        If True, a linear projection layer is added between RNN layers.
     projection_dim : int
         The number of neurons in the projection layer.
         This layer is used to reduce the size of the flattened
@@ -80,8 +69,7 @@ class CRDNN(sb.nnet.containers.Sequential):
 
     def __init__(
         self,
-        input_size=None,
-        input_shape=None,
+        input_shape,
         activation=torch.nn.LeakyReLU,
         dropout=0.15,
         cnn_blocks=2,
@@ -102,11 +90,6 @@ class CRDNN(sb.nnet.containers.Sequential):
         projection_dim=-1,
         use_rnnp=False,
     ):
-        if input_size is None and input_shape is None:
-            raise ValueError("Must specify one of input_size or input_shape")
-
-        if input_shape is None:
-            input_shape = [None, None, input_size]
         super().__init__(input_shape=input_shape)
 
         if cnn_blocks > 0:
@@ -137,8 +120,8 @@ class CRDNN(sb.nnet.containers.Sequential):
         # This projection helps reducing the number of parameters
         # when using large number of CNN filters.
         # Large numbers of CNN filters + large features
-        # often lead to very large flattened layers.
-        # This layer projects it back to something reasonable.
+        # often lead to very large flattened layers
+        # This layer projects it back to something reasonable
         if projection_dim != -1:
             self.append(sb.nnet.containers.Sequential, layer_name="projection")
             self.projection.append(
@@ -277,7 +260,7 @@ class CNN_Block(sb.nnet.containers.Sequential):
 
 
 class DNN_Block(sb.nnet.containers.Sequential):
-    """Block for linear layers.
+    """Block for linear layers
 
     Arguments
     ---------

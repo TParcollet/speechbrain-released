@@ -1,4 +1,5 @@
-"""Calculates Diarization Error Rate (DER) which is the sum of Missed Speaker (MS),
+"""
+Calculates Diarization Error Rate (DER) which is the sum of Missed Speaker (MS),
 False Alarm (FA), and Speaker Error Rate (SER) using md-eval-22.pl from NIST RT Evaluation.
 
 Authors
@@ -22,7 +23,8 @@ ERROR_SPEAKER_TIME = re.compile(r"(?<=SPEAKER ERROR TIME =)[\d.]+")
 
 
 def rectify(arr):
-    """Corrects corner cases and converts scores into percentage.
+    """
+    Corrects corner cases and converts scores into percentage.
     """
 
     # Numerator and denominator both 0.
@@ -58,16 +60,12 @@ def DER(
     ignore_overlap : bool
         If True, ignores overlapping speech during evaluation.
 
-    Returns
+    Outputs
     -------
     MS : float array
-        Missed Speech.
     FA : float array
-        False Alarms.
     SER : float array
-        Speaker Error Rates.
     DER : float array
-        Diarization Error Rates.
 
     Example
     -------

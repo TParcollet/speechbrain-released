@@ -2,10 +2,13 @@
 """
 import os
 
-__all__ = []
-for filename in os.listdir(os.path.dirname(__file__)):
+
+def condition(filename):
     filename = os.path.basename(filename)
-    if filename.endswith(".py") and not filename.startswith("__"):
-        __all__.append(filename[:-3])
+    return filename.endswith(".py") and not filename.startswith("__")
+
+
+files = os.listdir(os.path.dirname(__file__))
+__all__ = [filename[:-3] for filename in files if condition(filename)]
 
 from . import *  # noqa

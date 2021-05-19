@@ -1,4 +1,4 @@
-"""SpeechBrain Extended CSV Compatibility."""
+"""SpeechBrain Extended CSV Compatibility"""
 from speechbrain.dataio.dataset import DynamicItemDataset
 import collections
 import csv
@@ -15,34 +15,33 @@ TORCHAUDIO_FORMATS = ["wav", "flac", "aac", "ogg", "flac", "mp3"]
 ITEM_POSTFIX = "_data"
 
 CSVItem = collections.namedtuple("CSVItem", ["data", "format", "opts"])
-CSVItem.__doc__ = """The Legacy Extended CSV Data item triplet"""
+# The Legacy Extended CSV Data item triplet
 
 
 class ExtendedCSVDataset(DynamicItemDataset):
-    """Extended CSV compatibility for DynamicItemDataset.
+    """Extended CSV compatibility for DynamicItemDataset
 
-    Uses the SpeechBrain Extended CSV data format, where the CSV must have an
-    'ID' and 'duration' fields.
+    Uses the SpeechBrain Extended CSV data format, where the
+    CSV must have an 'ID' and 'duration' fields.
 
     The rest of the fields come in triplets:
-    ``<name>, <name>_format, <name>_opts``
+    a <name>, <name>_format, <name>_opts
 
-    These add a <name>_sb_data item in the dict. Additionally, a basic
-    DynamicItem (see DynamicItemDataset) is created, which loads the _sb_data
-    item.
+    These add a <name>_sb_data item in the dict. Additionally, a
+    basic DynamicItem (see DynamicItemDataset) is created, which
+    loads the _sb_data item.
 
     Bash-like string replacements with $to_replace are supported.
 
     NOTE
     ----
     Mapping from legacy interface:
-
-    - csv_file -> csvpath
-    - sentence_sorting -> sorting, and "random" is not supported, use e.g.
-      ``make_dataloader(..., shuffle = (sorting=="random"))``
-    - avoid_if_shorter_than -> min_duration
-    - avoid_if_longer_than -> max_duration
-    - csv_read -> output_keys, and if you want IDs add "id" as key
+        csv_file -> csvpath
+        sentence_sorting -> sorting, and "random" is not supported,
+            use e.g. make_dataloader(..., shuffle = (sorting=="random"))
+        avoid_if_shorter_than -> min_duration
+        avoid_if_longer_than -> max_duration
+        csv_read -> output_keys, and if you want IDs add "id" as key
 
     Arguments
     ---------
@@ -50,17 +49,19 @@ class ExtendedCSVDataset(DynamicItemDataset):
         Path to extended CSV.
     replacements : dict
         Used for Bash-like $-prefixed substitution,
-        e.g. ``{"data_folder": "/home/speechbrain/data"}``, which would
-        transform `$data_folder/utt1.wav` into `/home/speechbain/data/utt1.wav`
-    sorting : {"original", "ascending", "descending"}
-        Keep CSV order, or sort ascending or descending by duration.
+        e.g. {"data_folder": "/home/speechbrain/data"}
+        $data_folder/utt1.wav -> /home/speechbain/data/utt1.wav
+    sorting : {"original", "ascending", "descending", "random"}
+        Keep CSV order, or sort ascending or descending by duration,
+        or shuffle. NOTE: shuffled order is not reproducible.
+        It is here for backward compatibility.
     min_duration : float, int
         Minimum duration in seconds. Discards other entries.
     max_duration : float, int
         Maximum duration in seconds. Discards other entries.
     dynamic_items : list
         Configuration for extra dynamic items produced when fetching an
-        example. List of DynamicItems or dicts with keys::
+        example. List of DynamicItems or dicts with keys:
             func: <callable> # To be called
             takes: <list> # key or list of keys of args this takes
             provides: key # key or list of keys that this provides
@@ -68,7 +69,7 @@ class ExtendedCSVDataset(DynamicItemDataset):
     output_keys : list, None
         The list of output keys to produce. You can refer to the names of the
         CSV data-triplets. E.G. if the CSV has: wav,wav_format,wav_opts,
-        then the Dataset has a dynamic item output available with key ``"wav"``
+        then the Dataset has a dynamic item output available with key "wav"
         NOTE: If None, read all existing.
     """
 
@@ -111,13 +112,13 @@ class ExtendedCSVDataset(DynamicItemDataset):
 
 
 def load_sb_extended_csv(csv_path, replacements={}):
-    """Loads SB Extended CSV and formats string values.
+    """Loads SB Extended CSV and formats string values
 
     Uses the SpeechBrain Extended CSV data format, where the
     CSV must have an 'ID' and 'duration' fields.
 
     The rest of the fields come in triplets:
-    ``<name>, <name>_format, <name>_opts``.
+    a <name>, <name>_format, <name>_opts
 
     These add a <name>_sb_data item in the dict. Additionally, a
     basic DynamicItem (see DynamicItemDataset) is created, which
@@ -131,18 +132,18 @@ def load_sb_extended_csv(csv_path, replacements={}):
     Arguments
     ----------
     csv_path : str
-        Path to the CSV file.
+        Path to CSV file
     replacements : dict
         Optional dict:
-        e.g. ``{"data_folder": "/home/speechbrain/data"}``
-        This is used to recursively format all string values in the data.
+        e.g. {"data_folder": "/home/speechbrain/data"}
+        This is used to recursively format all string values in the data
 
     Returns
     -------
     dict
-        CSV data with replacements applied.
+        CSV data with replacements applied
     list
-        List of DynamicItems to add in DynamicItemDataset.
+        List of DynamicItems to add in DynamicItemDataset
 
     """
     with open(csv_path, newline="") as csvfile:
@@ -207,7 +208,7 @@ def load_sb_extended_csv(csv_path, replacements={}):
 
 
 def _read_csv_item(item):
-    """Reads the different formats supported in SB Extended CSV.
+    """Reads the different formats supported in SB Extended CSV
 
     Delegates to the relevant functions.
     """
@@ -235,7 +236,7 @@ def _read_csv_item(item):
 
 
 def _parse_csv_item_opts(entry):
-    """Parse the _opts field in a SB Extended CSV item."""
+    """Parse the _opts field in a SB Extended CSV item"""
     # Accepting even slightly weirdly formatted entries:
     entry = entry.strip()
     if len(entry) == 0:
@@ -248,7 +249,8 @@ def _parse_csv_item_opts(entry):
 
 
 def read_pkl(file, data_options={}, lab2ind=None):
-    """This function reads tensors store in pkl format.
+    """
+    This function reads tensors store in pkl format.
 
     Arguments
     ---------
@@ -262,7 +264,7 @@ def read_pkl(file, data_options={}, lab2ind=None):
     Returns
     -------
     numpy.array
-        The array containing the read signal.
+        The array containing the read signal
     """
 
     # Trying to read data

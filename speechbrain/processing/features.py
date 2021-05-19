@@ -40,7 +40,6 @@ from packaging import version
 from speechbrain.utils.checkpoints import (
     mark_as_saver,
     mark_as_loader,
-    mark_as_transfer,
     register_checkpoint_hooks,
 )
 
@@ -193,7 +192,7 @@ class ISTFT(torch.nn.Module):
 
     This class computes the Inverse Short-Term Fourier Transform of
     an audio signal. It supports multi-channel audio inputs
-    (batch, time_step, n_fft, n_channels [optional], 2).
+    (batch, time_step, n_fft, 2, n_channels [optional]).
 
     Arguments
     ---------
@@ -302,9 +301,6 @@ class ISTFT(torch.nn.Module):
         elif len(or_shape) == 4:
             x = x.permute(0, 2, 1, 3)
 
-        # isft ask complex input
-        x = torch.complex(x[..., 0], x[..., 1])
-
         istft = torch.istft(
             input=x,
             n_fft=n_fft,
@@ -361,40 +357,40 @@ class Filterbank(torch.nn.Module):
 
     Arguments
     ---------
-    n_mels : float
-        Number of Mel filters used to average the spectrogram.
-    log_mel : bool
-        If True, it computes the log of the FBANKs.
-    filter_shape : str
-        Shape of the filters ('triangular', 'rectangular', 'gaussian').
-    f_min : int
-        Lowest frequency for the Mel filters.
-    f_max : int
-        Highest frequency for the Mel filters.
-    n_fft : int
-        Number of fft points of the STFT. It defines the frequency resolution
-        (n_fft should be<= than win_len).
-    sample_rate : int
-        Sample rate of the input audio signal (e.g, 16000)
-    power_spectrogram : float
-        Exponent used for spectrogram computation.
-    amin : float
-        Minimum amplitude (used for numerical stability).
-    ref_value : float
-        Reference value used for the dB scale.
-    top_db : float
-        Top dB valu used for log-mels.
-    freeze : bool
-        If False, it the central frequency and the band of each filter are
-        added into nn.parameters. If True, the standard frozen features
-        are computed.
-    param_change_factor: bool
+     n_mels : float
+         Number of Mel filters used to average the spectrogram.
+     log_mel : bool
+         If True, it computes the log of the FBANKs.
+     filter_shape : str
+         Shape of the filters ('triangular', 'rectangular', 'gaussian').
+     f_min : int
+         Lowest frequency for the Mel filters.
+     f_max : int
+         Highest frequency for the Mel filters.
+     n_fft : int
+         Number of fft points of the STFT. It defines the frequency resolution
+         (n_fft should be<= than win_len).
+     sample_rate : int
+         Sample rate of the input audio signal (e.g, 16000)
+     power_spectrogram : float
+         Exponent used for spectrogram computation.
+     amin : float
+         Minimum amplitude (used for numerical stability).
+     ref_value : float
+         Reference value used for the dB scale.
+     top_db : float
+         Top dB valu used for log-mels.
+     freeze : bool
+         If False, it the central frequency and the band of each filter are
+         added into nn.parameters. If True, the standard frozen features
+         are computed.
+     param_change_factor: bool
         If freeze=False, this parameter affects the speed at which the filter
         parameters (i.e., central_freqs and bands) can be changed.  When high
         (e.g., param_change_factor=1) the filters change a lot during training.
         When low (e.g. param_change_factor=0.1) the filter parameters are more
         stable during training
-    param_rand_factor: float
+     param_rand_factor: float
         This parameter can be used to randomly change the filter parameters
         (i.e, central frequencies and bands) during training.  It is thus a
         sort of regularization. param_rand_factor=0 does not affect, while
@@ -699,7 +695,9 @@ class Filterbank(torch.nn.Module):
         x_db -= self.multiplier * self.db_multiplier
 
         # Setting up dB max
-        new_x_db_max = x_db.max() - self.top_db
+        new_x_db_max = torch.tensor(
+            float(x_db.max()) - self.top_db, dtype=x_db.dtype, device=x.device,
+        )
         # Clipping to dB max
         x_db = torch.max(x_db, new_x_db_max)
 
@@ -1014,7 +1012,7 @@ class InputNormalization(torch.nn.Module):
         for snt_id in range(N_batches):
 
             # Avoiding padded time steps
-            actual_size = torch.round(lengths[snt_id] * x.shape[1]).int()
+            actual_size = int(torch.round(lengths[snt_id] * x.shape[1]))
 
             # computing statistics
             current_mean, current_std = self._compute_current_stats(
@@ -1185,17 +1183,16 @@ class InputNormalization(torch.nn.Module):
         stats = self._statistics_dict()
         torch.save(stats, path)
 
-    @mark_as_transfer
     @mark_as_loader
-    def _load(self, path, end_of_epoch=False, device=None):
+    def _load(self, path, end_of_epoch, device):
         """Load statistic dictionary.
 
         Arguments
         ---------
         path : str
             The path of the statistic dictionary
-        device : str, None
-            Passed to torch.load(..., map_location=device)
+        end_of_epoch: bool
+            If True, the training has completed a full epoch.
         """
         del end_of_epoch  # Unused here.
         stats = torch.load(path, map_location=device)

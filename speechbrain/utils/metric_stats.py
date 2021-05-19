@@ -1,4 +1,5 @@
-"""The ``metric_stats`` module provides an abstract class for storing
+"""
+The ``metric_stats`` module provides an abstract class for storing
 statistics produced over the course of an experiment and summarizing them.
 
 Authors:
@@ -7,8 +8,9 @@ Authors:
 """
 import torch
 from joblib import Parallel, delayed
+from speechbrain.utils import edit_distance
 from speechbrain.utils.data_utils import undo_padding
-from speechbrain.utils.edit_distance import wer_summary, wer_details_for_batch
+from speechbrain.utils.edit_distance import wer_summary
 from speechbrain.dataio.dataio import merge_char, split_word
 from speechbrain.dataio.wer import print_wer_summary, print_alignments
 
@@ -80,7 +82,7 @@ class MetricStats:
         ids : list
             List of ids corresponding to utterances.
         *args, **kwargs
-            Arguments to pass to the metric function.
+            Arguments to pass to the metric function
         """
         self.ids.extend(ids)
 
@@ -153,23 +155,13 @@ class MetricStats:
 
 
 class ErrorRateStats(MetricStats):
-    """A class for tracking error rates (e.g., WER, PER).
+    """A class for tracking error rates (e.g. WER, PER).
 
     Arguments
     ---------
     merge_tokens : bool
-        Whether to merge the successive tokens (used for e.g.,
+        Whether to merge the successive tokens (used for e.g.
         creating words out of character tokens).
-        See ``speechbrain.dataio.dataio.merge_char``.
-    split_tokens : bool
-        Whether to split tokens (used for e.g. creating
-        characters out of word tokens).
-        See ``speechbrain.dataio.dataio.split_word``.
-    space_token : str
-        The character to use for boundaries. Used with ``merge_tokens``
-        this represents character to split on after merge.
-        Used with ``split_tokens`` the sequence is joined with
-        this token in between, and then the whole sequence is split.
 
     Example
     -------
@@ -193,11 +185,10 @@ class ErrorRateStats(MetricStats):
     1
     """
 
-    def __init__(self, merge_tokens=False, split_tokens=False, space_token="_"):
+    def __init__(self, merge_tokens=False, split_tokens=False):
         self.clear()
         self.merge_tokens = merge_tokens
         self.split_tokens = split_tokens
-        self.space_token = space_token
 
     def append(
         self,
@@ -243,14 +234,14 @@ class ErrorRateStats(MetricStats):
             target = ind2lab(target)
 
         if self.merge_tokens:
-            predict = merge_char(predict, space=self.space_token)
-            target = merge_char(target, space=self.space_token)
+            predict = merge_char(predict)
+            target = merge_char(target)
 
         if self.split_tokens:
-            predict = split_word(predict, space=self.space_token)
-            target = split_word(target, space=self.space_token)
+            predict = split_word(predict)
+            target = split_word(target)
 
-        scores = wer_details_for_batch(ids, target, predict, True)
+        scores = edit_distance.wer_details_for_batch(ids, target, predict, True)
 
         self.scores.extend(scores)
 
@@ -270,7 +261,7 @@ class ErrorRateStats(MetricStats):
             return self.summary
 
     def write_stats(self, filestream):
-        """Write all relevant info (e.g., error rate alignments) to file.
+        """Write all relevant info (e.g. error rate alignments) to file.
         * See MetricStats.write_stats()
         """
         if not self.summary:
@@ -282,6 +273,7 @@ class ErrorRateStats(MetricStats):
 
 class BinaryMetricStats(MetricStats):
     """Tracks binary metrics, such as precision, recall, F1, EER, etc.
+
     """
 
     def __init__(self, positive_label=1):
@@ -298,7 +290,7 @@ class BinaryMetricStats(MetricStats):
         """Appends scores and labels to internal lists.
 
         Does not compute metrics until time of summary, since
-        automatic thresholds (e.g., EER) need full set of scores.
+        automatic thresholds (e.g. EER) need full set of scores.
 
         Arguments
         ---------
@@ -384,7 +376,7 @@ class BinaryMetricStats(MetricStats):
 
 
 def EER(positive_scores, negative_scores):
-    """Computes the EER (and its threshold).
+    """Computes the EER (and its threshold)
 
     Arguments
     ---------
@@ -455,12 +447,12 @@ def minDCF(
         The scores from entries of the same class.
     negative_scores : torch.tensor
         The scores from entries of different classes.
-    c_miss : float
+    c_miss: float
          Cost assigned to a missing error (default 1.0).
-    c_fa : float
+    c_fa: float
         Cost assigned to a false alarm (default 1.0).
     p_target: float
-        Prior probability of having a target (default 0.01).
+        Prior probability of having a target (defaul 0.01).
 
 
     Example
