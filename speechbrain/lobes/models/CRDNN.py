@@ -85,6 +85,7 @@ class CRDNN(sb.nnet.containers.Sequential):
         rnn_neurons=512,
         rnn_bidirectional=True,
         rnn_re_init=False,
+        rnn_pooling=None,
         dnn_blocks=2,
         dnn_neurons=512,
         projection_dim=-1,
@@ -155,15 +156,26 @@ class CRDNN(sb.nnet.containers.Sequential):
                     )
                     self.append(torch.nn.Dropout(p=dropout))
             else:
-                self.append(
-                    rnn_class,
-                    layer_name="RNN",
-                    hidden_size=rnn_neurons,
-                    num_layers=rnn_layers,
-                    dropout=dropout,
-                    bidirectional=rnn_bidirectional,
-                    re_init=rnn_re_init,
-                )
+                for _ in range(rnn_layers):
+                    self.append(
+                        rnn_class,
+                        layer_name="RNN",
+                        hidden_size=rnn_neurons,
+                        num_layers=1,
+                        bidirectional=rnn_bidirectional,
+                        re_init=rnn_re_init,
+                    )
+                    if rnn_pooling is not None:
+                        if rnn_pooling[_] != 0:
+                            self.append(
+                                sb.nnet.pooling.Pooling1d(
+                                    pool_type="max",
+                                    input_dims=4,
+                                    kernel_size=rnn_pooling[_],
+                                    pool_axis=2,
+                                ),
+                                layer_name="pooling",
+                            )
 
         if dnn_blocks > 0:
             self.append(sb.nnet.containers.Sequential, layer_name="DNN")
