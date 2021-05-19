@@ -310,6 +310,8 @@ if __name__ == "__main__":
     enc_params_file, run_opts_enc, overrides_enc = sb.parse_arguments(
         [sys.argv[1]]
     )
+    print(overrides)
+    print(overrides_enc)
     with open(enc_params_file) as encoding_params:
         enc_params = load_hyperpyyaml(encoding_params, overrides_enc)
 
