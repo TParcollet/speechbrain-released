@@ -32,7 +32,7 @@ test_csv: !ref <csv_folder>/test.csv
 avoid_if_longer_than: 8.0
 sorting: ascending
 # Training parameters
-number_of_epochs: 10    
+number_of_epochs: 10
 #number_of_ctc_epochs: 30
 batch_size: 16
 batch_counter: 0
@@ -91,11 +91,11 @@ max_attn_shift: 60
 
 #Workers
 workers: ['melfs', 'mfcc', 'F0final_sma', "logHNR_sma", "audspecRasta_lengthL1norm_sma", "voicingFinalUnclipped_sma",  "alphaRatio_sma3"]
-#workers: ["age", "gen", "melfs", "F0semitoneFrom27.5Hz_sma3nz_amean"] 
+#workers: ["age", "gen", "melfs", "F0semitoneFrom27.5Hz_sma3nz_amean"]
 # SpecAugment
 #csv_read: [wav, age, gender, accent, quality, F0semitoneFrom27.5Hz_sma3nz_amean, alphaRatioV_sma3nz_amean, F1bandwidth_sma3nz_stddevNorm, MeanVoicedSegmentLengthSec, jitterLocal_sma3nz_stddevNorm,Loudness_sma3, F0final_sma, jitterLocal_sma, shimmerLocal_sma, logHNR_sma,  pcm_RMSenergy_sma, voicingFinalUnclipped_sma, alphaRatio_sma3, pcm_zcr_sma, audspecRasta_lengthL1norm_sma, audspec_lengthL1norm_sma]
 #workers: ["age", "gen", "accent", "quality",  "alphaRatioV_sma3nz_amean", "F1bandwidth_sma3nz_stddevNorm", "MeanVoicedSegmentLengthSec", "jitterLocal_sma3nz_stddevNorm"]
-#workers: ["age", "gen", "melfs", "F0semitoneFrom27.5Hz_sma3nz_amean"] 
+#workers: ["age", "gen", "melfs", "F0semitoneFrom27.5Hz_sma3nz_amean"]
 #augmentation: !new:speechbrain.lobes.augment.tdsa.TimeDomainSpecAugment
 #    sample_rate: !ref <sample_rate>
 #    speeds: [95, 100, 105]
@@ -119,7 +119,7 @@ enc: !new:speechbrain.lobes.models.CRDNN.CRDNN
     rnn_re_init: True
     dnn_blocks: !ref <dnn_blocks>
     dnn_neurons: !ref <dnn_neurons>
-#Workers 
+#Workers
 #Gender classifier
 gen: !new:speechbrain.lobes.models.VanillaNN.VanillaNN
     activation: !name:torch.nn.Softmax
@@ -241,14 +241,14 @@ gamma_normalizer: !new:speechbrain.processing.features.InputNormalization
 
 
 
-    
-    
+
+
 emb: !new:speechbrain.nnet.embedding.Embedding
     num_embeddings: !ref <output_neurons>
     embedding_dim: !ref <emb_size>
 
 #dec: !new:speechbrain.lobes.models.RNNLM.RNNLM
-#    output_neurons: 80 
+#    output_neurons: 80
 
 #    enc_dim: !ref <dnn_neurons>
 #    input_size: !ref <emb_size>
@@ -264,7 +264,7 @@ emb: !new:speechbrain.nnet.embedding.Embedding
 #    dropout: !ref <dropout>
 
 
-classification_loss: !name:torch.nn.CrossEntropyLoss 
+classification_loss: !name:torch.nn.CrossEntropyLoss
 
 reconstruction_loss: !name:torch.nn.MSELoss
 
@@ -308,8 +308,8 @@ modules:
     loghnr: !ref <loghnr>
     gammatone: !ref <gammatone>
     mfcc: !ref <mfcc>
-model: !new:torch.nn.ModuleList 
-    - [!ref <enc>, !ref <emb>, !ref <dec>, !ref <quality>, !ref <age>, !ref <gen>, !ref <accent>, !ref <normalize>, !ref <f0semitone>, !ref <jitter>, !ref <meanvoiced>, !ref <aratio>, !ref <f1std>, !ref <loudness>, !ref <f0_lld>, !ref <voicing>, !ref <pcm>, !ref <jitterLocal> , !ref <mfcc>, !ref <pcmzcr>, !ref <loghnr>, !ref <shimmerLocal>, !ref <audspec_rasta>, !ref <audspec_L1>, !ref <gammatone>] 
+model: !new:torch.nn.ModuleList
+    - [!ref <enc>, !ref <emb>, !ref <dec>, !ref <quality>, !ref <age>, !ref <gen>, !ref <accent>, !ref <normalize>, !ref <f0semitone>, !ref <jitter>, !ref <meanvoiced>, !ref <aratio>, !ref <f1std>, !ref <loudness>, !ref <f0_lld>, !ref <voicing>, !ref <pcm>, !ref <jitterLocal> , !ref <mfcc>, !ref <pcmzcr>, !ref <loghnr>, !ref <shimmerLocal>, !ref <audspec_rasta>, !ref <audspec_L1>, !ref <gammatone>]
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
     checkpoints_dir: !ref <save_folder>
     recoverables:
