@@ -99,15 +99,9 @@ def create_experiment_directory(
             }
             sb.utils.logger.setup_logging(log_config, logger_overrides)
             sys.excepthook = _logging_excepthook
-
             # Log beginning of experiment!
             logger.info("Beginning experiment!")
             logger.info(f"Experiment folder: {experiment_directory}")
-            commit_hash = "1234"
-            logger.debug(
-                "Commit hash: '%s'" % commit_hash.decode("utf-8").strip()
-            )
-
             # Save system description:
             if save_env_desc:
                 description_str = sb.utils.logger.get_environment_description()
