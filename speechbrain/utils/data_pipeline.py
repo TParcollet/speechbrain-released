@@ -385,8 +385,8 @@ class DataPipeline:
                 "provide anything."
             )
         depended = []
-        if not  isinstance(obj.takes[0], str) :
-            obj.takes=obj.takes[0]
+        if not isinstance(obj.takes[0], str):
+            obj.takes = obj.takes[0]
         for key in obj.takes:
             # Might not be accounted for, yet:
             if key not in self.key_to_node:
