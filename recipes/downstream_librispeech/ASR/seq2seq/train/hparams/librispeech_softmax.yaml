@@ -197,8 +197,8 @@ seq_cost: !name:speechbrain.nnet.losses.nll_loss
    label_smoothing: 0.1
 
 # Models
-#lm_model: !new:recipes.downstream_librispeech.LM.pretrained.pretrained.LM
-#   hparams_file: !ref <lm_hparam_file>
+lm_model: !new:recipes.downstream_librispeech.LM.pretrained.pretrained.LM
+   hparams_file: !ref <lm_hparam_file>
 
 modules:
    enc: !ref <enc>
