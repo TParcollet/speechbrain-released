@@ -82,7 +82,8 @@ class ASR(sb.Brain):
         if self.hparams.baseline:
             embeddings = feats
         else:
-            embeddings = PASE_brain.modules.enc(feats)
+            with torch.no_grad():
+                embeddings = PASE_brain.modules.enc(feats)
 
         x = self.modules.enc(embeddings.detach())
 
@@ -358,6 +359,8 @@ if __name__ == "__main__":
     )
 
     PASE_brain.checkpointer.recover_if_possible()
+
+    PASE_brain.modules.enc.eval()
 
     # Trainer initialization
     asr_brain = ASR(
