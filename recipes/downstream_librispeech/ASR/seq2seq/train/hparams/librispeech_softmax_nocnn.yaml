@@ -145,7 +145,7 @@ compute_features: !new:speechbrain.lobes.features.Fbank
 #   speeds: [95, 100, 105]
 
 enc: !new:speechbrain.lobes.models.CRDNN.CRDNN
-   input_shape: [null, null, 80]
+   input_shape: [null, null, 256]
    activation: !ref <activation>
    dropout: !ref <dropout>
    cnn_blocks: !ref <cnn_blocks>
