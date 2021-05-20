@@ -83,17 +83,11 @@ class ASR(sb.Brain):
         else:
             with torch.no_grad():
                 embeddings = PASE_brain.modules.enc(feats)
-
-        print(
-            torch.mean(
-                torch.nn.functional.layer_norm(
+                embeddings = torch.nn.functional.layer_norm(
                     embeddings, normalized_shape=embeddings.shape
-                ),
-                dim=-1,
-            )
-        )
-        print("----")
-        x = self.modules.enc(embeddings.detach())
+                ).detach()
+
+        x = self.modules.enc(embeddings)
 
         e_in = self.modules.emb(tokens_bos)  # y_in bos + tokens
         h, _ = self.modules.dec(e_in, x, wav_lens)
