@@ -44,7 +44,7 @@ lr: 1.0
 ctc_weight: 0.5
 sorting: ascending
 #dynamic_batching: True
-baseline: False
+baseline: True
 #dynamic_batch_sampler:
 #   feats_hop_size: 0.01
 #   max_batch_len: 4000 # in terms of frames
@@ -80,7 +80,7 @@ test_dataloader_opts:
 activation: !name:torch.nn.LeakyReLU
 dropout: 0.15
 cnn_blocks: 0
-cnn_channels: (64, 100, 128)
+cnn_channels: (64, 100, 100)
 inter_layer_pooling_size: (2, 2, 2)
 cnn_kernelsize: (3, 3)
 time_pooling_size: 2
