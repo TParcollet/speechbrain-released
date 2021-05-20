@@ -84,7 +84,14 @@ class ASR(sb.Brain):
             with torch.no_grad():
                 embeddings = PASE_brain.modules.enc(feats)
 
-        print(torch.mean(torch.nn.functional.layer_norm(embeddings), dim=-1))
+        print(
+            torch.mean(
+                torch.nn.functional.layer_norm(
+                    embeddings, normalized_shape=embeddings.shape
+                ),
+                dim=-1,
+            )
+        )
         print("----")
         x = self.modules.enc(embeddings.detach())
 
