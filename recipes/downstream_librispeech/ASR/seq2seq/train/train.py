@@ -82,10 +82,9 @@ class ASR(sb.Brain):
             embeddings = feats
         else:
             with torch.no_grad():
-                print(feats.shape)
                 embeddings = PASE_brain.modules.enc(feats)
 
-        print(embeddings.shape)
+        print(torch.mean(embeddings, dim=-1))
         print("----")
         x = self.modules.enc(embeddings.detach())
 
