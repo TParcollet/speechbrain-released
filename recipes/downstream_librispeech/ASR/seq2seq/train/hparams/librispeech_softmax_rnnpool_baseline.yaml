@@ -92,6 +92,7 @@ rnn_pooling:
 dnn_blocks: 2
 dnn_neurons: 512
 emb_size: 128
+dec_neurons: 1024
 output_neurons: 1000  # Number of tokens (same as LM)
 blank_index: 0
 bos_index: 0
@@ -152,7 +153,7 @@ enc: !new:speechbrain.lobes.models.CRDNN.CRDNN
    cnn_channels: !ref <cnn_channels>
    cnn_kernelsize: !ref <cnn_kernelsize>
    inter_layer_pooling_size: !ref <inter_layer_pooling_size>
-   time_pooling: True
+   time_pooling: False
    using_2d_pooling: False
    time_pooling_size: !ref <time_pooling_size>
    rnn_class: !ref <rnn_class>
