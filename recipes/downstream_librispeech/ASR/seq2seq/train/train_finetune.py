@@ -83,7 +83,7 @@ class ASR(sb.Brain):
         else:
             embeddings = PASE_brain.modules.enc(feats)
 
-        print(PASE_brain.modules.enc[0])
+        print(PASE_brain.modules.enc.CNN.conv_1.conv.weight)
         x = self.modules.enc(embeddings)
 
         e_in = self.modules.emb(tokens_bos)  # y_in bos + tokens
