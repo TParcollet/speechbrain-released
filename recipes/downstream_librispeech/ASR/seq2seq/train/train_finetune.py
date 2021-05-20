@@ -167,13 +167,11 @@ class ASR(sb.Brain):
         self.pase_optimizer = self.hparams.pase_opt_class(
             PASE_brain.modules.enc.parameters()
         )
-        self.model_optimizer = self.hparams.opt_class(
-            self.hparams.model.parameters()
-        )
+        self.optimizer = self.hparams.opt_class(self.hparams.model.parameters())
 
         if self.checkpointer is not None:
             self.checkpointer.add_recoverable("pase_opt", self.pase_optimizer)
-            self.checkpointer.add_recoverable("modelopt", self.model_optimizer)
+            self.checkpointer.add_recoverable("modelopt", self.optimizer)
 
     def fit_batch(self, batch):
         """Train the parameters given a single batch in input"""
