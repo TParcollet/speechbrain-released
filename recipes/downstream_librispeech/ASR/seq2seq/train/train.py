@@ -50,11 +50,10 @@ import speechbrain as sb
 from speechbrain.utils.distributed import run_on_main
 from hyperpyyaml import load_hyperpyyaml
 from pathlib import Path
+from pase_train import PASE
 
 logger = logging.getLogger(__name__)
 
-
-from pase_train import PASE
 
 # Define training procedure
 class ASR(sb.Brain):
@@ -66,15 +65,15 @@ class ASR(sb.Brain):
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
         # Add augmentation if specified
-        if stage == sb.Stage.TRAIN:
-            if hasattr(self.modules, "env_corrupt"):
-                wavs_noise = self.modules.env_corrupt(wavs, wav_lens)
-                wavs = torch.cat([wavs, wavs_noise], dim=0)
-                wav_lens = torch.cat([wav_lens, wav_lens])
-                tokens_bos = torch.cat([tokens_bos, tokens_bos], dim=0)
+        # if stage == sb.Stage.TRAIN:
+        #    if hasattr(self.modules, "env_corrupt"):
+        #        wavs_noise = self.modules.env_corrupt(wavs, wav_lens)
+        ##        wavs = torch.cat([wavs, wavs_noise], dim=0)
+        #        wav_lens = torch.cat([wav_lens, wav_lens])
+        #        tokens_bos = torch.cat([tokens_bos, tokens_bos], dim=0)
 
-            if hasattr(self.hparams, "augmentation"):
-                wavs = self.hparams.augmentation(wavs, wav_lens)
+        #    if hasattr(self.hparams, "augmentation"):
+        #        wavs = self.hparams.augmentation(wavs, wav_lens)
 
         # Forward pass
         feats = self.hparams.compute_features(wavs)
@@ -83,8 +82,11 @@ class ASR(sb.Brain):
             embeddings = feats
         else:
             with torch.no_grad():
+                print(feats.shape)
                 embeddings = PASE_brain.modules.enc(feats)
 
+        print(embeddings.shape)
+        print("----")
         x = self.modules.enc(embeddings.detach())
 
         e_in = self.modules.emb(tokens_bos)  # y_in bos + tokens
