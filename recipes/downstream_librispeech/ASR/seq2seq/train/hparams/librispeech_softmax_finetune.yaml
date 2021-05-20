@@ -248,7 +248,7 @@ lr_annealing: !new:speechbrain.nnet.schedulers.NewBobScheduler
    patient: 0
 
 lr_annealing_pase: !new:speechbrain.nnet.schedulers.NewBobScheduler
-   initial_value: !ref <lr>
+   initial_value: 0.0001
    improvement_threshold: 0.0025
    annealing_factor: 0.9
    patient: 0
