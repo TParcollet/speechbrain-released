@@ -37,8 +37,8 @@ test_csv:
    - !ref <data_folder>/test-other.csv
 
 # Training parameters
-number_of_epochs: 20
-number_of_ctc_epochs: 10
+number_of_epochs: 30
+number_of_ctc_epochs: 20
 batch_size: 8
 lr: 1.0
 ctc_weight: 0.5
@@ -258,6 +258,7 @@ checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
    recoverables:
       model: !ref <model>
       scheduler: !ref <lr_annealing>
+      scheduler_pase: !ref <lr_annealing_pase>
       normalizer: !ref <normalize>
       counter: !ref <epoch_counter>
 
