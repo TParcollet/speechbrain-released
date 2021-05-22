@@ -44,7 +44,7 @@ test_csv:
 # The global batch size is computed as batch_size * n_gpus * gradient_accumulation.
 # Empirically, we found that this value should be >= 128.
 # Please, set your parameters accordingly.
-number_of_epochs: 110
+number_of_epochs: 90
 batch_size: 16 # This works for 2x GPUs with 32GB
 ctc_weight: 0.3
 gradient_accumulation: 4
@@ -54,7 +54,7 @@ sorting: random
 ckpt_interval_minutes: 25 # save checkpoint every N min
 
 # stages related parameters
-stage_one_epochs: 90
+stage_one_epochs: 70
 lr_adam: 0.001
 lr_sgd: 0.000025
 
