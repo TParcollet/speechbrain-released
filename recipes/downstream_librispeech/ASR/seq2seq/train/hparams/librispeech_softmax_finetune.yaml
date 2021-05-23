@@ -37,8 +37,8 @@ test_csv:
    - !ref <data_folder>/test-other.csv
 
 # Training parameters
-number_of_epochs: 30
-number_of_ctc_epochs: 20
+number_of_epochs: 35
+number_of_ctc_epochs: 35
 batch_size: 8
 lr: 1.0
 ctc_weight: 0.5
@@ -63,7 +63,7 @@ opt_class: !name:torch.optim.Adadelta
    eps: 1.e-8
 
 pase_opt_class: !name:torch.optim.Adam
-   lr: 0.0001
+   lr: 0.0002
 
 # Dataloader options
 train_dataloader_opts:
@@ -142,9 +142,9 @@ compute_features: !new:speechbrain.lobes.features.Fbank
 #   noise_snr_low: 0
 #   noise_snr_high: 15
 
-#augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
-#   sample_rate: !ref <sample_rate>
-#   speeds: [95, 100, 105]
+augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
+   sample_rate: !ref <sample_rate>
+   speeds: [95, 100, 105]
 
 enc: !new:speechbrain.lobes.models.VanillaNN.VanillaNN
    input_shape: [null, null, 256]
@@ -248,7 +248,7 @@ lr_annealing: !new:speechbrain.nnet.schedulers.NewBobScheduler
    patient: 0
 
 lr_annealing_pase: !new:speechbrain.nnet.schedulers.NewBobScheduler
-   initial_value: 0.0001
+   initial_value: 0.0002
    improvement_threshold: 0.0025
    annealing_factor: 0.9
    patient: 0

@@ -65,15 +65,9 @@ class ASR(sb.Brain):
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
         # Add augmentation if specified
-        # if stage == sb.Stage.TRAIN:
-        #    if hasattr(self.modules, "env_corrupt"):
-        #        wavs_noise = self.modules.env_corrupt(wavs, wav_lens)
-        ##        wavs = torch.cat([wavs, wavs_noise], dim=0)
-        #        wav_lens = torch.cat([wav_lens, wav_lens])
-        #        tokens_bos = torch.cat([tokens_bos, tokens_bos], dim=0)
-
-        #    if hasattr(self.hparams, "augmentation"):
-        #        wavs = self.hparams.augmentation(wavs, wav_lens)
+        if stage == sb.Stage.TRAIN:
+            if hasattr(self.hparams, "augmentation"):
+                wavs = self.hparams.augmentation(wavs, wav_lens)
 
         # Forward pass
         feats = self.hparams.compute_features(wavs)
