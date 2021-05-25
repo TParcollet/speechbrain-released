@@ -80,7 +80,7 @@ test_dataloader_opts:
 activation: !name:torch.nn.LeakyReLU
 dropout: 0.15
 cnn_blocks: 3
-cnn_channels: (64, 100, 100)
+cnn_channels: (64, 100, 128)
 inter_layer_pooling_size: (2, 2, 2)
 cnn_kernelsize: (3, 3)
 time_pooling_size: 4
