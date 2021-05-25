@@ -42,7 +42,7 @@ number_of_ctc_epochs: 30
 batch_size: 6
 lr: 1.0
 ctc_weight: 0.5
-sorting: descending
+sorting: ascending
 #dynamic_batching: True
 baseline: False
 #dynamic_batch_sampler:
