@@ -379,7 +379,7 @@ if __name__ == "__main__":
         checkpointer=enc_params["checkpointer"],
     )
 
-    PASE_brain.checkpointer.load_checkpoint(hparams["pase_start_ckpt"])
+    PASE_brain.checkpointer.recover_if_possible()
 
     PASE_brain.modules.enc.train()
 
