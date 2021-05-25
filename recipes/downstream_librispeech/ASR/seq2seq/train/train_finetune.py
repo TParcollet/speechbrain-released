@@ -151,9 +151,6 @@ class ASR(sb.Brain):
                 for utt_seq in predicted_tokens
             ]
             target_words = [wrd.split(" ") for wrd in batch.wrd]
-            print(predicted_words)
-            print(target_words)
-            print("---")
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)
 
@@ -407,8 +404,6 @@ if __name__ == "__main__":
         train_loader_kwargs=hparams["train_dataloader_opts"],
         valid_loader_kwargs=hparams["valid_dataloader_opts"],
     )
-
-    PASE_brain.checkpointer.recover_if_possible()
 
     # Testing
     for k in test_datasets.keys():  # keys are test_clean, test_other etc
