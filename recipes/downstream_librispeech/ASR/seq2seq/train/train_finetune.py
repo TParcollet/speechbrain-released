@@ -229,6 +229,9 @@ class ASR(sb.Brain):
             self.checkpointer.save_and_keep_only(
                 meta={"WER": stage_stats["WER"]}, min_keys=["WER"],
             )
+            PASE_brain.checkpointer.save_checkpoint(
+                meta={"WER": stage_stats["WER"]},
+            )
         elif stage == sb.Stage.TEST:
             self.hparams.train_logger.log_stats(
                 stats_meta={"Epoch loaded": self.hparams.epoch_counter.current},
@@ -331,8 +334,6 @@ if __name__ == "__main__":
     enc_params_file, run_opts_enc, overrides_enc = sb.parse_arguments(
         [sys.argv[1]]
     )
-    print(overrides)
-    print(overrides_enc)
     with open(enc_params_file) as encoding_params:
         enc_params = load_hyperpyyaml(encoding_params, overrides_enc)
 
@@ -378,7 +379,7 @@ if __name__ == "__main__":
         checkpointer=enc_params["checkpointer"],
     )
 
-    PASE_brain.checkpointer.recover_if_possible()
+    PASE_brain.checkpointer.load_checkpoint(hparams["pase_start_ckpt"])
 
     PASE_brain.modules.enc.train()
 
@@ -406,6 +407,8 @@ if __name__ == "__main__":
     #    train_loader_kwargs=hparams["train_dataloader_opts"],
     #    valid_loader_kwargs=hparams["valid_dataloader_opts"],
     # )
+
+    PASE_brain.checkpointer.recover_if_possible()
 
     # Testing
     for k in test_datasets.keys():  # keys are test_clean, test_other etc

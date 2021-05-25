@@ -24,6 +24,8 @@ lm_hparam_file: recipes/downstream_librispeech/LM/pretrained/hparams/pretrained_
 
 # Data files
 data_folder: /ldaphome/szaiem/LibriSpeech/ # e,g./path/to/LibriSpeech
+pase_start_ckpt: /gpfswork/rech/kxg/uyk21ll/workspace/speechbrain/speechbrain_neurips_salah/pase_pretrained/librispeech_softmax/workers_save/
+
 # noise/ris dataset will automatically be downloaded
 data_folder_rirs: !ref <data_folder>
 train_splits: ["train-clean-100"]
