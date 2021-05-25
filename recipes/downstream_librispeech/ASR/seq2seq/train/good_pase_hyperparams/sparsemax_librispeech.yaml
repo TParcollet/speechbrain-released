@@ -10,7 +10,7 @@
 seed: 2210
 __set_seed: !!python/object/apply:torch.manual_seed [!ref <seed>]
 #output_folder: !ref results/CRDNN_fr/<seed>
-output_folder: librispeech_sparsemax
+output_folder: pase_pretrained_fixed/librispeech_sparsemax
 csv_folder: /ldaphome/szaiem/github_backup/new_sb/speechbrain/recipes/CommonVoice/smaller/
 #wer_file: !ref <output_folder>/wer.txt
 save_folder: !ref <output_folder>/workers_save
