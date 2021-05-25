@@ -37,8 +37,8 @@ test_csv:
    - !ref <data_folder>/test-other.csv
 
 # Training parameters
-number_of_epochs: 20
-number_of_ctc_epochs: 10
+number_of_epochs: 30
+number_of_ctc_epochs: 30
 batch_size: 6
 lr: 1.0
 ctc_weight: 0.5
@@ -101,7 +101,7 @@ unk_index: 0
 # Decoding parameters
 min_decode_ratio: 0.0
 max_decode_ratio: 1.0
-valid_beam_size: 10
+valid_beam_size: 1
 test_beam_size: 80
 eos_threshold: 1.5
 using_max_attn_shift: True
