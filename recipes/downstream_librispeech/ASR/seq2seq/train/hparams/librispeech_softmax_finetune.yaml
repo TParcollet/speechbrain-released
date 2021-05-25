@@ -75,7 +75,7 @@ valid_dataloader_opts:
    num_workers: 4
 
 test_dataloader_opts:
-   batch_size: !ref <batch_size>
+   batch_size: 1
    num_workers: 4
 
 # Model parameters
@@ -103,7 +103,7 @@ unk_index: 0
 # Decoding parameters
 min_decode_ratio: 0.0
 max_decode_ratio: 1.0
-valid_beam_size: 1
+valid_beam_size: 80
 test_beam_size: 80
 eos_threshold: 1.5
 using_max_attn_shift: True
@@ -142,9 +142,9 @@ compute_features: !new:speechbrain.lobes.features.Fbank
 #   noise_snr_low: 0
 #   noise_snr_high: 15
 
-augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
-   sample_rate: !ref <sample_rate>
-   speeds: [95, 100, 105]
+#augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
+#   sample_rate: !ref <sample_rate>
+#   speeds: [95, 100, 105]
 
 enc: !new:speechbrain.lobes.models.VanillaNN.VanillaNN
    input_shape: [null, null, 256]
