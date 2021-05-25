@@ -400,13 +400,13 @@ if __name__ == "__main__":
         asr_brain.load_lm()
 
     # Training
-    # asr_brain.fit(
-    #    asr_brain.hparams.epoch_counter,
-    #    train_data,
-    #    valid_data,
-    #    train_loader_kwargs=hparams["train_dataloader_opts"],
-    #    valid_loader_kwargs=hparams["valid_dataloader_opts"],
-    # )
+    asr_brain.fit(
+        asr_brain.hparams.epoch_counter,
+        train_data,
+        valid_data,
+        train_loader_kwargs=hparams["train_dataloader_opts"],
+        valid_loader_kwargs=hparams["valid_dataloader_opts"],
+    )
 
     PASE_brain.checkpointer.recover_if_possible()
 

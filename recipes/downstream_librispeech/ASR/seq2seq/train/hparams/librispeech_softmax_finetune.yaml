@@ -28,7 +28,7 @@ pase_start_ckpt: /gpfswork/rech/kxg/uyk21ll/workspace/speechbrain/speechbrain_ne
 
 # noise/ris dataset will automatically be downloaded
 data_folder_rirs: !ref <data_folder>
-train_splits: ["train-clean-100"]
+train_splits: ["dev-clean"]
 dev_splits: ["dev-clean"]
 test_splits: ["test-clean", "test-other"]
 skip_prep: False
