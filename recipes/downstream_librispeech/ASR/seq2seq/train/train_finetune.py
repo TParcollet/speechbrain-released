@@ -151,6 +151,9 @@ class ASR(sb.Brain):
                 for utt_seq in predicted_tokens
             ]
             target_words = [wrd.split(" ") for wrd in batch.wrd]
+            print(predicted_words)
+            print(target_words)
+            print("---")
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)
 
