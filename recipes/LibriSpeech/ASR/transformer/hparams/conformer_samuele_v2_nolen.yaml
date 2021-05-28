@@ -201,7 +201,7 @@ test_search: !new:speechbrain.decoders.S2STransformerBeamSearch
     temperature: 1.0
     temperature_lm: 1.0
     using_eos_threshold: False
-    length_normalization: True
+    length_normalization: False
 
 log_softmax: !new:torch.nn.LogSoftmax
     dim: -1
