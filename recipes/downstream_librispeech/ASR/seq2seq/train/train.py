@@ -110,7 +110,7 @@ class ASR(sb.Brain):
             if stage == sb.Stage.VALID:
                 p_tokens, scores = self.hparams.valid_search(x, wav_lens)
             else:
-                p_tokens, scores = self.hparams.valid_search(x, wav_lens)
+                p_tokens, scores = self.hparams.test_search(x, wav_lens)
             return p_seq, wav_lens, p_tokens
 
     def compute_objectives(self, predictions, batch, stage):
@@ -373,13 +373,13 @@ if __name__ == "__main__":
         asr_brain.load_lm()
 
     # Training
-    asr_brain.fit(
-        asr_brain.hparams.epoch_counter,
-        train_data,
-        valid_data,
-        train_loader_kwargs=hparams["train_dataloader_opts"],
-        valid_loader_kwargs=hparams["valid_dataloader_opts"],
-    )
+    # asr_brain.fit(
+    #    asr_brain.hparams.epoch_counter,
+    #    train_data,
+    #    valid_data,
+    #    train_loader_kwargs=hparams["train_dataloader_opts"],
+    #    valid_loader_kwargs=hparams["valid_dataloader_opts"],
+    # )
 
     # Testing
     for k in test_datasets.keys():  # keys are test_clean, test_other etc
