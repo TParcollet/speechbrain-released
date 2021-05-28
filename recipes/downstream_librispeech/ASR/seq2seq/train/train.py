@@ -110,7 +110,7 @@ class ASR(sb.Brain):
             if stage == sb.Stage.VALID:
                 p_tokens, scores = self.hparams.valid_search(x, wav_lens)
             else:
-                p_tokens, scores = self.hparams.test_search(x, wav_lens)
+                p_tokens, scores = self.hparams.valid_search(x, wav_lens)
             return p_seq, wav_lens, p_tokens
 
     def compute_objectives(self, predictions, batch, stage):
