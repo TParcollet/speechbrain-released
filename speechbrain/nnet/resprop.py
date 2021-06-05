@@ -8,8 +8,6 @@ class LinearResProp(Function):
     """ Standard forward/backward implementation for a nn.Linear
     layer BUT, uses sparsification as defined in ResProp."""
 
-    # adapted ResProp to linear layers
-
     @staticmethod
     def forward(
         ctx,
