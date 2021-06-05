@@ -19,7 +19,6 @@ import logging
 import speechbrain as sb
 from hyperpyyaml import load_hyperpyyaml
 from speechbrain.utils.distributed import run_on_main
-import torch.autograd.profiler as profiler
 
 logger = logging.getLogger(__name__)
 
@@ -28,31 +27,23 @@ logger = logging.getLogger(__name__)
 class ASR_Brain(sb.Brain):
     def compute_forward(self, batch, stage):
 
-        with profiler.profile(record_shapes=True, use_cuda=True) as prof:
+        "Given an input batch it computes the phoneme probabilities."
+        batch = batch.to(self.device)
+        wavs, wav_lens = batch.sig
+        # Adding optional augmentation when specified:
+        if stage == sb.Stage.TRAIN:
+            if hasattr(self.hparams, "env_corrupt"):
+                wavs_noise = self.hparams.env_corrupt(wavs, wav_lens)
+                wavs = torch.cat([wavs, wavs_noise], dim=0)
+                wav_lens = torch.cat([wav_lens, wav_lens])
+            if hasattr(self.hparams, "augmentation"):
+                wavs = self.hparams.augmentation(wavs, wav_lens)
 
-            "Given an input batch it computes the phoneme probabilities."
-            batch = batch.to(self.device)
-            wavs, wav_lens = batch.sig
-            # Adding optional augmentation when specified:
-            if stage == sb.Stage.TRAIN:
-                if hasattr(self.hparams, "env_corrupt"):
-                    wavs_noise = self.hparams.env_corrupt(wavs, wav_lens)
-                    wavs = torch.cat([wavs, wavs_noise], dim=0)
-                    wav_lens = torch.cat([wav_lens, wav_lens])
-                if hasattr(self.hparams, "augmentation"):
-                    wavs = self.hparams.augmentation(wavs, wav_lens)
-
-            feats = self.hparams.compute_features(wavs)
-            feats = self.modules.normalize(feats, wav_lens)
-            out = self.modules.model(feats)
-            out = self.modules.output(out)
-            pout = self.hparams.log_softmax(out)
-
-        print(
-            prof.key_averages(group_by_input_shape=True).table(
-                sort_by="self_cuda_time_total", row_limit=10
-            )
-        )
+        feats = self.hparams.compute_features(wavs)
+        feats = self.modules.normalize(feats, wav_lens)
+        out = self.modules.model(feats)
+        out = self.modules.output(out)
+        pout = self.hparams.log_softmax(out)
 
         return pout, wav_lens
 
