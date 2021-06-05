@@ -244,7 +244,7 @@ if __name__ == "__main__":
     )
     asr_brain.label_encoder = label_encoder
 
-    with profiler.profile(record_shapes=True) as prof:
+    with profiler.profile(record_shapes=True, use_cuda=True) as prof:
         with profiler.record_function("model_inference"):
             # Training/validation loop
             asr_brain.fit(
@@ -253,6 +253,11 @@ if __name__ == "__main__":
                 valid_data,
                 train_loader_kwargs=hparams["train_dataloader_opts"],
                 valid_loader_kwargs=hparams["valid_dataloader_opts"],
+            )
+            print(
+                prof.key_averages(group_by_input_shape=True).table(
+                    sort_by="self_cuda_time_total", row_limit=10
+                )
             )
 
     # Test
