@@ -201,50 +201,49 @@ if __name__ == "__main__":
 
     # CLI:
     hparams_file, run_opts, overrides = sb.parse_arguments(sys.argv[1:])
-
-    # Load hyperparameters file with command-line overrides
-    with open(hparams_file) as fin:
-        hparams = load_hyperpyyaml(fin, overrides)
-
-    # Dataset prep (parsing TIMIT and annotation into csv files)
-    from timit_prepare import prepare_timit  # noqa
-
-    # Initialize ddp (useful only for multi-GPU DDP training)
-    sb.utils.distributed.ddp_init_group(run_opts)
-
-    # Create experiment directory
-    sb.create_experiment_directory(
-        experiment_directory=hparams["output_folder"],
-        hyperparams_to_save=hparams_file,
-        overrides=overrides,
-    )
-
-    # multi-gpu (ddp) save data preparation
-    run_on_main(
-        prepare_timit,
-        kwargs={
-            "data_folder": hparams["data_folder"],
-            "save_json_train": hparams["train_annotation"],
-            "save_json_valid": hparams["valid_annotation"],
-            "save_json_test": hparams["test_annotation"],
-            "skip_prep": hparams["skip_prep"],
-        },
-    )
-
-    # Dataset IO prep: creating Dataset objects and proper encodings for phones
-    train_data, valid_data, test_data, label_encoder = dataio_prep(hparams)
-
-    # Trainer initialization
-    asr_brain = ASR_Brain(
-        modules=hparams["modules"],
-        opt_class=hparams["opt_class"],
-        hparams=hparams,
-        run_opts=run_opts,
-        checkpointer=hparams["checkpointer"],
-    )
-    asr_brain.label_encoder = label_encoder
-
     with profiler.profile(record_shapes=True, use_cuda=True) as prof:
+        # Load hyperparameters file with command-line overrides
+        with open(hparams_file) as fin:
+            hparams = load_hyperpyyaml(fin, overrides)
+
+        # Dataset prep (parsing TIMIT and annotation into csv files)
+        from timit_prepare import prepare_timit  # noqa
+
+        # Initialize ddp (useful only for multi-GPU DDP training)
+        sb.utils.distributed.ddp_init_group(run_opts)
+
+        # Create experiment directory
+        sb.create_experiment_directory(
+            experiment_directory=hparams["output_folder"],
+            hyperparams_to_save=hparams_file,
+            overrides=overrides,
+        )
+
+        # multi-gpu (ddp) save data preparation
+        run_on_main(
+            prepare_timit,
+            kwargs={
+                "data_folder": hparams["data_folder"],
+                "save_json_train": hparams["train_annotation"],
+                "save_json_valid": hparams["valid_annotation"],
+                "save_json_test": hparams["test_annotation"],
+                "skip_prep": hparams["skip_prep"],
+            },
+        )
+
+        # Dataset IO prep: creating Dataset objects and proper encodings for phones
+        train_data, valid_data, test_data, label_encoder = dataio_prep(hparams)
+
+        # Trainer initialization
+        asr_brain = ASR_Brain(
+            modules=hparams["modules"],
+            opt_class=hparams["opt_class"],
+            hparams=hparams,
+            run_opts=run_opts,
+            checkpointer=hparams["checkpointer"],
+        )
+        asr_brain.label_encoder = label_encoder
+
         # Training/validation loop
         asr_brain.fit(
             asr_brain.hparams.epoch_counter,
