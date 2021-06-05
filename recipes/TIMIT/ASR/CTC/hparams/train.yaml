@@ -120,8 +120,6 @@ modules:
     normalize: !ref <normalize>
     env_corrupt: !ref <env_corrupt>
 
-jit_module_keys: [model]
-
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
     checkpoints_dir: !ref <save_folder>
     recoverables:
