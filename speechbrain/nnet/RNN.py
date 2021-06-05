@@ -1209,6 +1209,7 @@ class LiGRU_Layer(torch.nn.Module):
         else:
             self.act = torch.nn.ReLU()
 
+    @staticmethod
     def forward(self, x, hx: Optional[Tensor] = None):
         # type: (Tensor, Optional[Tensor]) -> Tensor # noqa F821
         """Returns the output of the liGRU layer.
