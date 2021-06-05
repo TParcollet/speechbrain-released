@@ -33,7 +33,6 @@ from speechbrain.utils.distributed import run_on_main
 from speechbrain.dataio.dataloader import SaveableDataLoader
 from speechbrain.dataio.sampler import DistributedSamplerWrapper
 from speechbrain.dataio.sampler import ReproducibleRandomSampler
-import torch.autograd.profiler as profiler
 
 logger = logging.getLogger(__name__)
 DEFAULT_LOG_CONFIG = os.path.dirname(os.path.abspath(__file__))
@@ -837,15 +836,10 @@ class Brain:
                 self.scaler.step(self.optimizer)
             self.scaler.update()
         else:
-            with profiler.profile(record_shapes=True, use_cuda=True) as prof:
-                outputs = self.compute_forward(batch, Stage.TRAIN)
-                loss = self.compute_objectives(outputs, batch, Stage.TRAIN)
-                loss.backward()
-            print(
-                prof.key_averages(group_by_input_shape=True).table(
-                    sort_by="self_cuda_time_total", row_limit=10
-                )
-            )
+            outputs = self.compute_forward(batch, Stage.TRAIN)
+            loss = self.compute_objectives(outputs, batch, Stage.TRAIN)
+            loss.backward()
+
             if self.check_gradients(loss):
                 self.optimizer.step()
             self.optimizer.zero_grad()
