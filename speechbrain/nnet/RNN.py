@@ -1086,7 +1086,7 @@ class LiGRU(torch.nn.Module):
             if x.ndim == 4:
                 x = x.reshape(x.shape[0], x.shape[1], x.shape[2] * x.shape[3])
             if x.ndim == 3:
-                x = x.view(x.shape[0] * x.shape[1], x.shape[3])
+                x = x.view(x.shape[0] * x.shape[1], x.shape[2])
         # run ligru
         output, hh = self._forward_ligru(x, hx=hx)
 
