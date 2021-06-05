@@ -254,11 +254,11 @@ if __name__ == "__main__":
                 train_loader_kwargs=hparams["train_dataloader_opts"],
                 valid_loader_kwargs=hparams["valid_dataloader_opts"],
             )
-            print(
-                prof.key_averages(group_by_input_shape=True).table(
-                    sort_by="self_cuda_time_total", row_limit=10
-                )
+        print(
+            prof.key_averages(group_by_input_shape=True).table(
+                sort_by="self_cuda_time_total", row_limit=10
             )
+        )
 
     # Test
     asr_brain.evaluate(
