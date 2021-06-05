@@ -27,23 +27,32 @@ logger = logging.getLogger(__name__)
 # Define training procedure
 class ASR_Brain(sb.Brain):
     def compute_forward(self, batch, stage):
-        "Given an input batch it computes the phoneme probabilities."
-        batch = batch.to(self.device)
-        wavs, wav_lens = batch.sig
-        # Adding optional augmentation when specified:
-        if stage == sb.Stage.TRAIN:
-            if hasattr(self.hparams, "env_corrupt"):
-                wavs_noise = self.hparams.env_corrupt(wavs, wav_lens)
-                wavs = torch.cat([wavs, wavs_noise], dim=0)
-                wav_lens = torch.cat([wav_lens, wav_lens])
-            if hasattr(self.hparams, "augmentation"):
-                wavs = self.hparams.augmentation(wavs, wav_lens)
 
-        feats = self.hparams.compute_features(wavs)
-        feats = self.modules.normalize(feats, wav_lens)
-        out = self.modules.model(feats)
-        out = self.modules.output(out)
-        pout = self.hparams.log_softmax(out)
+        with profiler.profile(record_shapes=True, use_cuda=True) as prof:
+
+            "Given an input batch it computes the phoneme probabilities."
+            batch = batch.to(self.device)
+            wavs, wav_lens = batch.sig
+            # Adding optional augmentation when specified:
+            if stage == sb.Stage.TRAIN:
+                if hasattr(self.hparams, "env_corrupt"):
+                    wavs_noise = self.hparams.env_corrupt(wavs, wav_lens)
+                    wavs = torch.cat([wavs, wavs_noise], dim=0)
+                    wav_lens = torch.cat([wav_lens, wav_lens])
+                if hasattr(self.hparams, "augmentation"):
+                    wavs = self.hparams.augmentation(wavs, wav_lens)
+
+            feats = self.hparams.compute_features(wavs)
+            feats = self.modules.normalize(feats, wav_lens)
+            out = self.modules.model(feats)
+            out = self.modules.output(out)
+            pout = self.hparams.log_softmax(out)
+
+        print(
+            prof.key_averages(group_by_input_shape=True).table(
+                sort_by="self_cuda_time_total", row_limit=10
+            )
+        )
 
         return pout, wav_lens
 
@@ -201,61 +210,56 @@ if __name__ == "__main__":
 
     # CLI:
     hparams_file, run_opts, overrides = sb.parse_arguments(sys.argv[1:])
-    with profiler.profile(record_shapes=True, use_cuda=True) as prof:
-        # Load hyperparameters file with command-line overrides
-        with open(hparams_file) as fin:
-            hparams = load_hyperpyyaml(fin, overrides)
 
-        # Dataset prep (parsing TIMIT and annotation into csv files)
-        from timit_prepare import prepare_timit  # noqa
+    # Load hyperparameters file with command-line overrides
+    with open(hparams_file) as fin:
+        hparams = load_hyperpyyaml(fin, overrides)
 
-        # Initialize ddp (useful only for multi-GPU DDP training)
-        sb.utils.distributed.ddp_init_group(run_opts)
+    # Dataset prep (parsing TIMIT and annotation into csv files)
+    from timit_prepare import prepare_timit  # noqa
 
-        # Create experiment directory
-        sb.create_experiment_directory(
-            experiment_directory=hparams["output_folder"],
-            hyperparams_to_save=hparams_file,
-            overrides=overrides,
-        )
+    # Initialize ddp (useful only for multi-GPU DDP training)
+    sb.utils.distributed.ddp_init_group(run_opts)
 
-        # multi-gpu (ddp) save data preparation
-        run_on_main(
-            prepare_timit,
-            kwargs={
-                "data_folder": hparams["data_folder"],
-                "save_json_train": hparams["train_annotation"],
-                "save_json_valid": hparams["valid_annotation"],
-                "save_json_test": hparams["test_annotation"],
-                "skip_prep": hparams["skip_prep"],
-            },
-        )
+    # Create experiment directory
+    sb.create_experiment_directory(
+        experiment_directory=hparams["output_folder"],
+        hyperparams_to_save=hparams_file,
+        overrides=overrides,
+    )
 
-        # Dataset IO prep: creating Dataset objects and proper encodings for phones
-        train_data, valid_data, test_data, label_encoder = dataio_prep(hparams)
+    # multi-gpu (ddp) save data preparation
+    run_on_main(
+        prepare_timit,
+        kwargs={
+            "data_folder": hparams["data_folder"],
+            "save_json_train": hparams["train_annotation"],
+            "save_json_valid": hparams["valid_annotation"],
+            "save_json_test": hparams["test_annotation"],
+            "skip_prep": hparams["skip_prep"],
+        },
+    )
 
-        # Trainer initialization
-        asr_brain = ASR_Brain(
-            modules=hparams["modules"],
-            opt_class=hparams["opt_class"],
-            hparams=hparams,
-            run_opts=run_opts,
-            checkpointer=hparams["checkpointer"],
-        )
-        asr_brain.label_encoder = label_encoder
+    # Dataset IO prep: creating Dataset objects and proper encodings for phones
+    train_data, valid_data, test_data, label_encoder = dataio_prep(hparams)
 
-        # Training/validation loop
-        asr_brain.fit(
-            asr_brain.hparams.epoch_counter,
-            train_data,
-            train_data,
-            train_loader_kwargs=hparams["train_dataloader_opts"],
-            valid_loader_kwargs=hparams["valid_dataloader_opts"],
-        )
-    print(
-        prof.key_averages(group_by_input_shape=True).table(
-            sort_by="self_cuda_time_total", row_limit=10
-        )
+    # Trainer initialization
+    asr_brain = ASR_Brain(
+        modules=hparams["modules"],
+        opt_class=hparams["opt_class"],
+        hparams=hparams,
+        run_opts=run_opts,
+        checkpointer=hparams["checkpointer"],
+    )
+    asr_brain.label_encoder = label_encoder
+
+    # Training/validation loop
+    asr_brain.fit(
+        asr_brain.hparams.epoch_counter,
+        train_data,
+        train_data,
+        train_loader_kwargs=hparams["train_dataloader_opts"],
+        valid_loader_kwargs=hparams["valid_dataloader_opts"],
     )
 
     # Test
