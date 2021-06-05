@@ -1226,7 +1226,7 @@ class LiGRU_Layer(torch.nn.Module):
         self._change_batch_size(x)
 
         # Feed-forward affine transformations (all steps in parallel)
-        w = self.w.apply(x)
+        w = self.w(x)
 
         # Apply batch normalization
         if self.normalize:
