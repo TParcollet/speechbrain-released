@@ -1109,9 +1109,9 @@ class LiGRU(torch.nn.Module):
         # Processing the different layers
         for i, ligru_lay in enumerate(self.rnn):
             if hx is not None:
-                x = ligru_lay(x, hx=hx[i])
+                x = ligru_lay.apply(x, hx=hx[i])
             else:
-                x = ligru_lay(x, hx=None)
+                x = ligru_lay.apply(x, hx=None)
             h.append(x[:, -1, :])
         h = torch.stack(h, dim=1)
 
