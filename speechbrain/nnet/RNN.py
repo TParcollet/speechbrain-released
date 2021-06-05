@@ -1038,7 +1038,7 @@ class LiGRU(torch.nn.Module):
         self.reshape = False
 
         # Computing the feature dimensionality
-        if len(input_shape) > 3:
+        if len(input_shape) > 2:
             self.reshape = True
         self.fea_dim = float(torch.prod(torch.tensor(input_shape[2:])))
         self.batch_size = input_shape[0]
@@ -1085,7 +1085,8 @@ class LiGRU(torch.nn.Module):
         if self.reshape:
             if x.ndim == 4:
                 x = x.reshape(x.shape[0], x.shape[1], x.shape[2] * x.shape[3])
-
+            if x.ndim == 3:
+                x = x.view(x.shape[0] * x.shape[1], x.shape[3])
         # run ligru
         output, hh = self._forward_ligru(x, hx=hx)
 
