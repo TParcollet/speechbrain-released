@@ -19,6 +19,7 @@ import logging
 import speechbrain as sb
 from hyperpyyaml import load_hyperpyyaml
 from speechbrain.utils.distributed import run_on_main
+import torch.autograd.profiler as profiler
 
 logger = logging.getLogger(__name__)
 
@@ -243,14 +244,16 @@ if __name__ == "__main__":
     )
     asr_brain.label_encoder = label_encoder
 
-    # Training/validation loop
-    asr_brain.fit(
-        asr_brain.hparams.epoch_counter,
-        train_data,
-        valid_data,
-        train_loader_kwargs=hparams["train_dataloader_opts"],
-        valid_loader_kwargs=hparams["valid_dataloader_opts"],
-    )
+    with profiler.profile(record_shapes=True) as prof:
+        with profiler.record_function("model_inference"):
+            # Training/validation loop
+            asr_brain.fit(
+                asr_brain.hparams.epoch_counter,
+                train_data,
+                valid_data,
+                train_loader_kwargs=hparams["train_dataloader_opts"],
+                valid_loader_kwargs=hparams["valid_dataloader_opts"],
+            )
 
     # Test
     asr_brain.evaluate(
