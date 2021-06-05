@@ -13,6 +13,7 @@ import json
 import logging
 from speechbrain.utils.data_utils import get_all_files
 from speechbrain.dataio.dataio import read_audio
+from tqdm.contrib import tzip
 
 logger = logging.getLogger(__name__)
 SAMPLERATE = 16000
@@ -379,8 +380,9 @@ def create_json(
     logger.info(msg)
     json_dict = {}
 
-    for wav_file in wav_lst:
+    for wav_file in tzip(wav_lst):
 
+        wav_file = wav_file[0]
         # Getting sentence and speaker ids
         spk_id = wav_file.split("/")[-2]
         snt_id = wav_file.split("/")[-1].replace(".wav", "")
