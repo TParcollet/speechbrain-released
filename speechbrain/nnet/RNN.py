@@ -17,7 +17,7 @@ from speechbrain.nnet.attention import (
 )
 from torch import Tensor
 from typing import Optional
-from speechbrain.nnet.resprop import LinearResProp
+from speechbrain.nnet.resprop import resPropLinear
 
 logger = logging.getLogger(__name__)
 
@@ -1168,7 +1168,7 @@ class LiGRU_Layer(torch.nn.Module):
         self.bidirectional = bidirectional
         self.dropout = dropout
 
-        self.w = LinearResProp(
+        self.w = resPropLinear(
             self.input_size, 2 * self.hidden_size, bias=False
         )
 
