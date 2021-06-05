@@ -1109,9 +1109,9 @@ class LiGRU(torch.nn.Module):
         # Processing the different layers
         for i, ligru_lay in enumerate(self.rnn):
             if hx is not None:
-                x = ligru_lay.apply(x, hx=hx[i])
+                x = ligru_lay(x, hx=hx[i])
             else:
-                x = ligru_lay.apply(x, hx=None)
+                x = ligru_lay(x, hx=None)
             h.append(x[:, -1, :])
         h = torch.stack(h, dim=1)
 
@@ -1209,7 +1209,6 @@ class LiGRU_Layer(torch.nn.Module):
         else:
             self.act = torch.nn.ReLU()
 
-    @staticmethod
     def forward(self, x, hx: Optional[Tensor] = None):
         # type: (Tensor, Optional[Tensor]) -> Tensor # noqa F821
         """Returns the output of the liGRU layer.
@@ -1227,7 +1226,7 @@ class LiGRU_Layer(torch.nn.Module):
         self._change_batch_size(x)
 
         # Feed-forward affine transformations (all steps in parallel)
-        w = self.w(x)
+        w = self.w.apply(x)
 
         # Apply batch normalization
         if self.normalize:
