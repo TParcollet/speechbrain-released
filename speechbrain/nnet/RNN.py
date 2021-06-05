@@ -1090,6 +1090,8 @@ class LiGRU(torch.nn.Module):
         # run ligru
         output, hh = self._forward_ligru(x, hx=hx)
 
+        if self.reshape:
+            output = output.view(x.shape[0], x.shape[1], output.shape[1])
         return output, hh
 
     def _forward_ligru(self, x, hx: Optional[Tensor]):
