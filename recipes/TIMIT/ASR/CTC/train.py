@@ -88,7 +88,7 @@ class ASR_Brain(sb.Brain):
             per = self.per_metrics.summarize("error_rate")
 
         if stage == sb.Stage.VALID:
-            old_lr, new_lr = self.hparams.lr_annealing(per)
+            old_lr, new_lr = self.hparams.lr_annealing(stage_loss)
             sb.nnet.schedulers.update_learning_rate(self.optimizer, new_lr)
             self.hparams.train_logger.log_stats(
                 stats_meta={"epoch": epoch, "lr": old_lr},
@@ -248,7 +248,7 @@ if __name__ == "__main__":
     asr_brain.fit(
         asr_brain.hparams.epoch_counter,
         train_data,
-        train_data,
+        valid_data,
         train_loader_kwargs=hparams["train_dataloader_opts"],
         valid_loader_kwargs=hparams["valid_dataloader_opts"],
     )
