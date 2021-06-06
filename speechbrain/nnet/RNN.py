@@ -1213,6 +1213,7 @@ class LiGRU_Layer(torch.nn.Module):
             self.act = torch.nn.Tanh()
         elif nonlinearity == "sin":
             self.act = torch.sin
+            print("ENLO")
         elif nonlinearity == "leaky_relu":
             self.act = torch.nn.LeakyReLU()
         else:
