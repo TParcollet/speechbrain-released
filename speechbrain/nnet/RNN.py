@@ -1092,6 +1092,7 @@ class LiGRU(torch.nn.Module):
 
         if self.reshape:
             output = output.view(x.shape[0], x.shape[1], output.shape[1])
+
         return output, hh
 
     def _forward_ligru(self, x, hx: Optional[Tensor]):
@@ -1233,8 +1234,9 @@ class LiGRU_Layer(torch.nn.Module):
 
         # Apply batch normalization
         if self.normalize:
-            w_bn = self.norm(w.reshape(w.shape[0] * w.shape[1], w.shape[2]))
-            w = w_bn.reshape(w.shape[0], w.shape[1], w.shape[2])
+            # w_bn = self.norm(w.reshape(w.shape[0] * w.shape[1], w.shape[2]))
+            w = self.norm(w)
+            # w = w_bn.reshape(w.shape[0], w.shape[1], w.shape[2])
 
         # Processing time steps
         if hx is not None:
