@@ -1174,7 +1174,7 @@ class LiGRU_Layer(torch.nn.Module):
 
         if sparse:
             self.w = resPropLinear(
-                self.input_size, 2 * self.hidden_size, bias=False
+                self.input_size, 2 * self.hidden_size, bias=False, sparsity=0.2,
             )
         else:
             self.w = nn.Linear(
