@@ -1226,10 +1226,10 @@ class LiGRU_Layer(torch.nn.Module):
         self._change_batch_size(x)
 
         # Transform shape for sparsification
-        x = x.view(x.shape[0] * x.shape[1], x.shape[2])
+        x_t = x.view(x.shape[0] * x.shape[1], x.shape[2])
 
         # Feed-forward affine transformations (all steps in parallel)
-        w = self.w(x)
+        w = self.w(x_t)
 
         # Apply batch normalization
         if self.normalize:
