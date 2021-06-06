@@ -1085,13 +1085,9 @@ class LiGRU(torch.nn.Module):
         if self.reshape:
             if x.ndim == 4:
                 x = x.reshape(x.shape[0], x.shape[1], x.shape[2] * x.shape[3])
-            if x.ndim == 3:
-                x = x.view(x.shape[0] * x.shape[1], x.shape[2])
+
         # run ligru
         output, hh = self._forward_ligru(x, hx=hx)
-
-        if self.reshape:
-            output = output.view(x.shape[0], x.shape[1], output.shape[1])
 
         return output, hh
 
@@ -1229,6 +1225,9 @@ class LiGRU_Layer(torch.nn.Module):
         # Change batch size if needed
         self._change_batch_size(x)
 
+        # Transform shape for sparsification
+        x = x.view(x.shape(0) * x.shape(1), x.shape(2))
+
         # Feed-forward affine transformations (all steps in parallel)
         w = self.w(x)
 
@@ -1237,6 +1236,9 @@ class LiGRU_Layer(torch.nn.Module):
             # w_bn = self.norm(w.reshape(w.shape[0] * w.shape[1], w.shape[2]))
             w = self.norm(w)
             # w = w_bn.reshape(w.shape[0], w.shape[1], w.shape[2])
+
+        # Transform back the shape to [B, T, F]
+        w = w.view(x.shape(0), x.shape(1), x.shape(2))
 
         # Processing time steps
         if hx is not None:
