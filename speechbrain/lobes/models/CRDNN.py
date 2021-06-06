@@ -182,6 +182,7 @@ class CRDNN(sb.nnet.containers.Sequential):
                     bidirectional=rnn_bidirectional,
                     re_init=rnn_re_init,
                     sparse=sparse,
+                    activation="sin",
                 )
 
         if dnn_blocks > 0:
