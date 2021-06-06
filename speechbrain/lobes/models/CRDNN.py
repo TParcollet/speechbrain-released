@@ -101,6 +101,7 @@ class CRDNN(sb.nnet.containers.Sequential):
         dnn_neurons=512,
         projection_dim=-1,
         use_rnnp=False,
+        sparse=False,
     ):
         if input_size is None and input_shape is None:
             raise ValueError("Must specify one of input_size or input_shape")
@@ -180,6 +181,7 @@ class CRDNN(sb.nnet.containers.Sequential):
                     dropout=dropout,
                     bidirectional=rnn_bidirectional,
                     re_init=rnn_re_init,
+                    sparse=sparse,
                 )
 
         if dnn_blocks > 0:

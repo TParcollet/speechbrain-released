@@ -25,6 +25,7 @@ number_of_epochs: 50
 batch_size: 8
 lr: 1.0
 sorting: ascending # choose between ascending, descending and random
+sparse: True
 
 # Feature parameters
 sample_rate: 16000
@@ -94,6 +95,7 @@ model: !new:speechbrain.lobes.models.CRDNN.CRDNN
     rnn_bidirectional: !ref <rnn_bidirectional>
     dnn_blocks: !ref <dnn_blocks>
     dnn_neurons: !ref <dnn_neurons>
+    sparse: !ref <sparse>
 
 output: !new:speechbrain.nnet.linear.Linear
     input_size: !ref <dnn_neurons>

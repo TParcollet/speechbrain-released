@@ -1025,6 +1025,7 @@ class LiGRU(torch.nn.Module):
         dropout=0.0,
         re_init=True,
         bidirectional=False,
+        sparse=False,
     ):
         super().__init__()
         self.hidden_size = hidden_size
@@ -1036,6 +1037,7 @@ class LiGRU(torch.nn.Module):
         self.re_init = re_init
         self.bidirectional = bidirectional
         self.reshape = False
+        self.sparse = sparse
 
         # Computing the feature dimensionality
         if len(input_shape) > 2:
@@ -1062,6 +1064,7 @@ class LiGRU(torch.nn.Module):
                 nonlinearity=self.nonlinearity,
                 normalization=self.normalization,
                 bidirectional=self.bidirectional,
+                sparse=self.sparse,
             )
             rnn.append(rnn_lay)
 
@@ -1159,6 +1162,7 @@ class LiGRU_Layer(torch.nn.Module):
         nonlinearity="relu",
         normalization="batchnorm",
         bidirectional=False,
+        sparse=False,
     ):
 
         super(LiGRU_Layer, self).__init__()
@@ -1168,9 +1172,14 @@ class LiGRU_Layer(torch.nn.Module):
         self.bidirectional = bidirectional
         self.dropout = dropout
 
-        self.w = resPropLinear(
-            self.input_size, 2 * self.hidden_size, bias=False
-        )
+        if sparse:
+            self.w = resPropLinear(
+                self.input_size, 2 * self.hidden_size, bias=False
+            )
+        else:
+            self.w = nn.Linear(
+                self.input_size, 2 * self.hidden_size, bias=False
+            )
 
         self.u = nn.Linear(self.hidden_size, 2 * self.hidden_size, bias=False)
 
