@@ -116,8 +116,8 @@ opt_class: !name:torch.optim.Adadelta
 lr_annealing: !new:speechbrain.nnet.schedulers.NewBobScheduler
     initial_value: !ref <lr>
     improvement_threshold: 0.0025
-    annealing_factor: 0.8
-    patient: 0
+    annealing_factor: 0.95
+    patient: 1
 
 modules:
     model: !ref <model>
