@@ -61,7 +61,7 @@ n_mels: 80
 
 # Model parameters
 activation: !name:torch.nn.LeakyReLU
-dropout: 0.0
+dropout: 0.15
 cnn_blocks: 3
 cnn_channels: (128, 200, 256)
 inter_layer_pooling_size: (2, 2, 2)
@@ -138,6 +138,7 @@ enc: !new:speechbrain.lobes.models.CRDNN.CRDNN
     rnn_re_init: True
     dnn_blocks: !ref <dnn_blocks>
     dnn_neurons: !ref <dnn_neurons>
+    use_rnnp: True
 
 emb: !new:speechbrain.nnet.embedding.Embedding
     num_embeddings: !ref <output_neurons>
