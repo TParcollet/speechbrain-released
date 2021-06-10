@@ -76,6 +76,7 @@ class ASR(sb.core.Brain):
         """Computes the loss (CTC+NLL) given predictions and targets."""
 
         print(predictions)
+        print(batch)
         current_epoch = self.hparams.epoch_counter.current
         if stage == sb.Stage.TRAIN:
             if current_epoch <= self.hparams.number_of_ctc_epochs:
