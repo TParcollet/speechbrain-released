@@ -240,7 +240,7 @@ class CNN_Block(sb.nnet.containers.Sequential):
             kernel_size=kernel_size,
             layer_name="conv_1",
         )
-        self.append(sb.nnet.normalization.LayerNorm, layer_name="norm_1")
+        # self.append(sb.nnet.normalization.LayerNorm, layer_name="norm_1")
         self.append(activation(), layer_name="act_1")
         self.append(
             sb.nnet.CNN.Conv2d,
@@ -248,7 +248,7 @@ class CNN_Block(sb.nnet.containers.Sequential):
             kernel_size=kernel_size,
             layer_name="conv_2",
         )
-        self.append(sb.nnet.normalization.LayerNorm, layer_name="norm_2")
+        # self.append(sb.nnet.normalization.LayerNorm, layer_name="norm_2")
         self.append(activation(), layer_name="act_2")
 
         if using_2d_pool:
@@ -271,9 +271,9 @@ class CNN_Block(sb.nnet.containers.Sequential):
                 layer_name="pooling",
             )
 
-        self.append(
-            sb.nnet.dropout.Dropout2d(drop_rate=dropout), layer_name="drop"
-        )
+        # self.append(
+        #    sb.nnet.dropout.Dropout2d(drop_rate=dropout), layer_name="drop"
+        # )
 
 
 class DNN_Block(sb.nnet.containers.Sequential):
@@ -306,6 +306,6 @@ class DNN_Block(sb.nnet.containers.Sequential):
         self.append(
             sb.nnet.linear.Linear, n_neurons=neurons, layer_name="linear",
         )
-        self.append(sb.nnet.normalization.BatchNorm1d, layer_name="norm")
+        # self.append(sb.nnet.normalization.BatchNorm1d, layer_name="norm")
         self.append(activation(), layer_name="act")
         self.append(torch.nn.Dropout(p=dropout), layer_name="dropout")
