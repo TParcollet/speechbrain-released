@@ -250,12 +250,24 @@ class CNN_Block(sb.nnet.containers.Sequential):
         )
         # self.append(sb.nnet.normalization.LayerNorm, layer_name="norm_2")
         self.append(activation(), layer_name="act_2")
-        self.append(
-            sb.nnet.pooling.Pooling2d(
-                pool_type="max", kernel_size=(2, 2), pool_axis=(1, 2),
-            ),
-            layer_name="pooling",
-        )
+
+        if using_2d_pool:
+            self.append(
+                sb.nnet.pooling.Pooling2d(
+                    pool_type="max", kernel_size=(2, 2), pool_axis=(1, 2),
+                ),
+                layer_name="pooling",
+            )
+        else:
+            self.append(
+                sb.nnet.pooling.Pooling1d(
+                    pool_type="max",
+                    input_dims=4,
+                    kernel_size=pooling_size,
+                    pool_axis=2,
+                ),
+                layer_name="pooling",
+            )
 
         # self.append(
         #    sb.nnet.dropout.Dropout2d(drop_rate=dropout), layer_name="drop"
