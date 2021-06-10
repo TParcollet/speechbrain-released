@@ -56,7 +56,7 @@ class ASR(sb.core.Brain):
         logits = self.modules.seq_lin(h)
 
         p_seq = self.hparams.log_softmax(logits)
-        print(p_seq)
+
         # Compute outputs
         if stage == sb.Stage.TRAIN:
             current_epoch = self.hparams.epoch_counter.current
@@ -64,7 +64,7 @@ class ASR(sb.core.Brain):
                 # Output layer for ctc log-probabilities
                 logits = self.modules.ctc_lin(x)
                 p_ctc = self.hparams.log_softmax(logits)
-                print(p_ctc)
+
                 return p_ctc, p_seq, wav_lens
             else:
                 return p_seq, wav_lens
@@ -75,6 +75,7 @@ class ASR(sb.core.Brain):
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss (CTC+NLL) given predictions and targets."""
 
+        print(predictions)
         current_epoch = self.hparams.epoch_counter.current
         if stage == sb.Stage.TRAIN:
             if current_epoch <= self.hparams.number_of_ctc_epochs:
