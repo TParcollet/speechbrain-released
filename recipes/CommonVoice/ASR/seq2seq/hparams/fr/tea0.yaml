@@ -129,7 +129,7 @@ enc: !new:speechbrain.lobes.models.CRDNN.CRDNN
     cnn_kernelsize: !ref <cnn_kernelsize>
     inter_layer_pooling_size: !ref <inter_layer_pooling_size>
     time_pooling: False
-    using_2d_pooling: True
+    using_2d_pooling: False
     time_pooling_size: !ref <time_pooling_size>
     rnn_class: !ref <rnn_class>
     rnn_layers: !ref <rnn_layers>
