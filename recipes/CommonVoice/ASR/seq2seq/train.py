@@ -86,7 +86,7 @@ class ASR(sb.core.Brain):
         tokens_eos, tokens_eos_lens = batch.tokens_eos
         tokens, tokens_lens = batch.tokens
 
-        print(tokens)
+        print(torch.max(tokens))
         loss_seq = self.hparams.seq_cost(
             p_seq, tokens_eos, length=tokens_eos_lens
         )
