@@ -145,7 +145,7 @@ dec: !new:speechbrain.nnet.RNN.AttentionalRNNDecoder
     dropout: !ref <dropout>
 
 ctc_lin: !new:speechbrain.nnet.linear.Linear
-    input_size: !ref <dnn_neurons>
+    input_size: 1024
     n_neurons: !ref <output_neurons>
 
 seq_lin: !new:speechbrain.nnet.linear.Linear
