@@ -42,7 +42,7 @@ class ASR(sb.core.Brain):
 
         # Forward pass
         feats = self.hparams.compute_features(wavs)
-        feats = self.modules.normalize(feats, wav_lens)
+        # feats = self.modules.normalize(feats, wav_lens)
 
         ## Add augmentation if specified
         if stage == sb.Stage.TRAIN:
@@ -75,8 +75,6 @@ class ASR(sb.core.Brain):
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss (CTC+NLL) given predictions and targets."""
 
-        print(predictions)
-        print(batch)
         current_epoch = self.hparams.epoch_counter.current
         if stage == sb.Stage.TRAIN:
             if current_epoch <= self.hparams.number_of_ctc_epochs:
