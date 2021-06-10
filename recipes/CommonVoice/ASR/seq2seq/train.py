@@ -44,7 +44,7 @@ class ASR(sb.core.Brain):
         feats = self.hparams.compute_features(wavs)
         feats = self.modules.normalize(feats, wav_lens)
 
-        print(torch.sum(feats))
+        print(torch.max(feats))
         print(feats)
 
         ## Add augmentation if specified
