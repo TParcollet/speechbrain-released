@@ -296,11 +296,8 @@ def create_csv(
         chars = " ".join([char for char in chars][:])
 
         # Remove too short sentences (or empty):
-        print(words)
-        print(len(words.split(" ")))
-        if len(words) < 2:
+        if len(words.split(" ")) < 2:
             continue
-        print(words)
 
         # Composition of the csv_line
         csv_line = [snt_id, str(duration), mp3_path, spk_id, str(words)]
