@@ -126,7 +126,7 @@ class ASR(sb.core.Brain):
         if self.check_gradients(loss):
             self.optimizer.step()
         self.optimizer.zero_grad()
-        return loss.detach()
+        return loss.detach().cpu()
 
     def evaluate_batch(self, batch, stage):
         """Computations needed for validation/test batches"""
