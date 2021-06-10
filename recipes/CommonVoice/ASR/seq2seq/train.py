@@ -64,8 +64,8 @@ class ASR(sb.core.Brain):
                 logits = self.modules.ctc_lin(x)
                 p_ctc = self.hparams.log_softmax(logits)
 
-                print(not torch.any(torch.isfinite(p_ctc)))
-                print(not torch.any(torch.isfinite(p_seq)))
+                print(torch.max(p_ctc))
+                print(torch.max(p_seq))
 
                 return p_ctc, p_seq, wav_lens
             else:
