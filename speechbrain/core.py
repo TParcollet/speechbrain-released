@@ -839,7 +839,7 @@ class Brain:
             outputs = self.compute_forward(batch, Stage.TRAIN)
             loss = self.compute_objectives(outputs, batch, Stage.TRAIN)
             print(loss)
-            # print(outputs)
+            print(batch)
             # print(torch.max(outputs))
             loss.backward()
             print(loss)
