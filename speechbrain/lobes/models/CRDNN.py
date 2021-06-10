@@ -108,7 +108,7 @@ class CRDNN(sb.nnet.containers.Sequential):
         if input_shape is None:
             input_shape = [None, None, input_size]
         super().__init__(input_shape=input_shape)
-
+        print(using_2d_pooling)
         if cnn_blocks > 0:
             self.append(sb.nnet.containers.Sequential, layer_name="CNN")
         for block_index in range(cnn_blocks):
