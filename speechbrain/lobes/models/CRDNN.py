@@ -267,7 +267,6 @@ class CNN_Block(sb.nnet.containers.Sequential):
                     input_dims=4,
                     kernel_size=pooling_size,
                     pool_axis=2,
-                    ceil_mode=True,
                 ),
                 layer_name="pooling",
             )
