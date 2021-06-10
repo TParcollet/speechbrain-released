@@ -111,47 +111,17 @@ class CRDNN(sb.nnet.containers.Sequential):
 
         if cnn_blocks > 0:
             self.append(sb.nnet.containers.Sequential, layer_name="CNN")
-        self.append(
-            sb.nnet.CNN.Conv2d,
-            out_channels=64,
-            kernel_size=(3, 3),
-            layer_name="conv_1_1",
-        )
-        self.append(activation(), layer_name="act_1_1")
-        self.append(
-            sb.nnet.CNN.Conv2d,
-            out_channels=64,
-            kernel_size=(3, 3),
-            layer_name="conv_1_2",
-        )
-        self.append(activation(), layer_name="act_1_2")
-        self.append(
-            sb.nnet.pooling.Pooling2d(
-                pool_type="max", kernel_size=(2, 2), pool_axis=(1, 2),
-            ),
-            layer_name="pooling_1",
-        )
-
-        self.append(
-            sb.nnet.CNN.Conv2d,
-            out_channels=128,
-            kernel_size=(3, 3),
-            layer_name="conv_2_1",
-        )
-        self.append(activation(), layer_name="act_2_1")
-        self.append(
-            sb.nnet.CNN.Conv2d,
-            out_channels=128,
-            kernel_size=(3, 3),
-            layer_name="conv_2_2",
-        )
-        self.append(activation(), layer_name="act_2_2")
-        self.append(
-            sb.nnet.pooling.Pooling2d(
-                pool_type="max", kernel_size=(2, 2), pool_axis=(1, 2),
-            ),
-            layer_name="pooling_2",
-        )
+        for block_index in range(cnn_blocks):
+            self.CNN.append(
+                CNN_Block,
+                channels=cnn_channels[block_index],
+                kernel_size=cnn_kernelsize,
+                using_2d_pool=using_2d_pooling,
+                pooling_size=inter_layer_pooling_size[block_index],
+                activation=activation,
+                dropout=dropout,
+                layer_name=f"block_{block_index}",
+            )
 
         # if time_pooling:
         #    self.append(
