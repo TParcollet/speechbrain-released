@@ -861,6 +861,7 @@ class Brain:
         bool
             Whether or not the optimizer step should be carried out.
         """
+        print(loss)
         if not torch.isfinite(loss):
             self.nonfinite_count += 1
 
