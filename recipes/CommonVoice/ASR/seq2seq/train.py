@@ -86,7 +86,6 @@ class ASR(sb.core.Brain):
         tokens_eos, tokens_eos_lens = batch.tokens_eos
         tokens, tokens_lens = batch.tokens
 
-        print(torch.max(tokens))
         loss_seq = self.hparams.seq_cost(
             p_seq, tokens_eos, length=tokens_eos_lens
         )
@@ -100,6 +99,7 @@ class ASR(sb.core.Brain):
             loss_ctc = self.hparams.ctc_cost(
                 p_ctc, tokens, wav_lens, tokens_lens
             )
+            print(loss_ctc)
             loss = self.hparams.ctc_weight * loss_ctc
             loss += (1 - self.hparams.ctc_weight) * loss_seq
         else:
