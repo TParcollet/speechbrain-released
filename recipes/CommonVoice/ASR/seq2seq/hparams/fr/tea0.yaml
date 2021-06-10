@@ -31,9 +31,9 @@ avoid_if_longer_than: 10.0
 
 # Training parameters
 number_of_epochs: 25
-number_of_ctc_epochs: 20
+number_of_ctc_epochs: 0
 lr: 1.0
-ctc_weight: 0.3
+ctc_weight: 0.0
 sorting: ascending
 ckpt_interval_minutes: 30 # save checkpoint every N min
 
