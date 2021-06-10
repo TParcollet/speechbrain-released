@@ -64,9 +64,8 @@ class ASR(sb.core.Brain):
                 logits = self.modules.ctc_lin(x)
                 p_ctc = self.hparams.log_softmax(logits)
 
-                print(p_ctc)
-                print(p_seq)
-
+                p_ctc = p_ctc.view(p_ctc.shape)
+                p_seq = p_seq.view(p_seq.shape)
                 return p_ctc, p_seq, wav_lens
             else:
                 return p_seq, wav_lens
