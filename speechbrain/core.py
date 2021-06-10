@@ -840,6 +840,7 @@ class Brain:
             loss = self.compute_objectives(outputs, batch, Stage.TRAIN)
             print(loss)
             print(outputs)
+            print(torch.max(outputs))
             loss.backward()
             print(loss)
             if self.check_gradients(loss):
