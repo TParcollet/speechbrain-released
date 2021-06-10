@@ -260,16 +260,16 @@ class CNN_Block(sb.nnet.containers.Sequential):
                 ),
                 layer_name="pooling",
             )
-        else:
-            self.append(
-                sb.nnet.pooling.Pooling1d(
-                    pool_type="max",
-                    input_dims=4,
-                    kernel_size=pooling_size,
-                    pool_axis=2,
-                ),
-                layer_name="pooling",
-            )
+        # else:
+        #    self.append(
+        #        sb.nnet.pooling.Pooling1d(
+        #            pool_type="max",
+        #            input_dims=4,
+        #            kernel_size=pooling_size,
+        #            pool_axis=2,
+        #        ),
+        #        layer_name="pooling",
+        #    )
 
         self.append(
             sb.nnet.dropout.Dropout2d(drop_rate=dropout), layer_name="drop"
