@@ -252,6 +252,7 @@ class CNN_Block(sb.nnet.containers.Sequential):
         self.append(activation(), layer_name="act_2")
 
         if using_2d_pool:
+            print("hello")
             self.append(
                 sb.nnet.pooling.Pooling2d(
                     pool_type="max", kernel_size=(2, 2), pool_axis=(1, 2),
