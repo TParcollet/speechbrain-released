@@ -168,9 +168,6 @@ seq_lin: !new:speechbrain.nnet.linear.Linear
 log_softmax: !new:speechbrain.nnet.activations.Softmax
     apply_log: True
 
-log_softmax2: !new:speechbrain.nnet.activations.Softmax
-    apply_log: True
-
 ctc_cost: !name:speechbrain.nnet.losses.ctc_loss
     blank_index: !ref <blank_index>
 
