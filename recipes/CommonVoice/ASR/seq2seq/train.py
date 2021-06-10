@@ -87,10 +87,10 @@ class ASR(sb.core.Brain):
         tokens, tokens_lens = batch.tokens
 
         print(tokens)
-        print(predicted_tokens)
         loss_seq = self.hparams.seq_cost(
             p_seq, tokens_eos, length=tokens_eos_lens
         )
+        print(loss_seq)
 
         # Add ctc loss if necessary
         if (
