@@ -62,8 +62,8 @@ class ASR(sb.core.Brain):
             if current_epoch <= self.hparams.number_of_ctc_epochs:
                 # Output layer for ctc log-probabilities
                 logits = self.modules.ctc_lin(x)
-                p_ctc = self.hparams.log_softmax(logits)
-                print(p_seq)
+                p_ctc = self.hparams.log_softmax2(logits)
+
                 return p_ctc, p_seq, wav_lens
             else:
                 return p_seq, wav_lens
