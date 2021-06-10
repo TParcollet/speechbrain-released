@@ -297,7 +297,7 @@ def create_csv(
 
         # Remove too short sentences (or empty):
         print(words)
-        print(len(words))
+        print(len(words.split(" ")))
         if len(words) < 2:
             continue
         print(words)
