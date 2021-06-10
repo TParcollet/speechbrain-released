@@ -6,7 +6,7 @@
 # ################################
 
 # Seed needs to be set at top of yaml, before objects with parameters are made
-seed: 1234
+seed: 999
 __set_seed: !!python/object/apply:torch.manual_seed [!ref <seed>]
 output_folder: !ref results/CRDNN_it/<seed>
 wer_file: !ref <output_folder>/wer.txt
@@ -32,7 +32,7 @@ avoid_if_longer_than: 10.0
 # Training parameters
 number_of_epochs: 25
 number_of_ctc_epochs: 0
-lr: 0.1
+lr: 1.0
 ctc_weight: 0.0
 sorting: ascending
 ckpt_interval_minutes: 30 # save checkpoint every N min
