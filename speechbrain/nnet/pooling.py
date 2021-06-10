@@ -107,8 +107,6 @@ class Pooling1d(nn.Module):
     def forward(self, x):
 
         # Put the pooling axes as the last dimension for torch.nn.pool
-        print("before")
-        print(x.shape)
         x = x.transpose(-1, self.pool_axis)
 
         # Apply pooling
@@ -116,8 +114,6 @@ class Pooling1d(nn.Module):
 
         # Recover input shape
         x = x.transpose(-1, self.pool_axis)
-
-        print(x.shape)
 
         return x
 
