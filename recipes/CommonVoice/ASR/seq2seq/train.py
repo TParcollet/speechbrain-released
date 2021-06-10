@@ -44,6 +44,9 @@ class ASR(sb.core.Brain):
         feats = self.hparams.compute_features(wavs)
         feats = self.modules.normalize(feats, wav_lens)
 
+        print(torch.sum(feats))
+        print(feats)
+
         ## Add augmentation if specified
         if stage == sb.Stage.TRAIN:
             if hasattr(self.hparams, "augmentation"):
@@ -229,7 +232,6 @@ def dataio_prepare(hparams):
         resampled = torchaudio.transforms.Resample(
             info.sample_rate, hparams["sample_rate"],
         )(sig)
-        print(torch.sum(resampled))
         return resampled
 
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
