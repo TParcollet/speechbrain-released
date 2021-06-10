@@ -93,7 +93,7 @@ class Pooling1d(nn.Module):
             elif input_dims == 4:
                 self.pool_layer = torch.nn.MaxPool2d(
                     (1, kernel_size),
-                    stride=(1, stride),
+                    stride=(1, 1),
                     padding=(0, padding),
                     dilation=(1, dilation),
                     ceil_mode=ceil_mode,
