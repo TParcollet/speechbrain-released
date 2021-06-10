@@ -62,17 +62,11 @@ n_mels: 80
 # Model parameters
 activation: !name:torch.nn.LeakyReLU
 dropout: 0.15
-cnn_blocks: 3
-cnn_channels: (128, 200, 256)
-inter_layer_pooling_size: (2, 2, 2)
-cnn_kernelsize: (3, 3)
-time_pooling_size: 4
-rnn_class: !name:speechbrain.nnet.RNN.GRU
+cnn_channels: (128, 256)
+rnn_class: !name:speechbrain.nnet.RNN.LSTM
 rnn_layers: 5
 rnn_neurons: 1024
 rnn_bidirectional: True
-dnn_blocks: 2
-dnn_neurons: 1024
 emb_size: 128
 dec_neurons: 1024
 
@@ -120,24 +114,17 @@ compute_features: !new:speechbrain.lobes.features.Fbank
     n_fft: !ref <n_fft>
     n_mels: !ref <n_mels>
 
-enc: !new:speechbrain.lobes.models.CRDNN.CRDNN
+enc: !new:speechbrain.lobes.models.ESPnetVGG
     input_shape: [null, null, !ref <n_mels>]
     activation: !ref <activation>
     dropout: !ref <dropout>
-    cnn_blocks: !ref <cnn_blocks>
     cnn_channels: !ref <cnn_channels>
-    cnn_kernelsize: !ref <cnn_kernelsize>
-    inter_layer_pooling_size: !ref <inter_layer_pooling_size>
-    time_pooling: True
-    using_2d_pooling: False
-    time_pooling_size: !ref <time_pooling_size>
     rnn_class: !ref <rnn_class>
     rnn_layers: !ref <rnn_layers>
     rnn_neurons: !ref <rnn_neurons>
     rnn_bidirectional: !ref <rnn_bidirectional>
     rnn_re_init: True
-    dnn_blocks: !ref <dnn_blocks>
-    dnn_neurons: !ref <dnn_neurons>
+    projection_neurons: 1024
 
 emb: !new:speechbrain.nnet.embedding.Embedding
     num_embeddings: !ref <output_neurons>
