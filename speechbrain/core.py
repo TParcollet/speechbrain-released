@@ -838,11 +838,7 @@ class Brain:
         else:
             outputs = self.compute_forward(batch, Stage.TRAIN)
             loss = self.compute_objectives(outputs, batch, Stage.TRAIN)
-            print(loss)
-            print(batch)
-            # print(torch.max(outputs))
             loss.backward()
-            print(loss)
             if self.check_gradients(loss):
                 self.optimizer.step()
             self.optimizer.zero_grad()
