@@ -54,6 +54,7 @@ class ASR(sb.core.Brain):
         h, _ = self.modules.dec(e_in, x, wav_lens)
         # Output layer for seq2seq log-probabilities
         logits = self.modules.seq_lin(h)
+        print(logits)
         p_seq = self.hparams.log_softmax(logits)
 
         # Compute outputs
