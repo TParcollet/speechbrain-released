@@ -55,15 +55,15 @@ class ASR(sb.core.Brain):
         # Output layer for seq2seq log-probabilities
         logits = self.modules.seq_lin(h)
 
-        p_seq = self.modules.log_softmax(logits)
-
+        p_seq = self.hparams.log_softmax(logits)
+        print(p_seq)
         # Compute outputs
         if stage == sb.Stage.TRAIN:
             current_epoch = self.hparams.epoch_counter.current
             if current_epoch <= self.hparams.number_of_ctc_epochs:
                 # Output layer for ctc log-probabilities
                 logits = self.modules.ctc_lin(x)
-                p_ctc = self.modules.log_softmax(logits)
+                p_ctc = self.hparams.log_softmax(logits)
 
                 return p_ctc, p_seq, wav_lens
             else:
