@@ -63,6 +63,7 @@ class ASR(sb.core.Brain):
                 # Output layer for ctc log-probabilities
                 logits = self.modules.ctc_lin(x)
                 p_ctc = self.hparams.log_softmax(logits)
+                print(p_ctc)
                 return p_ctc, p_seq, wav_lens
             else:
                 return p_seq, wav_lens
@@ -89,7 +90,6 @@ class ASR(sb.core.Brain):
         loss_seq = self.hparams.seq_cost(
             p_seq, tokens_eos, length=tokens_eos_lens
         )
-        print(loss_seq)
 
         # Add ctc loss if necessary
         if (
@@ -99,7 +99,6 @@ class ASR(sb.core.Brain):
             loss_ctc = self.hparams.ctc_cost(
                 p_ctc, tokens, wav_lens, tokens_lens
             )
-            print(loss_ctc)
             loss = self.hparams.ctc_weight * loss_ctc
             loss += (1 - self.hparams.ctc_weight) * loss_seq
         else:
