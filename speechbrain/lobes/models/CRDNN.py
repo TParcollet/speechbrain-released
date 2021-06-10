@@ -108,7 +108,7 @@ class CRDNN(sb.nnet.containers.Sequential):
         if input_shape is None:
             input_shape = [None, None, input_size]
         super().__init__(input_shape=input_shape)
-        print(time_pooling)
+
         if cnn_blocks > 0:
             self.append(sb.nnet.containers.Sequential, layer_name="CNN")
         for block_index in range(cnn_blocks):
@@ -270,9 +270,9 @@ class CNN_Block(sb.nnet.containers.Sequential):
                 layer_name="pooling",
             )
 
-        # self.append(
-        #    sb.nnet.dropout.Dropout2d(drop_rate=dropout), layer_name="drop"
-        # )
+        self.append(
+            sb.nnet.dropout.Dropout2d(drop_rate=dropout), layer_name="drop"
+        )
 
 
 class DNN_Block(sb.nnet.containers.Sequential):
@@ -305,6 +305,6 @@ class DNN_Block(sb.nnet.containers.Sequential):
         self.append(
             sb.nnet.linear.Linear, n_neurons=neurons, layer_name="linear",
         )
-        # self.append(sb.nnet.normalization.BatchNorm1d, layer_name="norm")
-        self.append(torch.nn.Tanh(), layer_name="act")
-        # self.append(torch.nn.Dropout(p=dropout), layer_name="dropout")
+        self.append(sb.nnet.normalization.BatchNorm1d, layer_name="norm")
+        self.append(activation(), layer_name="act")
+        self.append(torch.nn.Dropout(p=dropout), layer_name="dropout")
