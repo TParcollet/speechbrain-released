@@ -42,15 +42,14 @@ class ASR(sb.core.Brain):
 
         # Forward pass
         feats = self.hparams.compute_features(wavs)
-        # feats = self.modules.normalize(feats, wav_lens)
+        feats = self.modules.normalize(feats, wav_lens)
 
         ## Add augmentation if specified
-        # if stage == sb.Stage.TRAIN:
-        #    if hasattr(self.hparams, "augmentation"):
-        #        feats = self.hparams.augmentation(feats)
+        if stage == sb.Stage.TRAIN:
+            if hasattr(self.hparams, "augmentation"):
+                feats = self.hparams.augmentation(feats)
 
         x = self.modules.enc(feats)
-        print(x.shape)
         e_in = self.modules.emb(tokens_bos)  # y_in bos + tokens
         h, _ = self.modules.dec(e_in, x, wav_lens)
         # Output layer for seq2seq log-probabilities
@@ -242,7 +241,6 @@ def dataio_prepare(hparams):
         "tokens_list", "tokens_bos", "tokens_eos", "tokens"
     )
     def text_pipeline(wrd):
-        print(wrd)
         tokens_list = tokenizer.sp.encode_as_ids(wrd)
         yield tokens_list
         tokens_bos = torch.LongTensor([hparams["bos_index"]] + (tokens_list))
