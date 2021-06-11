@@ -6,7 +6,7 @@
 # ################################
 
 # Seed needs to be set at top of yaml, before objects with parameters are made
-seed: 999
+seed: 1234
 __set_seed: !!python/object/apply:torch.manual_seed [!ref <seed>]
 output_folder: !ref results/CRDNN_it/<seed>
 wer_file: !ref <output_folder>/wer.txt
@@ -34,7 +34,7 @@ number_of_epochs: 25
 number_of_ctc_epochs: 20
 lr: 1.0
 ctc_weight: 0.3
-sorting: ascending
+sorting: random
 ckpt_interval_minutes: 30 # save checkpoint every N min
 
 # With data_parallel batch_size is split into N jobs
@@ -45,10 +45,10 @@ test_batch_size: 8
 
 dataloader_options:
     batch_size: !ref <batch_size>
-    num_workers: 4
+    num_workers: 6
 test_dataloader_options:
     batch_size: !ref <test_batch_size>
-    num_workers: 4
+    num_workers: 6
 
 # BPE parameters
 token_type: unigram  # ["unigram", "bpe", "char"]
@@ -62,17 +62,11 @@ n_mels: 80
 # Model parameters
 activation: !name:torch.nn.LeakyReLU
 dropout: 0.15
-cnn_blocks: 3
-cnn_channels: (128, 128, 256)
-inter_layer_pooling_size: (2, 2, 2)
-cnn_kernelsize: (3, 3)
-time_pooling_size: 4
+cnn_channels: (128, 256)
 rnn_class: !name:speechbrain.nnet.RNN.LSTM
 rnn_layers: 5
 rnn_neurons: 1024
 rnn_bidirectional: True
-dnn_blocks: 2
-dnn_neurons: 1024
 emb_size: 128
 dec_neurons: 1024
 
@@ -120,31 +114,24 @@ compute_features: !new:speechbrain.lobes.features.Fbank
     n_fft: !ref <n_fft>
     n_mels: !ref <n_mels>
 
-enc: !new:speechbrain.lobes.models.CRDNN.CRDNN
+enc: !new:speechbrain.lobes.models.ESPnetVGG.ESPnetVGG
     input_shape: [null, null, !ref <n_mels>]
     activation: !ref <activation>
     dropout: !ref <dropout>
-    cnn_blocks: !ref <cnn_blocks>
     cnn_channels: !ref <cnn_channels>
-    cnn_kernelsize: !ref <cnn_kernelsize>
-    inter_layer_pooling_size: !ref <inter_layer_pooling_size>
-    time_pooling: True
-    using_2d_pooling: False
-    time_pooling_size: !ref <time_pooling_size>
     rnn_class: !ref <rnn_class>
     rnn_layers: !ref <rnn_layers>
     rnn_neurons: !ref <rnn_neurons>
     rnn_bidirectional: !ref <rnn_bidirectional>
     rnn_re_init: True
-    dnn_blocks: !ref <dnn_blocks>
-    dnn_neurons: !ref <dnn_neurons>
+    projection_neurons: 1024
 
 emb: !new:speechbrain.nnet.embedding.Embedding
     num_embeddings: !ref <output_neurons>
     embedding_dim: !ref <emb_size>
 
 dec: !new:speechbrain.nnet.RNN.AttentionalRNNDecoder
-    enc_dim: !ref <dnn_neurons>
+    enc_dim: 1024
     input_size: !ref <emb_size>
     rnn_type: gru
     attn_type: location
@@ -158,7 +145,7 @@ dec: !new:speechbrain.nnet.RNN.AttentionalRNNDecoder
     dropout: !ref <dropout>
 
 ctc_lin: !new:speechbrain.nnet.linear.Linear
-    input_size: !ref <dnn_neurons>
+    input_size: 1024
     n_neurons: !ref <output_neurons>
 
 seq_lin: !new:speechbrain.nnet.linear.Linear

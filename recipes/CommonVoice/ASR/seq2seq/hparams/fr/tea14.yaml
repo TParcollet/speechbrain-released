@@ -34,7 +34,7 @@ number_of_epochs: 25
 number_of_ctc_epochs: 20
 lr: 1.0
 ctc_weight: 0.3
-sorting: ascending
+sorting: random
 ckpt_interval_minutes: 30 # save checkpoint every N min
 
 # With data_parallel batch_size is split into N jobs
