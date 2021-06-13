@@ -8,7 +8,7 @@
 # Seed needs to be set at top of yaml, before objects with parameters are made
 seed: 1234
 __set_seed: !!python/object/apply:torch.manual_seed [!ref <seed>]
-output_folder: !ref results/CRDNN_it/<seed>
+output_folder: !ref results/CRDNN/<seed>
 wer_file: !ref <output_folder>/wer.txt
 save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
@@ -27,7 +27,7 @@ non_verbal: False
 punctuation: False
 skip_prep: False # Skip data preparation
 
-avoid_if_longer_than: 10.0
+avoid_if_longer_than: 20.0
 
 # Training parameters
 number_of_epochs: 25
@@ -61,13 +61,13 @@ n_mels: 80
 # Model parameters
 activation: !name:torch.nn.LeakyReLU
 dropout: 0.15
-cnn_blocks: 2
-cnn_channels: (64, 128)
-inter_layer_pooling_size: (2, 2)
+cnn_blocks: 3
+cnn_channels: (64, 100, 128)
+inter_layer_pooling_size: (2, 2, 2)
 cnn_kernelsize: (3, 3)
 time_pooling_size: 4
 rnn_class: !name:speechbrain.nnet.RNN.LSTM
-rnn_layers: 5
+rnn_layers: 4
 rnn_neurons: 1024
 rnn_bidirectional: True
 dnn_blocks: 2
