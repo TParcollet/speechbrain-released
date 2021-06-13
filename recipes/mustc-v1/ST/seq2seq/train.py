@@ -241,6 +241,8 @@ def dataio_prepare(hparams):
         stop = int(offset + duration) * 16000
         speech_segment = {"file": wav, "start": start, "stop": stop}
         print(speech_segment)
+        print(offset)
+        print(duration)
         sig = sb.dataio.dataio.read_audio(speech_segment)
         if info.num_channels > 1:
             sig = torch.mean(sig, dim=1)
