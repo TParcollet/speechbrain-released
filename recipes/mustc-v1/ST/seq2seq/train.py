@@ -238,7 +238,7 @@ def dataio_prepare(hparams):
     def audio_pipeline(wav, duration, offset):
         info = torchaudio.info(wav)
         start = int(offset * 16000)
-        stop = int(offset + duration) * 16000
+        stop = int(offset + duration * 16000)
         speech_segment = {"file": wav, "start": start, "stop": stop}
         print(speech_segment)
         print(offset)
