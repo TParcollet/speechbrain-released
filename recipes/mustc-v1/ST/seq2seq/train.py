@@ -237,8 +237,8 @@ def dataio_prepare(hparams):
     @sb.utils.data_pipeline.provides("sig")
     def audio_pipeline(wav, duration, offset):
         info = torchaudio.info(wav)
-        start = int(offset * 16000)
-        stop = int(offset + duration * 16000)
+        start = offset * 16000
+        stop = (offset + duration) * 16000
         speech_segment = {"file": wav, "start": start, "stop": stop}
         print(speech_segment)
         print(offset)
