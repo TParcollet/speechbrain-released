@@ -207,6 +207,7 @@ def read_audio(waveforms_obj):
     # which is the torchaudio default
     stop = waveforms_obj.get("stop", start)
     num_frames = stop - start
+    print(num_frames)
     audio, fs = torchaudio.load(path, num_frames=num_frames, frame_offset=start)
     audio = audio.transpose(0, 1)
     return audio.squeeze(1)
