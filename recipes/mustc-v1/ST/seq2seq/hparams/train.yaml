@@ -31,7 +31,7 @@ avoid_if_longer_than: 20.0
 
 # Training parameters
 number_of_epochs: 25
-number_of_ctc_epochs: 20
+number_of_ctc_epochs: 25
 lr: 1.0
 ctc_weight: 0.0
 sorting: random
@@ -173,7 +173,6 @@ ctc_cost: !name:speechbrain.nnet.losses.ctc_loss
     blank_index: !ref <blank_index>
 
 seq_cost: !name:speechbrain.nnet.losses.nll_loss
-    label_smoothing: 0.0
 
 modules:
     enc: !ref <enc>
