@@ -227,7 +227,7 @@ def dataio_prepare(hparams):
         model_dir=hparams["save_folder"],
         vocab_size=hparams["output_neurons"],
         annotation_train=hparams["train_json"],
-        annotation_read="wrd_src",
+        annotation_read="wrd_tgt",
         annotation_format="json",
         model_type=hparams["token_type"],
         character_coverage=hparams["character_coverage"],
@@ -254,12 +254,12 @@ def dataio_prepare(hparams):
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
 
     # 3. Define text pipeline:
-    @sb.utils.data_pipeline.takes("wrd_src")
+    @sb.utils.data_pipeline.takes("wrd_tgt")
     @sb.utils.data_pipeline.provides(
         "tokens_list", "tokens_bos", "tokens_eos", "tokens"
     )
-    def text_pipeline(wrd_src):
-        tokens_list = tokenizer.sp.encode_as_ids(wrd_src)
+    def text_pipeline(wrd_tgt):
+        tokens_list = tokenizer.sp.encode_as_ids(wrd_tgt)
         yield tokens_list
         tokens_bos = torch.LongTensor([hparams["bos_index"]] + (tokens_list))
         yield tokens_bos
