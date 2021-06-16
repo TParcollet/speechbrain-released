@@ -95,6 +95,7 @@ class ASR(sb.core.Brain):
             stage == sb.Stage.TRAIN
             and current_epoch < self.hparams.number_of_ctc_epochs
         ):
+            print("hello")
             loss_ctc = self.hparams.ctc_cost(
                 p_ctc, tokens, wav_lens, tokens_lens
             )
