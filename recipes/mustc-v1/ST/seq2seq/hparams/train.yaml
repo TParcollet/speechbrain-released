@@ -224,5 +224,6 @@ train_logger: !new:speechbrain.utils.train_logger.FileTrainLogger
 # Metrics (CER / WER / ACC)
 error_rate_computer: !name:speechbrain.utils.metric_stats.ErrorRateStats
 acc_computer: !name:speechbrain.utils.Accuracy.AccuracyStats
+acc_train_computer: !name:speechbrain.utils.Accuracy.AccuracyStats
 cer_computer: !name:speechbrain.utils.metric_stats.ErrorRateStats
     split_tokens: True
