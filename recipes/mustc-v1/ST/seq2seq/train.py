@@ -89,7 +89,7 @@ class ASR(sb.core.Brain):
         loss_seq = self.hparams.seq_cost(
             p_seq, tokens_eos, length=tokens_eos_lens
         )
-        print("gneuh")
+
         # Add ctc loss if necessary
         if (
             stage == sb.Stage.TRAIN
