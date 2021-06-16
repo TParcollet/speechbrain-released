@@ -73,7 +73,7 @@ rnn_layers: 4
 rnn_neurons: 1024
 rnn_bidirectional: True
 dnn_blocks: 2
-dnn_neurons: 1024
+dnn_neurons: 512
 emb_size: 128
 dec_neurons: 1024
 
@@ -101,17 +101,17 @@ epoch_counter: !new:speechbrain.utils.epoch_loop.EpochCounter
     limit: !ref <number_of_epochs>
 
 # Frequency domain SpecAugment
-augmentation: !new:speechbrain.lobes.augment.SpecAugment
-    time_warp: True
-    time_warp_window: 5
-    time_warp_mode: bicubic
-    freq_mask: True
-    n_freq_mask: 2
-    time_mask: True
-    n_time_mask: 2
-    replace_with_zero: False
-    freq_mask_width: 30
-    time_mask_width: 40
+#augmentation: !new:speechbrain.lobes.augment.SpecAugment
+#    time_warp: True
+#    time_warp_window: 5
+#    time_warp_mode: bicubic
+#    freq_mask: True
+#    n_freq_mask: 2
+#    time_mask: True
+#    n_time_mask: 2
+#    replace_with_zero: False
+#    freq_mask_width: 30
+#    time_mask_width: 40
 
 normalize: !new:speechbrain.processing.features.InputNormalization
     norm_type: global
