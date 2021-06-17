@@ -39,7 +39,7 @@ sorting: random
 # With data_parallel batch_size is split into N jobs
 # With DDP batch_size is multiplied by N jobs
 # Must be 6 per GPU to fit 16GB of VRAM
-batch_size: 12
+batch_size: 6
 test_batch_size: 6
 
 dataloader_options:
@@ -61,10 +61,10 @@ n_fft: 400
 n_mels: 80
 
 # Model parameters
-activation: !name:torch.nn.LeakyReLU
-dropout: 0.15
+activation: !name:torch.nn.ReLU
+dropout: 0.2
 cnn_blocks: 3
-cnn_channels: (64, 100, 128)
+cnn_channels: (64, 128)
 inter_layer_pooling_size: (2, 2, 2)
 cnn_kernelsize: (3, 3)
 time_pooling_size: 4
@@ -121,24 +121,17 @@ compute_features: !new:speechbrain.lobes.features.Fbank
     n_fft: !ref <n_fft>
     n_mels: !ref <n_mels>
 
-enc: !new:speechbrain.lobes.models.CRDNN.CRDNN
+enc: !new:speechbrain.lobes.models.ESPnetVGG.ESPnetVGG
     input_shape: [null, null, !ref <n_mels>]
     activation: !ref <activation>
     dropout: !ref <dropout>
-    cnn_blocks: !ref <cnn_blocks>
     cnn_channels: !ref <cnn_channels>
-    cnn_kernelsize: !ref <cnn_kernelsize>
-    inter_layer_pooling_size: !ref <inter_layer_pooling_size>
-    time_pooling: True
-    using_2d_pooling: False
-    time_pooling_size: !ref <time_pooling_size>
     rnn_class: !ref <rnn_class>
     rnn_layers: !ref <rnn_layers>
     rnn_neurons: !ref <rnn_neurons>
     rnn_bidirectional: !ref <rnn_bidirectional>
-    rnn_re_init: True
-    dnn_blocks: !ref <dnn_blocks>
-    dnn_neurons: !ref <dnn_neurons>
+    rnn_re_init: False
+    projection_neurons: 1024
 
 emb: !new:speechbrain.nnet.embedding.Embedding
     num_embeddings: !ref <output_neurons>

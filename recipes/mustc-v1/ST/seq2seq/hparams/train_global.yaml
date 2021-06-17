@@ -114,7 +114,7 @@ epoch_counter: !new:speechbrain.utils.epoch_loop.EpochCounter
 #    time_mask_width: 40
 
 normalize: !new:speechbrain.processing.features.InputNormalization
-    norm_type: sentence
+    norm_type: global
 
 compute_features: !new:speechbrain.lobes.features.Fbank
     sample_rate: !ref <sample_rate>
