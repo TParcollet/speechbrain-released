@@ -91,7 +91,7 @@ class ASR(sb.core.Brain):
             p_seq, tokens_eos, length=tokens_eos_lens
         )
 
-        print(p_seq)
+        print(p_seq.shape)
         loss_seq *= np.mean([len(x) for x in p_seq]) - 1
 
         # Add ctc loss if necessary
