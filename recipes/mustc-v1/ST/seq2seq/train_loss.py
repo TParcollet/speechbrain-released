@@ -90,8 +90,9 @@ class ASR(sb.core.Brain):
         loss_seq = self.hparams.seq_cost(
             p_seq, tokens_eos, length=tokens_eos_lens
         )
-
-        print([len(x) for x in p_seq])
+        voila = undo_padding(p_seq, tokens_eos_lens)
+        print(voila.shape)
+        print([len(x) for x in voila])
         loss_seq *= np.mean([len(x) for x in p_seq]) - 1
 
         # Add ctc loss if necessary
