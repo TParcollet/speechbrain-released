@@ -883,9 +883,11 @@ class Brain:
                 return False
 
         # Clip gradient norm
-        print("clip")
-        torch.nn.utils.clip_grad_norm_(
-            (p for p in self.modules.parameters()), self.max_grad_norm
+        print("hello")
+        print(
+            torch.nn.utils.clip_grad_norm_(
+                (p for p in self.modules.parameters()), self.max_grad_norm
+            )
         )
 
         return True
