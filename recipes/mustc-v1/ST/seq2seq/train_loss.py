@@ -92,6 +92,7 @@ class ASR(sb.core.Brain):
         )
 
         print([len(x) for x in p_seq])
+        print(loss_seq)
         loss_seq *= np.mean([len(x) for x in p_seq]) - 1
 
         # Add ctc loss if necessary
