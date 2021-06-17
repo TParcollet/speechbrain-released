@@ -91,8 +91,7 @@ class ASR(sb.core.Brain):
             p_seq, tokens_eos, length=tokens_eos_lens
         )
         voila = undo_padding(p_seq, tokens_eos_lens)
-        print([len(x) for x in voila])
-        loss_seq *= np.mean([len(x) for x in p_seq]) - 1
+        loss_seq *= np.mean([len(x) for x in voila]) - 1
 
         # Add ctc loss if necessary
         if (
