@@ -185,7 +185,7 @@ model: !new:torch.nn.ModuleList
     - [!ref <enc>, !ref <emb>, !ref <dec>, !ref <ctc_lin>, !ref <seq_lin>]
 
 opt_class: !name:madgrad.MADGRAD
-    lr: 2.54e-4
+    lr: 0.0003
 
 lr_annealing: !new:speechbrain.nnet.schedulers.NewBobScheduler
     initial_value: !ref <lr>
