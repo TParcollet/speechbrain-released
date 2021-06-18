@@ -321,8 +321,8 @@ def create_json(
             "offset": offset,
             "wav": wav,
             "spk_id": spk_id,
-            "wrd_src": str(normalized_src),
-            "wrd_tgt": str(normalized_tgt),
+            "wrd_src": normalized_src.encode(encoding="UTF-8"),
+            "wrd_tgt": normalized_tgt.encode(encoding="UTF-8"),
         }
 
         sample += 1
