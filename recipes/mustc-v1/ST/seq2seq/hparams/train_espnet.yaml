@@ -23,8 +23,8 @@ data_folder: !PLACEHOLDER  # e.g, /localscratch/cv-corpus-5.1-2020-06-22/fr
 accented_letters: True
 tgt_language: de
 font_case: tc
-non_verbal: False
-punctuation: False
+non_verbal: True
+punctuation: True
 skip_prep: False # Skip data preparation
 
 avoid_if_longer_than: 20.0
