@@ -316,7 +316,6 @@ def create_json(
         if len(normalized_tgt) < 1 or len(normalized_src) < 1:
             continue
 
-        print(normalized_tgt)
         json_dict[snt_id] = {
             "duration": duration,
             "offset": offset,
