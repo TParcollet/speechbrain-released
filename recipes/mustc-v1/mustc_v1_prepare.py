@@ -316,13 +316,14 @@ def create_json(
         if len(normalized_tgt) < 1 or len(normalized_src) < 1:
             continue
 
+        print(type(normalized_tgt))
         json_dict[snt_id] = {
             "duration": duration,
             "offset": offset,
             "wav": wav,
             "spk_id": spk_id,
-            "wrd_src": normalized_src.encode(encoding="UTF-8"),
-            "wrd_tgt": normalized_tgt.encode(encoding="UTF-8"),
+            "wrd_src": normalized_src,
+            "wrd_tgt": normalized_tgt,
         }
 
         sample += 1
