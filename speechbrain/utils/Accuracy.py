@@ -43,8 +43,6 @@ def Accuracy(log_probabilities, targets, length=None):
     else:
         numerator = torch.sum(padded_pred == targets)
         denominator = targets.shape[1]
-        print(numerator)
-        print(denominator)
     return float(numerator), float(denominator)
 
 
