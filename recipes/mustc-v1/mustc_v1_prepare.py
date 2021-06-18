@@ -330,7 +330,7 @@ def create_json(
 
     # Writing the dictionary to the json file
     with open(json_path, mode="w") as json_f:
-        json.dump(json_dict, json_f, indent=2)
+        json.dump(json_dict, json_f, indent=2, encoding="utf-8")
 
     # Final prints
     msg = "%s successfully created!" % (json_path)
