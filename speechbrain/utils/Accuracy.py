@@ -26,7 +26,6 @@ def Accuracy(log_probabilities, targets, length=None):
     >>> print(acc)
     (1.0, 2.0)
     """
-    print(length)
     if length is not None:
         mask = length_to_mask(
             length * targets.shape[1], max_len=targets.shape[1],
