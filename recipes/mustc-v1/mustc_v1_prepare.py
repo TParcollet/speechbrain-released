@@ -328,8 +328,8 @@ def create_json(
         sample += 1
 
     # Writing the dictionary to the json file
-    with open(json_path, mode="w") as json_f:
-        json.dump(json_dict, json_f, indent=2, encoding="utf-8")
+    with open(json_path, mode="w", encoding="utf8") as json_f:
+        json.dump(json_dict, json_f, indent=2, ensure_ascii=False)
 
     # Final prints
     msg = "%s successfully created!" % (json_path)
