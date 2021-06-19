@@ -189,7 +189,7 @@ opt_class: !name:madgrad.MADGRAD
     lr: 0.0005
 
 lr_annealing: !new:speechbrain.nnet.schedulers.NewBobScheduler
-    initial_value: !ref <lr>
+    initial_value: 0.0005
     improvement_threshold: 0.0025
     annealing_factor: 0.8
     patient: 1
