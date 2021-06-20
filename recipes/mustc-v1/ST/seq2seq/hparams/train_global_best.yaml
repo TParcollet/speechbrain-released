@@ -34,7 +34,7 @@ number_of_epochs: 30
 number_of_ctc_epochs: 0
 lr: 1.0
 ctc_weight: 0.0
-sorting: ascending
+sorting: random
 gradient_clipping: 5.0
 ckpt_interval_minutes: 15 # save checkpoint every N min
 
