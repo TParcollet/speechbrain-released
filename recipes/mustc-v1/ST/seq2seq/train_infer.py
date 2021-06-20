@@ -271,7 +271,7 @@ def dataio_prepare(hparams):
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
 
     # 3. Define text pipeline:
-    @sb.utils.data_pipeline.takes("wrd_tgt, wrd_src")
+    @sb.utils.data_pipeline.takes("wrd_tgt", "wrd_src")
     @sb.utils.data_pipeline.provides(
         "tokens_list", "tokens_bos", "tokens_eos", "tokens"
     )
