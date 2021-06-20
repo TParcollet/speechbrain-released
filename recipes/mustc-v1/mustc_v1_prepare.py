@@ -312,13 +312,11 @@ def create_json(
             normalized_src = strip_accents(normalized_src)
             normalized_tgt = strip_accents(normalized_tgt)
 
-        # 6. We remove all examples that do not contains anything
+        # 6. We remove all examples that contains a single word
         if (
             len(normalized_tgt.split(" ")) < 2
             or len(normalized_src.split(" ")) < 2
         ):
-            print(normalized_tgt)
-            print(normalized_src)
             continue
 
         json_dict[snt_id] = {
