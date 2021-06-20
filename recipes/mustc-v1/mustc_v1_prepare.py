@@ -314,6 +314,8 @@ def create_json(
 
         # 6. We remove all examples that do not contains anything
         if len(normalized_tgt) < 2 or len(normalized_src) < 2:
+            print(normalized_tgt)
+            print(normalized_src)
             continue
 
         json_dict[snt_id] = {
