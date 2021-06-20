@@ -313,7 +313,7 @@ def create_json(
             normalized_tgt = strip_accents(normalized_tgt)
 
         # 6. We remove all examples that do not contains anything
-        if len(normalized_tgt) < 1 or len(normalized_src) < 1:
+        if len(normalized_tgt) < 2 or len(normalized_src) < 2:
             continue
 
         json_dict[snt_id] = {
