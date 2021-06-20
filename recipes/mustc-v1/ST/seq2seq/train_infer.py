@@ -276,8 +276,6 @@ def dataio_prepare(hparams):
         "tokens_list", "tokens_bos", "tokens_eos", "tokens"
     )
     def text_pipeline(wrd_tgt, wrd_src):
-        print(wrd_src)
-        print(wrd_tgt)
         tokens_list = tokenizer.sp.encode_as_ids(wrd_tgt)
         yield tokens_list
         tokens_bos = torch.LongTensor([hparams["bos_index"]] + (tokens_list))
