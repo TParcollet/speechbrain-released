@@ -6,6 +6,7 @@ import speechbrain as sb
 import torchaudio
 from hyperpyyaml import load_hyperpyyaml
 from speechbrain.tokenizers.SentencePiece import SentencePiece
+from speechbrain.utils.data_utils import undo_padding
 from speechbrain.utils.distributed import run_on_main
 
 """Recipe for training a sequence-to-sequence ASR system with CommonVoice.
@@ -114,14 +115,14 @@ class ASR(sb.core.Brain):
 
         if stage != sb.Stage.TRAIN:
             # Decode token terms to words
-            predicted_words = [
-                self.tokenizer.decode_ids(utt_seq).split(" ")
-                for utt_seq in predicted_tokens
-            ]
+            predicted_words = self.tokenizer(
+                predicted_tokens, task="decode_from_list"
+            )
 
             # Convert indices to words
-            target_words = [wrd.split(" ") for wrd in batch.wrd]
+            target_words = undo_padding(tokens, tokens_lens)
             target_words = self.tokenizer(target_words, task="decode_from_list")
+
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)
             self.acc_metric.append(p_seq, tokens_eos, tokens_eos_lens)
