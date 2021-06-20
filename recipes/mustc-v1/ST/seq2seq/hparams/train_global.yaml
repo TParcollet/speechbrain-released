@@ -91,7 +91,7 @@ min_decode_ratio: 0.0
 max_decode_ratio: 0.3
 beam_size: 80
 eos_threshold: 2.0
-using_max_attn_shift: True
+using_max_attn_shift: False
 max_attn_shift: 240
 ctc_weight_decode: 0.0
 temperature: 1.50
@@ -208,7 +208,9 @@ beam_searcher: !new:speechbrain.decoders.S2SRNNBeamSearcher
     eos_threshold: !ref <eos_threshold>
     using_max_attn_shift: !ref <using_max_attn_shift>
     max_attn_shift: !ref <max_attn_shift>
+    coverage_penalty:
     # temperature: !ref <temperature>
+
 
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
     checkpoints_dir: !ref <save_folder>
