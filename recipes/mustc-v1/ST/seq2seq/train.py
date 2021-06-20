@@ -90,6 +90,7 @@ class ASR(sb.core.Brain):
         target_words = undo_padding(tokens, tokens_lens)
         target_words = self.tokenizer(target_words, task="decode_from_list")
         print(target_words)
+
         loss_seq = self.hparams.seq_cost(
             p_seq, tokens_eos, length=tokens_eos_lens
         )
@@ -275,6 +276,7 @@ def dataio_prepare(hparams):
         "tokens_list", "tokens_bos", "tokens_eos", "tokens"
     )
     def text_pipeline(wrd_tgt):
+        print(wrd_tgt)
         tokens_list = tokenizer.sp.encode_as_ids(wrd_tgt)
         yield tokens_list
         tokens_bos = torch.LongTensor([hparams["bos_index"]] + (tokens_list))
