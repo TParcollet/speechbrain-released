@@ -91,8 +91,8 @@ min_decode_ratio: 0.0
 max_decode_ratio: 0.3
 beam_size: 80
 eos_threshold: 2.0
-using_max_attn_shift: False
-max_attn_shift: 140
+using_max_attn_shift: True
+max_attn_shift: 240
 ctc_weight_decode: 0.0
 temperature: 1.50
 
