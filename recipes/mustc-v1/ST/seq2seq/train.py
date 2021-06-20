@@ -192,6 +192,7 @@ def dataio_prepare(hparams):
         # we sort training data to speed up training and get better results.
         train_data = train_data.filtered_sorted(
             sort_key="duration",
+            key_min_value={"duration": hparams["avoid_if_shorter_than"]},
             key_max_value={"duration": hparams["avoid_if_longer_than"]},
         )
         # when sorting do not shuffle in dataloader ! otherwise is pointless
@@ -201,6 +202,7 @@ def dataio_prepare(hparams):
         train_data = train_data.filtered_sorted(
             sort_key="duration",
             reverse=True,
+            key_min_value={"duration": hparams["avoid_if_shorter_than"]},
             key_max_value={"duration": hparams["avoid_if_longer_than"]},
         )
         # when sorting do not shuffle in dataloader ! otherwise is pointless
@@ -208,7 +210,8 @@ def dataio_prepare(hparams):
 
     elif hparams["sorting"] == "random":
         train_data = train_data.filtered_sorted(
-            key_max_value={"duration": hparams["avoid_if_longer_than"]}
+            key_min_value={"duration": hparams["avoid_if_shorter_than"]},
+            key_max_value={"duration": hparams["avoid_if_longer_than"]},
         )
 
     else:

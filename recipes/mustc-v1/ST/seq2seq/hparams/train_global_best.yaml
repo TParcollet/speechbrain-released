@@ -28,6 +28,7 @@ punctuation: True
 skip_prep: False # Skip data preparation
 
 avoid_if_longer_than: 20.0
+avoid_if_shorter_than: 0.5
 
 # Training parameters
 number_of_epochs: 30
