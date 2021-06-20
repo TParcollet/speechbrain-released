@@ -86,11 +86,6 @@ class ASR(sb.core.Brain):
         tokens_eos, tokens_eos_lens = batch.tokens_eos
         tokens, tokens_lens = batch.tokens
 
-        # Convert indices to words
-        target_words = undo_padding(tokens, tokens_lens)
-        target_words = self.tokenizer(target_words, task="decode_from_list")
-        print(target_words)
-
         loss_seq = self.hparams.seq_cost(
             p_seq, tokens_eos, length=tokens_eos_lens
         )
