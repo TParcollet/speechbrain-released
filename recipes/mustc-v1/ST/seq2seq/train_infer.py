@@ -253,9 +253,15 @@ def dataio_prepare(hparams):
     @sb.utils.data_pipeline.takes("wav", "duration", "offset")
     @sb.utils.data_pipeline.provides("sig")
     def audio_pipeline(wav, duration, offset):
+        print(wav)
         info = torchaudio.info(wav)
         start = int(offset * 16000)
         stop = int((offset + duration) * 16000)
+        print(start)
+        print(stop)
+        print(offset)
+        print(duration)
+        print("----")
         speech_segment = {"file": wav, "start": start, "stop": stop}
         sig = sb.dataio.dataio.read_audio(speech_segment)
         if info.num_channels > 1:
@@ -349,13 +355,13 @@ if __name__ == "__main__":
     asr_brain.tokenizer = tokenizer
 
     # Training
-    # asr_brain.fit(
-    #    asr_brain.hparams.epoch_counter,
-    #    train_data,
-    #    valid_data,
-    #    train_loader_kwargs=hparams["dataloader_options"],
-    #    valid_loader_kwargs=hparams["test_dataloader_options"],
-    # )
+    asr_brain.fit(
+        asr_brain.hparams.epoch_counter,
+        train_data,
+        valid_data,
+        train_loader_kwargs=hparams["dataloader_options"],
+        valid_loader_kwargs=hparams["test_dataloader_options"],
+    )
 
     # Test
     asr_brain.hparams.wer_file = hparams["output_folder"] + "/wer_test.txt"
