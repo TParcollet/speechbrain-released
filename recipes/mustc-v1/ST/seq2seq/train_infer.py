@@ -267,7 +267,9 @@ def dataio_prepare(hparams):
             info.sample_rate, hparams["sample_rate"],
         )(sig)
         torchaudio.save(
-            "file_" + str(offset) + ".wav", resampled, hparams["sample_rate"]
+            "file_" + str(offset) + ".wav",
+            resampled.unsqueeze(0),
+            hparams["sample_rate"],
         )
         return resampled
 
