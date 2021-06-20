@@ -79,7 +79,7 @@ class ASR(sb.core.Brain):
             if current_epoch < self.hparams.number_of_ctc_epochs:
                 p_ctc, p_seq, wav_lens = predictions
             else:
-                p_seq, wav_lens = predictions
+                p_seq, wav_lens, predicted_tokens = predictions
         else:
             p_seq, wav_lens, predicted_tokens = predictions
 
