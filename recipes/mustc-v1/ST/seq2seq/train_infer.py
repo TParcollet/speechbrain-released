@@ -360,5 +360,5 @@ if __name__ == "__main__":
     # Test
     asr_brain.hparams.wer_file = hparams["output_folder"] + "/wer_test.txt"
     asr_brain.evaluate(
-        valid_data, test_loader_kwargs=hparams["test_dataloader_options"],
+        train_data, test_loader_kwargs=hparams["test_dataloader_options"],
     )
