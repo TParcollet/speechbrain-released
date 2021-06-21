@@ -143,7 +143,7 @@ class ST(sb.core.Brain):
             predicted_words = self.tokenizer(hyps, task="decode_from_list")
 
             # Convert indices to words
-            target_words = undo_padding(tokens_eos, tokens_eos_lens)
+            target_words = undo_padding(tokens, tokens_lens)
             target_words = self.tokenizer(target_words, task="decode_from_list")
 
             self.wer_metric.append(ids, predicted_words, target_words)
