@@ -219,3 +219,6 @@ bleu_computer: !name:speechbrain.utils.bleu.BLEUStats
     merge_words: False
 
 acc_computer: !name:speechbrain.utils.Accuracy.AccuracyStats
+cer_computer: !name:speechbrain.utils.metric_stats.ErrorRateStats
+    split_tokens: True
+error_rate_computer: !name:speechbrain.utils.metric_stats.ErrorRateStats
