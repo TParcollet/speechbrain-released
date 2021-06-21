@@ -64,7 +64,7 @@ character_coverage: 1.0
 
 # Trainer settings
 number_of_epochs: 50
-valid_search_epoch: 1
+valid_search_epoch: 5
 batch_size: 8
 gradient_accumulation: 4
 gradient_clipping: 5.0
@@ -85,7 +85,7 @@ train_dataloader_opts:
     num_workers: !ref <num_workers>
 
 valid_dataloader_opts:
-    batch_size: 32
+    batch_size: 1
     num_workers: !ref <num_workers>
 
 test_dataloader_opts:
