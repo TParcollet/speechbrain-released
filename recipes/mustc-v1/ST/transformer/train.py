@@ -496,6 +496,9 @@ if __name__ == "__main__":
         checkpointer=hparams["checkpointer"],
     )
 
+    # Adding objects to trainer.
+    st_brain.tokenizer = tokenizer
+
     st_brain.fit(
         st_brain.hparams.epoch_counter,
         train_data,
