@@ -82,6 +82,8 @@ class BLEUStats(MetricStats):
         if self.targets is None:
             self.targets = targets
         else:
+            print(len(self.targets))
+            print(len(targets))
             assert len(self.targets) == len(targets)
             for i in range(len(self.targets)):
                 self.targets[i].extend(targets[i])
