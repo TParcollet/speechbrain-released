@@ -114,7 +114,6 @@ class ASR(sb.core.Brain):
             predicted_words = self.tokenizer(
                 predicted_tokens, task="decode_from_list"
             )
-            predicted_words = self.tokenizer(predicted_tokens, task="decode")
 
             # Convert indices to words
             target_words = undo_padding(tokens, tokens_lens)
