@@ -149,7 +149,7 @@ class ST(sb.core.Brain):
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)
             self.acc_metric.append(p_seq, tokens_eos, tokens_eos_lens)
-            self.bleu_metric.append(ids, predicted_words, target_words)
+            # self.bleu_metric.append(ids, predicted_words, target_words)
 
         return loss
 
@@ -187,7 +187,7 @@ class ST(sb.core.Brain):
         """Gets called at the beginning of each epoch"""
         if stage != sb.Stage.TRAIN:
             self.acc_metric = self.hparams.acc_computer()
-            self.bleu_metric = self.hparams.bleu_computer()
+            # self.bleu_metric = self.hparams.bleu_computer()
             self.cer_metric = self.hparams.cer_computer()
             self.wer_metric = self.hparams.error_rate_computer()
 
@@ -203,14 +203,14 @@ class ST(sb.core.Brain):
             valid_search_interval = self.hparams.valid_search_interval
 
             if stage == sb.Stage.TEST:
-                stage_stats["BLEU"] = self.bleu_metric.summarize("BLEU")
+                # stage_stats["BLEU"] = self.bleu_metric.summarize("BLEU")
                 stage_stats["CER"] = self.cer_metric.summarize("error_rate")
                 stage_stats["WER"] = self.wer_metric.summarize("error_rate")
             elif (
                 current_epoch % valid_search_interval == 0
                 and stage == sb.Stage.VALID
             ):
-                stage_stats["BLEU"] = self.bleu_metric.summarize("BLEU")
+                # stage_stats["BLEU"] = self.bleu_metric.summarize("BLEU")
                 stage_stats["CER"] = self.cer_metric.summarize("error_rate")
                 stage_stats["WER"] = self.wer_metric.summarize("error_rate")
 
@@ -252,8 +252,8 @@ class ST(sb.core.Brain):
                 test_stats=stage_stats,
             )
 
-            with open(self.hparams.bleu_file, "a+", encoding="utf-8") as w:
-                self.bleu_metric.write_stats(w)
+            # with open(self.hparams.bleu_file, "a+", encoding="utf-8") as w:
+            #    self.bleu_metric.write_stats(w)
 
             # save the averaged checkpoint at the end of the evaluation stage
             # delete the rest of the intermediate checkpoints
