@@ -110,6 +110,7 @@ class ASR(sb.core.Brain):
             print(predicted_tokens)
             print(tokens_eos)
             print(self.tokenizer.sp.id_to_piece(predicted_tokens))
+            print(self.tokenizer.sp.id_to_piece(tokens_eos))
             predicted_words = self.tokenizer(
                 predicted_tokens, task="decode_from_list"
             )
