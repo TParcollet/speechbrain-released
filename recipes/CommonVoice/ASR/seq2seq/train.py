@@ -107,6 +107,8 @@ class ASR(sb.core.Brain):
 
         if stage != sb.Stage.TRAIN:
             # Decode token terms to words
+            print(predicted_tokens)
+            print(tokens_eos)
             predicted_words = self.tokenizer(
                 predicted_tokens, task="decode_from_list"
             )
