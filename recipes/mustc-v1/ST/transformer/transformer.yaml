@@ -20,8 +20,16 @@ train_log: !ref <output_folder>/train_log.txt
 
 use_speed_perturb: True
 
-# Data files
-data_folder: $PLACEHOLDER
+data_folder: !PLACEHOLDER  # e.g, /localscratch/cv-corpus-5.1-2020-06-22/fr
+accented_letters: True
+tgt_language: de
+font_case: tc
+non_verbal: True
+punctuation: True
+skip_prep: False # Skip data preparation
+
+avoid_if_longer_than: 20.0
+avoid_if_shorter_than: 0.5
 
 # The train logger writes training statistics to a file, as well as stdout.
 train_logger: !new:speechbrain.utils.train_logger.FileTrainLogger
