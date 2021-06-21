@@ -58,6 +58,10 @@ speed_perturb: !new:speechbrain.processing.speech_augmentation.SpeedPerturb
     orig_freq: !ref <sample_rate>
     speeds: [90, 100, 110]
 
+# BPE parameters
+token_type: bpe  # ["unigram", "bpe", "char"]
+character_coverage: 1.0
+
 # Trainer settings
 number_of_epochs: 50
 valid_search_epoch: 1
