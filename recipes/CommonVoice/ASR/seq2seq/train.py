@@ -109,8 +109,8 @@ class ASR(sb.core.Brain):
             # Decode token terms to words
             print(predicted_tokens)
             print(tokens_eos)
-            print(self.tokenizer.sp.id_to_piece(predicted_tokens))
-            print(self.tokenizer.sp.id_to_piece(tokens_eos))
+            print(self.tokenizer.sp.id_to_piece(predicted_tokens[0]))
+            print(self.tokenizer.sp.id_to_piece(tokens_eos[0]))
             predicted_words = self.tokenizer(
                 predicted_tokens, task="decode_from_list"
             )
