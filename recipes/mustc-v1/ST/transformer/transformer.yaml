@@ -85,11 +85,11 @@ train_dataloader_opts:
     num_workers: !ref <num_workers>
 
 valid_dataloader_opts:
-    batch_size: !ref <batch_size>
+    batch_size: 8
     num_workers: !ref <num_workers>
 
 test_dataloader_opts:
-    batch_size: !ref <batch_size>
+    batch_size: 1
     num_workers: !ref <num_workers>
 
 ####################### Model parameters ###########################
@@ -121,7 +121,7 @@ unk_index: 0
 min_decode_ratio: 0.0
 max_decode_ratio: 1.0
 valid_search_interval: !ref <valid_search_epoch>
-valid_beam_size: 10
+valid_beam_size: 1
 test_beam_size: 10
 
 ############################## models ################################
