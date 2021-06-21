@@ -34,7 +34,7 @@ class ST(sb.core.Brain):
         tokens_bos, _ = batch.tokens_bos
 
         # for asr task
-        transcription_bos, _ = batch.transcription_bos
+        # transcription_bos, _ = batch.transcription_bos
 
         # compute features
         feats = self.hparams.compute_features(wavs)
@@ -49,12 +49,12 @@ class ST(sb.core.Brain):
 
         asr_p_seq = None
         # asr output layer for seq2seq log-probabilities
-        if self.hparams.asr_weight > 0 and self.hparams.ctc_weight < 1:
-            asr_pred = self.hparams.Transformer.forward_asr(
-                enc_out, transcription_bos, pad_idx=self.hparams.pad_index,
-            )
-            asr_pred = self.hparams.asr_seq_lin(asr_pred)
-            asr_p_seq = self.hparams.log_softmax(asr_pred)
+        # if self.hparams.asr_weight > 0 and self.hparams.ctc_weight < 1:
+        #    asr_pred = self.hparams.Transformer.forward_asr(
+        #        enc_out, transcription_bos, pad_idx=self.hparams.pad_index,
+        #    )
+        #    asr_pred = self.hparams.asr_seq_lin(asr_pred)
+        #    asr_p_seq = self.hparams.log_softmax(asr_pred)
 
         # st output layer for seq2seq log-probabilities
         pred = self.hparams.seq_lin(pred)
@@ -68,14 +68,14 @@ class ST(sb.core.Brain):
 
         # mt task
         mt_p_seq = None
-        if self.hparams.mt_weight > 0:
-            _, mt_pred = self.hparams.Transformer.forward_mt(
-                transcription_bos, tokens_bos, pad_idx=self.hparams.pad_index,
-            )
+        # if self.hparams.mt_weight > 0:
+        #    _, mt_pred = self.hparams.Transformer.forward_mt(
+        #        transcription_bos, tokens_bos, pad_idx=self.hparams.pad_index,
+        #    )
 
-            # mt output layer for seq2seq log-probabilities
-            mt_pred = self.hparams.seq_lin(mt_pred)
-            mt_p_seq = self.hparams.log_softmax(mt_pred)
+        #    # mt output layer for seq2seq log-probabilities
+        #    mt_pred = self.hparams.seq_lin(mt_pred)
+        #    mt_p_seq = self.hparams.log_softmax(mt_pred)
 
         # compute outputs
         hyps = None
