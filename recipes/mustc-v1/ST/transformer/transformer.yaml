@@ -18,6 +18,11 @@ bleu_file: !ref <output_folder>/bleu.txt
 save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
 
+train_json: !ref <save_folder>/train_en-de.json
+valid_json: !ref <save_folder>/dev_en-de.json
+test_he_json: !ref <save_folder>/test_he_en-de.json
+test_com_json: !ref <save_folder>/test_com_en-de.json
+
 use_speed_perturb: True
 
 data_folder: !PLACEHOLDER  # e.g, /localscratch/cv-corpus-5.1-2020-06-22/fr
