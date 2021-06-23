@@ -205,7 +205,7 @@ class S2SGreedySearcherForced(S2SBaseSearcher):
 
         log_probs_lst = []
         max_decode_steps = int(enc_states.shape[1] * self.max_decode_ratio)
-        print(max_decode_steps)
+        print(15)
         for t in range(max_decode_steps):
 
             log_probs, memory, _ = self.forward_step(
