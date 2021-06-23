@@ -186,7 +186,44 @@ class S2SGreedySearcher(S2SBaseSearcher):
         return predictions, scores
 
 
-class S2SRNNGreedySearcher(S2SGreedySearcher):
+class S2SGreedySearcherForced(S2SBaseSearcher):
+    """This class implements the general forward-pass of
+    greedy decoding approach. See also S2SBaseSearcher().
+    """
+
+    def forward(self, inp_tokens, enc_states, wav_len):
+        enc_lens = torch.round(enc_states.shape[1] * wav_len).int()
+        device = enc_states.device
+        batch_size = enc_states.shape[0]
+
+        memory = self.reset_mem(batch_size, device=device)
+
+        # Using bos as the first input
+        # inp_tokens = (
+        #    enc_states.new_zeros(batch_size).fill_(self.bos_index).long()
+        # )
+
+        log_probs_lst = []
+        max_decode_steps = int(enc_states.shape[1] * self.max_decode_ratio)
+
+        for t in range(max_decode_steps):
+            log_probs, memory, _ = self.forward_step(
+                inp_tokens[t], memory, enc_states, enc_lens
+            )
+            log_probs_lst.append(log_probs)
+            # inp_tokens = log_probs.argmax(dim=-1)
+
+        log_probs = torch.stack(log_probs_lst, dim=1)
+        scores, predictions = log_probs.max(dim=-1)
+        scores = scores.sum(dim=1).tolist()
+        predictions = batch_filter_seq2seq_output(
+            predictions, eos_id=self.eos_index
+        )
+
+        return predictions, scores
+
+
+class S2SRNNGreedySearcher(S2SGreedySearcherForced):
     """
     This class implements the greedy decoding
     for AttentionalRNNDecoder (speechbrain/nnet/RNN.py).
