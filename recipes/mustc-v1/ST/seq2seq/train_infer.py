@@ -4,6 +4,7 @@ import torch
 import logging
 import speechbrain as sb
 import torchaudio
+import numpy as np
 from hyperpyyaml import load_hyperpyyaml
 from speechbrain.tokenizers.SentencePiece import SentencePiece
 from speechbrain.utils.data_utils import undo_padding
@@ -147,7 +148,7 @@ class ASR(sb.core.Brain):
             target_words = self.tokenizer(target_words, task="decode_from_list")
             print(predicted_words)
             print(target_words)
-            att_w = torch.Tensor(self.hparams.greedy_searcher.attn_lst)
+            att_w = np.array(self.hparams.greedy_searcher.attn_lst)
             print(att_w)
             print("---")
             self.wer_metric.append(ids, predicted_words, target_words)
