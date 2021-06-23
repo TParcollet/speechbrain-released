@@ -67,7 +67,7 @@ class ASR(sb.core.Brain):
             else:
 
                 p_tokens, scores = self.hparams.greedy_searcher(
-                    e_in, x, wav_lens
+                    tokens_bos, x, wav_lens
                 )
                 return p_seq, wav_lens, p_tokens
         else:
