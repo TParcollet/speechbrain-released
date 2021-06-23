@@ -114,14 +114,14 @@ class ASR(sb.core.Brain):
             self.acc_train_metric.total = old_total
             loss = loss_seq
 
-            predicted_words = self.tokenizer(
-                predicted_tokens, task="decode_from_list"
-            )
+            # predicted_words = self.tokenizer(
+            #    predicted_tokens, task="decode_from_list"
+            # )
 
             # Convert indices to words
             target_words = undo_padding(tokens_eos, tokens_eos_lens)
             target_words = self.tokenizer(target_words, task="decode_from_list")
-            print(predicted_words)
+            # print(predicted_words)
             print(target_words)
             print("---")
 
