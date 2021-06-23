@@ -147,6 +147,7 @@ class ASR(sb.core.Brain):
             target_words = self.tokenizer(target_words, task="decode_from_list")
             print(predicted_words)
             print(target_words)
+            print(self.hparams.greedy_searcher.attn_lst)
             print("---")
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)

@@ -51,8 +51,6 @@ class ContentBasedAttention(nn.Module):
         self.mlp_attn = nn.Linear(attn_dim, 1, bias=False)
         self.mlp_out = nn.Linear(enc_dim, output_dim)
 
-        self.attn_list = []
-
         self.scaling = scaling
 
         self.softmax = nn.Softmax(dim=-1)
@@ -96,8 +94,6 @@ class ContentBasedAttention(nn.Module):
         # mask the padded frames
         attn = attn.masked_fill(self.mask == 0, -np.inf)
         attn = self.softmax(attn * self.scaling)
-
-        self.attn_lst.append(attn)
 
         # compute context vectors
         # [B, 1, L] X [B, L, F]
