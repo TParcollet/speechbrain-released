@@ -28,6 +28,7 @@ punctuation: True
 skip_prep: False # Skip data preparation
 
 avoid_if_longer_than: 20.0
+avoid_if_shorter_than: 0.5
 
 # Training parameters
 number_of_epochs: 25
@@ -85,13 +86,13 @@ output_neurons: 8000  # BPE size, index(blank/eos/bos) = 0
 # Decoding parameters
 # Be sure that the bos and eos index match with the BPEs ones
 blank_index: 0
-bos_index: 1
-eos_index: 2
+bos_index: 0
+eos_index: 0
 min_decode_ratio: 0.0
-max_decode_ratio: 1.0
-beam_size: 80
+max_decode_ratio: 0.3
+beam_size: 1
 eos_threshold: 1.5
-using_max_attn_shift: True
+using_max_attn_shift: False
 max_attn_shift: 140
 ctc_weight_decode: 0.0
 temperature: 1.50
@@ -173,6 +174,7 @@ ctc_cost: !name:speechbrain.nnet.losses.ctc_loss
     blank_index: !ref <blank_index>
 
 seq_cost: !name:speechbrain.nnet.losses.nll_loss
+    label_smoothing: 0.1
 
 modules:
     enc: !ref <enc>
@@ -186,10 +188,10 @@ model: !new:torch.nn.ModuleList
     - [!ref <enc>, !ref <emb>, !ref <dec>, !ref <ctc_lin>, !ref <seq_lin>]
 
 opt_class: !name:madgrad.MADGRAD
-    lr: 0.0005
+    lr: 0.0002
 
 lr_annealing: !new:speechbrain.nnet.schedulers.NewBobScheduler
-    initial_value: 0.0005
+    initial_value: 0.0002
     improvement_threshold: 0.0025
     annealing_factor: 0.8
     patient: 1

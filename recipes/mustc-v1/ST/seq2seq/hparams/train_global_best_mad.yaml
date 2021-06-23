@@ -35,14 +35,14 @@ number_of_epochs: 30
 number_of_ctc_epochs: 0
 lr: 1.0
 ctc_weight: 0.0
-sorting: random
+sorting: ascending
 gradient_clipping: 5.0
 ckpt_interval_minutes: 15 # save checkpoint every N min
 
 # With data_parallel batch_size is split into N jobs
 # With DDP batch_size is multiplied by N jobs
 # Must be 6 per GPU to fit 16GB of VRAM
-batch_size: 10
+batch_size: 12
 test_batch_size: 6
 
 dataloader_options:
@@ -86,8 +86,8 @@ output_neurons: 8000  # BPE size, index(blank/eos/bos) = 0
 # Decoding parameters
 # Be sure that the bos and eos index match with the BPEs ones
 blank_index: 0
-bos_index: 1
-eos_index: 2
+bos_index: 0
+eos_index: 0
 min_decode_ratio: 0.0
 max_decode_ratio: 0.3
 beam_size: 1
@@ -188,13 +188,13 @@ model: !new:torch.nn.ModuleList
     - [!ref <enc>, !ref <emb>, !ref <dec>, !ref <ctc_lin>, !ref <seq_lin>]
 
 opt_class: !name:madgrad.MADGRAD
-    lr: 0.0003
+    lr: 0.0002
 
 lr_annealing: !new:speechbrain.nnet.schedulers.NewBobScheduler
-    initial_value: 0.0003
+    initial_value: 0.0002
     improvement_threshold: 0.0025
     annealing_factor: 0.8
-    patient: 0
+    patient: 1
 
 greedy_searcher: !new:speechbrain.decoders.seq2seq.S2SRNNGreedySearcher
     embedding: !ref <emb>
