@@ -40,6 +40,7 @@ class ASR(sb.core.Brain):
         tokens_bos, _ = batch.tokens_bos
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
+        print(wavs[:10])
         # Forward pass
         feats = self.hparams.compute_features(wavs)
         feats = self.modules.normalize(feats, wav_lens)
@@ -102,7 +103,7 @@ class ASR(sb.core.Brain):
             loss += (1 - self.hparams.ctc_weight) * loss_seq
         else:
             self.acc_train_metric.append(p_seq, tokens_eos, tokens_eos_lens)
-            # logger.info(self.acc_train_metric.summarize())
+            logger.info(self.acc_train_metric.summarize())
             old_correct = self.acc_train_metric.correct
             old_total = self.acc_train_metric.total
             self.acc_train_metric.correct = 0
