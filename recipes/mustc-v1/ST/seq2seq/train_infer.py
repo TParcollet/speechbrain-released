@@ -114,6 +114,17 @@ class ASR(sb.core.Brain):
             self.acc_train_metric.total = old_total
             loss = loss_seq
 
+            predicted_words = self.tokenizer(
+                predicted_tokens, task="decode_from_list"
+            )
+
+            # Convert indices to words
+            target_words = undo_padding(tokens_eos, tokens_eos_lens)
+            target_words = self.tokenizer(target_words, task="decode_from_list")
+            print(predicted_words)
+            print(target_words)
+            print("---")
+
         if stage != sb.Stage.TRAIN:
             # Decode token terms to words
             predicted_words = self.tokenizer(
@@ -350,13 +361,13 @@ if __name__ == "__main__":
     asr_brain.tokenizer = tokenizer
 
     # Training
-    # asr_brain.fit(
-    #    asr_brain.hparams.epoch_counter,
-    #    train_data,
-    #    valid_data,
-    #    train_loader_kwargs=hparams["dataloader_options"],
-    #    valid_loader_kwargs=hparams["test_dataloader_options"],
-    # )
+    asr_brain.fit(
+        asr_brain.hparams.epoch_counter,
+        train_data,
+        valid_data,
+        train_loader_kwargs=hparams["dataloader_options"],
+        valid_loader_kwargs=hparams["test_dataloader_options"],
+    )
 
     # Test
     asr_brain.hparams.wer_file = hparams["output_folder"] + "/wer_test.txt"
