@@ -148,6 +148,25 @@ class S2SBaseSearcher(torch.nn.Module):
         """
         raise NotImplementedError
 
+    def get_attention_weight_list(self):
+        """This method should implement the resetting of
+        memory variables in the language model.
+        E.g., initializing zero vector as initial hidden states.
+
+        Arguments
+        ---------
+        batch_size : int
+            The size of the batch.
+        device : torch.device
+            The device to put the initial variables.
+
+        Return
+        ------
+        memory : No limit
+            The initial memory variable.
+        """
+        raise NotImplementedError
+
 
 class S2SGreedySearcher(S2SBaseSearcher):
     """This class implements the general forward-pass of
@@ -207,6 +226,8 @@ class S2SGreedySearcherForced(S2SBaseSearcher):
             )
             log_probs_lst.append(log_probs)
 
+        print(self.get_attention_weight_list())
+
         log_probs = torch.stack(log_probs_lst, dim=1)
         scores, predictions = log_probs.max(dim=-1)
         scores = scores.sum(dim=1).tolist()
@@ -261,6 +282,10 @@ class S2SRNNGreedySearcher(S2SGreedySearcherForced):
         self.dec = decoder
         self.fc = linear
         self.softmax = torch.nn.LogSoftmax(dim=-1)
+
+    def get_attention_weight_list(self):
+
+        return self.decoder.attn.attn_lst
 
     def reset_mem(self, batch_size, device):
         """When doing greedy search, keep hidden state (hs) adn context vector (c)
