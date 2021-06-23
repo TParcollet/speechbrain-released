@@ -950,7 +950,6 @@ class AttentionalRNNDecoder(nn.Module):
                 inp = inp_tensor[:, t]
             else:
                 if torch.rand(1) < 0.2:
-                    logger.info("sampling")
                     inp = outputs
                 else:
                     inp = inp_tensor[:, t]
