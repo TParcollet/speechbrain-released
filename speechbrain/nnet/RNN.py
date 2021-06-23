@@ -791,6 +791,7 @@ class AttentionalRNNDecoder(nn.Module):
         kernel_size=None,
         bias=True,
         dropout=0.0,
+        teacher_forcing=True,
     ):
         super(AttentionalRNNDecoder, self).__init__()
 
@@ -805,6 +806,7 @@ class AttentionalRNNDecoder(nn.Module):
         self.normalization = normalization
         self.re_init = re_init
         self.nonlinearity = nonlinearity
+        self.teacher_forcing = teacher_forcing
 
         # only for location-aware attention
         self.channels = channels
@@ -942,9 +944,17 @@ class AttentionalRNNDecoder(nn.Module):
 
         # store predicted tokens
         outputs_lst, attn_lst = [], []
+        outputs = -1
         for t in range(inp_tensor.shape[1]):
+            if self.teacher_forcing or t == 0:
+                inp = inp_tensor[:, t]
+            else:
+                if torch.rand(1) < 0.2:
+                    inp = outputs
+                else:
+                    inp = inp_tensor[:, t]
             outputs, hs, c, w = self.forward_step(
-                inp_tensor[:, t], hs, c, enc_states, enc_len
+                inp, hs, c, enc_states, enc_len
             )
             outputs_lst.append(outputs)
             attn_lst.append(w)
