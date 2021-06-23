@@ -95,6 +95,8 @@ class ContentBasedAttention(nn.Module):
         attn = attn.masked_fill(self.mask == 0, -np.inf)
         attn = self.softmax(attn * self.scaling)
 
+        print(attn.shape)
+
         # compute context vectors
         # [B, 1, L] X [B, L, F]
         context = torch.bmm(attn.unsqueeze(1), enc_states).squeeze(1)
