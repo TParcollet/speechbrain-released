@@ -155,7 +155,6 @@ class S2SGreedySearcher(S2SBaseSearcher):
     """
 
     def forward(self, enc_states, wav_len):
-        print("hello")
         enc_lens = torch.round(enc_states.shape[1] * wav_len).int()
         device = enc_states.device
         batch_size = enc_states.shape[0]
@@ -176,7 +175,7 @@ class S2SGreedySearcher(S2SBaseSearcher):
             )
             log_probs_lst.append(log_probs)
             inp_tokens = log_probs.argmax(dim=-1)
-
+        print(log_probs_lst)
         log_probs = torch.stack(log_probs_lst, dim=1)
         scores, predictions = log_probs.max(dim=-1)
         scores = scores.sum(dim=1).tolist()
