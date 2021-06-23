@@ -40,7 +40,6 @@ class ASR(sb.core.Brain):
         tokens_bos, _ = batch.tokens_bos
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
-        print(wavs[:10])
         # Forward pass
         feats = self.hparams.compute_features(wavs)
         feats = self.modules.normalize(feats, wav_lens)
@@ -117,13 +116,13 @@ class ASR(sb.core.Brain):
             # predicted_words = self.tokenizer(
             #    predicted_tokens, task="decode_from_list"
             # )
-
+            print(p_seq.argmax(-1)[0])
             # Convert indices to words
-            target_words = undo_padding(tokens_eos, tokens_eos_lens)
-            target_words = self.tokenizer(target_words, task="decode_from_list")
+            # target_words = undo_padding(tokens_eos, tokens_eos_lens)
+            # target_words = self.tokenizer(target_words, task="decode_from_list")
             # print(predicted_words)
-            print(target_words)
-            print("---")
+            # print(target_words)
+            # print("---")
 
         if stage != sb.Stage.TRAIN:
             # Decode token terms to words
