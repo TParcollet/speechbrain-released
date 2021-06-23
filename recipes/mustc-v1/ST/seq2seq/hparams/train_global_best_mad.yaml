@@ -87,7 +87,7 @@ output_neurons: 8000  # BPE size, index(blank/eos/bos) = 0
 # Be sure that the bos and eos index match with the BPEs ones
 blank_index: 0
 bos_index: 1
-eos_index: 1
+eos_index: 2
 min_decode_ratio: 0.0
 max_decode_ratio: 0.3
 beam_size: 1
