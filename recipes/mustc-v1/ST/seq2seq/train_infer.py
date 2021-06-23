@@ -154,7 +154,11 @@ class ASR(sb.core.Brain):
                     torch.stack(self.hparams.greedy_searcher.attn_lst), dim=1
                 ).cpu()
             )
-            print(att_w)
+            print(
+                torch.squeeze(
+                    torch.stack(self.hparams.greedy_searcher.attn_lst), dim=1
+                ).shape
+            )
             plt.imshow(att_w, cmap="hot", interpolation="nearest")
             plt.savefig("testu" + str(np.random.randint(1000)) + ".png")
             print("---")
