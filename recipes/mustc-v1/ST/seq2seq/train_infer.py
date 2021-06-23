@@ -120,7 +120,7 @@ class ASR(sb.core.Brain):
             )
 
             # Convert indices to words
-            target_words = undo_padding(tokens, tokens_eos_lens)
+            target_words = undo_padding(tokens_eos, tokens_eos_lens)
             target_words = self.tokenizer(target_words, task="decode_from_list")
             print(predicted_words)
             print(target_words)
@@ -263,11 +263,6 @@ def dataio_prepare(hparams):
         resampled = torchaudio.transforms.Resample(
             info.sample_rate, hparams["sample_rate"],
         )(sig)
-        torchaudio.save(
-            "file_" + str(offset) + ".wav",
-            resampled.unsqueeze(0),
-            hparams["sample_rate"],
-        )
         return resampled
 
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
