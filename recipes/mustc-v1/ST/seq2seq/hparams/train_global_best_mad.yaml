@@ -175,6 +175,7 @@ ctc_cost: !name:speechbrain.nnet.losses.ctc_loss
     blank_index: !ref <blank_index>
 
 seq_cost: !name:speechbrain.nnet.losses.nll_loss
+    label_smoothing: 0.1
 
 modules:
     enc: !ref <enc>
