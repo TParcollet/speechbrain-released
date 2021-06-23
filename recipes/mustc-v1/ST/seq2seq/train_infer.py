@@ -65,7 +65,9 @@ class ASR(sb.core.Brain):
                 p_ctc = self.hparams.log_softmax(logits)
                 return p_ctc, p_seq, wav_lens
             else:
-                p_tokens, scores = self.hparams.greedy_searcher(x, wav_lens)
+                p_tokens, scores = self.hparams.greedy_searcher(
+                    e_in, x, wav_lens
+                )
                 return p_seq, wav_lens, p_tokens
         else:
             p_tokens, scores = self.hparams.greedy_searcher(x, wav_lens)
