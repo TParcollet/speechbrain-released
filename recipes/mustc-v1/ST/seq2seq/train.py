@@ -246,8 +246,6 @@ def dataio_prepare(hparams):
         annotation_format="json",
         model_type=hparams["token_type"],
         character_coverage=hparams["character_coverage"],
-        bos_id=hparams["bos_index"],
-        eos_id=hparams["eos_index"],
     )
 
     # 2. Define audio pipeline:
