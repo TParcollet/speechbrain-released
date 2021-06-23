@@ -156,7 +156,7 @@ class ASR(sb.core.Brain):
             )
             print(att_w)
             plt.imshow(att_w, cmap="hot", interpolation="nearest")
-            plt.savefig("testu" + str(torch.rand(1)) + ".png")
+            plt.savefig("testu" + str(np.random.randint(1000)) + ".png")
             print("---")
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)
