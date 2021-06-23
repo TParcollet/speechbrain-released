@@ -5,7 +5,7 @@ import logging
 import speechbrain as sb
 import torchaudio
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from hyperpyyaml import load_hyperpyyaml
 from speechbrain.tokenizers.SentencePiece import SentencePiece
 from speechbrain.utils.data_utils import undo_padding
