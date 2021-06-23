@@ -198,13 +198,14 @@ class S2SGreedySearcherForced(S2SBaseSearcher):
 
         memory = self.reset_mem(batch_size, device=device)
 
+        max_decode_steps = inp_tokens.shape[1]
+
         # Using bos as the first input
         inp_tokens = (
             enc_states.new_zeros(batch_size).fill_(self.bos_index).long()
         )
 
         log_probs_lst = []
-        max_decode_steps = inp_tokens.shape[1]
 
         for t in range(max_decode_steps):
             log_probs, memory, _ = self.forward_step(
