@@ -116,7 +116,7 @@ class ASR(sb.core.Brain):
             # predicted_words = self.tokenizer(
             #    predicted_tokens, task="decode_from_list"
             # )
-            print(p_seq.argmax(-1)[0])
+            print(self.tokenizer.sp.decode_ids(p_seq.argmax(-1)[0]))
             # Convert indices to words
             # target_words = undo_padding(tokens_eos, tokens_eos_lens)
             # target_words = self.tokenizer(target_words, task="decode_from_list")
