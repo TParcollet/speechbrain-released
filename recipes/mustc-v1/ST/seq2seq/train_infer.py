@@ -65,7 +65,8 @@ class ASR(sb.core.Brain):
                 p_ctc = self.hparams.log_softmax(logits)
                 return p_ctc, p_seq, wav_lens
             else:
-                return p_seq, wav_lens
+                p_tokens, scores = self.hparams.beam_searcher(x, wav_lens)
+                return p_seq, wav_lens, p_tokens
         else:
             p_tokens, scores = self.hparams.beam_searcher(x, wav_lens)
             return p_seq, wav_lens, p_tokens
@@ -78,7 +79,7 @@ class ASR(sb.core.Brain):
             if current_epoch < self.hparams.number_of_ctc_epochs:
                 p_ctc, p_seq, wav_lens = predictions
             else:
-                p_seq, wav_lens = predictions
+                p_seq, wav_lens, predicted_tokens = predictions
         else:
             p_seq, wav_lens, predicted_tokens = predictions
 
@@ -113,14 +114,16 @@ class ASR(sb.core.Brain):
             self.acc_train_metric.total = old_total
             loss = loss_seq
 
-            # predicted_words = self.tokenizer(
-            #    predicted_tokens, task="decode_from_list"
-            # )
+            predicted_words = self.tokenizer(
+                predicted_tokens, task="decode_from_list"
+            )
             print(self.tokenizer.sp.decode_ids(p_seq.argmax(-1)[0].tolist()))
             # Convert indices to words
             target_words = undo_padding(tokens_eos, tokens_eos_lens)
             target_words = self.tokenizer(target_words, task="decode_from_list")
+            print(predicted_tokens[0])
             print(target_words[0])
+            print("----")
             # Convert indices to words
             # target_words = undo_padding(tokens_eos, tokens_eos_lens)
             # target_words = self.tokenizer(target_words, task="decode_from_list")
