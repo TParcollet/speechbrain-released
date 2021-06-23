@@ -150,7 +150,9 @@ class ASR(sb.core.Brain):
             print(predicted_words)
             print(target_words)
             att_w = np.array(
-                torch.stack(self.hparams.greedy_searcher.attn_lst).cpu()
+                torch.squeez(
+                    torch.stack(self.hparams.greedy_searcher.attn_lst), dim=1
+                ).cpu()
             )
             print(att_w)
             plt.imshow(att_w, cmap="hot", interpolation="nearest")
