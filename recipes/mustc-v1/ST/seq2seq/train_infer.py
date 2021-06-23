@@ -122,6 +122,9 @@ class ASR(sb.core.Brain):
             # Convert indices to words
             target_words = undo_padding(tokens, tokens_eos_lens)
             target_words = self.tokenizer(target_words, task="decode_from_list")
+            print(predicted_words)
+            print(target_words)
+            print("---")
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)
             self.acc_metric.append(p_seq, tokens_eos, tokens_eos_lens)
@@ -250,15 +253,9 @@ def dataio_prepare(hparams):
     @sb.utils.data_pipeline.takes("wav", "duration", "offset")
     @sb.utils.data_pipeline.provides("sig")
     def audio_pipeline(wav, duration, offset):
-        print(wav)
         info = torchaudio.info(wav)
         start = int(offset * 16000)
         stop = int((offset + duration) * 16000)
-        print(start)
-        print(stop)
-        print(offset)
-        print(duration)
-        print("----")
         speech_segment = {"file": wav, "start": start, "stop": stop}
         sig = sb.dataio.dataio.read_audio(speech_segment)
         if info.num_channels > 1:
@@ -357,13 +354,13 @@ if __name__ == "__main__":
     asr_brain.tokenizer = tokenizer
 
     # Training
-    asr_brain.fit(
-        asr_brain.hparams.epoch_counter,
-        train_data,
-        valid_data,
-        train_loader_kwargs=hparams["dataloader_options"],
-        valid_loader_kwargs=hparams["test_dataloader_options"],
-    )
+    # asr_brain.fit(
+    #    asr_brain.hparams.epoch_counter,
+    #    train_data,
+    #    valid_data,
+    #    train_loader_kwargs=hparams["dataloader_options"],
+    #    valid_loader_kwargs=hparams["test_dataloader_options"],
+    # )
 
     # Test
     asr_brain.hparams.wer_file = hparams["output_folder"] + "/wer_test.txt"
