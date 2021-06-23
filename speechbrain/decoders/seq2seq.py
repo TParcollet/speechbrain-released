@@ -209,7 +209,7 @@ class S2SGreedySearcherForced(S2SBaseSearcher):
         )
 
         for t in range(max_decode_steps):
-
+            print(t)
             log_probs, memory, _ = self.forward_step(
                 inp_tokens[:, t], memory, enc_states, enc_lens
             )
