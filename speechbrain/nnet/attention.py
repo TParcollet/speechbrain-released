@@ -95,6 +95,7 @@ class ContentBasedAttention(nn.Module):
         attn = attn.masked_fill(self.mask == 0, -np.inf)
         attn = self.softmax(attn * self.scaling)
 
+        print("Euh print ?")
         print(attn.shape)
 
         # compute context vectors
