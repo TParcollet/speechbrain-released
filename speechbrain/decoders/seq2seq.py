@@ -198,14 +198,20 @@ class S2SGreedySearcherForced(S2SBaseSearcher):
 
         memory = self.reset_mem(batch_size, device=device)
 
+        # Using bos as the first input
+        inp_tokens = (
+            enc_states.new_zeros(batch_size).fill_(self.bos_index).long()
+        )
+
         log_probs_lst = []
         max_decode_steps = inp_tokens.shape[1]
 
         for t in range(max_decode_steps):
             log_probs, memory, _ = self.forward_step(
-                inp_tokens[:, t], memory, enc_states, enc_lens
+                inp_tokens, memory, enc_states, enc_lens
             )
             log_probs_lst.append(log_probs)
+            inp_tokens = log_probs.argmax(dim=-1)
 
         log_probs = torch.stack(log_probs_lst, dim=1)
         scores, predictions = log_probs.max(dim=-1)
