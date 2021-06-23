@@ -71,7 +71,9 @@ class ASR(sb.core.Brain):
                 )
                 return p_seq, wav_lens, p_tokens
         else:
-            p_tokens, scores = self.hparams.greedy_searcher(x, wav_lens)
+            p_tokens, scores = self.hparams.greedy_searcher(
+                tokens_bos, x, wav_lens
+            )
             return p_seq, wav_lens, p_tokens
 
     def compute_objectives(self, predictions, batch, stage):
