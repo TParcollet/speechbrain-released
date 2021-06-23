@@ -175,7 +175,7 @@ class S2SGreedySearcher(S2SBaseSearcher):
             )
             log_probs_lst.append(log_probs)
             inp_tokens = log_probs.argmax(dim=-1)
-        print(log_probs_lst)
+        print(log_probs_lst.max(dim=-1))
         log_probs = torch.stack(log_probs_lst, dim=1)
         scores, predictions = log_probs.max(dim=-1)
         scores = scores.sum(dim=1).tolist()
