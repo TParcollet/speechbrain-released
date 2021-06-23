@@ -39,6 +39,7 @@ def Accuracy(log_probabilities, targets, length=None):
         numerator = torch.sum(
             padded_pred.masked_select(mask) == targets.masked_select(mask)
         )
+        print(padded_pred.masked_select(mask) == targets.masked_select(mask))
         print(padded_pred.masked_select(mask))
         print(targets.masked_select(mask))
         denominator = torch.sum(mask)
