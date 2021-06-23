@@ -122,11 +122,11 @@ class ASR(sb.core.Brain):
             )
             # print(self.tokenizer.sp.decode_ids(p_seq.argmax(-1)[0].tolist()))
             # Convert indices to words
-            target_words = undo_padding(tokens_eos, tokens_eos_lens)
-            target_words = self.tokenizer(target_words, task="decode_from_list")
-            print(predicted_words[0])
-            print(target_words[0])
-            print("----")
+            # target_words = undo_padding(tokens_eos, tokens_eos_lens)
+            # target_words = self.tokenizer(target_words, task="decode_from_list")
+            # print(predicted_words[0])
+            # print(target_words[0])
+            # print("----")
             # Convert indices to words
             # target_words = undo_padding(tokens_eos, tokens_eos_lens)
             # target_words = self.tokenizer(target_words, task="decode_from_list")
@@ -370,16 +370,16 @@ if __name__ == "__main__":
     asr_brain.tokenizer = tokenizer
 
     # Training
-    asr_brain.fit(
-        asr_brain.hparams.epoch_counter,
-        train_data,
-        valid_data,
-        train_loader_kwargs=hparams["dataloader_options"],
-        valid_loader_kwargs=hparams["test_dataloader_options"],
-    )
+    # asr_brain.fit(
+    #    asr_brain.hparams.epoch_counter,
+    #    train_data,
+    #    valid_data,
+    #    train_loader_kwargs=hparams["dataloader_options"],
+    #    valid_loader_kwargs=hparams["test_dataloader_options"],
+    # )
 
     # Test
     asr_brain.hparams.wer_file = hparams["output_folder"] + "/wer_test.txt"
     asr_brain.evaluate(
-        train_data, test_loader_kwargs=hparams["test_dataloader_options"],
+        valid_data, test_loader_kwargs=hparams["test_dataloader_options"],
     )
