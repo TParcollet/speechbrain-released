@@ -108,8 +108,6 @@ class ASR(sb.core.Brain):
             self.acc_train_metric.correct = 0
             self.acc_train_metric.total = 0
             self.acc_train_metric.append(p_seq, tokens_eos, tokens_eos_lens)
-            print(p_seq)
-            print(tokens_eos)
             logger.info(self.acc_train_metric.summarize())
             self.acc_train_metric.correct = old_correct
             self.acc_train_metric.total = old_total
