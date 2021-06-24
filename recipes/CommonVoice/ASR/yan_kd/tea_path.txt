@@ -1,0 +1,10 @@
+/home/yan/kd_commonvoice_fr/tea_models/tea0.ckpt
+/home/yan/kd_commonvoice_fr/tea_models/tea1.ckpt
+/home/yan/kd_commonvoice_fr/tea_models/tea2.ckpt
+/home/yan/kd_commonvoice_fr/tea_models/tea3.ckpt
+/home/yan/kd_commonvoice_fr/tea_models/tea4.ckpt
+/home/yan/kd_commonvoice_fr/tea_models/tea5.ckpt
+/home/yan/kd_commonvoice_fr/tea_models/tea6.ckpt
+/home/yan/kd_commonvoice_fr/tea_models/tea7.ckpt
+/home/yan/kd_commonvoice_fr/tea_models/tea8.ckpt
+/home/yan/kd_commonvoice_fr/tea_models/tea9.ckpt
