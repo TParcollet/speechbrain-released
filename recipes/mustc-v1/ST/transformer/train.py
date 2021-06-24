@@ -139,15 +139,21 @@ class ST(sb.core.Brain):
         )
 
         if stage != sb.Stage.TRAIN:
-            # Decode token terms to words
-            predicted_words = self.tokenizer(hyps, task="decode_from_list")
 
             # Convert indices to words
             target_words = undo_padding(tokens, tokens_lens)
             target_words = self.tokenizer(target_words, task="decode_from_list")
 
-            self.wer_metric.append(ids, predicted_words, target_words)
-            self.cer_metric.append(ids, predicted_words, target_words)
+            current_epoch = self.hparams.epoch_counter.current
+            valid_search_interval = self.hparams.valid_search_interval
+            # Decode token terms to words
+            if current_epoch % valid_search_interval == 0 or (
+                stage == sb.Stage.TEST
+            ):
+                predicted_words = self.tokenizer(hyps, task="decode_from_list")
+                self.wer_metric.append(ids, predicted_words, target_words)
+                self.cer_metric.append(ids, predicted_words, target_words)
+
             self.acc_metric.append(p_seq, tokens_eos, tokens_eos_lens)
             # self.bleu_metric.append(ids, predicted_words, target_words)
 
