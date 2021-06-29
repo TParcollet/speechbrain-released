@@ -52,7 +52,7 @@ tea_keys: ["p_ctc_tea", "p_seq_tea", "wer_ctc_tea", "wer_tea"]
 avoid_if_longer_than: 10.0
 
 # Training parameters
-number_of_epochs: 25
+number_of_epochs: 20
 number_of_ctc_epochs: 20
 lr: 1.0
 ctc_weight: 0.1
