@@ -72,10 +72,10 @@ train_dataloader_opts:
     num_workers: !ref <num_workers>
 
 valid_dataloader_opts:
-    batch_size: 6
+    batch_size: 1
 
 test_dataloader_opts:
-    batch_size: 6
+    batch_size: 1
 
 ####################### Model parameters ###########################
 # Transformer
