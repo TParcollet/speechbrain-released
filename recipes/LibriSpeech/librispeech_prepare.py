@@ -20,6 +20,7 @@ from speechbrain.dataio.dataio import (
     save_pkl,
     merge_csvs,
 )
+from tqdm import tzip
 
 logger = logging.getLogger(__name__)
 OPT_FILE = "opt_librispeech_prepare.pkl"
@@ -293,8 +294,9 @@ def create_csv(
 
     snt_cnt = 0
     # Processing all the wav files in wav_lst
-    for wav_file in wav_lst:
+    for wav_file in tzip(wav_lst):
 
+        wav_file = wav_file[0]
         snt_id = wav_file.split("/")[-1].replace(".flac", "")
         spk_id = "-".join(snt_id.split("-")[0:2])
         wrds = text_dict[snt_id]
