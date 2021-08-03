@@ -47,6 +47,7 @@ ckpt_interval_minutes: 30 # save checkpoint every N min
 # Please, set your parameters accordingly.
 number_of_epochs: 110
 batch_size: 16 # This works for 2x GPUs with 32GB
+num_workers: 4
 ctc_weight: 0.3
 gradient_accumulation: 4
 gradient_clipping: 5.0
@@ -67,6 +68,7 @@ n_mels: 80
 train_dataloader_opts:
     batch_size: !ref <batch_size>
     shuffle: True
+    num_workers: !ref <num_workers>
 
 valid_dataloader_opts:
     batch_size: 1
