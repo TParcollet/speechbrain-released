@@ -20,7 +20,7 @@ from speechbrain.dataio.dataio import (
     save_pkl,
     merge_csvs,
 )
-from tqdm import tzip
+from tqdm.contrib import tzip
 
 logger = logging.getLogger(__name__)
 OPT_FILE = "opt_librispeech_prepare.pkl"
