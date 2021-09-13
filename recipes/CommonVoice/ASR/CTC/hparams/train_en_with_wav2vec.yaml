@@ -99,7 +99,7 @@ enc: !new:speechbrain.nnet.containers.Sequential
     drop2: !new:torch.nn.Dropout
         p: !ref <dropout>
     linear3: !name:speechbrain.nnet.linear.Linear
-        n_neurons: !ref <dnn_neurons>
+        n_neurons: 512
         bias: True
     bn3: !name:speechbrain.nnet.normalization.BatchNorm1d
     activation3: !new:torch.nn.LeakyReLU
