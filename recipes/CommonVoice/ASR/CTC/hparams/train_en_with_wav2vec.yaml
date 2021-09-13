@@ -124,7 +124,7 @@ wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
 #####
 
 ctc_lin: !new:speechbrain.nnet.linear.Linear
-    input_size: !ref <dnn_neurons>
+    input_size: 512
     n_neurons: !ref <output_neurons>
 
 log_softmax: !new:speechbrain.nnet.activations.Softmax
