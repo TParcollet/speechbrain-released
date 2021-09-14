@@ -315,10 +315,7 @@ def download_file(
 
 
 def pad_right_to(
-    tensor: torch.Tensor,
-    target_shape: (list, tuple),
-    mode="constant",
-    value=0.001,
+    tensor: torch.Tensor, target_shape: (list, tuple), mode="constant", value=1,
 ):
     """
     This function takes a torch tensor of arbitrary shape and pads it to target
