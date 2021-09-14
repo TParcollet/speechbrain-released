@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 import sys
+import os
 import torch
 import logging
 import speechbrain as sb
 import torchaudio
 from hyperpyyaml import load_hyperpyyaml
-from speechbrain.tokenizers.SentencePiece import SentencePiece
-from speechbrain.utils.data_utils import undo_padding
 from speechbrain.utils.distributed import run_on_main
 
 """Recipe for training a sequence-to-sequence ASR system with CommonVoice.
@@ -52,15 +51,21 @@ class ASR(sb.core.Brain):
         # Forward pass
         feats = self.modules.wav2vec2(wavs)
         x = self.modules.enc(feats)
+
+        p_tokens = None
         logits = self.modules.ctc_lin(x)
         p_ctc = self.hparams.log_softmax(logits)
+        if stage != sb.Stage.TRAIN:
+            p_tokens = sb.decoders.ctc_greedy_decode(
+                p_ctc, wav_lens, blank_id=self.hparams.blank_index
+            )
 
-        return p_ctc, wav_lens
+        return p_ctc, wav_lens, p_tokens
 
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss (CTC) given predictions and targets."""
 
-        p_ctc, wav_lens = predictions
+        p_ctc, wav_lens, predicted_tokens = predictions
 
         ids = batch.id
         tokens, tokens_lens = batch.tokens
@@ -68,17 +73,13 @@ class ASR(sb.core.Brain):
         loss = self.hparams.ctc_cost(p_ctc, tokens, wav_lens, tokens_lens)
 
         if stage != sb.Stage.TRAIN:
+
             # Decode token terms to words
-            sequence = sb.decoders.ctc_greedy_decode(
-                p_ctc, wav_lens, blank_id=self.hparams.blank_index
-            )
-
-            predicted_words = self.tokenizer(sequence, task="decode_from_list")
-
-            # Convert indices to words
-            target_words = undo_padding(tokens, tokens_lens)
-            target_words = self.tokenizer(target_words, task="decode_from_list")
-
+            predicted_words = [
+                "".join(self.tokenizer.decode_ndim(utt_seq)).split(" ")
+                for utt_seq in predicted_tokens
+            ]
+            target_words = [wrd.split(" ") for wrd in batch.wrd]
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)
 
@@ -201,7 +202,7 @@ class ASR(sb.core.Brain):
 
 
 # Define custom data procedure
-def dataio_prepare(hparams, tokenizer):
+def dataio_prepare(hparams):
     """This function prepares the datasets to be used in the brain class.
     It also defines the data processing pipeline through user-defined functions."""
 
@@ -268,24 +269,41 @@ def dataio_prepare(hparams, tokenizer):
 
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
 
+    label_encoder = sb.dataio.encoder.CTCTextEncoder()
     # 3. Define text pipeline:
-    @sb.utils.data_pipeline.takes("wrd", "wav")
-    @sb.utils.data_pipeline.provides("wav", "tokens_list", "tokens")
-    def text_pipeline(wrd, wav):
+    @sb.utils.data_pipeline.takes("wrd")
+    @sb.utils.data_pipeline.provides(
+        "wrd", "char_list", "tokens_list", "tokens"
+    )
+    def text_pipeline(wrd):
 
-        yield wav
-        tokens_list = tokenizer.sp.encode_as_ids(wrd)
+        yield wrd
+        char_list = list(wrd)
+        yield char_list
+        tokens_list = label_encoder.encode_sequence(char_list)
         yield tokens_list
         tokens = torch.LongTensor(tokens_list)
         yield tokens
 
     sb.dataio.dataset.add_dynamic_item(datasets, text_pipeline)
 
+    lab_enc_file = os.path.join(hparams["save_folder"], "label_encoder.txt")
+    special_labels = {
+        "blank_label": hparams["blank_index"],
+    }
+    label_encoder.load_or_create(
+        path=lab_enc_file,
+        from_didatasets=[train_data, valid_data, test_data],
+        output_key="char_list",
+        special_labels=special_labels,
+        sequence_input=True,
+    )
+
     # 4. Set output:
     sb.dataio.dataset.set_output_keys(
-        datasets, ["id", "sig", "wav", "tokens"],
+        datasets, ["id", "sig", "wrd", "char_list", "tokens"],
     )
-    return train_data, valid_data, test_data
+    return train_data, valid_data, test_data, label_encoder
 
 
 if __name__ == "__main__":
@@ -324,18 +342,8 @@ if __name__ == "__main__":
         },
     )
 
-    # Defining tokenizer and loading it
-    tokenizer = SentencePiece(
-        model_dir=hparams["save_folder"],
-        vocab_size=hparams["output_neurons"],
-        annotation_train=hparams["train_csv"],
-        annotation_read="wrd",
-        model_type=hparams["token_type"],
-        character_coverage=hparams["character_coverage"],
-    )
-
     # Create the datasets objects as well as tokenization and encoding :-D
-    train_data, valid_data, test_data = dataio_prepare(hparams, tokenizer)
+    train_data, valid_data, test_data, label_encoder = dataio_prepare(hparams)
 
     # Trainer initialization
     asr_brain = ASR(
@@ -345,8 +353,8 @@ if __name__ == "__main__":
         checkpointer=hparams["checkpointer"],
     )
 
-    # Adding objects to trainer.
-    asr_brain.tokenizer = tokenizer
+    # Defining tokenizer and loading it
+    asr_brain.tokenizer = label_encoder
 
     # Training
     asr_brain.fit(
