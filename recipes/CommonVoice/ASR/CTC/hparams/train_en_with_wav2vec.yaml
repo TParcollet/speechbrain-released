@@ -13,7 +13,7 @@ save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
 
 # URL for the biggest Fairseq english wav2vec2 model.
-wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/wav2vec2-large-lv60
+wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/wav2vec2-large-robust
 
 # Data files
 data_folder: !PLACEHOLDER  # e.g, /localscratch/cv-corpus-5.1-2020-06-22/fr
@@ -92,7 +92,7 @@ enc: !new:speechbrain.lobes.models.VanillaNN.VanillaNN
 
 wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
     source: !ref <wav2vec2_hub>
-    output_norm: False
+    output_norm: True
     freeze: !ref <freeze_wav2vec>
     save_path: !ref <save_folder>/wav2vec2_checkpoint
 
