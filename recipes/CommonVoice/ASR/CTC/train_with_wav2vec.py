@@ -117,6 +117,8 @@ class ASR(sb.core.Brain):
             if self.check_gradients(loss):
                 self.wav2vec_optimizer.step()
                 self.model_optimizer.step()
+            else:
+                return
 
             self.wav2vec_optimizer.zero_grad()
             self.model_optimizer.zero_grad()
