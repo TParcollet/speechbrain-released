@@ -67,9 +67,6 @@ class ASR(sb.core.Brain):
         tokens_eos, tokens_eos_lens = batch.tokens_eos
         tokens, tokens_lens = batch.tokens
 
-        print(p_ctc)
-        print(tokens)
-        print(batch.wav)
         loss = self.hparams.ctc_cost(p_ctc, tokens, wav_lens, tokens_lens)
 
         if stage != sb.Stage.TRAIN:
@@ -115,7 +112,6 @@ class ASR(sb.core.Brain):
             loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
 
             tokens, tokens_lens = batch.tokens
-            loss = loss / (tokens.size(-1))
 
             loss.backward()
 
