@@ -113,7 +113,9 @@ class ASR(sb.core.Brain):
             outputs = self.compute_forward(batch, sb.Stage.TRAIN)
 
             loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
-            print(loss)
+
+            loss = loss / (batch.tokens.shape(-1))
+
             loss.backward()
 
             # for p in self.modules.parameters():
