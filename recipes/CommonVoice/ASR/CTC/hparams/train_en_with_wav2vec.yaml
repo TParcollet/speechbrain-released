@@ -36,7 +36,7 @@ avoid_if_shorter_than: 1.0
 number_of_epochs: 20
 lr: 1.0
 lr_wav2vec: 0.0001
-gradient_clipping: 1.0
+gradient_clipping: 5.0
 sorting: ascending
 auto_mix_prec: False
 sample_rate: 16000
