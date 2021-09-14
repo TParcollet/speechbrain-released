@@ -110,7 +110,9 @@ class ASR(sb.core.Brain):
             outputs = self.compute_forward(batch, sb.Stage.TRAIN)
 
             loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
+            print(loss)
             loss.backward()
+            print(loss)
 
             if self.check_gradients(loss):
                 self.wav2vec_optimizer.step()
