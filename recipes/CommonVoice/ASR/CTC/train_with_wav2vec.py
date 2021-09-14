@@ -43,7 +43,6 @@ class ASR(sb.core.Brain):
 
         batch = batch.to(self.device)
         wavs, wav_lens = batch.sig
-        tokens_bos, _ = batch.tokens_bos
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
         if stage == sb.Stage.TRAIN:
@@ -64,7 +63,6 @@ class ASR(sb.core.Brain):
         p_ctc, wav_lens = predictions
 
         ids = batch.id
-        tokens_eos, tokens_eos_lens = batch.tokens_eos
         tokens, tokens_lens = batch.tokens
 
         loss = self.hparams.ctc_cost(p_ctc, tokens, wav_lens, tokens_lens)
@@ -272,18 +270,12 @@ def dataio_prepare(hparams, tokenizer):
 
     # 3. Define text pipeline:
     @sb.utils.data_pipeline.takes("wrd", "wav")
-    @sb.utils.data_pipeline.provides(
-        "wav", "tokens_list", "tokens_bos", "tokens_eos", "tokens"
-    )
+    @sb.utils.data_pipeline.provides("wav", "tokens_list", "tokens")
     def text_pipeline(wrd, wav):
 
         yield wav
         tokens_list = tokenizer.sp.encode_as_ids(wrd)
         yield tokens_list
-        tokens_bos = torch.LongTensor([hparams["bos_index"]] + (tokens_list))
-        yield tokens_bos
-        tokens_eos = torch.LongTensor(tokens_list + [hparams["eos_index"]])
-        yield tokens_eos
         tokens = torch.LongTensor(tokens_list)
         yield tokens
 
@@ -291,7 +283,7 @@ def dataio_prepare(hparams, tokenizer):
 
     # 4. Set output:
     sb.dataio.dataset.set_output_keys(
-        datasets, ["id", "sig", "wav", "tokens_bos", "tokens_eos", "tokens"],
+        datasets, ["id", "sig", "wav", "tokens"],
     )
     return train_data, valid_data, test_data
 
