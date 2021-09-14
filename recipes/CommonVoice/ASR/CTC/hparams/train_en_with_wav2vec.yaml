@@ -30,6 +30,7 @@ skip_prep: False # Skip data preparation
 # We remove utterance slonger than 10s in the train/dev/test sets as
 # longer sentences certainly correspond to "open microphones".
 avoid_if_longer_than: 10.0
+avoid_if_shorter_than: 1.0
 
 # Training parameters
 number_of_epochs: 20

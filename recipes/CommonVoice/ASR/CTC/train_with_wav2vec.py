@@ -211,6 +211,7 @@ def dataio_prepare(hparams, tokenizer):
         train_data = train_data.filtered_sorted(
             sort_key="duration",
             key_max_value={"duration": hparams["avoid_if_longer_than"]},
+            key_min_value={"duration": hparams["avoid_if_shorter_than"]},
         )
         # when sorting do not shuffle in dataloader ! otherwise is pointless
         hparams["dataloader_options"]["shuffle"] = False
@@ -220,6 +221,7 @@ def dataio_prepare(hparams, tokenizer):
             sort_key="duration",
             reverse=True,
             key_max_value={"duration": hparams["avoid_if_longer_than"]},
+            key_min_value={"duration": hparams["avoid_if_shorter_than"]},
         )
         # when sorting do not shuffle in dataloader ! otherwise is pointless
         hparams["dataloader_options"]["shuffle"] = False
