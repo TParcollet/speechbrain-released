@@ -136,7 +136,6 @@ class HuggingFaceWav2Vec2(nn.Module):
         """
 
         if self.normalize_wav:
-            print("norm")
             wav = F.layer_norm(wav, wav.shape)
 
         # Extract wav2vec output
@@ -145,5 +144,9 @@ class HuggingFaceWav2Vec2(nn.Module):
         # We normalize the output if required
         if self.output_norm:
             out = F.layer_norm(out, out.shape)
+
+        print(torch.max(out))
+        print(torch.min(out))
+        print(out)
 
         return out
