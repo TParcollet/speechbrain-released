@@ -234,7 +234,11 @@ def dataio_prepare(hparams):
         hparams["dataloader_options"]["shuffle"] = False
 
     elif hparams["sorting"] == "random":
-        pass
+        train_data = train_data.filtered_sorted(
+            key_max_value={"duration": hparams["avoid_if_longer_than"]},
+            key_min_value={"duration": hparams["avoid_if_shorter_than"]},
+        )
+        hparams["dataloader_options"]["shuffle"] = True
 
     else:
         raise NotImplementedError(
