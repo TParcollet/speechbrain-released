@@ -145,8 +145,4 @@ class HuggingFaceWav2Vec2(nn.Module):
         if self.output_norm:
             out = F.layer_norm(out, out.shape)
 
-        print(torch.max(out))
-        print(torch.min(out))
-        print(out)
-
         return out
