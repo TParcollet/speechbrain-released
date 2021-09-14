@@ -70,9 +70,7 @@ output_neurons: 27  # BPE size, index(blank/eos/bos) = 0
 
 # Decoding parameters
 # Be sure that the bos and eos index match with the BPEs ones
-blank_index: 0
-bos_index: 1
-eos_index: 2
+blank_index: 1
 
 #
 # Functions and classes
