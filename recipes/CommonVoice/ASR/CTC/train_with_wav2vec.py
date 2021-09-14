@@ -114,8 +114,8 @@ class ASR(sb.core.Brain):
             loss.backward()
             print(loss)
 
-            for p in self.modules.parameters():
-                print(torch.max(p))
+            # for p in self.modules.parameters():
+            #    print(torch.max(p))
 
             if self.check_gradients(loss):
                 self.wav2vec_optimizer.step()
