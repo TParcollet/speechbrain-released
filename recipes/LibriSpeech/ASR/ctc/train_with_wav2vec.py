@@ -351,7 +351,9 @@ if __name__ == "__main__":
             "wav2vec2_trans"
         ].model.wav2vec2
         print(
-            asr_brain.modules.wav2vec2.model.feature_projection.layer_norm.weight
+            hparams[
+                "wav2vec2_trans"
+            ].model.wav2vec2.feature_projection.layer_norm.weight
         )
 
     # Training
