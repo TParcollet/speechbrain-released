@@ -106,7 +106,11 @@ class ASR(sb.Brain):
         loss = self.compute_objectives(predictions, batch, sb.Stage.TRAIN)
         loss.backward()
         if self.check_gradients(loss):
-            self.wav2vec_optimizer.step()
+            if (
+                not self.hparams.freeze_wav2vec
+                and self.epoch_counter.current > 1
+            ):
+                self.wav2vec_optimizer.step()
             self.model_optimizer.step()
 
         self.wav2vec_optimizer.zero_grad()
