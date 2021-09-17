@@ -54,6 +54,7 @@ class ASR(sb.Brain):
         feats = self.modules.wav2vec2(wavs)
         x = self.modules.enc(feats)
 
+        print(feats.shape)
         # Compute outputs
         p_tokens = None
         logits = self.modules.ctc_lin(x)
