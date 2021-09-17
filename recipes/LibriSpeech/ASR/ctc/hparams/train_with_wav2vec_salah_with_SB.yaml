@@ -14,8 +14,7 @@ train_log: !ref <output_folder>/train_log.txt
 
 # URL for the biggest Fairseq english wav2vec2 model.
 wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/wav2vec2-base
-pretrain_path: /gpfswork/rech/kxg/uyk21ll/workspace/speechbrain/sp_ssl/speechbrain/results/wav2vec2_cv_ascending/save/CKPT+2021-09-17+15-20-48+00
-
+pretrain_path: /gpfswork/rech/kxg/uyk21ll/workspace/speechbrain/sp_ssl/speechbrain/results/wav2vec2_cv_ascending/save/27k_steps
 # Data files
 data_folder: !PLACEHOLDER # e,g./path/to/LibriSpeech
 # noise/ris dataset will automatically be downloaded
