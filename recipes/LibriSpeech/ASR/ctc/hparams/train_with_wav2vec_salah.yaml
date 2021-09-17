@@ -13,7 +13,7 @@ save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
 
 # URL for the biggest Fairseq english wav2vec2 model.
-wav2vec2_hub: facebook/wav2vec2-large-960h-lv60-self
+wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/commonvoice_base_32GPUs/checkpoint_best.pt
 
 # Data files
 data_folder: !PLACEHOLDER # e,g./path/to/LibriSpeech
