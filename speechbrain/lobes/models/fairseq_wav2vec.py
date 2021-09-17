@@ -121,6 +121,7 @@ class FairseqWav2Vec2(nn.Module):
         else:
             self.normalize = input_norm
 
+        print(self.normalize)
         model = model[0]
         self.model = model
         self.freeze = freeze
