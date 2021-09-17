@@ -144,13 +144,13 @@ def torch_parameter_transfer(obj, path, device):
     )
     for missing_key in incompatible_keys.missing_keys:
         logger.warning(
-            f"During parameter transfer to {obj} loading from "
+            f"During parameter transfer to loading from "
             + f"{path}, the transferred parameters did not have "
             + f"parameters for the key: {missing_key}"
         )
     for unexpected_key in incompatible_keys.unexpected_keys:
         logger.warning(
-            f"During parameter transfer to {obj} loading from "
+            f"During parameter transfer to loading from "
             + f"{path}, the object could not use the parameters loaded "
             + f"with the key: {unexpected_key}"
         )
