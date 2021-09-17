@@ -104,12 +104,12 @@ wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
    pretrain: !ref <pretrain>
    save_path: !ref <save_folder>/wav2vec2_checkpoint
 
-#wav2vec2_trans: !new:speechbrain.lobes.models.huggingface_wav2vec.PretrainedHuggingFaceWav2Vec2
-#   source: !ref <wav2vec2_hub>
-#   output_norm: True
-#   freeze: !ref <freeze_wav2vec>
-#   pretrain: !ref <pretrain>
-#   save_path: !ref <save_folder>/wav2vec2_checkpoint
+wav2vec2_trans: !new:speechbrain.lobes.models.huggingface_wav2vec.PretrainedHuggingFaceWav2Vec2
+   source: !ref <wav2vec2_hub>
+   output_norm: True
+   freeze: !ref <freeze_wav2vec>
+   pretrain: !ref <pretrain>
+   save_path: !ref <save_folder>/wav2vec2_checkpoint
 
 #####
 # Uncomment this block if you prefer to use a Fairseq pretrained model instead
@@ -135,6 +135,7 @@ ctc_cost: !name:speechbrain.nnet.losses.ctc_loss
 
 modules:
    wav2vec2: !ref <wav2vec2>
+   wav2vec2_trans: !ref <wav2vec2_trans>
    enc: !ref <enc>
    ctc_lin: !ref <ctc_lin>
 
@@ -175,7 +176,7 @@ checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
 pretrainer: !new:speechbrain.utils.parameter_transfer.Pretrainer
    collect_in: !ref <save_folder>
    loadables:
-      wav2vec2: !ref <wav2vec2>.wav2vec2
+      wav2vec2: !ref <wav2vec2_trans>
    paths:
       wav2vec2: !ref <pretrain_path>/wav2vec2.ckpt
 
