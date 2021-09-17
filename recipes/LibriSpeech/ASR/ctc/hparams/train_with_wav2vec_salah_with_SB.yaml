@@ -97,12 +97,19 @@ enc: !new:speechbrain.nnet.RNN.LSTM
    re_init: True
    bidirectional: True
 
-wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.PretrainedHuggingFaceWav2Vec2
+wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
    source: !ref <wav2vec2_hub>
    output_norm: True
    freeze: !ref <freeze_wav2vec>
    pretrain: !ref <pretrain>
    save_path: !ref <save_folder>/wav2vec2_checkpoint
+
+#wav2vec2_trans: !new:speechbrain.lobes.models.huggingface_wav2vec.PretrainedHuggingFaceWav2Vec2
+#   source: !ref <wav2vec2_hub>
+#   output_norm: True
+#   freeze: !ref <freeze_wav2vec>
+#   pretrain: !ref <pretrain>
+#   save_path: !ref <save_folder>/wav2vec2_checkpoint
 
 #####
 # Uncomment this block if you prefer to use a Fairseq pretrained model instead
