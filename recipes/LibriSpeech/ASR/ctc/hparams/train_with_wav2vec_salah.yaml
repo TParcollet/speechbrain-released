@@ -60,8 +60,8 @@ test_dataloader_opts:
 
 # Model parameters
 activation: !name:torch.nn.LeakyReLU
-dnn_layers: 2
-dnn_neurons: 1024
+rnn_layers: 2
+rnn_neurons: 1024
 freeze_wav2vec: False
 
 # Outputs
@@ -82,11 +82,18 @@ augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
    sample_rate: !ref <sample_rate>
    speeds: [95, 100, 105]
 
-enc: !new:speechbrain.lobes.models.VanillaNN.VanillaNN
-   input_shape: [null, null, 1024]
-   activation: !ref <activation>
-   dnn_blocks: !ref <dnn_layers>
-   dnn_neurons: !ref <dnn_neurons>
+#enc: !new:speechbrain.lobes.models.VanillaNN.VanillaNN
+#   input_shape: [null, null, 768]
+#   activation: !ref <activation>
+#   dnn_blocks: !ref <dnn_layers>
+#   dnn_neurons: !ref <dnn_neurons>
+
+enc: !new:speechbrain.nnet.RNN.LSTM
+   input_shape: [null, null, 768]
+   num_layers: !ref <rnn_layers>
+   hidden_size: !ref <rnn_neurons>
+   re_init: True
+   bidirectional: True
 
 #wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
 #   source: !ref <wav2vec2_hub>
@@ -106,7 +113,7 @@ wav2vec2: !new:speechbrain.lobes.models.fairseq_wav2vec.FairseqWav2Vec2
    save_path: !ref <save_folder>/wav2vec2_checkpoint/model.pt
 
 ctc_lin: !new:speechbrain.nnet.linear.Linear
-   input_size: !ref <dnn_neurons>
+   input_size: 2048
    n_neurons: !ref <output_neurons>
 
 log_softmax: !new:speechbrain.nnet.activations.Softmax
