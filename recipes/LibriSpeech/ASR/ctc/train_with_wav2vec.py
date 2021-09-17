@@ -52,9 +52,12 @@ class ASR(sb.Brain):
 
         # Forward pass
         feats = self.modules.wav2vec2(wavs)
-        x = self.modules.enc(feats)
 
-        print(feats.shape)
+        if self.haprams.isrnn:
+            x, _ = self.modules.enc(feats)
+        else:
+            x = self.modules.enc(feats)
+
         # Compute outputs
         p_tokens = None
         logits = self.modules.ctc_lin(x)
