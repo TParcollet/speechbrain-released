@@ -113,6 +113,7 @@ class FairseqWav2Vec2(nn.Module):
         # BY THE USER.
         if input_norm is None:
             if hasattr(cfg["task"], "normalize"):
+                print(cfg["task"].normalize)
                 self.normalize = cfg["task"].normalize
             elif hasattr(cfg, "normalize"):
                 self.normalize = cfg.normalize
@@ -121,7 +122,6 @@ class FairseqWav2Vec2(nn.Module):
         else:
             self.normalize = input_norm
 
-        print(self.normalize)
         model = model[0]
         self.model = model
         self.freeze = freeze
