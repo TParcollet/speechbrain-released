@@ -106,8 +106,6 @@ wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
 
 wav2vec2_trans: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2ForPretrain
    source: !ref <wav2vec2_hub>
-   output_norm: True
-   freeze: !ref <freeze_wav2vec>
    pretrain: !ref <pretrain>
    save_path: !ref <save_folder>/wav2vec2_checkpoint
 
