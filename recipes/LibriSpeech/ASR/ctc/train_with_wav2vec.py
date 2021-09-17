@@ -344,11 +344,15 @@ if __name__ == "__main__":
     if not hparams["pretrain"]:
         run_on_main(hparams["pretrainer"].collect_files)
         hparams["pretrainer"].load_collected()
-        print(asr_brain.modules.wav2vec2.model.encoder.layers.10.attention.k_proj.weight)
+        print(
+            asr_brain.modules.wav2vec2.model.feature_projection.layer_norm.weight
+        )
         asr_brain.modules.wav2vec2.model = (
             asr_brain.modules.wav2vec2_trans.model.wav2vec2
         )
-        print(asr_brain.modules.wav2vec2.model.encoder.layers.10.attention.k_proj.weight)
+        print(
+            asr_brain.modules.wav2vec2.model.feature_projection.layer_norm.weight
+        )
 
     # Training
     asr_brain.fit(
