@@ -344,7 +344,7 @@ if __name__ == "__main__":
     if not hparams["pretrain"]:
         run_on_main(hparams["pretrainer"].collect_files)
         hparams["pretrainer"].load_collected()
-        asr_brain.modules.wav2vec2 = asr_brain.modules.wav2vec2_trans.wav2vec
+        asr_brain.modules.wav2vec2 = asr_brain.modules.wav2vec2_trans.wav2vec2
 
     # Training
     asr_brain.fit(
