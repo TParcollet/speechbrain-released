@@ -341,6 +341,10 @@ if __name__ == "__main__":
     # NB: This tokenizer corresponds to the one used for the LM!!
     asr_brain.tokenizer = label_encoder
 
+    if not hparams["pretrain"]:
+        run_on_main(hparams["pretrainer"].collect_files)
+        hparams["pretrainer"].load_collected()
+
     # Training
     asr_brain.fit(
         asr_brain.hparams.epoch_counter,
