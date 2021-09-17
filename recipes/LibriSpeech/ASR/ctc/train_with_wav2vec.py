@@ -108,7 +108,7 @@ class ASR(sb.Brain):
         if self.check_gradients(loss):
             if (
                 not self.hparams.freeze_wav2vec
-                and self.epoch_counter.current > 1
+                and self.hparams.epoch_counter.current > 1
             ):
                 self.wav2vec_optimizer.step()
             self.model_optimizer.step()
