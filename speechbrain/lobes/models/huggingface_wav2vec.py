@@ -198,7 +198,7 @@ class HuggingFaceWav2Vec2ForPretrain(nn.Module):
     """
 
     def __init__(
-        self, source, save_path, pretrain=True,
+        self, source, save_path, pretrain=True, freeze=False,
     ):
         super().__init__()
 
@@ -219,6 +219,9 @@ class HuggingFaceWav2Vec2ForPretrain(nn.Module):
             self.model = Wav2Vec2ForPreTraining.from_pretrained(
                 source, cache_dir=save_path
             )
+
+        if self.freeze:
+            self.model.eval()
 
         # We check if inputs need to be normalized w.r.t pretrained wav2vec2
         self.normalize_wav = self.feature_extractor.do_normalize

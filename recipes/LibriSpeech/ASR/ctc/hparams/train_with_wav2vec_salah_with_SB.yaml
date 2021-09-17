@@ -133,7 +133,6 @@ ctc_cost: !name:speechbrain.nnet.losses.ctc_loss
 
 modules:
    wav2vec2: !ref <wav2vec2>
-   wav2vec2_trans: !ref <wav2vec2_trans>
    enc: !ref <enc>
    ctc_lin: !ref <ctc_lin>
 
