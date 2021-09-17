@@ -176,7 +176,7 @@ checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
 pretrainer: !new:speechbrain.utils.parameter_transfer.Pretrainer
    collect_in: !ref <save_folder>
    loadables:
-      wav2vec2: !ref <wav2vec2_trans>
+      wav2vec2_trans: !ref <wav2vec2_trans>
    paths:
       wav2vec2: !ref <pretrain_path>/wav2vec2.ckpt
 
