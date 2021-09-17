@@ -201,6 +201,7 @@ class HuggingFaceWav2Vec2ForPretrain(nn.Module):
         self, source, save_path, pretrain=True, freeze=False,
     ):
         super().__init__()
+        self.freeze = freeze
 
         # Download the extractor from HuggingFace.
         # The extractor is only used to retrieve the normalisation
