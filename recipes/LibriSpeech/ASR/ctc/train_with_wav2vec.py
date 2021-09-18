@@ -41,6 +41,7 @@ class ASR(sb.Brain):
 
         # If SSL is frozen, go eval mode
         if self.hparams.freeze_wav2vec:
+            print("eval")
             self.modules.wav2vec2.eval()
 
         # Add augmentation if specified
