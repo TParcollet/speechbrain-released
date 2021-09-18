@@ -39,6 +39,10 @@ class ASR(sb.Brain):
         tokens_bos, _ = batch.tokens_bos
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
+        # If SSL is frozen, go eval mode
+        if self.hparams.freeze_wav2vec:
+            self.modules.wav2vec2.eval()
+
         # Add augmentation if specified
         if stage == sb.Stage.TRAIN:
             if hasattr(self.modules, "env_corrupt"):
