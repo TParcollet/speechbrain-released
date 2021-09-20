@@ -39,8 +39,8 @@ os.environ["MASTER_ADDR"] = hostnames[0]
 os.environ["MASTER_PORT"] = str(
     12345 + int(min(gpu_ids))
 )  # to avoid port conflict on the same node
-os.environ["RANK"] = int(os.environ["SLURM_PROCID"])
-os.environ["LOCAL_RANK"] = int(os.environ["SLURM_LOCALID"])
+# os.environ["RANK"] = int(os.environ["SLURM_PROCID"])
+# os.environ["LOCAL_RANK"] = int(os.environ["SLURM_LOCALID"])
 
 logger = logging.getLogger(__name__)
 
