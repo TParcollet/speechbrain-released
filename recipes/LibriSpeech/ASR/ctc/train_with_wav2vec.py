@@ -109,6 +109,7 @@ class ASR(sb.Brain):
         predictions = self.compute_forward(batch, sb.Stage.TRAIN)
         loss = self.compute_objectives(predictions, batch, sb.Stage.TRAIN)
         loss.backward()
+        print(self.modules.wav2vec2)
         if self.check_gradients(loss):
             if (
                 not self.hparams.freeze_wav2vec
