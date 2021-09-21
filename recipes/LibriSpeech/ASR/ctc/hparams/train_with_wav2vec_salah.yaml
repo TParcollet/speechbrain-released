@@ -93,7 +93,7 @@ augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
 #   dnn_neurons: !ref <dnn_neurons>
 
 enc: !new:speechbrain.nnet.RNN.LSTM
-   input_shape: [null, null, 768]
+   input_shape: [null, null, 1024]
    num_layers: !ref <rnn_layers>
    hidden_size: !ref <rnn_neurons>
    re_init: True
