@@ -13,8 +13,7 @@ save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
 
 # URL for the biggest Fairseq english wav2vec2 model.
-
-wav2vec2_hub: /gpfsscratch/rech/kxg/uyk21ll/buffer/model_xslr_ft_SLU_portMedia.pt
+wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/commonvoice_base_32GPUs/checkpoint_best.pt
 pretrain_path: /gpfswork/rech/kxg/uyk21ll/workspace/speechbrain/sp_ssl/speechbrain/results/wav2vec2_cv_ascending/save/CKPT+2021-09-17+15-20-48+00
 
 # Data files
@@ -93,7 +92,7 @@ augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
 #   dnn_neurons: !ref <dnn_neurons>
 
 enc: !new:speechbrain.nnet.RNN.LSTM
-   input_shape: [null, null, 1024]
+   input_shape: [null, null, 768]
    num_layers: !ref <rnn_layers>
    hidden_size: !ref <rnn_neurons>
    re_init: True
