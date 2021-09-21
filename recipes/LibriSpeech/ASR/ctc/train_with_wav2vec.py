@@ -110,6 +110,11 @@ class ASR(sb.Brain):
         loss = self.compute_objectives(predictions, batch, sb.Stage.TRAIN)
         loss.backward()
         print(self.modules.wav2vec2)
+        print(
+            self.modules.wav2vec2.model.feature_extractor.conv_layers[
+                0[0].weight.grad
+            ]
+        )
         print(self.modules.wav2vec2.model.encoder.layers[0].fc1.weight.grad)
         if self.check_gradients(loss):
             if (
