@@ -104,14 +104,6 @@ wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
    pretrain: !ref <pretrain>
    save_path: !ref <save_folder>/wav2vec2_checkpoint
 
-wav2vec2_fairseq: !new:speechbrain.lobes.models.fairseq_wav2vec.FairseqWav2Vec2
-   pretrained_path: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/commonvoice_base_32GPUs/checkpoint_best.pt
-   output_norm: False
-   pretrain: !ref <pretrain>
-   freeze: !ref <freeze_wav2vec>
-   save_path: !ref <save_folder>/wav2vec2_checkpoint/model.pt
-
-
 #wav2vec2_trans: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2ForPretrain
 #   source: !ref <wav2vec2_hub>
 #   pretrain: !ref <pretrain>
@@ -141,7 +133,6 @@ ctc_cost: !name:speechbrain.nnet.losses.ctc_loss
 
 modules:
    wav2vec2: !ref <wav2vec2>
-   wav2vec2_fairseq: !ref <wav2vec2_fairseq>
    enc: !ref <enc>
    ctc_lin: !ref <ctc_lin>
 
