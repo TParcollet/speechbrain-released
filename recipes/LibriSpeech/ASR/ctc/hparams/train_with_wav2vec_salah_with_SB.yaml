@@ -99,14 +99,14 @@ enc: !new:speechbrain.nnet.RNN.LSTM
 
 wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
    source: !ref <wav2vec2_hub>
-   output_norm: True
+   output_norm: False
    freeze: !ref <freeze_wav2vec>
    pretrain: !ref <pretrain>
    save_path: !ref <save_folder>/wav2vec2_checkpoint
 
 wav2vec2_fairseq: !new:speechbrain.lobes.models.fairseq_wav2vec.FairseqWav2Vec2
    pretrained_path: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/commonvoice_base_32GPUs/checkpoint_best.pt
-   output_norm: True
+   output_norm: False
    pretrain: !ref <pretrain>
    freeze: !ref <freeze_wav2vec>
    save_path: !ref <save_folder>/wav2vec2_checkpoint/model.pt
