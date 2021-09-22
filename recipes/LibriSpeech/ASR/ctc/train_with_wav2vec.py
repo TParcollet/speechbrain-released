@@ -59,14 +59,18 @@ class ASR(sb.Brain):
         feats = self.modules.wav2vec2(wavs)
 
         print(
-            self.modules.wav2vec2.model.encoder.layers[
-                11
-            ].feed_forward.output_dense.weight.data
+            torch.max(
+                self.modules.wav2vec2.model.encoder.layers[
+                    11
+                ].feed_forward.output_dense.weight.data
+            )
         )
         print(
-            self.modules.wav2vec2_fairseq.model.encoder.layers[
-                11
-            ].fc2.weight.data
+            torch.max(
+                self.modules.wav2vec2_fairseq.model.encoder.layers[
+                    11
+                ].fc2.weight.data
+            )
         )
 
         if self.hparams.isrnn:
