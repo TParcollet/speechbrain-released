@@ -37,7 +37,7 @@ lr_wav2vec: 0.0001
 sorting: ascending
 auto_mix_prec: False
 sample_rate: 16000
-pretrain: True
+pretrain: False
 
 
 # With data_parallel batch_size is split into N jobs
