@@ -58,8 +58,8 @@ class ASR(sb.Brain):
         # Forward pass
         feats = self.modules.wav2vec2(wavs)
 
-        print(self.modules.wav2vec2.model.encoder.layers[11].fc2.weight)
-        print(self.modules.wav2vec2_fairseq.model.encoder.layers[11].fc2.weight)
+        print(self.modules.wav2vec2.model.encoder.layers[11])
+        print(self.modules.wav2vec2_fairseq.model.encoder.layers[11])
 
         if self.hparams.isrnn:
             x, _ = self.modules.enc(feats)
