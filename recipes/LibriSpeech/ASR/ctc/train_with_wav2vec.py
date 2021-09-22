@@ -59,8 +59,10 @@ class ASR(sb.Brain):
         feats = self.modules.wav2vec2(wavs)
         feats2 = self.modules.wav2vec2_fairseq(wavs)
 
-        print(feats[0])
-        print(feats2[0])
+        print(torch.mean(feats[0]))
+        print(torch.max(feats[0]))
+        print(torch.mean(feats2[0]))
+        print(torch.max(feats2[0]))
         feats = (feats + feats2) / 2
 
         if self.hparams.isrnn:
