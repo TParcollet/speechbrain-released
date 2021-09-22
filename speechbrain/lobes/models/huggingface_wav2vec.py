@@ -144,8 +144,8 @@ class HuggingFaceWav2Vec2(nn.Module):
             A batch of audio signals to transform to features.
         """
 
-        # if self.normalize_wav:
-        #    wav = F.layer_norm(wav, wav.shape)
+        if self.normalize_wav:
+            wav = F.layer_norm(wav, wav.shape)
 
         # Extract wav2vec output
         out = self.model(wav)[0]
