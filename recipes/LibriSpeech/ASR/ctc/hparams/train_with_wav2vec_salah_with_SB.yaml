@@ -14,7 +14,7 @@ train_log: !ref <output_folder>/train_log.txt
 
 # URL for the biggest Fairseq english wav2vec2 model.
 wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/wav2vec2-base
-pretrain_path: /gpfswork/rech/kxg/uyk21ll/workspace/speechbrain/sp_ssl/speechbrain/results/wav2vec2_cv_ascending/save/27k_steps
+pretrain_path: /gpfswork/rech/kxg/uyk21ll/workspace/speechbrain/sp_ssl/speechbrain/results/wav2vec2_cv_4_multinode/save/157k_steps/
 # Data files
 data_folder: !PLACEHOLDER # e,g./path/to/LibriSpeech
 # noise/ris dataset will automatically be downloaded
@@ -83,10 +83,6 @@ normalize: !new:speechbrain.processing.features.InputNormalization
 
 epoch_counter: !new:speechbrain.utils.epoch_loop.EpochCounter
    limit: !ref <number_of_epochs>
-
-augmentation: !new:speechbrain.lobes.augment.TimeDomainSpecAugment
-   sample_rate: !ref <sample_rate>
-   speeds: [95, 100, 105]
 
 #enc: !new:speechbrain.lobes.models.VanillaNN.VanillaNN
 #   input_shape: [null, null, 768]
