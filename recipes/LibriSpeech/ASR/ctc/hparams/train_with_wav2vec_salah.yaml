@@ -14,7 +14,6 @@ train_log: !ref <output_folder>/train_log.txt
 
 # URL for the biggest Fairseq english wav2vec2 model.
 wav2vec2_hub: /gpfswork/rech/kxg/uyk21ll/datasets/huggingface_hub/commonvoice_base_32GPUs/checkpoint_best.pt
-pretrain_path: /gpfswork/rech/kxg/uyk21ll/workspace/speechbrain/sp_ssl/speechbrain/results/wav2vec2_cv_ascending/save/CKPT+2021-09-17+15-20-48+00
 
 # Data files
 data_folder: !PLACEHOLDER # e,g./path/to/LibriSpeech
@@ -46,7 +45,7 @@ pretrain: True
 # With DDP batch_size is multiplied by N jobs
 # Must be 3 per GPU to fit 32GB of VRAM
 batch_size: 6
-test_batch_size: 8
+test_batch_size: 1
 
 # Dataloader options
 train_dataloader_opts:
@@ -109,7 +108,7 @@ enc: !new:speechbrain.nnet.RNN.LSTM
 #
 wav2vec2: !new:speechbrain.lobes.models.fairseq_wav2vec.FairseqWav2Vec2
    pretrained_path: !ref <wav2vec2_hub>
-   output_norm: True
+   output_norm: False
    pretrain: !ref <pretrain>
    freeze: !ref <freeze_wav2vec>
    save_path: !ref <save_folder>/wav2vec2_checkpoint/model.pt
@@ -161,14 +160,6 @@ checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
       scheduler_model: !ref <lr_annealing_model>
       scheduler_wav2vec: !ref <lr_annealing_wav2vec>
       counter: !ref <epoch_counter>
-
-# Used to load the SB checkpoint of w2v2
-pretrainer: !new:speechbrain.utils.parameter_transfer.Pretrainer
-   collect_in: !ref <save_folder>
-   loadables:
-      wav2vec2: !ref <wav2vec2>
-   paths:
-      wav2vec2: !ref <pretrain_path>/wav2vec2.ckpt
 
 train_logger: !new:speechbrain.utils.train_logger.FileTrainLogger
    save_file: !ref <train_log>
