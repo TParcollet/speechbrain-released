@@ -77,6 +77,10 @@ eos_index: 2
 #
 # Functions and classes
 #
+
+normalize: !new:speechbrain.processing.features.InputNormalization
+   norm_type: sentence
+
 epoch_counter: !new:speechbrain.utils.epoch_loop.EpochCounter
    limit: !ref <number_of_epochs>
 
@@ -135,6 +139,7 @@ modules:
    wav2vec2: !ref <wav2vec2>
    enc: !ref <enc>
    ctc_lin: !ref <ctc_lin>
+   normalize: !ref <normalize>
 
 model: !new:torch.nn.ModuleList
    - [!ref <enc>, !ref <ctc_lin>]
