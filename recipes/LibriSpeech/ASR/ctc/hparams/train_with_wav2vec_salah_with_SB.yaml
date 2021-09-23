@@ -33,6 +33,7 @@ test_csv:
 # Training parameters
 number_of_epochs: 30
 lr: 1.0
+dropout: 0.1
 lr_wav2vec: 0.0001
 sorting: ascending
 auto_mix_prec: False
@@ -94,6 +95,7 @@ enc: !new:speechbrain.nnet.RNN.LSTM
    input_shape: [null, null, 768]
    num_layers: !ref <rnn_layers>
    hidden_size: !ref <rnn_neurons>
+   dropout: !ref <dropout>
    re_init: True
    bidirectional: True
 
