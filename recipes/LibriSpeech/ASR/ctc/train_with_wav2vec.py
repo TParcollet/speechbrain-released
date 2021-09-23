@@ -55,7 +55,6 @@ class ASR(sb.Brain):
         #        wavs = self.hparams.augmentation(wavs, wav_lens)
 
         if hasattr(self.modules, "normalize"):
-            print("normalize")
             wavs = self.modules.normalize(wavs, wav_lens)
 
         # Forward pass
