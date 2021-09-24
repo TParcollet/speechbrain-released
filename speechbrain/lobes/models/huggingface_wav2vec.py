@@ -100,7 +100,7 @@ class HuggingFaceWav2Vec2(nn.Module):
             )
 
         # set apply_spec_augment
-        self.model.config.apply_spec_augment = apply_spec_augment
+        self.model.config.apply_spec_augment = False
 
         # We check if inputs need to be normalized w.r.t pretrained wav2vec2
         self.normalize_wav = self.feature_extractor.do_normalize
