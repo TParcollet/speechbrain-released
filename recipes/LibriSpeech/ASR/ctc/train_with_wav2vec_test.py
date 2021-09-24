@@ -62,14 +62,20 @@ class ASR(sb.Brain):
         feats = self.modules.wav2vec2(wavs)
         feats = self.modules.wav2vec2_fairseq(wavs)
         sum = 0.0
+        count = 0
         for p1 in self.modules.wav2vec2.parameters():
             sum += torch.sum(p1.data)
+            count += 1
         print(sum)
+        print(count)
 
+        count = 0
         sum = 0.0
         for p1 in self.modules.wav2vec2_fairseq.parameters():
             sum += torch.sum(p1.data)
+            count += 1
         print(sum)
+        print(count)
 
         if self.hparams.isrnn:
             x, _ = self.modules.enc(feats)
