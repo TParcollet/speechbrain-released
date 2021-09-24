@@ -151,8 +151,8 @@ class HuggingFaceWav2Vec2(nn.Module):
         out = self.model(wav)[0]
 
         # We normalize the output if required
-        if self.output_norm:
-            out = F.layer_norm(out, out.shape)
+        # if self.output_norm:
+        #    out = F.layer_norm(out, out.shape)
 
         return out
 
