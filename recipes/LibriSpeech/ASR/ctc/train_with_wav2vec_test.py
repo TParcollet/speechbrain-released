@@ -42,7 +42,6 @@ class ASR(sb.Brain):
         # If SSL is frozen, go eval mode
         if self.hparams.freeze_wav2vec:
             self.modules.wav2vec2.eval()
-            self.modules.wav2vec2_fairseq.eval()
 
         # Add augmentation if specified
         # if stage == sb.Stage.TRAIN:
@@ -55,27 +54,11 @@ class ASR(sb.Brain):
         #    if hasattr(self.hparams, "augmentation"):
         #        wavs = self.hparams.augmentation(wavs, wav_lens)
 
-        # if hasattr(self.modules, "normalize"):
-        #    wavs = self.modules.normalize(wavs, wav_lens)
+        if hasattr(self.modules, "normalize"):
+            wavs = self.modules.normalize(wavs, wav_lens)
 
         # Forward pass
         feats = self.modules.wav2vec2(wavs)
-        feats = self.modules.wav2vec2_fairseq(wavs)
-        sum = 0.0
-        count = 0
-        for p1 in self.modules.wav2vec2.model.parameters():
-            sum += torch.sum(p1.data)
-            count += 1
-        print(sum)
-        print(count)
-
-        count = 0
-        sum = 0.0
-        for p1 in self.modules.wav2vec2_fairseq.model.parameters():
-            sum += torch.sum(p1.data)
-            count += 1
-        print(sum)
-        print(count)
 
         if self.hparams.isrnn:
             x, _ = self.modules.enc(feats)
@@ -86,6 +69,7 @@ class ASR(sb.Brain):
         p_tokens = None
         logits = self.modules.ctc_lin(x)
         p_ctc = self.hparams.log_softmax(logits)
+
         if stage != sb.Stage.TRAIN:
             p_tokens = sb.decoders.ctc_greedy_decode(
                 p_ctc, wav_lens, blank_id=self.hparams.blank_index
