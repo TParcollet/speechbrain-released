@@ -60,9 +60,9 @@ class ASR(sb.Brain):
 
         # Forward pass
         feats = self.modules.wav2vec2(wavs)
-        print(feats[0])
         feats = self.modules.wav2vec2_fairseq(wavs)
-        print(feats[0])
+        print(self.modules.wav2vec2)
+        print(self.modules.wav2vec2_fairseq)
 
         if self.hparams.isrnn:
             x, _ = self.modules.enc(feats)
