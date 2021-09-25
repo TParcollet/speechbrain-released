@@ -93,7 +93,7 @@ epoch_counter: !new:speechbrain.utils.epoch_loop.EpochCounter
 #   dnn_neurons: !ref <dnn_neurons>
 
 enc: !new:speechbrain.nnet.RNN.LiGRU
-   input_shape: [null, null, 768]
+   input_shape: [12, null, 768]
    nonlinearity: leaky_relu
    num_layers: !ref <rnn_layers>
    hidden_size: !ref <rnn_neurons>
