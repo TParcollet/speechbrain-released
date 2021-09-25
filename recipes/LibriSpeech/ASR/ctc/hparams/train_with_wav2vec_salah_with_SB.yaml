@@ -33,7 +33,7 @@ test_csv:
 
 # Training parameters
 number_of_epochs: 30
-lr: 0.0003
+lr: 0.0005
 weight_decay: 0.01
 dropout: 0.1
 lr_wav2vec: 0.0001
