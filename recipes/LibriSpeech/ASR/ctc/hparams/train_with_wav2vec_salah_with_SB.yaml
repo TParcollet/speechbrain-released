@@ -33,7 +33,8 @@ test_csv:
 
 # Training parameters
 number_of_epochs: 30
-lr: 1.0
+lr: 0.0003
+weight_decay: 0.01
 dropout: 0.1
 lr_wav2vec: 0.0001
 sorting: ascending
@@ -144,8 +145,8 @@ model: !new:torch.nn.ModuleList
    - [!ref <enc>, !ref <ctc_lin>]
 
 model_opt_class: !name:torch.optim.AdamW
-   lr: 0.001
-   weight_decay: 0.01
+   lr: !ref <lr>
+   weight_decay: !ref <weight_decay>
 
 wav2vec_opt_class: !name:torch.optim.Adam
    lr: !ref <lr_wav2vec>
