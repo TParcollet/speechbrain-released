@@ -145,6 +145,7 @@ model: !new:torch.nn.ModuleList
 
 model_opt_class: !name:torch.optim.AdamW
    lr: 0.001
+   weight_decay: 0.01
 
 wav2vec_opt_class: !name:torch.optim.Adam
    lr: !ref <lr_wav2vec>
