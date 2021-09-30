@@ -108,6 +108,7 @@ class HuggingFaceWav2Vec2(nn.Module):
         self.freeze = freeze
         self.freeze_feature_extractor = freeze_feature_extractor
         self.output_norm = output_norm
+        config.gradient_checkpointing = False
         if self.freeze:
             self.model.eval()
             for param in self.model.parameters():
