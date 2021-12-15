@@ -151,13 +151,13 @@ wav2vec_opt_class: !name:torch.optim.AdamW
 lr_annealing_model: !new:speechbrain.nnet.schedulers.NewBobScheduler
     initial_value: !ref <lr>
     improvement_threshold: 0.0025
-    annealing_factor: 0.8
+    annealing_factor: 0.5
     patient: 0
 
 lr_annealing_wav2vec: !new:speechbrain.nnet.schedulers.NewBobScheduler
     initial_value: !ref <lr_wav2vec>
     improvement_threshold: 0.0025
-    annealing_factor: 0.9
+    annealing_factor: 0.5
     patient: 0
 
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
