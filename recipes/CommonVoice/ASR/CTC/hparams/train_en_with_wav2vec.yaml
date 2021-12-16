@@ -142,10 +142,10 @@ modules:
 model: !new:torch.nn.ModuleList
     - [!ref <enc>, !ref <ctc_lin>]
 
-model_opt_class: !name:torch.optim.AdamW
+model_opt_class: !name:bitsandbytes.optim.AdamW
     lr: !ref <lr>
 
-wav2vec_opt_class: !name:torch.optim.AdamW
+wav2vec_opt_class: !name:bitsandbytes.optim.Adam
     lr: !ref <lr_wav2vec>
 
 lr_annealing_model: !new:speechbrain.nnet.schedulers.NoamScheduler
