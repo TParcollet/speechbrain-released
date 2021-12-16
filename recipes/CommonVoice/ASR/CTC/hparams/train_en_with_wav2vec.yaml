@@ -143,11 +143,11 @@ modules:
 model: !new:torch.nn.ModuleList
     - [!ref <enc>, !ref <ctc_lin>]
 
-model_opt_class: !name:bitsandbytes.optim.Adam
+model_opt_class: !name:bitsandbytes.optim.AdamW
     lr: !ref <lr>
     optim_bits: !ref <optim_bits>
 
-wav2vec_opt_class: !name:bitsandbytes.optim.Adam
+wav2vec_opt_class: !name:bitsandbytes.optim.AdamW
     lr: !ref <lr_wav2vec>
     optim_bits: !ref <optim_bits>
 
