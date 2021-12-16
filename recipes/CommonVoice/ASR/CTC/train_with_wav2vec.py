@@ -3,8 +3,7 @@ import sys
 import torch
 import logging
 import speechbrain as sb
-
-# import torchaudio
+import torchaudio
 from hyperpyyaml import load_hyperpyyaml
 from speechbrain.tokenizers.SentencePiece import SentencePiece
 from speechbrain.utils.data_utils import undo_padding
@@ -90,32 +89,34 @@ class ASR(sb.core.Brain):
     def fit_batch(self, batch):
         """Train the parameters given a single batch in input"""
         if self.auto_mix_prec:
-
-            # if not self.hparams.wav2vec2.freeze:
-            #    self.wav2vec_optimizer.zero_grad()
-            # self.model_optimizer.zero_grad()
-
-            # with torch.cuda.amp.autocast():
-            #    outputs = self.compute_forward(batch, sb.Stage.TRAIN)
-            #    loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
-
-            # self.scaler.scale(loss).backward()
-            # if not self.hparams.wav2vec2.freeze:
-            #    self.scaler.unscale_(self.wav2vec_optimizer)
-            # self.scaler.unscale_(self.model_optimizer)
-
-            # if self.check_gradients(loss):
-            #    if not self.hparams.wav2vec2.freeze:
-            #        self.scaler.step(self.wav2vec_optimizer)
-            #    self.scaler.step(self.model_optimizer)
-
-            # self.scaler.update()
-            loss = torch.tensor([1.0])
-            print(self.hparams.lr_annealing_model.current_lr)
             self.hparams.lr_annealing_model(self.model_optimizer)
             if not self.hparams.wav2vec2.freeze:
                 self.hparams.lr_annealing_wav2vec(self.wav2vec_optimizer)
+
+            if not self.hparams.wav2vec2.freeze:
+                self.wav2vec_optimizer.zero_grad()
+            self.model_optimizer.zero_grad()
+
+            with torch.cuda.amp.autocast():
+                outputs = self.compute_forward(batch, sb.Stage.TRAIN)
+                loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
+
+            self.scaler.scale(loss).backward()
+            if not self.hparams.wav2vec2.freeze:
+                self.scaler.unscale_(self.wav2vec_optimizer)
+            self.scaler.unscale_(self.model_optimizer)
+
+            if self.check_gradients(loss):
+                if not self.hparams.wav2vec2.freeze:
+                    self.scaler.step(self.wav2vec_optimizer)
+                self.scaler.step(self.model_optimizer)
+
+            self.scaler.update()
         else:
+            self.hparams.lr_annealing_model(self.model_optimizer)
+            if not self.hparams.wav2vec2.freeze:
+                self.hparams.lr_annealing_wav2vec(self.wav2vec_optimizer)
+
             outputs = self.compute_forward(batch, sb.Stage.TRAIN)
 
             loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
@@ -129,10 +130,6 @@ class ASR(sb.core.Brain):
             if not self.hparams.wav2vec2.freeze:
                 self.wav2vec_optimizer.zero_grad()
             self.model_optimizer.zero_grad()
-
-            self.hparams.lr_annealing_model(self.model_optimizer)
-            if not self.hparams.wav2vec2.freeze:
-                self.hparams.lr_annealing_wav2vec(self.wav2vec_optimizer)
 
         return loss.detach()
 
@@ -264,12 +261,12 @@ def dataio_prepare(hparams, tokenizer):
     @sb.utils.data_pipeline.takes("wav")
     @sb.utils.data_pipeline.provides("sig")
     def audio_pipeline(wav):
-        # info = torchaudio.info(wav)
-        sig = torch.tensor([1.0])  # sb.dataio.dataio.read_audio(wav)
-        # resampled = torchaudio.transforms.Resample(
-        #    info.sample_rate, hparams["sample_rate"],
-        # )(sig)
-        return sig
+        info = torchaudio.info(wav)
+        sig = sb.dataio.dataio.read_audio(wav)
+        resampled = torchaudio.transforms.Resample(
+            info.sample_rate, hparams["sample_rate"],
+        )(sig)
+        return resampled
 
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
 
