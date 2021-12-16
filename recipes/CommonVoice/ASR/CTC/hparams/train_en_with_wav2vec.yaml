@@ -35,7 +35,7 @@ avoid_if_longer_than: 10.0
 number_of_epochs: 30
 lr: 0.5
 lr_wav2vec: 2
-optim_bit: 8
+optim_bits: 8
 sorting: ascending
 auto_mix_prec: False
 sample_rate: 16000
@@ -145,11 +145,11 @@ model: !new:torch.nn.ModuleList
 
 model_opt_class: !name:bitsandbytes.optim.Adam
     lr: !ref <lr>
-    optim_bit: !ref <optim_bit>
+    optim_bits: !ref <optim_bits>
 
 wav2vec_opt_class: !name:bitsandbytes.optim.Adam
     lr: !ref <lr_wav2vec>
-    optim_bit: !ref <optim_bit>
+    optim_bits: !ref <optim_bits>
 
 lr_annealing_model: !new:speechbrain.nnet.schedulers.NoamScheduler
     lr_initial: !ref <lr>
