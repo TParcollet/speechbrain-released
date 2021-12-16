@@ -90,26 +90,27 @@ class ASR(sb.core.Brain):
         """Train the parameters given a single batch in input"""
         if self.auto_mix_prec:
 
-            if not self.hparams.wav2vec2.freeze:
-                self.wav2vec_optimizer.zero_grad()
-            self.model_optimizer.zero_grad()
+            # if not self.hparams.wav2vec2.freeze:
+            #    self.wav2vec_optimizer.zero_grad()
+            # self.model_optimizer.zero_grad()
 
-            with torch.cuda.amp.autocast():
-                outputs = self.compute_forward(batch, sb.Stage.TRAIN)
-                loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
+            # with torch.cuda.amp.autocast():
+            #    outputs = self.compute_forward(batch, sb.Stage.TRAIN)
+            #    loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
 
-            self.scaler.scale(loss).backward()
-            if not self.hparams.wav2vec2.freeze:
-                self.scaler.unscale_(self.wav2vec_optimizer)
-            self.scaler.unscale_(self.model_optimizer)
+            # self.scaler.scale(loss).backward()
+            # if not self.hparams.wav2vec2.freeze:
+            #    self.scaler.unscale_(self.wav2vec_optimizer)
+            # self.scaler.unscale_(self.model_optimizer)
 
-            if self.check_gradients(loss):
-                if not self.hparams.wav2vec2.freeze:
-                    self.scaler.step(self.wav2vec_optimizer)
-                self.scaler.step(self.model_optimizer)
+            # if self.check_gradients(loss):
+            #    if not self.hparams.wav2vec2.freeze:
+            #        self.scaler.step(self.wav2vec_optimizer)
+            #    self.scaler.step(self.model_optimizer)
 
-            self.scaler.update()
-
+            # self.scaler.update()
+            loss = torch.tensor([1.0])
+            print(self.hparams.lr_annealing_model.current_lr)
             self.hparams.lr_annealing_model(self.model_optimizer)
             if not self.hparams.wav2vec2.freeze:
                 self.hparams.lr_annealing_wav2vec(self.wav2vec_optimizer)
