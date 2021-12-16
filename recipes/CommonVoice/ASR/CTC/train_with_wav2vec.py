@@ -3,7 +3,8 @@ import sys
 import torch
 import logging
 import speechbrain as sb
-import torchaudio
+
+# import torchaudio
 from hyperpyyaml import load_hyperpyyaml
 from speechbrain.tokenizers.SentencePiece import SentencePiece
 from speechbrain.utils.data_utils import undo_padding
@@ -263,12 +264,12 @@ def dataio_prepare(hparams, tokenizer):
     @sb.utils.data_pipeline.takes("wav")
     @sb.utils.data_pipeline.provides("sig")
     def audio_pipeline(wav):
-        info = torchaudio.info(wav)
-        sig = sb.dataio.dataio.read_audio(wav)
-        resampled = torchaudio.transforms.Resample(
-            info.sample_rate, hparams["sample_rate"],
-        )(sig)
-        return resampled
+        # info = torchaudio.info(wav)
+        sig = torch.tensor([1.0])  # sb.dataio.dataio.read_audio(wav)
+        # resampled = torchaudio.transforms.Resample(
+        #    info.sample_rate, hparams["sample_rate"],
+        # )(sig)
+        return sig
 
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
 
