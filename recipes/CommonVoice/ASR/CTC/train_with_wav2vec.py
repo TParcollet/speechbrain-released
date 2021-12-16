@@ -93,7 +93,6 @@ class ASR(sb.core.Brain):
             if not self.hparams.wav2vec2.freeze:
                 self.hparams.lr_annealing_wav2vec(self.wav2vec_optimizer)
 
-            print(self.hparams.lr_annealing_model.current_lr)
             if not self.hparams.wav2vec2.freeze:
                 self.wav2vec_optimizer.zero_grad()
             self.model_optimizer.zero_grad()
