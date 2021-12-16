@@ -33,8 +33,8 @@ avoid_if_longer_than: 10.0
 
 # Training parameters
 number_of_epochs: 30
-lr: 0.0005
-lr_wav2vec: 0.0001
+lr: 0.001
+lr_wav2vec: 0.0003
 sorting: ascending
 auto_mix_prec: False
 sample_rate: 16000
@@ -148,17 +148,15 @@ model_opt_class: !name:torch.optim.AdamW
 wav2vec_opt_class: !name:torch.optim.AdamW
     lr: !ref <lr_wav2vec>
 
-lr_annealing_model: !new:speechbrain.nnet.schedulers.NewBobScheduler
-    initial_value: !ref <lr>
-    improvement_threshold: 0.0025
-    annealing_factor: 0.5
-    patient: 0
+lr_annealing_model: !new:speechbrain.nnet.schedulers.NoamScheduler
+    lr_initial: !ref <lr>
+    n_warmup_steps: 25000
+    model_size: !ref <wav2vec_output_dim>
 
-lr_annealing_wav2vec: !new:speechbrain.nnet.schedulers.NewBobScheduler
-    initial_value: !ref <lr_wav2vec>
-    improvement_threshold: 0.0025
-    annealing_factor: 0.5
-    patient: 0
+lr_annealing_wav2vec: !new:speechbrain.nnet.schedulers.NoamScheduler
+    lr_initial: !ref <lr_wav2vec>
+    n_warmup_steps: 25000
+    model_size: !ref <wav2vec_output_dim>
 
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
     checkpoints_dir: !ref <save_folder>
