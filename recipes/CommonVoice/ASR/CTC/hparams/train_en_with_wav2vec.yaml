@@ -150,7 +150,7 @@ wav2vec_opt_class: !name:torch.optim.AdamW
 
 lr_annealing_model: !new:speechbrain.nnet.schedulers.NoamScheduler
     lr_initial: !ref <lr>
-    n_warmup_steps: 25000
+    n_warmup_steps: 5000
     model_size: !ref <wav2vec_output_dim>
 
 lr_annealing_wav2vec: !new:speechbrain.nnet.schedulers.NoamScheduler
