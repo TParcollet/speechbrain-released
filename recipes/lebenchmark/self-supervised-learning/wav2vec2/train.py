@@ -306,6 +306,8 @@ if __name__ == "__main__":
         checkpointer=hparams["checkpointer"],
     )
 
+    train_dataloader_opt = hparams["dataloader_options"]
+    valid_dataloader_opts = hparams["test_dataloader_options"]
     if train_bsampler is not None:
         train_dataloader_opts = {"batch_sampler": train_bsampler}
     if valid_bsampler is not None:
@@ -318,8 +320,8 @@ if __name__ == "__main__":
         asr_brain.hparams.epoch_counter,
         train_data,
         valid_data,
-        train_loader_kwargs=hparams["dataloader_options"],
-        valid_loader_kwargs=hparams["test_dataloader_options"],
+        train_loader_kwargs=train_dataloader_opts,
+        valid_loader_kwargs=valid_dataloader_opts,
     )
 
     # Test
