@@ -249,7 +249,6 @@ def dataio_prepare(hparams):
         from speechbrain.dataio.batch import PaddedBatch  # noqa
 
         dynamic_hparams = hparams["dynamic_batch_sampler"]
-        hop_size = dynamic_hparams["feats_hop_size"]
 
         num_buckets = dynamic_hparams["num_buckets"]
 
@@ -257,7 +256,7 @@ def dataio_prepare(hparams):
             train_data,
             dynamic_hparams["max_batch_len"],
             num_buckets=num_buckets,
-            length_func=lambda x: x["duration"] * (1 / hop_size),
+            length_func=lambda x: x["duration"],
             shuffle=dynamic_hparams["shuffle_ex"],
             batch_ordering=dynamic_hparams["batch_ordering"],
         )
@@ -266,7 +265,7 @@ def dataio_prepare(hparams):
             valid_data,
             dynamic_hparams["max_batch_len"],
             num_buckets=num_buckets,
-            length_func=lambda x: x["duration"] * (1 / hop_size),
+            length_func=lambda x: x["duration"],
             shuffle=dynamic_hparams["shuffle_ex"],
             batch_ordering=dynamic_hparams["batch_ordering"],
         )
