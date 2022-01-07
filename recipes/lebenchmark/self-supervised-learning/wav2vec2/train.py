@@ -254,9 +254,6 @@ if __name__ == "__main__":
     # create ddp_group with the right communication protocol
     sb.utils.distributed.ddp_init_group(run_opts)
 
-    # Dataset preparation (parsing CommonVoice)
-    from common_voice_prepare import prepare_common_voice  # noqa
-
     # Create experiment directory
     sb.create_experiment_directory(
         experiment_directory=hparams["output_folder"],
