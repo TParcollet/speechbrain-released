@@ -240,7 +240,38 @@ def dataio_prepare(hparams):
     sb.dataio.dataset.set_output_keys(
         datasets, ["id", "sig"],
     )
-    return train_data, valid_data
+
+    train_batch_sampler = None
+    valid_batch_sampler = None
+    if hparams["dynamic_batching"]:
+        from speechbrain.dataio.sampler import DynamicBatchSampler  # noqa
+        from speechbrain.dataio.dataloader import SaveableDataLoader  # noqa
+        from speechbrain.dataio.batch import PaddedBatch  # noqa
+
+        dynamic_hparams = hparams["dynamic_batch_sampler"]
+        hop_size = dynamic_hparams["feats_hop_size"]
+
+        num_buckets = dynamic_hparams["num_buckets"]
+
+        train_batch_sampler = DynamicBatchSampler(
+            train_data,
+            dynamic_hparams["max_batch_len"],
+            num_buckets=num_buckets,
+            length_func=lambda x: x["duration"] * (1 / hop_size),
+            shuffle=dynamic_hparams["shuffle_ex"],
+            batch_ordering=dynamic_hparams["batch_ordering"],
+        )
+
+        valid_batch_sampler = DynamicBatchSampler(
+            valid_data,
+            dynamic_hparams["max_batch_len"],
+            num_buckets=num_buckets,
+            length_func=lambda x: x["duration"] * (1 / hop_size),
+            shuffle=dynamic_hparams["shuffle_ex"],
+            batch_ordering=dynamic_hparams["batch_ordering"],
+        )
+
+    return train_data, valid_data, train_batch_sampler, valid_batch_sampler
 
 
 if __name__ == "__main__":
@@ -262,7 +293,9 @@ if __name__ == "__main__":
     )
 
     # Create the datasets objects as well as tokenization and encoding :-D
-    train_data, valid_data = dataio_prepare(hparams)
+    train_data, valid_data, train_bsampler, valid_bsampler = dataio_prepare(
+        hparams
+    )
 
     # Trainer initialization
     asr_brain = W2VBrain(
@@ -272,6 +305,11 @@ if __name__ == "__main__":
         opt_class=hparams["opt_class"],
         checkpointer=hparams["checkpointer"],
     )
+
+    if train_bsampler is not None:
+        train_dataloader_opts = {"batch_sampler": train_bsampler}
+    if valid_bsampler is not None:
+        valid_dataloader_opts = {"batch_sampler": valid_bsampler}
 
     # Adding objects to trainer.
 
