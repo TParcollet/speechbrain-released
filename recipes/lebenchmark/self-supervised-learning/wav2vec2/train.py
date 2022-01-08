@@ -255,7 +255,7 @@ def dataio_prepare(hparams):
         train_batch_sampler = DynamicBatchSampler(
             train_data,
             dynamic_hparams["max_batch_len"],
-            max_batch_ex=hparams["max_batch_ex"],
+            max_batch_ex=dynamic_hparams["max_batch_ex"],
             num_buckets=num_buckets,
             length_func=lambda x: x["duration"],
             shuffle=dynamic_hparams["shuffle_ex"],
@@ -265,7 +265,7 @@ def dataio_prepare(hparams):
         valid_batch_sampler = DynamicBatchSampler(
             valid_data,
             dynamic_hparams["max_batch_len"],
-            max_batch_ex=hparams["max_batch_ex"],
+            max_batch_ex=dynamic_hparams["max_batch_ex"],
             num_buckets=num_buckets,
             length_func=lambda x: x["duration"],
             shuffle=dynamic_hparams["shuffle_ex"],
