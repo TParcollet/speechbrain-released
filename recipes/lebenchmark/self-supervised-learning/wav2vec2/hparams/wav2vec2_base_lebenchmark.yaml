@@ -63,11 +63,11 @@ gradient_accumulation: 8
 
 dataloader_options:
     batch_size: !ref <batch_size>
-    num_workers: 4
+    num_workers: 0
 
 test_dataloader_options:
     batch_size: !ref <test_batch_size>
-    num_workers: 4
+    num_workers: 0
 
 #
 # Functions and classes

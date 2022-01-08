@@ -227,6 +227,8 @@ def dataio_prepare(hparams):
         info = torchaudio.info(wav)
         start_seg = int(float(start) * hparams["sample_rate"])
         stop_seg = int(float(end) * hparams["sample_rate"])
+        print(start_seg)
+        print(stop_seg)
         speech_segment = {"file": wav, "start": start_seg, "stop": stop_seg}
         sig = sb.dataio.dataio.read_audio(speech_segment)
         if info.num_channels > 1:
