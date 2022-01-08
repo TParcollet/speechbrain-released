@@ -221,12 +221,13 @@ def dataio_prepare(hparams):
     # defining tokenizer and loading it
 
     # 2. Define audio pipeline:
-    @sb.utils.data_pipeline.takes("wav", "start", "end")
+    @sb.utils.data_pipeline.takes("ID", "wav", "start", "end")
     @sb.utils.data_pipeline.provides("sig")
-    def audio_pipeline(wav, start, end):
+    def audio_pipeline(ID, wav, start, end):
         info = torchaudio.info(wav)
         start_seg = int(float(start) * hparams["sample_rate"])
         stop_seg = int(float(end) * hparams["sample_rate"])
+        print(ID)
         print(start_seg)
         print(stop_seg)
         speech_segment = {"file": wav, "start": start_seg, "stop": stop_seg}
