@@ -44,9 +44,10 @@ dynamic_batching: False
 # dynamic batching parameters, if used
 dynamic_batch_sampler:
     max_batch_len: 120 # in terms of frames
+    max_batch_ex: 50 # maximal batch size
     shuffle_ex: False
     batch_ordering: !ref <sorting>
-    num_buckets: 50
+    num_buckets: 5
 
 # With data_parallel batch_size is split into N jobs
 # With DDP batch_size is multiplied by N jobs
