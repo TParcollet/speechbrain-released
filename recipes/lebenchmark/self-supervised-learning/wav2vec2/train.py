@@ -53,10 +53,7 @@ class W2VBrain(sb.core.Brain):
         out, mask = self.modules.wav2vec2(wavs)
         loss = out.loss
 
-        if stage != sb.Stage.TRAIN:
-            return loss, out, mask
-
-        return loss
+        return loss, out, mask
 
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss (CTC+NLL) given predictions and targets."""
@@ -64,7 +61,7 @@ class W2VBrain(sb.core.Brain):
         if stage == sb.Stage.TRAIN:
             # We don't have to compute anything as the HF model directly returns
             # the constrative loss.
-            loss = predictions
+            loss, out, mask = predictions
         else:
             # We compute the accuracy between embeddings with cosing sim.
             loss, out, mask_time_indices = predictions
