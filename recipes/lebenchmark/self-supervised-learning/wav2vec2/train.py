@@ -74,6 +74,27 @@ class W2VBrain(sb.core.Brain):
             acc = cosine_sim[mask_time_indices].mean()
             self.acc_metric.append(acc)
 
+        if (
+            self.hparams.use_tensorboard
+            and self.step % self.hparams.tensorboard_log_interval == 0
+        ):
+
+            # We compute the accuracy between embeddings with cosing sim.
+            loss_tmp, out, mask_time_indices = predictions
+            cosine_sim = torch.cosine_similarity(
+                out.projected_states, out.projected_quantized_states, dim=-1
+            )
+            acc = cosine_sim[mask_time_indices].mean()
+
+            train_stats = {
+                "loss": loss,
+                "lr": self.hparams.noam_annealing.current_lr,
+                "acc": acc,
+            }
+            self.hparams.tensorboard_train_logger.log_stats(
+                {"Step": self.step}, train_stats
+            )
+
         return loss
 
     def fit_batch(self, batch):
@@ -293,6 +314,13 @@ if __name__ == "__main__":
         hyperparams_to_save=hparams_file,
         overrides=overrides,
     )
+
+    if hparams["use_tensorboard"]:
+        from speechbrain.utils.train_logger import TensorboardLogger
+
+        hparams["tensorboard_train_logger"] = TensorboardLogger(
+            hparams["tensorboard_logs"]
+        )
 
     # Create the datasets objects as well as tokenization and encoding :-D
     train_data, valid_data, train_bsampler, valid_bsampler = dataio_prepare(
