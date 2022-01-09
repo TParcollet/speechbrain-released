@@ -20,6 +20,7 @@ valid_csv: !ref <data_folder>/valid.csv
 
 use_tensorboard: True
 tensorboard_logs: !ref <output_folder>/tensorboard_logs/
+tensorboard_log_interval: 5000
 
 # We remove utterance slonger than 10s in the train/dev/test sets as
 # longer sentences certainly correspond to "open microphones".
