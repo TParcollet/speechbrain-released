@@ -6,6 +6,7 @@ import logging
 import speechbrain as sb
 import torchaudio
 from hyperpyyaml import load_hyperpyyaml
+from speechbrain.utils.distributed import run_on_main
 
 """Recipe for pretraining a wav2vec 2.0 model on CommonVoice EN. Note that it can be
 trained with ANY dataset as long as you provide the correct JSON or CSV file.
@@ -88,8 +89,12 @@ class W2VBrain(sb.core.Brain):
                 "lr": self.hparams.noam_annealing.current_lr,
                 "acc": acc,
             }
-            self.hparams.tensorboard_train_logger.log_stats(
-                {"Step": self.hparams.noam_annealing.n_steps}, train_stats
+            run_on_main(
+                self.hparams.tensorboard_train_logger.log_stats,
+                args=[
+                    {"Step": self.hparams.noam_annealing.n_steps},
+                    train_stats,
+                ],
             )
 
         return loss
