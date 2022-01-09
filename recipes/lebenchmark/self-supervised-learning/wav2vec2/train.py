@@ -310,8 +310,9 @@ if __name__ == "__main__":
         checkpointer=hparams["checkpointer"],
     )
 
-    train_dataloader_opt = hparams["dataloader_options"]
+    train_dataloader_opts = hparams["dataloader_options"]
     valid_dataloader_opts = hparams["test_dataloader_options"]
+
     if train_bsampler is not None:
         train_dataloader_opts = {"batch_sampler": train_bsampler}
     if valid_bsampler is not None:
