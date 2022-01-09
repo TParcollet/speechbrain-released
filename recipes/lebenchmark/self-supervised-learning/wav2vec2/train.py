@@ -312,7 +312,7 @@ if __name__ == "__main__":
 
     train_dataloader_opts = hparams["dataloader_options"]
     valid_dataloader_opts = hparams["test_dataloader_options"]
-
+    print(train_bsampler)
     if train_bsampler is not None:
         train_dataloader_opts = {"batch_sampler": train_bsampler}
     if valid_bsampler is not None:
