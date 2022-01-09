@@ -50,7 +50,7 @@ dyn_batch_len: 100
 dynamic_batch_sampler:
     max_batch_len: !ref <dyn_batch_len>
     max_batch_ex: 64 # maximal batch size
-    shuffle_ex: False
+    shuffle_ex: True
     batch_ordering: !ref <sorting>
     num_buckets: 50
 
