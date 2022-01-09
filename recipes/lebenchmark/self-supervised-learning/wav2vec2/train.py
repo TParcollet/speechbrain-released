@@ -92,7 +92,7 @@ class W2VBrain(sb.core.Brain):
                 "acc": acc,
             }
             self.hparams.tensorboard_train_logger.log_stats(
-                {"Step": self.step}, train_stats
+                {"Step": self.hparams.noam_annealing.n_steps}, train_stats
             )
 
         return loss
