@@ -20,11 +20,11 @@ valid_csv: !ref <data_folder>/valid.csv
 
 use_tensorboard: True
 tensorboard_logs: !ref <output_folder>/tensorboard_logs/
-tensorboard_log_interval: 5000
+tensorboard_log_interval: 1000
 
 # We remove utterance slonger than 10s in the train/dev/test sets as
 # longer sentences certainly correspond to "open microphones".
-avoid_if_longer_than: 30.0
+avoid_if_longer_than: 16.0
 avoid_if_shorter_than: 1.0
 
 # Training parameters
@@ -38,13 +38,13 @@ number_of_epochs: 100
 lr_adam: 2.0 # This will get reduced by the training scheduler
 weight_decay: 0.01
 d_model: 1024  # Needed by the scheduler. 768 is for the BASE w2v2
-sorting: ascending
+sorting: random
 auto_mix_prec: True
 sample_rate: 16000
 ckpt_interval_minutes: 30 # save checkpoint every N min
 
 dynamic_batching: False
-dyn_batch_len: 100
+dyn_batch_len: 90
 
 # dynamic batching parameters, if used
 dynamic_batch_sampler:
