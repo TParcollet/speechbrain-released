@@ -123,7 +123,7 @@ class TensorboardLogger(TrainLogger):
     def prepare_tensorboard_logger(self):
         """Used to create the dir of the tensorboard logs compliant with DDP"""
         if not os.path.isdir(self.save_dir):
-            run_on_main(os.makedirs(), args=[self.save_dir])
+            run_on_main(os.makedirs, args=[self.save_dir])
 
         # Raises ImportError if TensorBoard is not installed
         from torch.utils.tensorboard import SummaryWriter
