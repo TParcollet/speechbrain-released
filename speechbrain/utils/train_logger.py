@@ -2,9 +2,12 @@
 
 Authors
  * Peter Plantinga 2020
+ * Titouan Parcollet 2021
 """
+import os
 import logging
 import ruamel.yaml
+from speechbrain.utils.distributed import run_on_main
 
 logger = logging.getLogger(__name__)
 
@@ -114,12 +117,18 @@ class TensorboardLogger(TrainLogger):
 
     def __init__(self, save_dir):
         self.save_dir = save_dir
+        self.writer = None
+        self.global_step = {"train": {}, "valid": {}, "test": {}, "meta": 0}
+
+    def prepare_tensorboard_logger(self, save_dir):
+        """Used to create the dir of the tensorboard logs compliant with DDP"""
+        if not os.path.isdir(save_dir):
+            run_on_main(os.makedirs(), args=[save_dir])
 
         # Raises ImportError if TensorBoard is not installed
         from torch.utils.tensorboard import SummaryWriter
 
         self.writer = SummaryWriter(self.save_dir)
-        self.global_step = {"train": {}, "valid": {}, "test": {}, "meta": 0}
 
     def log_stats(
         self,
