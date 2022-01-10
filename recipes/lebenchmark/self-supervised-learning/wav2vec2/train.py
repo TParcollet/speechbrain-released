@@ -318,16 +318,7 @@ if __name__ == "__main__":
     )
 
     if hparams["use_tensorboard"]:
-        from speechbrain.utils.train_logger import TensorboardLogger
-
-        # Create the logger only on main (to create the folder once)
-        run_on_main(
-            TensorboardLogger, args=[hparams["tensorboard_logs"]],
-        )
-
-        hparams["tensorboard_train_logger"] = TensorboardLogger(
-            hparams["tensorboard_logs"]
-        )
+        hparams["tensorboard_train_logger"].prepare_tensorboard_logger()
 
     # Create the datasets objects as well as tokenization and encoding :-D
     train_data, valid_data, train_bsampler, valid_bsampler = dataio_prepare(
