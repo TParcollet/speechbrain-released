@@ -236,8 +236,11 @@ def dataio_prepare(hparams):
     valid_data = sb.dataio.dataset.DynamicItemDataset.from_csv(
         csv_path=hparams["valid_csv"], replacements={"data_root": data_folder},
     )
-    # We also sort the validation data so it is faster to validate
-    valid_data = valid_data.filtered_sorted(sort_key="duration")
+
+    valid_data = valid_data.filtered_sorted(
+        key_max_value={"duration": hparams["avoid_if_longer_than"]},
+        key_min_value={"duration": hparams["avoid_if_shorter_than"]},
+    )
 
     datasets = [train_data, valid_data]
 
