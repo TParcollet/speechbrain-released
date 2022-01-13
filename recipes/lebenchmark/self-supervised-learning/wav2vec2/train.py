@@ -170,6 +170,7 @@ class W2VBrain(sb.core.Brain):
         out = self.compute_forward(batch, stage=stage)
         loss = self.compute_objectives(out, batch, stage=stage) / 100
         self.check_gradients(loss)
+        print(loss)
         return loss.detach()
 
     def on_stage_start(self, stage, epoch):
@@ -278,6 +279,7 @@ def dataio_prepare(hparams):
     @sb.utils.data_pipeline.provides("sig")
     def audio_pipeline(wav, start, end, duration):
         info = torchaudio.info(wav)
+        print(wav)
         start_seg = int(float(start) * hparams["sample_rate"])
         stop_seg = int(float(end) * hparams["sample_rate"])
         speech_segment = {"file": wav, "start": start_seg, "stop": stop_seg}
