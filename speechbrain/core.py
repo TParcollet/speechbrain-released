@@ -928,7 +928,7 @@ class Brain:
 
         out = self.compute_forward(batch, stage=stage)
         loss = self.compute_objectives(out, batch, stage=stage)
-        return loss
+        return loss.detach().cpu()
 
     def fit(
         self,
