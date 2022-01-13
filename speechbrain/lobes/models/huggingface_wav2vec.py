@@ -347,7 +347,7 @@ class HuggingFaceWav2Vec2Pretrain(nn.Module):
         batch_size, raw_sequence_length = wav.shape
 
         if self.normalize_wav:
-            wav = F.layer_norm(wav, wav.shape[-1])
+            wav = F.layer_norm(wav, wav.shape[1:])
 
         sequence_length = self.model._get_feat_extract_output_lengths(
             raw_sequence_length
