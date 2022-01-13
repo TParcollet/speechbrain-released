@@ -96,7 +96,7 @@ class W2VBrain(sb.core.Brain):
                     train_stats,
                 ],
             )
-
+        print(loss)
         return loss
 
     def fit_batch(self, batch):
