@@ -54,6 +54,8 @@ class W2VBrain(sb.core.Brain):
         out, mask = self.modules.wav2vec2(wavs)
         loss = out.loss
 
+        print(loss)
+
         return loss, out, mask
 
     def compute_objectives(self, predictions, batch, stage):
