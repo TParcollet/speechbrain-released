@@ -75,6 +75,7 @@ class W2VBrain(sb.core.Brain):
         if (
             self.hparams.use_tensorboard
             and self.step % self.hparams.tensorboard_log_interval == 0
+            and stage == sb.Stage.TRAIN
         ):
 
             # We compute the accuracy between embeddings with cosing sim.
@@ -84,7 +85,7 @@ class W2VBrain(sb.core.Brain):
             acc = cosine_sim[mask_time_indices].mean()
 
             train_stats = {
-                "loss": loss,
+                "loss": loss.detach().cpu(),
                 "lr": self.hparams.noam_annealing.current_lr,
                 "acc": acc,
             }
