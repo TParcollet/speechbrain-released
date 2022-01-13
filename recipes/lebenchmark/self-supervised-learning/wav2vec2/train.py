@@ -97,7 +97,6 @@ class W2VBrain(sb.core.Brain):
                 ],
             )
 
-        print(loss)
         return loss
 
     def fit_batch(self, batch):
@@ -279,7 +278,6 @@ def dataio_prepare(hparams):
     @sb.utils.data_pipeline.provides("sig")
     def audio_pipeline(wav, start, end, duration):
         info = torchaudio.info(wav)
-        print(wav)
         start_seg = int(float(start) * hparams["sample_rate"])
         stop_seg = int(float(end) * hparams["sample_rate"])
         speech_segment = {"file": wav, "start": start_seg, "stop": stop_seg}
