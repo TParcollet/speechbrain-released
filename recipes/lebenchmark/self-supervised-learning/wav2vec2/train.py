@@ -168,7 +168,7 @@ class W2VBrain(sb.core.Brain):
         """
 
         out = self.compute_forward(batch, stage=stage)
-        loss = self.compute_objectives(out, batch, stage=stage) / 100
+        loss = self.compute_objectives(out, batch, stage=stage)
         self.check_gradients(loss)
         return loss.detach()
 
