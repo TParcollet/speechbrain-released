@@ -85,7 +85,7 @@ class W2VBrain(sb.core.Brain):
             acc = cosine_sim[mask_time_indices].mean()
 
             train_stats = {
-                "loss": loss.detach().cpu(),
+                "loss": self.avg_train_loss,
                 "lr": self.hparams.noam_annealing.current_lr,
                 "acc": acc,
             }
