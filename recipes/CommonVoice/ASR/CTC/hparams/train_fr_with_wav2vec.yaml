@@ -64,6 +64,8 @@ activation: !name:torch.nn.LeakyReLU
 wav2vec_output_dim: 1024
 dnn_neurons: 1024
 freeze_wav2vec: False
+apply_spec_augment: False
+output_norm: True
 
 # Outputs
 output_neurons: 76  # BPE size, index(blank/eos/bos) = 0
@@ -116,8 +118,9 @@ enc: !new:speechbrain.nnet.containers.Sequential
 
 wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
     source: !ref <wav2vec2_hub>
-    output_norm: True
+    output_norm: !ref <output_norm>
     freeze: !ref <freeze_wav2vec>
+    apply_spec_augment: !ref <apply_spec_augment>
     save_path: !ref <save_folder>/wav2vec2_checkpoint
 
 #####
@@ -157,7 +160,7 @@ model_opt_class: !name:torch.optim.Adadelta
     rho: 0.95
     eps: 1.e-8
 
-wav2vec_opt_class: !name:torch.optim.Adam
+wav2vec_opt_class: !name:torch.optim.AdamW
     lr: !ref <lr_wav2vec>
 
 lr_annealing_model: !new:speechbrain.nnet.schedulers.NewBobScheduler
