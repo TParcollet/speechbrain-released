@@ -263,7 +263,7 @@ class HuggingFaceWav2Vec2(nn.Module):
         """
 
         if self.normalize_wav:
-            wav = F.layer_norm(wav, wav.shape)
+            wav = F.layer_norm(wav, wav.shape[1:])
 
         # Extract wav2vec output
         out = self.model(wav)[0]
