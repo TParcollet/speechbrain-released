@@ -67,7 +67,7 @@ apply_spec_augment: False
 output_norm: True
 
 # Outputs
-output_neurons: 76  # BPE size, index(blank/eos/bos) = 0
+output_neurons: 200  # BPE size, index(blank/eos/bos) = 0
 
 #
 # Functions and classes
