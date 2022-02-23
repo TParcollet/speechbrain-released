@@ -382,7 +382,7 @@ class Brain:
             Number of times to ignore non-finite losses before stopping.
             Default: ``3``.
         noprogressbar (bool)
-            Whether to turn off progressbar when training. Default: ``False``.
+            Whether to turn off progressbar when training. Default: ``False``. FRANCHEMENT.
         ckpt_interval_minutes (float)
             Amount of time between saving intra-epoch checkpoints,
             in minutes, default: ``15.0``. If non-positive, these are not saved.
