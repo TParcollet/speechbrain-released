@@ -8,6 +8,7 @@ To run this recipe, do the following:
 > python train.py hparams/train.yaml --data_folder /path/to/IEMOCAP
 
 Authors
+ * Michel 
  * Pierre-Yves Yanni 2021
 """
 
