@@ -90,6 +90,7 @@ class W2VBrain(sb.core.Brain):
                 "acc": acc,
             }
             print(self.step)
+            print(self.hparams.noam_annealing.n_steps)
             run_on_main(
                 self.hparams.tensorboard_train_logger.log_stats,
                 args=[
