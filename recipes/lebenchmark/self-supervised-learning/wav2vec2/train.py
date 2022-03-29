@@ -74,7 +74,9 @@ class W2VBrain(sb.core.Brain):
 
         if (
             self.hparams.use_tensorboard
-            and self.step % self.hparams.tensorboard_log_interval == 0
+            and self.hparams.noam_annealing.n_steps
+            % self.hparams.tensorboard_log_interval
+            == 0
             and stage == sb.Stage.TRAIN
         ):
 
