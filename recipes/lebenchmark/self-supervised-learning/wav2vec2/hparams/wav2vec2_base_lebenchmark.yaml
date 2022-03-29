@@ -20,7 +20,7 @@ valid_csv: !ref <data_folder>/valid.csv
 
 use_tensorboard: True
 tensorboard_logs: !ref <output_folder>/tensorboard_logs/
-tensorboard_log_interval: 1000
+tensorboard_log_interval: 2
 
 # We remove utterance slonger than 10s in the train/dev/test sets as
 # longer sentences certainly correspond to "open microphones".
@@ -41,7 +41,7 @@ d_model: 1024  # Needed by the scheduler. 768 is for the BASE w2v2
 sorting: random
 auto_mix_prec: True
 sample_rate: 16000
-ckpt_interval_minutes: 30 # save checkpoint every N min
+ckpt_interval_minutes: 1 # save checkpoint every N min
 
 dynamic_batching: True
 dyn_batch_len: 90
