@@ -6,8 +6,10 @@ Authors
 """
 import os
 import logging
+import torch
 import ruamel.yaml
 from speechbrain.utils.distributed import run_on_main
+from speechbrain.utils import checkpoints
 
 logger = logging.getLogger(__name__)
 
@@ -104,6 +106,9 @@ class FileTrainLogger(TrainLogger):
 
 class TensorboardLogger(TrainLogger):
     """Logs training information in the format required by Tensorboard.
+    If you wish your loader to be resumable i.e., the logging does not restart
+    from the global step 0 every time, you must create a SpeechBrain checkpointer
+    that will automatically save the corresponding global steps.
 
     Arguments
     ---------
@@ -121,7 +126,11 @@ class TensorboardLogger(TrainLogger):
         self.global_step = {"train": {}, "valid": {}, "test": {}, "meta": 0}
 
     def prepare_tensorboard_logger(self):
-        """Used to create the dir of the tensorboard logs compliant with DDP"""
+        """Used to create the dir of the tensorboard logs compliant with DDP
+        Indeed, the init function is call before DDP is initialised. Hence,
+        the SummaryWriter would try to create the save_folder with all processes,
+        leading to a R/W error. The SummaryWriter must be initialised after DDP.
+        """
         if not os.path.isdir(self.save_dir):
             run_on_main(os.makedirs, args=[self.save_dir])
 
@@ -132,6 +141,7 @@ class TensorboardLogger(TrainLogger):
 
     def log_stats(
         self,
+        global_step,
         stats_meta,
         train_stats=None,
         valid_stats=None,
@@ -166,6 +176,18 @@ class TensorboardLogger(TrainLogger):
                     new_global_step = self.global_step[dataset][stat] + 1
                     self.writer.add_scalar(tag, value, new_global_step)
                     self.global_step[dataset][stat] = new_global_step
+
+    @checkpoints.mark_as_saver
+    def save(self, path):
+        data = {"global_step": self.global_step}
+        torch.save(data, path)
+
+    @checkpoints.mark_as_loader
+    def load(self, path, end_of_epoch=False, device=None):
+        del end_of_epoch  # Unused in this class
+        del device
+        data = torch.load(path)
+        self.global_step = data["global_step"]
 
 
 class WandBLogger(TrainLogger):

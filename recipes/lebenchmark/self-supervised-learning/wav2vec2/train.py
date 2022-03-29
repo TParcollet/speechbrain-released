@@ -6,7 +6,6 @@ import logging
 import speechbrain as sb
 import torchaudio
 from hyperpyyaml import load_hyperpyyaml
-from speechbrain.utils.distributed import run_on_main
 
 """Recipe for pretraining a wav2vec 2.0 model on CommonVoice EN. Note that it can be
 trained with ANY dataset as long as you provide the correct JSON or CSV file.
@@ -89,15 +88,11 @@ class W2VBrain(sb.core.Brain):
                 "lr": self.hparams.noam_annealing.current_lr,
                 "acc": acc,
             }
-            print(self.step)
-            print(self.hparams.noam_annealing.n_steps)
-            run_on_main(
-                self.hparams.tensorboard_train_logger.log_stats,
-                args=[
-                    {"Step": self.hparams.noam_annealing.n_steps},
-                    train_stats,
-                ],
-            )
+            if sb.utils.distributed.if_main_process():
+                self.hparams.tensorboard_train_logger.log_stats(
+                    {"Step": self.hparams.noam_annealing.n_steps}, train_stats
+                )
+                self.hparans.tensorboard_checkpointer.save_and_keep_only()
 
         return loss
 
@@ -350,7 +345,10 @@ if __name__ == "__main__":
     )
 
     if hparams["use_tensorboard"]:
+        # Create the tensorboard_dir in a DDP compliant manner.
         hparams["tensorboard_train_logger"].prepare_tensorboard_logger()
+        # Resume the tensorboard logger from a previous experiment if needed.
+        hparams["tensorboard_checkpointer"].recover_if_possible()
 
     # Create the datasets objects as well as tokenization and encoding :-D
     train_data, valid_data, train_bsampler, valid_bsampler = dataio_prepare(
