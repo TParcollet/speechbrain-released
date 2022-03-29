@@ -160,10 +160,6 @@ class TensorboardLogger(TrainLogger):
     ):
         """See TrainLogger.log_stats()"""
 
-        # Check resume case with purge_step
-        if self.global_step["meta"] > self.purge_step:
-            self.global_step["meta"] = self.purge_step
-
         self.global_step["meta"] += 1
         for name, value in stats_meta.items():
             self.writer.add_scalar(name, value, self.global_step["meta"])
@@ -206,6 +202,18 @@ class TensorboardLogger(TrainLogger):
         del device
         data = torch.load(path)
         self.global_step = data["global_step"]
+
+        for dict in self.global_step:
+            if dict != "meta":
+                for subdict in self.global_step[dict]:
+                    if self.global_step[dict][subdict] > self.purge_step:
+                        self.global_step[dict][subdict] = self.purge_step
+            else:
+                if self.global_step["meta"] > self.purge_step:
+                    self.global_step["meta"] = self.purge_step
+        # Check resume case with purge_step
+        if self.global_step["meta"] > self.purge_step:
+            self.global_step["meta"] = self.purge_step
 
 
 class WandBLogger(TrainLogger):
