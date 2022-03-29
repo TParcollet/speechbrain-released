@@ -104,6 +104,7 @@ class FileTrainLogger(TrainLogger):
             logger.info(string_summary)
 
 
+@checkpoints.register_checkpoint_hooks
 class TensorboardLogger(TrainLogger):
     """Logs training information in the format required by Tensorboard.
     If you wish your loader to be resumable i.e., the logging does not restart
