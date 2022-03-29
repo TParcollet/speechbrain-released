@@ -126,11 +126,18 @@ class TensorboardLogger(TrainLogger):
         self.writer = None
         self.global_step = {"train": {}, "valid": {}, "test": {}, "meta": 0}
 
-    def prepare_tensorboard_logger(self):
+    def prepare_tensorboard_logger(self, purge_step=None):
         """Used to create the dir of the tensorboard logs compliant with DDP
         Indeed, the init function is call before DDP is initialised. Hence,
         the SummaryWriter would try to create the save_folder with all processes,
         leading to a R/W error. The SummaryWriter must be initialised after DDP.
+
+        Arguments
+        ---------
+        purge_step : int
+            When logging crashes at step T + X and restart at step T,
+            any events whose global_step larger or equal to T will be purged and
+            hidden from TensorBoard.
         """
         if not os.path.isdir(self.save_dir):
             run_on_main(os.makedirs, args=[self.save_dir])
@@ -138,7 +145,7 @@ class TensorboardLogger(TrainLogger):
         # Raises ImportError if TensorBoard is not installed
         from torch.utils.tensorboard import SummaryWriter
 
-        self.writer = SummaryWriter(self.save_dir)
+        self.writer = SummaryWriter(self.save_dir, purge_step=purge_step)
 
     def log_stats(
         self,

@@ -89,9 +89,7 @@ class W2VBrain(sb.core.Brain):
                 "acc": acc,
             }
             if sb.utils.distributed.if_main_process():
-                self.hparams.tensorboard_train_logger.log_stats(
-                    {"Step": self.hparams.noam_annealing.n_steps}, train_stats
-                )
+                self.hparams.tensorboard_train_logger.log_stats(train_stats)
                 self.hparams.tensorboard_checkpointer.save_and_keep_only()
 
         return loss
@@ -344,12 +342,6 @@ if __name__ == "__main__":
         overrides=overrides,
     )
 
-    if hparams["use_tensorboard"]:
-        # Create the tensorboard_dir in a DDP compliant manner.
-        hparams["tensorboard_train_logger"].prepare_tensorboard_logger()
-        # Resume the tensorboard logger from a previous experiment if needed.
-        hparams["tensorboard_checkpointer"].recover_if_possible()
-
     # Create the datasets objects as well as tokenization and encoding :-D
     train_data, valid_data, train_bsampler, valid_bsampler = dataio_prepare(
         hparams
@@ -363,6 +355,14 @@ if __name__ == "__main__":
         opt_class=hparams["opt_class"],
         checkpointer=hparams["checkpointer"],
     )
+
+    if hparams["use_tensorboard"]:
+        # Create the tensorboard_dir in a DDP compliant manner.
+        hparams["tensorboard_train_logger"].prepare_tensorboard_logger(
+            purge_step=(asr_brain.step // hparams["tensorboard_log_interval"])
+        )
+        # Resume the tensorboard logger from a previous experiment if needed.
+        hparams["tensorboard_checkpointer"].recover_if_possible()
 
     train_dataloader_opts = hparams["dataloader_options"]
     valid_dataloader_opts = hparams["test_dataloader_options"]
