@@ -145,6 +145,8 @@ class TensorboardLogger(TrainLogger):
         # Raises ImportError if TensorBoard is not installed
         from torch.utils.tensorboard import SummaryWriter
 
+        print(purge_step)
+        self.purge_step = purge_step
         self.writer = SummaryWriter(self.save_dir, purge_step=purge_step)
 
     def log_stats(
@@ -157,6 +159,11 @@ class TensorboardLogger(TrainLogger):
         verbose=False,
     ):
         """See TrainLogger.log_stats()"""
+
+        # Check resume case with purge_step
+        if self.global_step["meta"] > self.purge_step:
+            self.global_step["meta"] = self.purge_step
+
         self.global_step["meta"] += 1
         for name, value in stats_meta.items():
             self.writer.add_scalar(name, value, self.global_step["meta"])
@@ -171,6 +178,9 @@ class TensorboardLogger(TrainLogger):
             for stat, value_list in stats.items():
                 if stat not in self.global_step[dataset]:
                     self.global_step[dataset][stat] = 0
+                elif self.global_step[dataset][stat] > self.purge_step:
+                    self.global_step[dataset][stat] = self.purge_step
+
                 tag = f"{stat}/{dataset}"
 
                 # Both single value (per Epoch) and list (Per batch) logging is supported

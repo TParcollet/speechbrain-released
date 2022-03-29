@@ -362,7 +362,6 @@ if __name__ == "__main__":
         # We need the asr_brain to resume the last checkpoint to get the last step.
         hparams["checkpointer"].recover_if_possible()
         # Create the tensorboard_dir in a DDP compliant manner.
-        print(str(asr_brain.step // hparams["tensorboard_log_interval"]))
         hparams["tensorboard_train_logger"].prepare_tensorboard_logger(
             purge_step=(asr_brain.step // hparams["tensorboard_log_interval"])
         )
