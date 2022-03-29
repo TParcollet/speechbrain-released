@@ -74,9 +74,7 @@ class W2VBrain(sb.core.Brain):
 
         if (
             self.hparams.use_tensorboard
-            and self.hparams.noam_annealing.n_steps
-            % self.hparams.tensorboard_log_interval
-            == 0
+            and self.step % self.hparams.tensorboard_log_interval == 0
             and stage == sb.Stage.TRAIN
         ):
 
@@ -91,6 +89,7 @@ class W2VBrain(sb.core.Brain):
                 "lr": self.hparams.noam_annealing.current_lr,
                 "acc": acc,
             }
+            print(self.step)
             run_on_main(
                 self.hparams.tensorboard_train_logger.log_stats,
                 args=[
