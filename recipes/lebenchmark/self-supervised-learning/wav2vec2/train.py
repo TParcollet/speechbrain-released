@@ -89,7 +89,9 @@ class W2VBrain(sb.core.Brain):
                 "acc": acc,
             }
             if sb.utils.distributed.if_main_process():
-                self.hparams.tensorboard_train_logger.log_stats(train_stats)
+                self.hparams.tensorboard_train_logger.log_stats(
+                    {"Step": self.hparams.noam_annealing.n_steps}, train_stats
+                )
                 self.hparams.tensorboard_checkpointer.save_and_keep_only()
 
         return loss
