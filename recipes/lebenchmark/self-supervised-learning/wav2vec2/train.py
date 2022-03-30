@@ -72,7 +72,7 @@ class W2VBrain(sb.core.Brain):
             self.acc_metric.append(acc)
 
         if (
-            self.hparams.use_tensorboard
+            not self.hparams.use_tensorboard
             and self.step % self.hparams.tensorboard_log_interval == 0
             and stage == sb.Stage.TRAIN
         ):
@@ -358,15 +358,13 @@ if __name__ == "__main__":
         checkpointer=hparams["checkpointer"],
     )
 
-    if hparams["use_tensorboard"]:
-        # We need the asr_brain to resume the last checkpoint to get the last step.
-        hparams["checkpointer"].recover_if_possible()
-        # Create the tensorboard_dir in a DDP compliant manner.
-        hparams["tensorboard_train_logger"].prepare_tensorboard_logger(
-            purge_step=(asr_brain.step // hparams["tensorboard_log_interval"])
-        )
-        # Resume the tensorboard logger from a previous experiment if needed.
-        hparams["tensorboard_checkpointer"].recover_if_possible()
+    # if hparams["use_tensorboard"]:
+    # We need the asr_brain to resume the last checkpoint to get the last step.
+    #    hparams["checkpointer"].recover_if_possible()
+    # Create the tensorboard_dir in a DDP compliant manner.
+    #    hparams["tensorboard_train_logger"].prepare_tensorboard_logger(purge_step=(asr_brain.step//hparams["tensorboard_log_interval"]))
+    # Resume the tensorboard logger from a previous experiment if needed.
+    #    hparams["tensorboard_checkpointer"].recover_if_possible()
 
     train_dataloader_opts = hparams["dataloader_options"]
     valid_dataloader_opts = hparams["test_dataloader_options"]
