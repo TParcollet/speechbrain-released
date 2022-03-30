@@ -145,7 +145,6 @@ class TensorboardLogger(TrainLogger):
         # Raises ImportError if TensorBoard is not installed
         from torch.utils.tensorboard import SummaryWriter
 
-        print(purge_step)
         self.purge_step = purge_step
         self.writer = SummaryWriter(self.save_dir, purge_step=purge_step)
 
@@ -203,6 +202,9 @@ class TensorboardLogger(TrainLogger):
         data = torch.load(path)
         self.global_step = data["global_step"]
 
+        # Remove all the logged event up until purge step
+        # This is usefull in case of resuming (we restart the log from the last
+        # epoch and not the last log that might be newer than the epoch)
         for dict in self.global_step:
             if dict != "meta":
                 for subdict in self.global_step[dict]:
@@ -211,7 +213,7 @@ class TensorboardLogger(TrainLogger):
             else:
                 if self.global_step["meta"] > self.purge_step:
                     self.global_step["meta"] = self.purge_step
-        # Check resume case with purge_step
+
         if self.global_step["meta"] > self.purge_step:
             self.global_step["meta"] = self.purge_step
 
