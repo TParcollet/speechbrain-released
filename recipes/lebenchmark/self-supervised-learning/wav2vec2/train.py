@@ -76,7 +76,7 @@ class W2VBrain(sb.core.Brain):
             and self.step % self.hparams.tensorboard_log_interval == 0
             and stage == sb.Stage.TRAIN
         ):
-            print(self.step)
+
             # We compute the accuracy between embeddings with cosing sim.
             cosine_sim = torch.cosine_similarity(
                 out.projected_states, out.projected_quantized_states, dim=-1
