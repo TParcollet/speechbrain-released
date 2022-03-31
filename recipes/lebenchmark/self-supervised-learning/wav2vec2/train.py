@@ -70,6 +70,8 @@ class W2VBrain(sb.core.Brain):
             )
             print(cosine_sim.shape)
             print(mask_time_indices.shape)
+            if cosine_sim.shape != mask_time_indices.shape:
+                print("WWWWTTTFF")
             acc = cosine_sim[mask_time_indices].mean()
             self.acc_metric.append(acc)
 
@@ -318,7 +320,7 @@ def dataio_prepare(hparams):
 
         valid_batch_sampler = DynamicBatchSampler(
             valid_data,
-            90,
+            dynamic_hparams["max_batch_len"],
             num_buckets=num_buckets,
             length_func=lambda x: x["duration"],
             shuffle=dynamic_hparams["shuffle_ex"],
