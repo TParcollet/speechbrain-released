@@ -68,8 +68,12 @@ class W2VBrain(sb.core.Brain):
             cosine_sim = torch.cosine_similarity(
                 out.projected_states, out.projected_quantized_states, dim=-1
             )
-            print(str(cosine_sim.shape[0] + " " + mask_time_indices.shape[0]))
-            print(str(cosine_sim.shape[1] + " " + mask_time_indices.shape[1]))
+            print(
+                str(cosine_sim.shape[0]) + " " + str(mask_time_indices.shape[0])
+            )
+            print(
+                str(cosine_sim.shape[1]) + " " + str(mask_time_indices.shape[1])
+            )
             acc = cosine_sim[mask_time_indices].mean()
             self.acc_metric.append(acc)
 
