@@ -69,7 +69,7 @@ class W2VBrain(sb.core.Brain):
                 out.projected_states, out.projected_quantized_states, dim=-1
             )
             print(cosine_sim.shape)
-            print(mask_time_indices)
+            print(mask_time_indices.shape)
             acc = cosine_sim[mask_time_indices].mean()
             self.acc_metric.append(acc)
 
