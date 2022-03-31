@@ -69,7 +69,8 @@ class W2VBrain(sb.core.Brain):
                 out.projected_states, out.projected_quantized_states, dim=-1
             )
             acc = torch.masked_select(
-                cosine_sim, mask_time_indices.type(torch.BoolTensor)
+                cosine_sim,
+                mask_time_indices.type(torch.BoolTensor).to(self.device),
             ).mean()
             self.acc_metric.append(acc)
 
