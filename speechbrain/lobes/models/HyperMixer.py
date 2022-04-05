@@ -17,8 +17,6 @@ class MixAndMLP(nn.Module):
         self,
         input_size,
         hidden_size,
-        embeddings: nn.Embedding,
-        n_classes: int,
         num_blocks: int,
         location_mixers: list,
         dropout_rate: float,
@@ -125,28 +123,30 @@ class MixAndMLP(nn.Module):
 
 
 def HyperMixer(
-    model_dim: int,
-    embeddings: nn.Embedding,
-    n_classes: int,
-    hidden_layer_size: int,
-    num_layers: int,
-    dropout: float,
-    mode: str,
-    tied: bool = False,
+    input_size,
+    hidden_size,
+    dropout_rate,
+    num_blocks,
+    activation=torch.nn.GELU(),
+    positional_encoding=None,
+    feature_mixing=True,
+    max_length=3000,
+    tied=False,
 ):
     location_mixers = [
-        HyperMixerLayer(model_dim, hidden_layer_size, tied)
-        for _ in range(num_layers)
+        HyperMixerLayer(hidden_size, hidden_size, tied)
+        for _ in range(num_blocks)
     ]
     return MixAndMLP(
-        model_dim,
-        embeddings,
-        n_classes,
-        hidden_layer_size,
-        num_layers,
+        input_size,
+        hidden_size,
+        num_blocks,
         location_mixers,
-        dropout,
-        mode,
+        dropout_rate,
+        activation,
+        positional_encoding,
+        feature_mixing,
+        max_length,
     )
 
 
