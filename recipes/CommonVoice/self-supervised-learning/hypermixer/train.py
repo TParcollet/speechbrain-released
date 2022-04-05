@@ -48,32 +48,15 @@ class W2VBrain(sb.core.Brain):
         wavs, wav_lens = batch.sig
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
-        # Forward on w2v2 and take the loss.
-        # It has to be on train mode even for eval. Otherwise it would deactivate
-        # the loss computation ...
-        out, mask = self.modules.wav2vec2(wavs)
-        loss = out.loss
+        feats = self.hparams.compute_features(wavs)
+        out = self.modules.hypermixer(feats)
 
-        if stage != sb.Stage.TRAIN:
-            return loss, out, mask
-
-        return loss
+        return out, feats
 
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss (CTC+NLL) given predictions and targets."""
-
-        if stage == sb.Stage.TRAIN:
-            # We don't have to compute anything as the HF model directly returns
-            # the constrative loss.
-            loss = predictions
-        else:
-            # We compute the accuracy between embeddings with cosing sim.
-            loss, out, mask_time_indices = predictions
-            cosine_sim = torch.cosine_similarity(
-                out.projected_states, out.projected_quantized_states, dim=-1
-            )
-            acc = cosine_sim[mask_time_indices].mean()
-            self.acc_metric.append(acc)
+        out, feats = predictions
+        loss = self.hparams.MSE_loss(out, feats)
 
         return loss
 
@@ -132,10 +115,10 @@ class W2VBrain(sb.core.Brain):
         """Gets called at the end of an epoch."""
         # Compute/store important stats
         stage_stats = {"loss": stage_loss}
-        if stage == sb.Stage.TRAIN:
-            self.train_stats = stage_stats
-        else:
-            stage_stats["acc"] = sum(self.acc_metric) / len(self.acc_metric)
+        # if stage == sb.Stage.TRAIN:
+        #    self.train_stats = stage_stats
+        # else:
+        #    stage_stats["acc"] = sum(self.acc_metric) / len(self.acc_metric)
 
         # Perform end-of-iteration things, like annealing, logging, etc.
         if stage == sb.Stage.VALID:
@@ -155,8 +138,8 @@ class W2VBrain(sb.core.Brain):
                 valid_stats=stage_stats,
             )
             self.checkpointer.save_and_keep_only(
-                meta={"acc": stage_stats["acc"], "epoch": epoch},
-                max_keys=["acc"],
+                meta={"loss": stage_stats["loss"], "epoch": epoch},
+                max_keys=["loss"],
             )
 
         elif stage == sb.Stage.TEST:
