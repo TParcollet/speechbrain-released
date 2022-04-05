@@ -4,9 +4,53 @@ Authors
  * Jianyuan Zhong 2020
 """
 import torch
+import math
 from speechbrain.nnet.CNN import Conv2d
 from speechbrain.nnet.containers import Sequential
 from speechbrain.nnet.normalization import LayerNorm
+
+
+class PositionalConvEmbedding(torch.nn.Module):
+    """Positional encoding as implemented in fairseq.
+     """
+
+    def __init__(self, embedding_dim, pos_conv_kernel=128, pos_conv_groups=16):
+        super().__init__()
+        self.embedding_dim = embedding_dim
+        self.pos_conv = torch.nn.Conv1d(
+            self.embedding_dim,
+            self.embedding_dim,
+            kernel_size=pos_conv_kernel,
+            padding=pos_conv_kernel // 2,
+            groups=pos_conv_groups,
+        )
+        std = math.sqrt((4 * (1.0)) / (pos_conv_kernel * embedding_dim))
+        torch.nn.init.normal_(self.pos_conv.weight, mean=0, std=std)
+        torch.nn.init.constant_(self.pos_conv.bias, 0)
+
+        self.pos_conv = torch.nn.utils.weight_norm(
+            self.pos_conv, name="weight", dim=2
+        )
+        self.pos_conv = torch.nn.Sequential(
+            self.pos_conv, SamePadLayer(pos_conv_kernel), torch.nn.GELU()
+        )
+
+    def forward(self, x):
+        x = x.transpose(1, 2)
+        x = self.pos_conv(x)
+        x = x.transpose(1, 2)
+        return x
+
+
+class SamePadLayer(torch.nn.Module):
+    def __init__(self, num_conv_pos_embeddings):
+        super().__init__()
+        self.num_pad_remove = 1 if num_conv_pos_embeddings % 2 == 0 else 0
+
+    def forward(self, hidden_states):
+        if self.num_pad_remove > 0:
+            hidden_states = hidden_states[:, :, : -self.num_pad_remove]
+        return hidden_states
 
 
 class ConvolutionFrontEnd(Sequential):
