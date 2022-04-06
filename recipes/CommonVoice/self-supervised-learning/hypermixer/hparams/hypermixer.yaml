@@ -85,7 +85,9 @@ hypermixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     dropout_rate: 0.1
 
 modules:
-    wav2vec2: !ref <wav2vec2>
+    hypermixer: !ref <hypermixer>
+
+MSE_loss: !name:speechbrain.nnet.losses.mse_loss
 
 opt_class: !name:torch.optim.AdamW
     lr: 0 # Will be changed by the scheduler, but we start at 0!
@@ -101,7 +103,7 @@ noam_annealing: !new:speechbrain.nnet.schedulers.NoamScheduler
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
     checkpoints_dir: !ref <save_folder>
     recoverables:
-        wav2vec2: !ref <wav2vec2>
+        hypermixer: !ref <hypermixer>
         scheduler: !ref <noam_annealing>
         counter: !ref <epoch_counter>
 
