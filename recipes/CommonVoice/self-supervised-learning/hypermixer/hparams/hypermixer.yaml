@@ -102,7 +102,7 @@ opt_class: !name:torch.optim.AdamW
 
 noam_annealing: !new:speechbrain.nnet.schedulers.NoamScheduler
     lr_initial: !ref <lr_adam>
-    n_warmup_steps: 25000
+    n_warmup_steps: 100
     model_size: !ref <d_model>
 
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
