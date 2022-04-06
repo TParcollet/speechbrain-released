@@ -124,6 +124,7 @@ class MixAndMLP(nn.Module):
 
 class HyperMixer(nn.Module):
     def __init__(
+        self,
         input_size,
         hidden_size,
         dropout_rate,
