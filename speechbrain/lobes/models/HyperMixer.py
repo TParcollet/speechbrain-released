@@ -122,32 +122,33 @@ class MixAndMLP(nn.Module):
         return src_padding_mask
 
 
-def HyperMixer(
-    input_size,
-    hidden_size,
-    dropout_rate,
-    num_blocks,
-    activation=torch.nn.GELU(),
-    positional_encoding=None,
-    feature_mixing=True,
-    max_length=3000,
-    tied=False,
-):
-    location_mixers = [
-        HyperMixerLayer(hidden_size, hidden_size, tied)
-        for _ in range(num_blocks)
-    ]
-    return MixAndMLP(
+class HyperMixer(nn.Module):
+    def __init__(
         input_size,
         hidden_size,
-        num_blocks,
-        location_mixers,
         dropout_rate,
-        activation,
-        positional_encoding,
-        feature_mixing,
-        max_length,
-    )
+        num_blocks,
+        activation=torch.nn.GELU(),
+        positional_encoding=None,
+        feature_mixing=True,
+        max_length=3000,
+        tied=False,
+    ):
+        location_mixers = [
+            HyperMixerLayer(hidden_size, hidden_size, tied)
+            for _ in range(num_blocks)
+        ]
+        return MixAndMLP(
+            input_size,
+            hidden_size,
+            num_blocks,
+            location_mixers,
+            dropout_rate,
+            activation,
+            positional_encoding,
+            feature_mixing,
+            max_length,
+        )
 
 
 class HyperMixerLayer(nn.Module):
