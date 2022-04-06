@@ -64,7 +64,7 @@ class MixAndMLP(nn.Module):
     def forward(self, x, wav_lens, pad_idx):
 
         # Computing padding masks
-        pad_masks = self.make_mask(x, wav_lens, pad_idx)
+        pad_masks = torch.self.make_mask(x, wav_lens, pad_idx)
 
         # (B, T, F)
         out = self.input_projection(x)
@@ -117,7 +117,7 @@ class MixAndMLP(nn.Module):
         """
 
         abs_len = torch.round(wav_len * src.shape[1])
-        src_padding_mask = ~length_to_mask(abs_len).bool()
+        src_padding_mask = length_to_mask(abs_len).bool()
 
         return src_padding_mask
 
