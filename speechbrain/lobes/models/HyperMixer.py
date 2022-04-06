@@ -41,7 +41,7 @@ class MixAndMLP(nn.Module):
             self.positional_encoding = PositionalEncoding(
                 hidden_size, self.max_length
             )
-        elif self.positional_encoder == "relative_conv":
+        elif self.positional_encoding == "relative_conv":
             self.positional_encoding = PositionalConvEmbedding(hidden_size)
         elif positional_encoding is None:
             pass
