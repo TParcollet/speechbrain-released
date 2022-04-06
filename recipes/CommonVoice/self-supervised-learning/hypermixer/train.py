@@ -49,7 +49,7 @@ class W2VBrain(sb.core.Brain):
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
         feats = self.hparams.compute_features(wavs)
-        out = self.modules.hypermixer(feats)
+        out = self.modules.hypermixer(feats, wav_lens, 0)
 
         return out, feats
 
