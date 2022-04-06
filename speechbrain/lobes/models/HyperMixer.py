@@ -135,6 +135,7 @@ class HyperMixer(nn.Module):
         max_length=3000,
         tied=False,
     ):
+        super().__init__()
         location_mixers = [
             HyperMixerLayer(hidden_size, hidden_size, tied)
             for _ in range(num_blocks)
