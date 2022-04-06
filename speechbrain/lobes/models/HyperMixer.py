@@ -139,7 +139,8 @@ class HyperMixer(nn.Module):
             HyperMixerLayer(hidden_size, hidden_size, tied)
             for _ in range(num_blocks)
         ]
-        return MixAndMLP(
+
+        self.model = MixAndMLP(
             input_size,
             hidden_size,
             num_blocks,
@@ -150,6 +151,10 @@ class HyperMixer(nn.Module):
             feature_mixing,
             max_length,
         )
+
+    def forward(self, x, wav_len, pad_idx=0):
+
+        return self.model(x, wav_len, pad_idx)
 
 
 class HyperMixerLayer(nn.Module):
