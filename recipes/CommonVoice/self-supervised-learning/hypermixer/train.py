@@ -89,7 +89,7 @@ class W2VBrain(sb.core.Brain):
                 self.optimizer.zero_grad()
 
                 # anneal lr every update
-                self.hparams.noam_annealing(self.optimizer)
+                # self.hparams.noam_annealing(self.optimizer)
         else:
             predictions = self.compute_forward(batch, sb.Stage.TRAIN)
             loss = self.compute_objectives(predictions, batch, sb.Stage.TRAIN)
@@ -105,7 +105,7 @@ class W2VBrain(sb.core.Brain):
                 self.optimizer.zero_grad()
 
                 # anneal lr every update
-                self.hparams.noam_annealing(self.optimizer)
+                # self.hparams.noam_annealing(self.optimizer)
 
         return loss.detach()
 
