@@ -80,9 +80,9 @@ epoch_counter: !new:speechbrain.utils.epoch_loop.EpochCounter
 
 hypermixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     input_size: 80
-    hidden_size: 256
-    num_blocks: 4
-    dropout_rate: 0.1
+    hidden_size: 1024
+    num_blocks: 5
+    dropout_rate: 0.0
 
 lin: !new:speechbrain.nnet.linear.Linear
     input_shape: [null, null, 256]
