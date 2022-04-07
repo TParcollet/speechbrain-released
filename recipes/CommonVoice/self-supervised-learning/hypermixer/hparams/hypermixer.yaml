@@ -38,7 +38,7 @@ mask_prob: 0.65
 freeze_wav2vec: False
 
 number_of_epochs: 100
-lr_adam: 2.0 # This will get reduced by the training scheduler
+lr_adam: 0.001 # This will get reduced by the training scheduler
 weight_decay: 0.01
 d_model: 768  # Needed by the scheduler. 768 is for the BASE w2v2
 sorting: ascending
@@ -108,7 +108,6 @@ opt_class: !name:torch.optim.AdamW
 noam_annealing: !new:speechbrain.nnet.schedulers.NoamScheduler
     lr_initial: !ref <lr_adam>
     n_warmup_steps: 100
-    model_size: !ref <d_model>
 
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
     checkpoints_dir: !ref <save_folder>
