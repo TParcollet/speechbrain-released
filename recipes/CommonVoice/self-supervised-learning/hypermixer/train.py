@@ -58,6 +58,8 @@ class W2VBrain(sb.core.Brain):
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss (CTC+NLL) given predictions and targets."""
         out, feats = predictions
+        print(out[0])
+        print(feats[0])
         loss = self.hparams.MSE_loss(out, feats)
 
         return loss
