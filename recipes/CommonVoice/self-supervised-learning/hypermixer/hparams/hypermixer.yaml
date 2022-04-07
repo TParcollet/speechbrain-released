@@ -84,9 +84,10 @@ hypermixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     num_blocks: 4
     dropout_rate: 0.1
 
-lin: !new:speechbrain.lobes.models.VanillaNN.VanillaNN
+lin: !new:speechbrain.nnet.linear.Linear
     input_shape: [null, null, 256]
-    dnn_neurons: 80
+    n_neurons: 80
+    bias: False
 
 modules:
     hypermixer: !ref <hypermixer>
