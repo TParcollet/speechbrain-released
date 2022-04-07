@@ -89,9 +89,13 @@ lin: !new:speechbrain.nnet.linear.Linear
     n_neurons: 80
     bias: False
 
+normalize: !new:speechbrain.processing.features.InputNormalization
+    norm_type: sentence
+
 modules:
     hypermixer: !ref <hypermixer>
     lin: !ref <lin>
+    normalize: !ref <normalize>
 
 MSE_loss: !name:speechbrain.nnet.losses.mse_loss
 
@@ -112,6 +116,7 @@ checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
         hypermixer: !ref <hypermixer>
         scheduler: !ref <noam_annealing>
         counter: !ref <epoch_counter>
+        normalizer: !ref <normalize>
         lin: !ref <lin>
 
 train_logger: !new:speechbrain.utils.train_logger.FileTrainLogger
