@@ -52,6 +52,7 @@ class W2VBrain(sb.core.Brain):
             feats = self.modules.conv_frontend(wavs.unsqueeze(-1))
         else:
             feats = self.hparams.compute_features(wavs)
+            feats = self.modules.normalize(feats, wav_lens)
 
         # print(feats.shape)
         # feats = self.modules.normalize(feats, wav_lens)
