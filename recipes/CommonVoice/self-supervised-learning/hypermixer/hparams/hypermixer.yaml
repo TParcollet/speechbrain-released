@@ -36,7 +36,7 @@ avoid_if_shorter_than: 1.0
 mask_length: 10
 mask_prob: 0.65
 freeze_wav2vec: False
-frontend: 'fastaudio'
+frontend: fastaudio
 frontend_size: 512
 
 number_of_epochs: 100
@@ -86,7 +86,7 @@ conv_frontend: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     input_shape: [null, !ref <sample_rate>, 1]
     num_blocks: 7
     num_layers_per_block: 1
-    out_channels: [512, 512, 512, 512, 512, 512, !ref <frontend_size]
+    out_channels: [512, 512, 512, 512, 512, 512, !ref <frontend_size>]
     kernel_sizes: [11, 3, 3, 3, 3, 3, 3]
     strides: [5, 2, 2, 2, 2, 2, 2]
     dropout: 0.0
@@ -100,14 +100,14 @@ conv_frontend: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     conv_init: kaiming
 
 hypermixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
-    input_size: !ref <frontend_size
+    input_size: !ref <frontend_size>
     hidden_size: 1024
     num_blocks: 5
     dropout_rate: 0.0
 
 lin: !new:speechbrain.nnet.linear.Linear
     input_shape: [null, null, 1024]
-    n_neurons: !ref <frontend_size
+    n_neurons: !ref <frontend_size>
     bias: False
 
 normalize: !new:speechbrain.processing.features.InputNormalization
