@@ -103,6 +103,9 @@ class ConvolutionFrontEnd(Sequential):
         activation=torch.nn.LeakyReLU,
         norm=LayerNorm,
         dropout=0.1,
+        conv_bias=True,
+        padding="same",
+        conv_init="",
     ):
         super().__init__(input_shape=input_shape)
         for i in range(num_blocks):
@@ -119,6 +122,9 @@ class ConvolutionFrontEnd(Sequential):
                 norm=norm,
                 dropout=dropout,
                 layer_name=f"convblock_{i}",
+                conv_bias=conv_bias,
+                padding=padding,
+                conv_init=conv_init,
             )
 
 
@@ -164,6 +170,9 @@ class ConvBlock(torch.nn.Module):
         activation=torch.nn.LeakyReLU,
         norm=None,
         dropout=0.1,
+        conv_bias=True,
+        padding="same",
+        conv_init="",
     ):
         super().__init__()
 
@@ -177,6 +186,9 @@ class ConvBlock(torch.nn.Module):
                 stride=stride if i == num_layers - 1 else 1,
                 dilation=dilation,
                 layer_name=f"conv_{i}",
+                conv_bias=conv_bias,
+                padding=padding,
+                conv_init=conv_init,
             )
             if norm is not None:
                 self.convs.append(norm, layer_name=f"norm_{i}")
