@@ -242,7 +242,7 @@ def dataio_prepare(hparams):
             info.sample_rate, hparams["sample_rate"],
         )(sig)
 
-        features_size = (1, get_output_lengths(torch.as_tensor(sig.size(1))))
+        features_size = (1, get_output_lengths(torch.as_tensor(sig.size(-1))))
         masks = compute_mask(
             features_size, None, hparams["mask_prob"], hparams["mask_length"]
         )
