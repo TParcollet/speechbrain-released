@@ -46,6 +46,8 @@ class W2VBrain(sb.core.Brain):
         """Forward computations from the waveform batches to the w2v2 loss."""
 
         batch = batch.to(self.device)
+        masks = batch.masks
+        print(masks)
         wavs, wav_lens = batch.sig
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
