@@ -96,14 +96,14 @@ conv_frontend: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     conv_init: kaiming
 
 hypermixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
-    input_size: 80
+    input_size: 512
     hidden_size: 1024
     num_blocks: 5
     dropout_rate: 0.0
 
 lin: !new:speechbrain.nnet.linear.Linear
     input_shape: [null, null, 1024]
-    n_neurons: 80
+    n_neurons: 512
     bias: False
 
 normalize: !new:speechbrain.processing.features.InputNormalization
