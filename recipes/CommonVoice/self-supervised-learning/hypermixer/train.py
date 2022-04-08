@@ -47,9 +47,12 @@ class W2VBrain(sb.core.Brain):
 
         batch = batch.to(self.device)
         masks = batch.masks
-        print(masks)
+
         wavs, wav_lens = batch.sig
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
+
+        print(masks)
+        print(wav_lens)
 
         if self.hparams.frontend != "fastaudio":
             feats = self.modules.conv_frontend(wavs.unsqueeze(-1))
@@ -67,8 +70,8 @@ class W2VBrain(sb.core.Brain):
     def compute_objectives(self, predictions, batch, stage):
         """Computes the loss (CTC+NLL) given predictions and targets."""
         out, feats = predictions
-        print(out[0])
-        print(feats[0])
+        # print(out[0])
+        # print(feats[0])
         loss = self.hparams.MSE_loss(out, feats)
 
         return loss
