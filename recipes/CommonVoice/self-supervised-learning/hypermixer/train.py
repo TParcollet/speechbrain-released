@@ -48,9 +48,12 @@ class W2VBrain(sb.core.Brain):
         wavs, wav_lens = batch.sig
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
-        # feats = self.hparams.compute_features(wavs)
-        feats = self.modules.conv_frontend(wavs.unsqueeze(-1))
-        print(feats.shape)
+        if self.hparams.frontend != "fastaudio":
+            feats = self.modules.conv_frontend(wavs.unsqueeze(-1))
+        else:
+            feats = self.hparams.compute_features(wavs)
+
+        # print(feats.shape)
         # feats = self.modules.normalize(feats, wav_lens)
         out = self.modules.hypermixer(feats, wav_lens, 0)
         out = self.modules.lin(out)
