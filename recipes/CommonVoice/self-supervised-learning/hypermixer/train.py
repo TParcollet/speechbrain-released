@@ -232,7 +232,7 @@ def dataio_prepare(hparams):
 
     # 2. Define audio pipeline:
     @sb.utils.data_pipeline.takes("wav")
-    @sb.utils.data_pipeline.provides("sig, masks")
+    @sb.utils.data_pipeline.provides("sig", "masks")
     def audio_pipeline(wav):
         info = torchaudio.info(wav)
         sig = sb.dataio.dataio.read_audio(wav)
