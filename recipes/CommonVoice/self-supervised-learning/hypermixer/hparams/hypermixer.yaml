@@ -89,7 +89,7 @@ conv_frontend: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     num_blocks: 7
     num_layers_per_block: 1
     out_channels: [512, 512, 512, 512, 512, 512, !ref <frontend_size>]
-    kernel_sizes: !ref <kernel_size>
+    kernel_sizes: !ref <kernel_sizes>
     strides: !ref <strides>
     dropout: 0.0
     dilations: [1, 1, 1, 1, 1, 1, 1]
