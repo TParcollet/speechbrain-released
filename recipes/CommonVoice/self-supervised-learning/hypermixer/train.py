@@ -51,8 +51,8 @@ class W2VBrain(sb.core.Brain):
         wavs, wav_lens = batch.sig
         wavs, wav_lens = wavs.to(self.device), wav_lens.to(self.device)
 
-        print(masks)
-        print(wav_lens)
+        # print(masks)
+        # print(wav_lens)
 
         if self.hparams.frontend != "fastaudio":
             feats = self.modules.conv_frontend(wavs.unsqueeze(-1))
