@@ -222,11 +222,13 @@ def dataio_prepare(hparams):
 
     # defining tokenizer and loading it
 
-    def get_output_lengths(self, input_lengths):
+    def get_output_lengths(input_lengths):
         def _conv_out_length(input_length, kernel_size, stride):
             return torch.floor((input_length - kernel_size) / stride + 1)
 
-        for kernel_size, stride in zip(hparams.kernel_sizes, hparams.strides):
+        for kernel_size, stride in zip(
+            hparams["kernel_sizes"], hparams["strides"]
+        ):
             input_lengths = _conv_out_length(input_lengths, kernel_size, stride)
         return input_lengths.to(torch.long)
 
