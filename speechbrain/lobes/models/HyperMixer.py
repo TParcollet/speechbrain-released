@@ -232,7 +232,6 @@ def compute_mask(shape, padding_mask, mask_prob, mask_length):
     else:
         sample_lens = torch.ones(bs, dtype=torch.int32) * padded_sample_len
 
-    print(sample_lens)
     min_sample_len = sample_lens.min()
     # So we dont have ragged tensors number of masks is the same for each sample.
     num_mask = int(
