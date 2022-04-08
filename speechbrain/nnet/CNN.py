@@ -351,6 +351,7 @@ class Conv1d(nn.Module):
         bias=True,
         padding_mode="reflect",
         skip_transpose=False,
+        conv_init="",
     ):
         super().__init__()
         self.kernel_size = kernel_size
@@ -377,6 +378,8 @@ class Conv1d(nn.Module):
             groups=groups,
             bias=bias,
         )
+        if conv_init == "kaiming":
+            nn.init.kaiming_normal_(self.conv.weight)
 
     def forward(self, x):
         """Returns the output of the convolution.
@@ -530,6 +533,7 @@ class Conv2d(nn.Module):
         groups=1,
         bias=True,
         padding_mode="reflect",
+        conv_init="",
     ):
         super().__init__()
 
@@ -565,6 +569,8 @@ class Conv2d(nn.Module):
             groups=groups,
             bias=bias,
         )
+        if conv_init == "kaiming":
+            nn.init.kaiming_normal_(self.conv.weight)
 
     def forward(self, x):
         """Returns the output of the convolution.

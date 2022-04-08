@@ -186,7 +186,7 @@ class ConvBlock(torch.nn.Module):
                 stride=stride if i == num_layers - 1 else 1,
                 dilation=dilation,
                 layer_name=f"conv_{i}",
-                conv_bias=conv_bias,
+                bias=conv_bias,
                 padding=padding,
                 conv_init=conv_init,
             )
