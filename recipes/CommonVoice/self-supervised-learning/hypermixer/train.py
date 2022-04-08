@@ -7,6 +7,7 @@ import speechbrain as sb
 import torchaudio
 from hyperpyyaml import load_hyperpyyaml
 from speechbrain.utils.distributed import run_on_main
+from speechbrain.lobes.models.HyperMixer import compute_mask
 
 """Recipe for pretraining a wav2vec 2.0 model on CommonVoice EN. Note that it can be
 trained with ANY dataset as long as you provide the correct JSON or CSV file.
@@ -221,9 +222,17 @@ def dataio_prepare(hparams):
 
     # defining tokenizer and loading it
 
+    def get_output_lengths(self, input_lengths):
+        def _conv_out_length(input_length, kernel_size, stride):
+            return torch.floor((input_length - kernel_size) / stride + 1)
+
+        for kernel_size, stride in zip(hparams.kernel_sizes, hparams.strides):
+            input_lengths = _conv_out_length(input_lengths, kernel_size, stride)
+        return input_lengths.to(torch.long)
+
     # 2. Define audio pipeline:
     @sb.utils.data_pipeline.takes("wav")
-    @sb.utils.data_pipeline.provides("sig")
+    @sb.utils.data_pipeline.provides("sig, masks")
     def audio_pipeline(wav):
         info = torchaudio.info(wav)
         sig = sb.dataio.dataio.read_audio(wav)
@@ -233,7 +242,11 @@ def dataio_prepare(hparams):
             info.sample_rate, hparams["sample_rate"],
         )(sig)
 
-        return resampled
+        features_size = (1, get_output_lengths(torch.as_tensor(sig.size(1))))
+        masks = compute_mask(
+            features_size, None, hparams["mask_prob"], hparams["mask_length"]
+        )
+        return resampled, masks
 
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
 

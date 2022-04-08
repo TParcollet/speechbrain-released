@@ -6,6 +6,8 @@ Authors
  * Titouan Parcollet 2020
 """
 import torch
+import random
+import numpy as np
 from torch import nn
 from speechbrain.lobes.models.transformer.Transformer import PositionalEncoding
 from speechbrain.lobes.models.convolution import PositionalConvEmbedding
@@ -127,6 +129,7 @@ class HyperMixer(nn.Module):
         self,
         input_size,
         hidden_size,
+        hypernet_size,
         dropout_rate,
         num_blocks,
         activation=torch.nn.GELU(),
@@ -160,10 +163,10 @@ class HyperMixer(nn.Module):
 
 class HyperMixerLayer(nn.Module):
     def __init__(
-        self, embedding_dim: int, hidden_layer_size: int, tied=False
+        self, input_output_dim: int, hypernet_size: int, tied=False
     ) -> None:
         super().__init__()
-        self.hyper = HyperNetwork(embedding_dim, hidden_layer_size, tied=tied)
+        self.hyper = HyperNetwork(input_output_dim, hypernet_size, tied=tied)
         self.activation = nn.GELU()
 
     def forward(self, out, attention_mask):
@@ -179,16 +182,16 @@ class HyperMixerLayer(nn.Module):
 
 class HyperNetwork(nn.Module):
     def __init__(
-        self, embedding_dim: int, hidden_layer_size: int, tied=False
+        self, input_output_dim: int, hypernet_size: int, tied=False
     ) -> None:
         super().__init__()
 
         self.tied = tied
-        self.w1_gen = MLP(embedding_dim, hidden_layer_size)
+        self.w1_gen = MLP(input_output_dim, hypernet_size)
         if self.tied:
             self.w2_gen = self.w1_gen
         else:
-            self.w2_gen = MLP(embedding_dim, hidden_layer_size)
+            self.w2_gen = MLP(input_output_dim, hypernet_size)
 
     def forward(self, position_embeddings: torch.Tensor):
         """
@@ -217,3 +220,53 @@ def _mlp_pass_from_components(out, W1, W2, activation):
     out = activation(out)
     out = torch.bmm(out, W2.transpose(1, 2))
     return out
+
+
+def compute_mask(shape, padding_mask, mask_prob, mask_length):
+    bs, padded_sample_len = shape
+
+    if padding_mask is not None:
+        sample_lens = (padded_sample_len - torch.sum(padding_mask, -1)).type(
+            torch.int32
+        )
+    else:
+        sample_lens = torch.ones(bs, dtype=torch.int32) * padded_sample_len
+
+    print(sample_lens)
+    min_sample_len = sample_lens.min()
+    # So we dont have ragged tensors number of masks is the same for each sample.
+    num_mask = int(
+        mask_prob * min_sample_len / float(mask_length) + random.random()
+    )
+
+    mask_idcs = []
+    for i in range(bs):
+        sample_len = sample_lens[i].item()
+        mask_indices = np.random.choice(
+            sample_len - mask_length, num_mask, replace=False
+        )
+
+        mask_indices = np.asarray(
+            [
+                mask_indices[j] + offset
+                for j in range(len(mask_indices))
+                for offset in range(mask_length)
+            ]
+        )
+        mask_idcs.append(np.unique(mask_indices[mask_indices < sample_len]))
+
+    mask = np.full((bs, padded_sample_len), False)
+    # unique may have caused num masks to go down..
+    num_mask_total = num_mask * mask_length
+    for i, mask_idc in enumerate(mask_idcs):
+        # ..so we dont have ragged tensors we need to make the number of masked elements the same for each sample in the batch
+        if padding_mask is not None and len(mask_idc) < num_mask_total:
+            num_mask_missing = num_mask_total - len(mask_idc)
+            arange = np.arange(sample_lens[i].item())
+            arange = np.delete(arange, mask_idc)
+            extra_indcs = np.random.choice(
+                arange, num_mask_missing, replace=False
+            )
+            mask[i, extra_indcs] = True
+        mask[i, mask_idc] = True
+    return mask

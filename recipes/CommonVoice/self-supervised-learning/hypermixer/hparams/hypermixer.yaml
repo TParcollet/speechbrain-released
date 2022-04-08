@@ -38,6 +38,8 @@ mask_prob: 0.65
 freeze_wav2vec: False
 frontend: fastaudio
 frontend_size: 512
+kernel_sizes: [11, 3, 3, 3, 3, 3, 3]
+strides: [5, 2, 2, 2, 2, 2, 2]
 
 number_of_epochs: 100
 lr_adam: 1.0 # This will get reduced by the training scheduler
@@ -87,8 +89,8 @@ conv_frontend: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     num_blocks: 7
     num_layers_per_block: 1
     out_channels: [512, 512, 512, 512, 512, 512, !ref <frontend_size>]
-    kernel_sizes: [11, 3, 3, 3, 3, 3, 3]
-    strides: [5, 2, 2, 2, 2, 2, 2]
+    kernel_sizes: !ref <kernel_size>
+    strides: !ref <strides>
     dropout: 0.0
     dilations: [1, 1, 1, 1, 1, 1, 1]
     residuals: [False, False, False, False, False, False, False]
