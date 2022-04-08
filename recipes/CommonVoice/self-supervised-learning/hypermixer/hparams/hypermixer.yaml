@@ -104,6 +104,7 @@ conv_frontend: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
 hypermixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     input_size: !ref <frontend_size>
     hidden_size: 1024
+    hypernet_size: 512
     num_blocks: 5
     dropout_rate: 0.0
 
