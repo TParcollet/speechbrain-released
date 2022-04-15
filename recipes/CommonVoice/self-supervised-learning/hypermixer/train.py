@@ -257,6 +257,7 @@ def dataio_prepare(hparams):
         masks = compute_mask(
             features_size, None, hparams["mask_prob"], hparams["mask_length"]
         )
+        print(sig.size(-1))
         print(features_size)
         return resampled, masks
 
