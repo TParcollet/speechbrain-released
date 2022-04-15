@@ -257,7 +257,7 @@ def dataio_prepare(hparams):
         masks = compute_mask(
             features_size, None, hparams["mask_prob"], hparams["mask_length"]
         )
-        print(masks.shape)
+        print(features_size)
         return resampled, masks
 
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
