@@ -55,8 +55,10 @@ class W2VBrain(sb.core.Brain):
         # print(wav_lens)
 
         if self.hparams.frontend != "fastaudio":
+            print("no")
             feats = self.modules.conv_frontend(wavs.unsqueeze(-1))
         else:
+            print("dafuk")
             feats = self.hparams.compute_features(wavs)
             feats = self.modules.normalize(feats, wav_lens)
 
@@ -257,8 +259,7 @@ def dataio_prepare(hparams):
         masks = compute_mask(
             features_size, None, hparams["mask_prob"], hparams["mask_length"]
         )
-        print(sig.size(-1))
-        print(features_size)
+
         return resampled, masks
 
     sb.dataio.dataset.add_dynamic_item(datasets, audio_pipeline)
