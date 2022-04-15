@@ -61,7 +61,9 @@ class W2VBrain(sb.core.Brain):
             feats = self.modules.normalize(feats, wav_lens)
 
         # Apply masking
-        masked_feats = feats * masks[0].unsqueeze(-1)
+        print(feats.shape)
+        print(masks[0].shape)
+        masked_feats = feats * masks[0]
         # print(feats.shape)
         # feats = self.modules.normalize(feats, wav_lens)
         out = self.modules.hypermixer(masked_feats, wav_lens, 0)
