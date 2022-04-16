@@ -121,9 +121,9 @@ compute_features: !new:speechbrain.lobes.features.Fbank
 
 enc: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     input_size: !ref <n_mels>
-    hidden_size: 2048
+    hidden_size: 1024
     hypernet_size: 2048
-    num_blocks: 12
+    num_blocks: 8
     dropout_rate: 0.1
 
 enc2: !new:speechbrain.lobes.models.CRDNN.CRDNN
