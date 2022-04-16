@@ -49,7 +49,7 @@ class ASR(sb.core.Brain):
             if hasattr(self.hparams, "augmentation"):
                 feats = self.hparams.augmentation(feats)
 
-        x = self.modules.enc(feats.detach())
+        x = self.modules.enc(feats.detach(), wav_lens)
         e_in = self.modules.emb(tokens_bos)  # y_in bos + tokens
         h, _ = self.modules.dec(e_in, x, wav_lens)
         # Output layer for seq2seq log-probabilities
