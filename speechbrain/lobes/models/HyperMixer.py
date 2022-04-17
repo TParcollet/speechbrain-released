@@ -9,6 +9,7 @@ import torch
 import random
 import numpy as np
 from torch import nn
+import speechbrain as sb
 from speechbrain.lobes.models.transformer.Transformer import PositionalEncoding
 from speechbrain.lobes.models.convolution import PositionalConvEmbedding
 from speechbrain.dataio.dataio import length_to_mask
@@ -26,6 +27,7 @@ class MixAndMLP(nn.Module):
         positional_encoding=None,
         feature_mixing=True,
         max_length=3000,
+        pooling_layers=None,
     ) -> None:
         super().__init__()
 
@@ -51,6 +53,8 @@ class MixAndMLP(nn.Module):
 
         self.input_projection = nn.Linear(input_size, hidden_size)  # TOTEST
         self.lms = nn.ModuleList(location_mixers)
+        self.pooling_layers = nn.NoduleList(pooling_layers)
+
         self.mlps = nn.ModuleList(
             [MLP(hidden_size, hidden_size) for _ in range(num_blocks)]
         )
@@ -75,7 +79,9 @@ class MixAndMLP(nn.Module):
         if self.positional_encoding is not None:
             out = out + self.positional_encoding(out)
 
-        for ln1, lm, ln2, mlp in zip(self.ln1s, self.lms, self.ln2s, self.mlps):
+        for ln1, lm, ln2, mlp, pool in zip(
+            self.ln1s, self.lms, self.ln2s, self.mlps, self.pooling_layers
+        ):
 
             masked_input = out * pad_masks
             out = ln1(masked_input)
@@ -90,6 +96,9 @@ class MixAndMLP(nn.Module):
             if self.feature_mixing:
                 out = ln2(out)
                 out = masked_input + mlp(out)
+
+            # pool
+            out = pool(out)
 
         # (B, F, T)
         # out = out.permute(0, 2, 1)
@@ -137,11 +146,19 @@ class HyperMixer(nn.Module):
         feature_mixing=True,
         max_length=3000,
         tied=False,
+        inter_layer_pooling_size=None,
     ):
         super().__init__()
         location_mixers = [
             HyperMixerLayer(hidden_size, hidden_size, tied)
             for _ in range(num_blocks)
+        ]
+
+        pooling_layers = [
+            sb.nnet.pooling.Pooling1d(
+                pool_type="max", input_dims=3, kernel_size=size, pool_axis=1,
+            )
+            for size in inter_layer_pooling_size
         ]
 
         self.model = MixAndMLP(
@@ -154,6 +171,7 @@ class HyperMixer(nn.Module):
             positional_encoding,
             feature_mixing,
             max_length,
+            pooling_layers,
         )
 
     def forward(self, x, wav_len, pad_idx=0):
