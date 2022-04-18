@@ -125,6 +125,7 @@ enc: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     hypernet_size: 2048
     num_blocks: 12
     dropout_rate: 0.1
+    inter_layer_pooling_size: [1, 1, 2, 2, 2, 1, 1]
 
 enc2: !new:speechbrain.lobes.models.CRDNN.CRDNN
     input_shape: [null, null, !ref <n_mels>]
