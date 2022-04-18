@@ -79,11 +79,12 @@ class MixAndMLP(nn.Module):
         if self.positional_encoding is not None:
             out = out + self.positional_encoding(out)
 
+        masked_input = out * pad_masks
+
         for ln1, lm, ln2, mlp, pool in zip(
             self.ln1s, self.lms, self.ln2s, self.mlps, self.pooling_layers
         ):
 
-            masked_input = out * pad_masks
             out = ln1(masked_input)
             out = self.dropout(out)
             out = out.transpose(1, 2)
