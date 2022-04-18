@@ -53,7 +53,7 @@ class MixAndMLP(nn.Module):
 
         self.input_projection = nn.Linear(input_size, hidden_size)  # TOTEST
         self.lms = nn.ModuleList(location_mixers)
-        self.pooling_layers = nn.NoduleList(pooling_layers)
+        self.pooling_layers = nn.ModuleList(pooling_layers)
 
         self.mlps = nn.ModuleList(
             [MLP(hidden_size, hidden_size) for _ in range(num_blocks)]
