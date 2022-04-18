@@ -206,7 +206,7 @@ opt_class: !name:torch.optim.AdamW
     lr: 0 # Will be changed by the scheduler, but we start at 0!
     betas: (0.9, 0.98)
     eps: 0.000000001
-    weight_decay: 0.01
+    # weight_decay: 0.01
 
 # lr_annealing: !new:speechbrain.nnet.schedulers.NewBobScheduler
 #    initial_value: !ref <lr>
