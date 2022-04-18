@@ -122,8 +122,6 @@ class ASR(sb.core.Brain):
 
         should_step = self.step % self.grad_accumulation_factor == 0
         # Managing automatic mixed precision
-        print(self.step)
-        print(self.grad_accumulation_factor)
         if self.auto_mix_prec:
             self.optimizer.zero_grad()
             with torch.cuda.amp.autocast():
@@ -138,7 +136,6 @@ class ASR(sb.core.Brain):
                 self.optimizer_step += 1
 
                 # anneal lr every update
-                print(self.hparams.lr_annealing.current_lr)
                 self.hparams.lr_annealing(self.optimizer)
         else:
             outputs = self.compute_forward(batch, sb.Stage.TRAIN)
@@ -151,7 +148,6 @@ class ASR(sb.core.Brain):
                 self.optimizer_step += 1
 
                 # anneal lr every update
-                print(self.hparams.lr_annealing.current_lr)
                 self.hparams.lr_annealing(self.optimizer)
 
         return loss.detach().cpu()
