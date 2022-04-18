@@ -122,6 +122,8 @@ class ASR(sb.core.Brain):
 
         should_step = self.step % self.grad_accumulation_factor == 0
         # Managing automatic mixed precision
+        print(self.step)
+        print(self.grad_accumulation_factor)
         if self.auto_mix_prec:
             self.optimizer.zero_grad()
             with torch.cuda.amp.autocast():
