@@ -100,6 +100,7 @@ conv_frontend: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     conv_bias: False
     padding: valid
     conv_init: kaiming
+    inter_layer_pooling_size: [1, 1, 2, 2, 2, 1, 1]
 
 hypermixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     input_size: !ref <frontend_size>
