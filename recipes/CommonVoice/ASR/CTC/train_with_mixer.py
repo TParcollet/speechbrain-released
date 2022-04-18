@@ -277,6 +277,7 @@ if __name__ == "__main__":
         modules=hparams["modules"],
         hparams=hparams,
         run_opts=run_opts,
+        opt_class=hparams["model_opt_class"],
         checkpointer=hparams["checkpointer"],
     )
 
