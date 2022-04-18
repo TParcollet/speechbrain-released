@@ -114,7 +114,7 @@ class ASR(sb.core.Brain):
                 stage_stats["loss"]
             )
             sb.nnet.schedulers.update_learning_rate(
-                self.model_optimizer, new_lr_model
+                self.optimizer, new_lr_model
             )
             self.hparams.train_logger.log_stats(
                 stats_meta={"epoch": epoch, "lr_model": old_lr_model},
