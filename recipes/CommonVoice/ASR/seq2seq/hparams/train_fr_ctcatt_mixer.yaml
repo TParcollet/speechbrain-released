@@ -119,13 +119,22 @@ compute_features: !new:speechbrain.lobes.features.Fbank
     n_fft: !ref <n_fft>
     n_mels: !ref <n_mels>
 
+CNN: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
+    input_shape: (8, 10, 80)
+    num_blocks: 3
+    num_layers_per_block: 1
+    out_channels: (64, 64, 64)
+    kernel_sizes: (5, 5, 1)
+    strides: (2, 2, 1)
+    residuals: (False, False, True)
+
 enc: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
-    input_size: !ref <n_mels>
+    input_size: 1280
     hidden_size: 1024
     hypernet_size: 2048
     num_blocks: 12
     dropout_rate: 0.1
-    inter_layer_pooling_size: [1, 1, 2, 2, 2, 1, 1]
+    inter_layer_pooling_size: [1, 1, 1, 1, 1, 1, 1]
 
 enc2: !new:speechbrain.lobes.models.CRDNN.CRDNN
     input_shape: [null, null, !ref <n_mels>]
@@ -182,6 +191,7 @@ seq_cost: !name:speechbrain.nnet.losses.nll_loss
     label_smoothing: 0.1
 
 modules:
+    CNN: !ref <CNN>
     enc: !ref <enc>
     emb: !ref <emb>
     dec: !ref <dec>
