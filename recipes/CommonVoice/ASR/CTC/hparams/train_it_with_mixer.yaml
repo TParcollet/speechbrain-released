@@ -65,7 +65,7 @@ dnn_neurons: 1024
 dropout: 0.15
 
 # Outputs
-output_neurons: 1000  # BPE size, index(blank/eos/bos) = 0
+output_neurons: 28  # BPE size, index(blank/eos/bos) = 0
 
 # Decoding parameters
 # Be sure that the bos and eos index match with the BPEs ones
