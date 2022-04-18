@@ -154,6 +154,7 @@ class HyperMixer(nn.Module):
             for _ in range(num_blocks)
         ]
 
+        print(inter_layer_pooling_size)
         pooling_layers = [
             sb.nnet.pooling.Pooling1d(
                 pool_type="max", input_dims=3, kernel_size=size, pool_axis=1,
