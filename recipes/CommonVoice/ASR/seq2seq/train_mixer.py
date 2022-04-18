@@ -49,9 +49,7 @@ class ASR(sb.core.Brain):
             if hasattr(self.hparams, "augmentation"):
                 feats = self.hparams.augmentation(feats)
 
-        print(feats.shape)
         x = self.modules.CNN(feats.detach())
-        print(x.shape)
         x = self.modules.enc(x, wav_lens)
         e_in = self.modules.emb(tokens_bos)  # y_in bos + tokens
         h, _ = self.modules.dec(e_in, x, wav_lens)
