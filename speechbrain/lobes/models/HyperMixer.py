@@ -69,6 +69,11 @@ class MixAndMLP(nn.Module):
 
     def forward(self, x, wav_lens, pad_idx):
 
+        # reshpae the src vector to [Batch, Time, Fea] is a 4d vector is given
+        if x.ndim == 4:
+            bz, t, ch1, ch2 = x.shape
+            x = x.view(bz, t, ch1 * ch2)
+
         # Computing padding masks
         pad_masks = self.make_mask(x, wav_lens, pad_idx).unsqueeze(-1)
 
