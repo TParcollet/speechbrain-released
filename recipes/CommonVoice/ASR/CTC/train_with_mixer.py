@@ -50,7 +50,10 @@ class ASR(sb.core.Brain):
         feats = self.hparams.compute_features(wavs)
         feats = self.hparams.normalize(feats.detach(), wav_lens)
         x = self.modules.CNN(feats)
-        x = self.modules.mixer(x, wav_lens)
+        if self.hparams.is_mixer:
+            x = self.modules.mixer(x, wav_lens)
+        else:
+            x = self.modules.mixer(x)
         x = self.modules.enc(x)
         logits = self.modules.ctc_lin(x)
         p_ctc = self.hparams.log_softmax(logits)
