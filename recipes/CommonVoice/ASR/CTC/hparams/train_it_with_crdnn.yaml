@@ -116,7 +116,6 @@ mixer: !new:speechbrain.lobes.models.CRDNN.CRDNN
     cnn_blocks: 0
     time_pooling: False
     using_2d_pooling: False
-    time_pooling_size: !ref <time_pooling_size>
     rnn_class: !name:speechbrain.nnet.RNN.LSTM
     rnn_layers: 5
     rnn_neurons: 1024
