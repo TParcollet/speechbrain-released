@@ -41,6 +41,7 @@ ckpt_interval_minutes: 30 # save checkpoint every N min
 # Must be 8 per GPU to fit 32GB of VRAM
 batch_size: 12
 test_batch_size: 4
+is_mixer: True
 
 dataloader_options:
     batch_size: !ref <batch_size>
