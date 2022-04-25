@@ -113,7 +113,7 @@ compute_features: !new:speechbrain.lobes.features.Fbank
 mixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     input_size: 1280
     hidden_size: 2048
-    hypernet_size: 2048
+    hypernet_size: 1024
     num_blocks: 12
     dropout_rate: !ref <dropout>
     inter_layer_pooling_size: [1, 1, 1, 1, 1, 1, 1]
