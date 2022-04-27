@@ -74,6 +74,18 @@ class ASR(sb.core.Brain):
 
         loss = self.hparams.ctc_cost(p_ctc, tokens, wav_lens, tokens_lens)
 
+        sequence = sb.decoders.ctc_greedy_decode(
+            p_ctc, wav_lens, blank_id=self.hparams.blank_index
+        )
+        predicted_words = self.tokenizer(sequence, task="decode_from_list")
+
+        # Convert indices to words
+        target_words = undo_padding(tokens, tokens_lens)
+        target_words = self.tokenizer(target_words, task="decode_from_list")
+
+        print(target_words)
+        print(predicted_words)
+
         if stage != sb.Stage.TRAIN:
             # Decode token terms to words
             sequence = sb.decoders.ctc_greedy_decode(
@@ -86,8 +98,6 @@ class ASR(sb.core.Brain):
             target_words = undo_padding(tokens, tokens_lens)
             target_words = self.tokenizer(target_words, task="decode_from_list")
 
-            print(target_words)
-            print(predicted_words)
             self.wer_metric.append(ids, predicted_words, target_words)
             self.cer_metric.append(ids, predicted_words, target_words)
 
