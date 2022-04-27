@@ -116,7 +116,6 @@ mixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     hypernet_size: 1536
     num_blocks: 10
     dropout_rate: !ref <dropout>
-    inter_layer_pooling_size: [1, 1, 1, 1, 1, 1, 1]
 
 CNN: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     input_shape: (null, null, 80)
