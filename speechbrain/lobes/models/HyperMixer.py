@@ -86,9 +86,7 @@ class MixAndMLP(nn.Module):
 
         masked_input = out * pad_masks
 
-        for ln1, lm, ln2, mlp, pool in zip(
-            self.ln1s, self.lms, self.ln2s, self.mlps, self.pooling_layers
-        ):
+        for ln1, lm, ln2, mlp in zip(self.ln1s, self.lms, self.ln2s, self.mlps):
 
             out = ln1(masked_input)
             out = self.dropout(out)
