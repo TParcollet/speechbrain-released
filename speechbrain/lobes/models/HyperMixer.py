@@ -23,7 +23,7 @@ class MixAndMLP(nn.Module):
         location_mixers: list,
         dropout_rate: float,
         activation=torch.nn.GELU(),
-        positional_encoding=None,
+        positional_encoding="fixed_abs_sine",
         feature_mixing=True,
         max_length=3000,
         pooling_layers=None,
