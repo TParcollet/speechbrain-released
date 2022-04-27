@@ -81,6 +81,7 @@ class MixAndMLP(nn.Module):
 
         # add pos embeddings
         if self.positional_encoding is not None:
+            print("pos")
             out = out + self.positional_encoding(out)
 
         masked_input = out
