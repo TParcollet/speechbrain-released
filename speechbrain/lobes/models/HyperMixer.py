@@ -39,7 +39,7 @@ class MixAndMLP(nn.Module):
         self.dropout_rate = dropout_rate
 
         self.positional_encoding = positional_encoding
-        assert self.positional_encoding in ["fixed_abs_sine", None]
+
         if self.positional_encoding == "fixed_abs_sine":
             self.positional_encoding = PositionalEncoding(
                 hidden_size, self.max_length
