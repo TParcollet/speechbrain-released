@@ -77,7 +77,7 @@ class MixAndMLP(nn.Module):
         pad_masks = self.make_mask(x, wav_lens, pad_idx).unsqueeze(-1)
 
         # (B, T, F)
-        out = torch.nn.GELU(self.input_projection(x))
+        out = torch.nn.GELU()(self.input_projection(x))
 
         # add pos embeddings
         if self.positional_encoding is not None:
