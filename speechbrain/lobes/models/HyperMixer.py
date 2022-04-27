@@ -104,7 +104,7 @@ class MixAndMLP(nn.Module):
                 out = masked_input + mlp(out)
 
             # pool
-            out = pool(out)
+            # out = pool(out)
 
         # (B, F, T)
         # out = out.permute(0, 2, 1)
