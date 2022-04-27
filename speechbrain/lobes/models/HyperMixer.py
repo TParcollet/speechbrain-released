@@ -9,7 +9,6 @@ import torch
 import random
 import numpy as np
 from torch import nn
-import speechbrain as sb
 from speechbrain.lobes.models.transformer.Transformer import PositionalEncoding
 from speechbrain.lobes.models.convolution import PositionalConvEmbedding
 from speechbrain.dataio.dataio import length_to_mask
@@ -158,12 +157,14 @@ class HyperMixer(nn.Module):
             for _ in range(num_blocks)
         ]
 
-        pooling_layers = [
-            sb.nnet.pooling.Pooling1d(
-                pool_type="max", input_dims=3, kernel_size=size, pool_axis=1,
-            )
-            for size in inter_layer_pooling_size
-        ]
+        pooling_layers = None
+
+        # pooling_layers = [
+        #    sb.nnet.pooling.Pooling1d(
+        #        pool_type="max", input_dims=3, kernel_size=size, pool_axis=1,
+        #    )
+        #    for size in inter_layer_pooling_size
+        # ]
 
         self.model = MixAndMLP(
             input_size,
