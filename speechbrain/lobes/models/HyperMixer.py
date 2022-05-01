@@ -105,7 +105,7 @@ class MixAndMLP(nn.Module):
             # out = pool(out)
 
         # (B, F, T)
-        # out = out.permute(0, 2, 1)
+        out = out.permute(0, 2, 1)
 
         # if self.mode == "max_pooling":
         #    out = torch.max(out, 2)[0]
