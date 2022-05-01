@@ -85,7 +85,6 @@ class MixAndMLP(nn.Module):
 
         masked_input = out
         # masked_input = out * pad_masks
-        print(out.shape)
         for ln1, lm, ln2, mlp in zip(self.ln1s, self.lms, self.ln2s, self.mlps):
 
             out = ln1(masked_input)
@@ -105,9 +104,7 @@ class MixAndMLP(nn.Module):
             # out = pool(out)
 
         # (B, F, T)
-        print(out.shape)
-        out = out.permute(0, 2, 1)
-        print(out.shape)
+        # out = out.permute(0, 2, 1)
 
         # if self.mode == "max_pooling":
         #    out = torch.max(out, 2)[0]
@@ -234,11 +231,11 @@ class HyperNetwork(nn.Module):
 
 def MLP(in_dim: int, h_dim: int) -> nn.Module:
     return nn.Sequential(
-        nn.Linear(in_dim, h_dim, bias=False),
+        nn.Linear(in_dim, h_dim, bias=True),
         nn.GELU(),
-        nn.Linear(in_dim, h_dim, bias=False),
+        nn.Linear(in_dim, h_dim, bias=True),
         nn.GELU(),
-        nn.Linear(h_dim, in_dim, bias=False),
+        nn.Linear(h_dim, in_dim, bias=True),
     )
 
 
