@@ -85,7 +85,7 @@ class MixAndMLP(nn.Module):
 
         masked_input = out
         # masked_input = out * pad_masks
-
+        print(out.shape)
         for ln1, lm, ln2, mlp in zip(self.ln1s, self.lms, self.ln2s, self.mlps):
 
             out = ln1(masked_input)
@@ -105,7 +105,9 @@ class MixAndMLP(nn.Module):
             # out = pool(out)
 
         # (B, F, T)
+        print(out.shape)
         out = out.permute(0, 2, 1)
+        print(out.shape)
 
         # if self.mode == "max_pooling":
         #    out = torch.max(out, 2)[0]
