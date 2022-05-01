@@ -52,12 +52,12 @@ class ASR(sb.core.Brain):
         x = self.modules.CNN(feats)
         if self.hparams.is_mixer:
             x = self.modules.mixer(x, wav_lens)
-            x = self.modules.enc(x)
         else:
             if x.ndim == 4:
                 bz, t, ch1, ch2 = x.shape
                 x = x.view(bz, t, ch1 * ch2)
             x = self.modules.mixer(x)
+            x = self.modules.enc(x)
         logits = self.modules.ctc_lin(x)
         p_ctc = self.hparams.log_softmax(logits)
 

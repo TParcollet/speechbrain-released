@@ -127,7 +127,7 @@ CNN: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     residuals: (False, False, True)
 
 ctc_lin: !new:speechbrain.nnet.linear.Linear
-    input_size: !ref <mixer_output_dim>
+    input_size: !ref <dnn_neurons>
     n_neurons: !ref <output_neurons>
 
 log_softmax: !new:speechbrain.nnet.activations.Softmax
