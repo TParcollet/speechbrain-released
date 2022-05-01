@@ -232,9 +232,13 @@ class HyperNetwork(nn.Module):
 
 def MLP(in_dim: int, h_dim: int) -> nn.Module:
     return nn.Sequential(
-        nn.Linear(in_dim, h_dim, bias=False),
+        nn.Linear(in_dim, h_dim, bias=True),
         nn.GELU(),
-        nn.Linear(h_dim, in_dim, bias=False),
+        nn.Linear(h_dim, h_dim, bias=True),
+        nn.GELU(),
+        nn.Linear(h_dim, h_dim, bias=True),
+        nn.GELU(),
+        nn.Linear(h_dim, in_dim, bias=True),
     )
 
 
