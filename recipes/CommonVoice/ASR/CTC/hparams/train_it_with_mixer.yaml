@@ -61,7 +61,7 @@ n_mels: 80
 
 # Model parameters
 activation: !name:torch.nn.LeakyReLU
-mixer_output_dim: 1536
+mixer_output_dim: 1024
 dnn_neurons: 1024
 dropout: 0.15
 
@@ -88,13 +88,6 @@ enc: !new:speechbrain.nnet.containers.Sequential
     bn1: !name:speechbrain.nnet.normalization.LayerNorm
     activation: !new:torch.nn.LeakyReLU
     drop: !new:torch.nn.Dropout
-        p: !ref <dropout>
-    linear2: !name:speechbrain.nnet.linear.Linear
-        n_neurons: !ref <dnn_neurons>
-        bias: True
-    bn2: !name:speechbrain.nnet.normalization.LayerNorm
-    activation2: !new:torch.nn.LeakyReLU
-    drop2: !new:torch.nn.Dropout
         p: !ref <dropout>
     linear3: !name:speechbrain.nnet.linear.Linear
         n_neurons: !ref <dnn_neurons>
