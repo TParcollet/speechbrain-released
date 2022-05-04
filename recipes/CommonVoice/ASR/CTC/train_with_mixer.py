@@ -57,7 +57,7 @@ class ASR(sb.core.Brain):
                 bz, t, ch1, ch2 = x.shape
                 x = x.view(bz, t, ch1 * ch2)
             x = self.modules.mixer(x)
-            x = self.modules.enc(x)
+        x = self.modules.enc(x)
         logits = self.modules.ctc_lin(x)
         p_ctc = self.hparams.log_softmax(logits)
 
