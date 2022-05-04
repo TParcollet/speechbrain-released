@@ -223,8 +223,8 @@ class HyperNetwork(nn.Module):
         W1 : N -> k and W2 : k -> N, so it has to return W1 and W2
         """
 
-        W1 = self.w1_gen(position_embeddings)
-        W2 = self.w2_gen(position_embeddings)
+        W1 = self.w1_gen(position_embeddings) / position_embeddings.size(1)
+        W2 = self.w2_gen(position_embeddings) / position_embeddings.size(1)
 
         return W1, W2
 
