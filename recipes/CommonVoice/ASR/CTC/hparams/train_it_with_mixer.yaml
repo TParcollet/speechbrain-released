@@ -112,9 +112,9 @@ compute_features: !new:speechbrain.lobes.features.Fbank
 
 mixer: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     input_size: 1280
-    hidden_size: 1536
-    hypernet_size: 1536
-    num_blocks: 10
+    hidden_size: 1024
+    hypernet_size: 1024
+    num_blocks: 14
     dropout_rate: !ref <dropout>
 
 CNN: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
