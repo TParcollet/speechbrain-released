@@ -74,7 +74,7 @@ class MixAndMLP(nn.Module):
             x = x.view(bz, t, ch1 * ch2)
 
         # Computing padding masks
-        pad_masks = self.make_mask(x, wav_lens, pad_idx).unsqueeze(-1)
+        # pad_masks = self.make_mask(x, wav_lens, pad_idx).unsqueeze(-1)
 
         # (B, T, F)
         out = torch.nn.GELU()(self.input_projection(x))
@@ -94,9 +94,9 @@ class MixAndMLP(nn.Module):
             out = out.transpose(1, 2)
             # (B, F, T)
             if not return_weights:
-                out = lm(out, pad_masks, return_weights)
+                out = lm(out, return_weights)
             else:
-                out, w1, w2 = lm(out, pad_masks, return_weights)
+                out, w1, w2 = lm(out, return_weights)
                 W1.append(w1)
                 W2.append(w2)
             out = out.transpose(1, 2)
