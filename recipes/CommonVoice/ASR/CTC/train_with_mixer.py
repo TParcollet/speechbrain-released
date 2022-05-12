@@ -58,7 +58,7 @@ class ASR(sb.core.Brain):
                     pad_idx=0,
                     return_weights=self.hparams.return_weights,
                 )
-                print(W2.shape)
+                print(W2[0].shape)
             else:
                 x = self.modules.mixer(
                     x,
