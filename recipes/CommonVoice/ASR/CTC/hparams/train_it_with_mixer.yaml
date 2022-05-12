@@ -42,6 +42,7 @@ ckpt_interval_minutes: 30 # save checkpoint every N min
 batch_size: 12
 test_batch_size: 4
 is_mixer: True
+return_weights: False
 
 dataloader_options:
     batch_size: !ref <batch_size>
