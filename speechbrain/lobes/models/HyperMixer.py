@@ -66,7 +66,7 @@ class MixAndMLP(nn.Module):
         )
         self.dropout = nn.Dropout(dropout_rate)
 
-    def forward(self, x, wav_lens, pad_idx):
+    def forward(self, x, wav_lens, pad_idx, return_weights=False):
 
         # reshpae the src vector to [Batch, Time, Fea] is a 4d vector is given
         if x.ndim == 4:
@@ -84,10 +84,17 @@ class MixAndMLP(nn.Module):
             out = out + self.positional_encoding(out)
 
         masked_input = out
+        W1 = []
+        W2 = []
         # masked_input = out * pad_masks
         for ln1, lm, ln2, mlp in zip(self.ln1s, self.lms, self.ln2s, self.mlps):
 
-            out = ln1(masked_input)
+            if not return_weights:
+                out = ln1(masked_input, return_weights)
+            else:
+                out, w1, w2 = ln1(masked_input, return_weights)
+                W1.append(w1)
+                W2.append(w2)
             out = self.dropout(out)
             out = out.transpose(1, 2)
             # (B, F, T)
@@ -114,8 +121,10 @@ class MixAndMLP(nn.Module):
         #    out = out.sum(1) / length.unsqueeze(-1)
         # else:
         #    out = out[:, :, 0]
-
-        return out
+        if not return_weights:
+            return out
+        else:
+            return out, W1, W2
 
     def make_mask(self, src, wav_len, pad_idx=0):
         """This method generates the masks for training the HyperMixer model.
@@ -179,9 +188,9 @@ class HyperMixer(nn.Module):
             pooling_layers,
         )
 
-    def forward(self, x, wav_len, pad_idx=0):
+    def forward(self, x, wav_len, pad_idx=0, return_weights=False):
 
-        return self.model(x, wav_len, pad_idx)
+        return self.model(x, wav_len, pad_idx, return_weights)
 
 
 class HyperMixerLayer(nn.Module):
@@ -192,7 +201,7 @@ class HyperMixerLayer(nn.Module):
         self.hyper = HyperNetwork(input_output_dim, hypernet_size, tied=tied)
         self.activation = nn.GELU()
 
-    def forward(self, out, attention_mask):
+    def forward(self, out, attention_mask, return_weights=False):
 
         # add position embedding before passing to hypernetwork
         hyp_input = out.transpose(1, 2)
@@ -200,7 +209,10 @@ class HyperMixerLayer(nn.Module):
 
         # we stick MLP1 together manually
         out = _mlp_pass_from_components(out, W1, W2, self.activation)
-        return out
+        if not return_weights:
+            return out
+        else:
+            return out, W1, W2
 
 
 class HyperNetwork(nn.Module):
