@@ -53,7 +53,7 @@ class ASR(sb.core.Brain):
         if self.hparams.is_mixer:
             if self.hparams.return_weights:
                 x, W1, W2 = self.modules.mixer(
-                    x, wav_lens, self.hparams.return_weights
+                    x, wav_lens, 0, self.hparams.return_weights
                 )
                 print(W2.shape)
             else:
