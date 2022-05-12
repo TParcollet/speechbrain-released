@@ -16,7 +16,7 @@ train_log: !ref <output_folder>/train_log.txt
 # Data files
 data_folder: !PLACEHOLDER  # e.g, /localscratch/cv-corpus-5.1-2020-06-22/it
 train_tsv_file: !ref <data_folder>/train.tsv  # Standard CommonVoice .tsv files
-dev_tsv_file: !ref <data_folder>/dev.tsv  # Standard CommonVoice .tsv files
+dev_tsv_file: !ref <data_folder>/train.tsv  # Standard CommonVoice .tsv files
 test_tsv_file: !ref <data_folder>/test.tsv  # Standard CommonVoice .tsv files
 accented_letters: False
 language: it # use 'it' for Italian, 'rw' for Kinyarwanda, 'en' for english
