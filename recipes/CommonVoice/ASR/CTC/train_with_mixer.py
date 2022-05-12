@@ -57,7 +57,9 @@ class ASR(sb.core.Brain):
                 )
                 print(W2.shape)
             else:
-                x = self.modules.mixer(x, wav_lens, self.hparams.return_weights)
+                x = self.modules.mixer(
+                    x, wav_lens, 0, self.hparams.return_weights
+                )
         else:
             if x.ndim == 4:
                 bz, t, ch1, ch2 = x.shape
