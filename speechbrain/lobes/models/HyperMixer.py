@@ -190,7 +190,7 @@ class HyperMixer(nn.Module):
 
     def forward(self, x, wav_len, pad_idx=0, return_weights=False):
 
-        return self.model(x, wav_len, pad_idx=pad_idx)
+        return self.model(x, wav_len, pad_idx, return_weights)
 
 
 class HyperMixerLayer(nn.Module):
