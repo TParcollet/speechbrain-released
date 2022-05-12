@@ -89,16 +89,16 @@ class MixAndMLP(nn.Module):
         # masked_input = out * pad_masks
         for ln1, lm, ln2, mlp in zip(self.ln1s, self.lms, self.ln2s, self.mlps):
 
-            if not return_weights:
-                out = ln1(masked_input, return_weights)
-            else:
-                out, w1, w2 = ln1(masked_input, return_weights)
-                W1.append(w1)
-                W2.append(w2)
+            out = ln1(masked_input)
             out = self.dropout(out)
             out = out.transpose(1, 2)
             # (B, F, T)
-            out = lm(out, pad_masks)
+            if not return_weights:
+                out = lm(out, pad_masks, return_weights)
+            else:
+                out, w1, w2 = lm(out, pad_masks, return_weights)
+                W1.append(w1)
+                W2.append(w2)
             out = out.transpose(1, 2)
             # (B, T, F)
             out = masked_input + out
