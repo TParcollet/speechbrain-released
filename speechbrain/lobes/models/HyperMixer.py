@@ -201,7 +201,7 @@ class HyperMixerLayer(nn.Module):
         self.hyper = HyperNetwork(input_output_dim, hypernet_size, tied=tied)
         self.activation = nn.GELU()
 
-    def forward(self, out, attention_mask, return_weights=False):
+    def forward(self, out, return_weights=False):
 
         # add position embedding before passing to hypernetwork
         hyp_input = out.transpose(1, 2)
