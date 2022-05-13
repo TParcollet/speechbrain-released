@@ -12,6 +12,7 @@ from torch import nn
 from speechbrain.lobes.models.transformer.Transformer import PositionalEncoding
 from speechbrain.lobes.models.convolution import PositionalConvEmbedding
 from speechbrain.dataio.dataio import length_to_mask
+import matplotlib.pyplot as plt
 
 
 class MixAndMLP(nn.Module):
@@ -256,6 +257,12 @@ def _mlp_pass_from_components(out, W1, W2, activation):
     out = torch.bmm(out, W1)
     out = activation(out)
     out = torch.bmm(out, W2.transpose(1, 2))
+    fig = plt.figure()
+    plt.imshow(out[0].cpu().numpy(), cmap="hot", interpolation="nearest")
+    fig.savefig(
+        "results/mixer_cv_it_train_val/" + str(out[0][0][0]) + ".png",
+        dpi=fig.dpi,
+    )
     return out
 
 
