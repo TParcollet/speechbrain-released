@@ -8,6 +8,7 @@ from hyperpyyaml import load_hyperpyyaml
 from speechbrain.tokenizers.SentencePiece import SentencePiece
 from speechbrain.utils.data_utils import undo_padding
 from speechbrain.utils.distributed import run_on_main
+import matplotlib.pyplot as plt
 
 """Recipe for training a sequence-to-sequence ASR system with CommonVoice.
 The system employs a wav2vec2 encoder and a CTC decoder.
@@ -73,6 +74,13 @@ class ASR(sb.core.Brain):
         x = self.modules.enc(x)
         logits = self.modules.ctc_lin(x)
         p_ctc = self.hparams.log_softmax(logits)
+
+        if stage != sb.Stage.Train:
+            fig = plt.figure()
+            plt.imshow(W2[0][0].numpy(), cmap="hot", interpolation="nearest")
+            fig.savefig(
+                self.hparams.save_dir + str(self.steps) + ".png", dpi=fig.dpi
+            )
 
         return p_ctc, wav_lens
 
