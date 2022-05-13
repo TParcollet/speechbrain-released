@@ -600,7 +600,7 @@ class Conv2d(nn.Module):
 
         print(x.shape)
         wx = self.conv(x)
-
+        print(wx.shape)
         if self.unsqueeze:
             wx = wx.squeeze(1)
         wx = wx.transpose(1, -1)
