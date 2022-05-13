@@ -598,6 +598,7 @@ class Conv2d(nn.Module):
                 "Padding must be 'same' or 'valid'. Got " + self.padding
             )
 
+        print(x.shape)
         wx = self.conv(x)
 
         if self.unsqueeze:
