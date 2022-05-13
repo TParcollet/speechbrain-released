@@ -81,7 +81,7 @@ class ASR(sb.core.Brain):
                 W2[0][0].cpu().numpy(), cmap="hot", interpolation="nearest"
             )
             fig.savefig(
-                self.hparams.save_folder + str(self.steps) + ".png", dpi=fig.dpi
+                self.hparams.save_folder + str(self.step) + ".png", dpi=fig.dpi
             )
 
         return p_ctc, wav_lens
