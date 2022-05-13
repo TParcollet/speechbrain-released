@@ -256,13 +256,13 @@ def _mlp_pass_from_components(out, W1, W2, activation):
     # we stick MLP1 together manually
     out = torch.bmm(out, W1)
     out = activation(out)
-    out = torch.bmm(out, W2.transpose(1, 2))
     fig = plt.figure()
     plt.imshow(out[0].cpu().numpy(), cmap="hot", interpolation="nearest")
     fig.savefig(
         "results/mixer_cv_it_train_val/" + str(out[0][0][0]) + ".png",
         dpi=fig.dpi,
     )
+    out = torch.bmm(out, W2.transpose(1, 2))
     return out
 
 
