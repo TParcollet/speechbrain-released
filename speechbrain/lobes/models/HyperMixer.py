@@ -12,7 +12,7 @@ from torch import nn
 from speechbrain.lobes.models.transformer.Transformer import PositionalEncoding
 from speechbrain.lobes.models.convolution import PositionalConvEmbedding
 from speechbrain.dataio.dataio import length_to_mask
-from speechbrain.nnet.CNN import Conv2d
+from speechbrain.nnet.CNN import Conv1d
 
 
 class MixAndMLP(nn.Module):
@@ -224,9 +224,9 @@ class HyperNetwork(nn.Module):
 
         self.tied = tied
         # self.w1_gen = MLP(input_output_dim, hypernet_size)
-        self.w1_gen = Conv2d(
+        self.w1_gen = Conv1d(
             input_shape=(None, None, input_output_dim),
-            kernel_size=(input_output_dim - 1, 5),
+            kernel_size=(5),
             out_channels=hypernet_size,
         )
         if self.tied:
@@ -240,7 +240,6 @@ class HyperNetwork(nn.Module):
         The HyperNetwork is supposed to generate an MLP of the form W_2(GELU(W1 x)), where
         W1 : N -> k and W2 : k -> N, so it has to return W1 and W2
         """
-        print(position_embeddings.shape)
         W1 = self.w1_gen(position_embeddings)
         print(W1.shape)
         W2 = self.w2_gen(position_embeddings)
