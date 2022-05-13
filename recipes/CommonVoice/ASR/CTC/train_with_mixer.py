@@ -75,7 +75,7 @@ class ASR(sb.core.Brain):
         logits = self.modules.ctc_lin(x)
         p_ctc = self.hparams.log_softmax(logits)
 
-        if stage != sb.Stage.Train:
+        if stage != sb.Stage.TRAIN:
             fig = plt.figure()
             plt.imshow(W2[0][0].numpy(), cmap="hot", interpolation="nearest")
             fig.savefig(
