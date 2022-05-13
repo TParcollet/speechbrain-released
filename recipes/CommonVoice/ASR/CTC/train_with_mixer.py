@@ -78,7 +78,7 @@ class ASR(sb.core.Brain):
         if stage != sb.Stage.TRAIN:
             fig = plt.figure()
             plt.imshow(
-                W2[0][0].cpu().numpy(), cmap="hot", interpolation="nearest"
+                W1[0][0].cpu().numpy(), cmap="hot", interpolation="nearest"
             )
             fig.savefig(
                 self.hparams.save_folder + str(self.step) + ".png", dpi=fig.dpi
