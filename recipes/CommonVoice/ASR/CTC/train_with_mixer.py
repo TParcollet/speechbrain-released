@@ -84,6 +84,9 @@ class ASR(sb.core.Brain):
                 self.hparams.save_folder + str(self.step) + ".png", dpi=fig.dpi
             )
 
+            tokens, tokens_lens = batch.tokens
+            print(tokens[0])
+
         return p_ctc, wav_lens
 
     def compute_objectives(self, predictions, batch, stage):
