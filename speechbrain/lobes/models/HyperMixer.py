@@ -256,6 +256,7 @@ def _mlp_pass_from_components(out, W1, W2, activation):
     print(out.shape)
     print(W1.shape)
     out = torch.bmm(out, W1)
+    print(out.shape)
     out = activation(out)
     out = torch.bmm(out, W2.transpose(1, 2))
     return out
