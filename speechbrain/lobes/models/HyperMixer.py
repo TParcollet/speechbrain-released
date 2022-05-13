@@ -225,7 +225,9 @@ class HyperNetwork(nn.Module):
         self.tied = tied
         # self.w1_gen = MLP(input_output_dim, hypernet_size)
         self.w1_gen = Conv2d(
-            kernel_size=(5, input_output_dim), out_channels=hypernet_size
+            input_size=(input_output_dim),
+            kernel_size=(5, input_output_dim),
+            out_channels=hypernet_size,
         )
         if self.tied:
             self.w2_gen = self.w1_gen
