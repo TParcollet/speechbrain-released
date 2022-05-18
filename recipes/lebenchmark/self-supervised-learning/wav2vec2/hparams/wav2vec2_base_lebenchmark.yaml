@@ -45,6 +45,7 @@ ckpt_interval_minutes: 1 # save checkpoint every N min
 
 dynamic_batching: True
 dyn_batch_len: 80
+num_workers: 4
 
 # dynamic batching parameters, if used
 dynamic_batch_sampler:
@@ -68,11 +69,11 @@ gradient_accumulation: 8
 
 dataloader_options:
     batch_size: !ref <batch_size>
-    num_workers: 6
+    num_workers: !ref <num_workers>
 
 test_dataloader_options:
     batch_size: !ref <test_batch_size>
-    num_workers: 6
+    num_workers: !ref <num_workers>
 
 #
 # Functions and classes
