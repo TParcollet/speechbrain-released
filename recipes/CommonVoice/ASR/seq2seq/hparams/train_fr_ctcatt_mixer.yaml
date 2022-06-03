@@ -131,29 +131,10 @@ CNN: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
 enc: !new:speechbrain.lobes.models.HyperMixer.HyperMixer
     input_size: 1280
     hidden_size: 1024
-    hypernet_size: 2048
-    num_blocks: 12
+    hypernet_size: 1024
+    num_blocks: 8
     dropout_rate: 0.1
     inter_layer_pooling_size: [1, 1, 1, 1, 1, 1, 1]
-
-enc2: !new:speechbrain.lobes.models.CRDNN.CRDNN
-    input_shape: [null, null, !ref <n_mels>]
-    activation: !ref <activation>
-    dropout: !ref <dropout>
-    cnn_blocks: !ref <cnn_blocks>
-    cnn_channels: !ref <cnn_channels>
-    cnn_kernelsize: !ref <cnn_kernelsize>
-    inter_layer_pooling_size: !ref <inter_layer_pooling_size>
-    time_pooling: True
-    using_2d_pooling: False
-    time_pooling_size: !ref <time_pooling_size>
-    rnn_class: !ref <rnn_class>
-    rnn_layers: !ref <rnn_layers>
-    rnn_neurons: !ref <rnn_neurons>
-    rnn_bidirectional: !ref <rnn_bidirectional>
-    rnn_re_init: True
-    dnn_blocks: !ref <dnn_blocks>
-    dnn_neurons: !ref <dnn_neurons>
 
 emb: !new:speechbrain.nnet.embedding.Embedding
     num_embeddings: !ref <output_neurons>
