@@ -45,9 +45,9 @@ class ASR(sb.core.Brain):
         feats = self.modules.normalize(feats, wav_lens)
 
         ## Add augmentation if specified
-        if stage == sb.Stage.TRAIN:
-            if hasattr(self.hparams, "augmentation"):
-                feats = self.hparams.augmentation(feats)
+        # if stage == sb.Stage.TRAIN:
+        #    if hasattr(self.hparams, "augmentation"):
+        #        feats = self.hparams.augmentation(feats)
 
         x = self.modules.CNN(feats.detach())
         x = self.modules.enc(x, wav_lens)
