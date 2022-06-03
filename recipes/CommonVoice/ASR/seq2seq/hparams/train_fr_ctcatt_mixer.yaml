@@ -76,7 +76,7 @@ emb_size: 128
 dec_neurons: 1024
 
 # Outputs
-output_neurons: 65  # BPE size, index(blank/eos/bos) = 0
+output_neurons: 64  # BPE size, index(blank/eos/bos) = 0
 
 # Decoding parameters
 # Be sure that the bos and eos index match with the BPEs ones
