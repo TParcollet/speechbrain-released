@@ -72,7 +72,7 @@ rnn_neurons: 1024
 rnn_bidirectional: True
 dnn_blocks: 2
 dnn_neurons: 1024
-emb_size: 128
+emb_size: 16
 dec_neurons: 1024
 
 # Outputs
