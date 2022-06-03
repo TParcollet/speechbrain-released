@@ -72,11 +72,11 @@ rnn_neurons: 1024
 rnn_bidirectional: True
 dnn_blocks: 2
 dnn_neurons: 1024
-emb_size: 16
+emb_size: 128
 dec_neurons: 1024
 
 # Outputs
-output_neurons: 28  # BPE size, index(blank/eos/bos) = 0
+output_neurons: 30  # BPE size, index(blank/eos/bos) = 0
 
 # Decoding parameters
 # Be sure that the bos and eos index match with the BPEs ones
