@@ -298,6 +298,8 @@ if __name__ == "__main__":
         vocab_size=hparams["output_neurons"],
         annotation_train=hparams["train_csv"],
         annotation_read="wrd",
+        bos_id=hparams["bos_index"],
+        eos_id=hparams["eos_index"],
         model_type=hparams["token_type"],
         character_coverage=hparams["character_coverage"],
     )
