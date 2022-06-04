@@ -145,10 +145,10 @@ class ASR(sb.core.Brain):
 
         # Perform end-of-iteration things, like annealing, logging, etc.
         if stage == sb.Stage.VALID:
-            lr = self.hparams.lr_annealing.current_lr
-            sb.nnet.schedulers.update_learning_rate(self.optimizer, lr)
+            old_lr, new_lr = self.hparams.lr_annealing(stage_stats["loss"])
+            sb.nnet.schedulers.update_learning_rate(self.optimizer, new_lr)
             self.hparams.train_logger.log_stats(
-                stats_meta={"epoch": epoch, "lr": lr},
+                stats_meta={"epoch": epoch, "lr": new_lr},
                 train_stats=self.train_stats,
                 valid_stats=stage_stats,
             )
