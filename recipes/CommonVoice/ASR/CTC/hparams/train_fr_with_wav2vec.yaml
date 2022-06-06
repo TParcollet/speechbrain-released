@@ -33,7 +33,6 @@ avoid_if_longer_than: 10.0
 
 # Training parameters
 number_of_epochs: 30
-lr: 0.5
 lr_wav2vec: 0.0001
 sorting: ascending
 auto_mix_prec: False
@@ -143,16 +142,16 @@ modules:
 model: !new:torch.nn.ModuleList
     - [!ref <enc>, !ref <ctc_lin>]
 
-model_opt_class: !name:torch.optim.Adadelta
-    lr: !ref <lr>
-    rho: 0.95
-    eps: 1.e-8
+model_opt_class: !name:torch.optim.AdamW
+    lr: !ref <lr_wav2vec>
+    weight_decay: 0.01
 
 wav2vec_opt_class: !name:torch.optim.AdamW
     lr: !ref <lr_wav2vec>
+    weight_decay: 0.01
 
 lr_annealing_model: !new:speechbrain.nnet.schedulers.NewBobScheduler
-    initial_value: !ref <lr>
+    initial_value: !ref <lr_wav2vec>
     improvement_threshold: 0.0025
     annealing_factor: 0.8
     patient: 0
