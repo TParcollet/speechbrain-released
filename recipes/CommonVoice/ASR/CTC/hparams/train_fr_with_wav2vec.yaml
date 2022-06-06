@@ -63,11 +63,12 @@ activation: !name:torch.nn.LeakyReLU
 wav2vec_output_dim: 1024
 dnn_neurons: 1024
 freeze_wav2vec: False
+freeze_feature_extractor: True
 apply_spec_augment: False
 output_norm: True
 
 # Outputs
-output_neurons: 76  # BPE size, index(blank/eos/bos) = 0
+output_neurons: 80  # BPE size, index(blank/eos/bos) = 0
 
 #
 # Functions and classes
@@ -107,6 +108,7 @@ wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
     freeze: !ref <freeze_wav2vec>
     apply_spec_augment: !ref <apply_spec_augment>
     save_path: !ref <save_folder>/wav2vec2_checkpoint
+    freeze_feature_extractor: !ref <freeze_feature_extractor>
 
 #####
 # Uncomment this block if you prefer to use a Fairseq pretrained model instead
