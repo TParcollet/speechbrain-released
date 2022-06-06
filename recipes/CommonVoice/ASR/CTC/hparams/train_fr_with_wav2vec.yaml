@@ -37,6 +37,7 @@ lr: 1.0
 lr_wav2vec: 0.0001
 sorting: ascending
 auto_mix_prec: False
+freeze_feature_extractor: False
 sample_rate: 16000
 ckpt_interval_minutes: 30 # save checkpoint every N min
 
@@ -64,7 +65,7 @@ dnn_neurons: 1024
 freeze_wav2vec: False
 
 # Outputs
-output_neurons: 76  # BPE size, index(blank/eos/bos) = 0
+output_neurons: 80  # BPE size, index(blank/eos/bos) = 0
 
 # Decoding parameters
 # Be sure that the bos and eos index match with the BPEs ones
@@ -109,6 +110,7 @@ wav2vec2: !new:speechbrain.lobes.models.huggingface_wav2vec.HuggingFaceWav2Vec2
     output_norm: True
     freeze: !ref <freeze_wav2vec>
     save_path: !ref <save_folder>/wav2vec2_checkpoint
+    freeze_feature_extractor: !ref <freeze_feature_extractor>
 
 #####
 # Uncomment this block if you prefer to use a Fairseq pretrained model instead
