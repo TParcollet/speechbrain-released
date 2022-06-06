@@ -133,7 +133,7 @@ class ASR(sb.core.Brain):
                 self.wav2vec_optimizer.zero_grad()
             self.model_optimizer.zero_grad()
 
-        return loss.detach()
+        return loss.detach().cpu()
 
     def evaluate_batch(self, batch, stage):
         """Computations needed for validation/test batches"""
