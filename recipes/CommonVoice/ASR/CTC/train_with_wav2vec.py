@@ -102,7 +102,7 @@ class ASR(sb.core.Brain):
             ):
                 self.scaler.unscale_(self.wav2vec_optimizer)
             self.scaler.unscale_(self.model_optimizer)
-
+            print(loss)
             if self.check_gradients(loss):
                 if (
                     not self.hparams.wav2vec2.freeze
