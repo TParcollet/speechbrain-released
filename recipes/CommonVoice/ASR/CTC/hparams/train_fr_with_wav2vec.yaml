@@ -33,6 +33,7 @@ avoid_if_longer_than: 10.0
 
 # Training parameters
 number_of_epochs: 30
+lr: 0.0003
 lr_wav2vec: 0.0001
 sorting: ascending
 auto_mix_prec: False
@@ -143,7 +144,7 @@ model: !new:torch.nn.ModuleList
     - [!ref <enc>, !ref <ctc_lin>]
 
 model_opt_class: !name:torch.optim.AdamW
-    lr: !ref <lr_wav2vec>
+    lr: !ref <lr>
     weight_decay: 0.01
 
 wav2vec_opt_class: !name:torch.optim.AdamW
