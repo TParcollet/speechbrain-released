@@ -63,7 +63,7 @@ activation: !name:torch.nn.LeakyReLU
 wav2vec_output_dim: 1024
 dnn_neurons: 1024
 freeze_wav2vec: False
-freeze_feature_extractor: True
+freeze_feature_extractor: False
 warmup_steps: 100
 apply_spec_augment: False
 output_norm: True
