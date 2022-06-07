@@ -50,9 +50,10 @@ class ASR(sb.core.Brain):
                 wavs = self.hparams.augmentation(wavs, wav_lens)
 
         # Forward pass
+
+        feats = self.modules.wav2vec2(wavs)
         with torch.cuda.amp.autocast():
-            feats = self.modules.wav2vec2(wavs)
-        x = self.modules.enc(feats)
+            x = self.modules.enc(feats)
         logits = self.modules.ctc_lin(x)
         p_ctc = self.hparams.log_softmax(logits)
 
