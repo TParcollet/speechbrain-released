@@ -91,9 +91,10 @@ class ASR(sb.core.Brain):
                 self.wav2vec_optimizer.zero_grad()
             self.model_optimizer.zero_grad()
 
-            outputs = self.compute_forward(batch, sb.Stage.TRAIN)
             with torch.cuda.amp.autocast():
+                outputs = self.compute_forward(batch, sb.Stage.TRAIN)
                 loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
+                print(loss)
 
             self.scaler.scale(loss).backward()
 
@@ -116,6 +117,7 @@ class ASR(sb.core.Brain):
             outputs = self.compute_forward(batch, sb.Stage.TRAIN)
 
             loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
+            print(loss)
             loss.backward()
 
             if self.check_gradients(loss):
