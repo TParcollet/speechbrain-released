@@ -144,7 +144,7 @@ class W2VBrain(sb.core.Brain):
                 self.optimizer.zero_grad()
 
                 # anneal lr every update
-                self.hparams.noam_annealing(self.optimizer)
+                self.hparams.noam_annealing(self.optimizer, self.optimizer_step)
 
         return loss.detach()
 
