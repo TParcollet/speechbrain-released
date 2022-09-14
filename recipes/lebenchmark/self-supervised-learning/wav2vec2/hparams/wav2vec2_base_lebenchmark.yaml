@@ -35,6 +35,7 @@ mask_prob: 0.65
 freeze_wav2vec: False
 warmup: 80000
 cooldown: 920000
+optimizer_step_limit: 1000000
 
 number_of_epochs: 300
 lr_adam: 0.0006 # This will get reduced by the training scheduler
@@ -43,7 +44,7 @@ d_model: 1024  # Needed by the scheduler. 768 is for the BASE w2v2
 sorting: random
 auto_mix_prec: False
 sample_rate: 16000
-ckpt_interval_minutes: 1 # save checkpoint every N min
+ckpt_interval_minutes: 30 # save checkpoint every N min
 
 dynamic_batching: True
 dyn_batch_len: 50
@@ -102,7 +103,7 @@ noam_annealing: !new:speechbrain.nnet.schedulers.WarmCoolDecayLRSchedule
     lr: !ref <lr_adam>
     warmup: !ref <warmup>
     cooldown: !ref <cooldown>
-    total_steps: 1000000
+    total_steps: !ref <optimizer_step_limit>
 
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
     checkpoints_dir: !ref <save_folder>
