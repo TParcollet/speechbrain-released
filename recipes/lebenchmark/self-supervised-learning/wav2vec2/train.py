@@ -128,7 +128,7 @@ class W2VBrain(sb.core.Brain):
                 self.optimizer.zero_grad()
 
                 # anneal lr every update
-                self.hparams.noam_annealing(self.optimizer, self.optimizer_step)
+                self.hparams.noam_annealing(self.optimizer)
         else:
             with torch.cuda.amp.autocast(dtype=torch.bfloat16):
                 predictions = self.compute_forward(batch, sb.Stage.TRAIN)
@@ -147,7 +147,7 @@ class W2VBrain(sb.core.Brain):
                 self.optimizer.zero_grad()
 
                 # anneal lr every update
-                self.hparams.noam_annealing(self.optimizer, self.optimizer_step)
+                self.hparams.noam_annealing(self.optimizer)
 
         return loss.detach()
 

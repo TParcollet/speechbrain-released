@@ -99,11 +99,9 @@ opt_class: !name:torch.optim.AdamW
     eps: 0.000000001
     weight_decay: !ref <weight_decay>
 
-noam_annealing: !new:speechbrain.nnet.schedulers.WarmCoolDecayLRSchedule
-    lr: !ref <lr_adam>
-    warmup: !ref <warmup>
-    cooldown: !ref <cooldown>
-    total_steps: !ref <optimizer_step_limit>
+noam_annealing: !new:speechbrain.nnet.schedulers.NoamScheduler
+    lr_initial: !ref <lr_adam>
+    n_warmup_steps: !ref <warmup>
 
 checkpointer: !new:speechbrain.utils.checkpoints.Checkpointer
     checkpoints_dir: !ref <save_folder>
