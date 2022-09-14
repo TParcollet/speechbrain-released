@@ -130,11 +130,9 @@ class W2VBrain(sb.core.Brain):
                 # anneal lr every update
                 self.hparams.noam_annealing(self.optimizer, self.optimizer_step)
         else:
-            with torch.cuda.amp.autocast(dtype=torch.bfloat16):
-                predictions = self.compute_forward(batch, sb.Stage.TRAIN)
-                loss = self.compute_objectives(
-                    predictions, batch, sb.Stage.TRAIN
-                )
+
+            predictions = self.compute_forward(batch, sb.Stage.TRAIN)
+            loss = self.compute_objectives(predictions, batch, sb.Stage.TRAIN)
 
             # normalize the loss by gradient_accumulation step
             (loss / self.hparams.gradient_accumulation).backward()
