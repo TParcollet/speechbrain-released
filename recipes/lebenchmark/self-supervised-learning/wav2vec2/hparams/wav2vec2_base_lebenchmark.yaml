@@ -47,7 +47,7 @@ sample_rate: 16000
 ckpt_interval_minutes: 30 # save checkpoint every N min
 
 dynamic_batching: True
-dyn_batch_len: 125
+dyn_batch_len: 90
 num_workers: 4
 
 # dynamic batching parameters, if used
