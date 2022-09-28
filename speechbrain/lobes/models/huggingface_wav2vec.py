@@ -22,7 +22,6 @@ from speechbrain.pretrained.fetching import fetch
 
 # We check if transformers is installed.
 try:
-    import transformers
     from transformers import Wav2Vec2Model, HubertModel
     from transformers import Wav2Vec2Config, HubertConfig
     from transformers import Wav2Vec2FeatureExtractor
@@ -371,7 +370,7 @@ class HuggingFaceWav2Vec2Pretrain(nn.Module):
 
         # print(np.sum(mask_time_indices, axis=1))
         negative_sample_indices = torch.tensor(
-            transformers.models.wav2vec2.modeling_wav2vec2._sample_negative_indices(
+            _sample_negative_indices(
                 (batch_size, sequence_length),
                 num_negatives=self.config.num_negatives,
                 mask_time_indices=full_sentence_indices,
@@ -388,3 +387,56 @@ class HuggingFaceWav2Vec2Pretrain(nn.Module):
             ),
             torch_mask_time_indices,
         )
+
+
+def _sample_negative_indices(
+    features_shape, num_negatives, mask_time_indices=None,
+):
+    """
+    Sample `num_negatives` vectors from feature vectors.
+    """
+    batch_size, sequence_length = features_shape
+
+    # generate indices of the positive vectors themselves, repeat them `num_negatives` times
+    sequence_length_range = np.arange(sequence_length)
+
+    # get `num_negatives` random vector indices from the same utterance
+    sampled_negative_indices = np.zeros(
+        shape=(batch_size, sequence_length, num_negatives), dtype=np.int32
+    )
+
+    mask_time_indices = (
+        mask_time_indices.astype(np.bool)
+        if mask_time_indices is not None
+        else np.ones(features_shape, dtype=np.bool)
+    )
+
+    for batch_idx in range(batch_size):
+        high = mask_time_indices[batch_idx].sum() - 1
+
+        mapped_masked_indices = torch.masked_select(
+            sequence_length_range,
+            mask_time_indices[batch_idx].type(torch.BoolTensor),
+        )
+        # mapped_masked_indices = sequence_length_range[mask_time_indices[batch_idx]]
+
+        feature_indices = np.broadcast_to(
+            np.arange(high + 1)[:, None], (high + 1, num_negatives)
+        )
+        sampled_indices = np.random.randint(
+            0, high, size=(high + 1, num_negatives)
+        )
+        # avoid sampling the same positive vector, but keep the distribution uniform
+        sampled_indices[sampled_indices >= feature_indices] += 1
+
+        # remap to actual indices
+        sampled_negative_indices[batch_idx][
+            mask_time_indices[batch_idx]
+        ] = torch.masked_select(
+            mapped_masked_indices, sampled_indices.type(torch.BoolTensor),
+        )
+
+        # correct for batch size
+        sampled_negative_indices[batch_idx] += batch_idx * sequence_length
+
+        return sampled_negative_indices
