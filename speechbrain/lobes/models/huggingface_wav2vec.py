@@ -28,11 +28,11 @@ try:
     from transformers import (
         Wav2Vec2FeatureExtractor,
         Wav2Vec2PreTrainedModel,
-        Wav2Vec2ForPreTrainingOutput,
     )
     from transformers.models.wav2vec2.modeling_wav2vec2 import (
         _compute_mask_indices,
         Wav2Vec2GumbelVectorQuantizer,
+        Wav2Vec2ForPreTrainingOutput,
     )
 
 except ImportError:
