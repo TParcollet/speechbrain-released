@@ -353,6 +353,8 @@ class HuggingFaceWav2Vec2Pretrain(nn.Module):
             raw_sequence_length
         )
 
+        sequence_length -= 1
+
         # 1. Compute the indices that will be masked
         mask_time_indices = _compute_mask_indices(
             (batch_size, sequence_length),
