@@ -396,7 +396,7 @@ class HuggingFaceWav2Vec2Pretrain(nn.Module):
 
 
 class Wav2Vec2ForPreTraining(Wav2Vec2PreTrainedModel):
-    def __init__(self, config):
+    def __init__(self, config: Wav2Vec2Config):
         super().__init__(config)
         self.wav2vec2 = Wav2Vec2Model(config)
         self.dropout_features = nn.Dropout(config.feat_quantizer_dropout)
@@ -414,7 +414,7 @@ class Wav2Vec2ForPreTraining(Wav2Vec2PreTrainedModel):
             config.codevector_dim, config.proj_codevector_dim
         )
 
-    def set_gumbel_temperature(self, temperature):
+    def set_gumbel_temperature(self, temperature: int):
         """
         Set the Gumbel softmax temperature to a given value. Only necessary for training
         """
@@ -422,21 +422,17 @@ class Wav2Vec2ForPreTraining(Wav2Vec2PreTrainedModel):
 
     def freeze_feature_extractor(self):
         """
-        Calling this function will disable the gradient computation for the feature encoder so that its parameters will
-        not be updated during training.
-        """
-        self.freeze_feature_encoder()
-
-    def freeze_feature_encoder(self):
-        """
-        Calling this function will disable the gradient computation for the feature encoder so that its parameter will
-        not be updated during training.
+        Calling this function will disable the gradient computation for the feature extractor so that its parameters
+        will not be updated during training.
         """
         self.wav2vec2.feature_extractor._freeze_parameters()
 
     @staticmethod
     def compute_contrastive_logits(
-        target_features, negative_features, predicted_features, temperature=0.1,
+        target_features,
+        negative_features,
+        predicted_features,
+        temperature: int = 0.1,
     ):
         """
         Compute logits for contrastive loss based using cosine similarity as the distance measure between
@@ -473,27 +469,33 @@ class Wav2Vec2ForPreTraining(Wav2Vec2PreTrainedModel):
         Example:
         ```python
         >>> import torch
-        >>> from transformers import AutoFeatureExtractor, Wav2Vec2ForPreTraining
+        >>> from transformers import Wav2Vec2FeatureExtractor, Wav2Vec2ForPreTraining
         >>> from transformers.models.wav2vec2.modeling_wav2vec2 import _compute_mask_indices
         >>> from datasets import load_dataset
-        >>> feature_extractor = AutoFeatureExtractor.from_pretrained("facebook/wav2vec2-base")
-        >>> model = Wav2Vec2ForPreTraining.from_pretrained("facebook/wav2vec2-base")
+        >>> import soundfile as sf
+        >>> feature_extractor = Wav2Vec2FeatureExtractor.from_pretrained("patrickvonplaten/wav2vec2-base")
+        >>> model = Wav2Vec2ForPreTraining.from_pretrained("patrickvonplaten/wav2vec2-base")
+        >>> def map_to_array(batch):
+        ...     speech, _ = sf.read(batch["file"])
+        ...     batch["speech"] = speech
+        ...     return batch
         >>> ds = load_dataset("hf-internal-testing/librispeech_asr_dummy", "clean", split="validation")
-        >>> input_values = feature_extractor(ds[0]["audio"]["array"], return_tensors="pt").input_values  # Batch size 1
+        >>> ds = ds.map(map_to_array)
+        >>> input_values = feature_extractor(ds["speech"][0], return_tensors="pt").input_values  # Batch size 1
         >>> # compute masked indices
         >>> batch_size, raw_sequence_length = input_values.shape
         >>> sequence_length = model._get_feat_extract_output_lengths(raw_sequence_length)
         >>> mask_time_indices = _compute_mask_indices((batch_size, sequence_length), mask_prob=0.2, mask_length=2)
-        >>> mask_time_indices = torch.tensor(mask_time_indices, device=input_values.device, dtype=torch.long)
         >>> with torch.no_grad():
         ...     outputs = model(input_values, mask_time_indices=mask_time_indices)
         >>> # compute cosine similarity between predicted (=projected_states) and target (=projected_quantized_states)
-        >>> cosine_sim = torch.cosine_similarity(outputs.projected_states, outputs.projected_quantized_states, dim=-1)
+        >>> cosine_sim = torch.cosine_similarity(
+        ...     outputs.projected_states, outputs.projected_quantized_states, dim=-1
+        ... )
         >>> # show that cosine similarity is much higher than random
-        >>> cosine_sim[mask_time_indices.to(torch.bool)].mean() > 0.5
-        tensor(True)
+        >>> assert cosine_sim[mask_time_indices].mean() > 0.5
         >>> # for contrastive loss training model should be put into train mode
-        >>> model = model.train()
+        >>> model.train()
         >>> loss = model(input_values, mask_time_indices=mask_time_indices).loss
         ```"""
 
