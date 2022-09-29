@@ -23,7 +23,7 @@ from speechbrain.pretrained.fetching import fetch
 # We check if transformers is installed.
 try:
     import transformers
-    from transformers import Wav2Vec2Model, HubertModel
+    from transformers import HubertModel
     from transformers import Wav2Vec2Config, HubertConfig
     from transformers import (
         Wav2Vec2FeatureExtractor,
@@ -47,10 +47,6 @@ except ImportError:
     raise ImportError(MSG)
 
 logger = logging.getLogger(__name__)
-
-HF_models = {"wav2vec2": Wav2Vec2Model, "hubert": HubertModel}
-
-HF_config = {"wav2vec2": Wav2Vec2Config, "hubert": HubertConfig}
 
 
 class HuggingFaceWav2Vec2(nn.Module):
@@ -780,3 +776,8 @@ class Wav2Vec2Model(Wav2Vec2PreTrainedModel):
             hidden_states=encoder_outputs.hidden_states,
             attentions=encoder_outputs.attentions,
         )
+
+
+HF_models = {"wav2vec2": Wav2Vec2Model, "hubert": HubertModel}
+
+HF_config = {"wav2vec2": Wav2Vec2Config, "hubert": HubertConfig}
