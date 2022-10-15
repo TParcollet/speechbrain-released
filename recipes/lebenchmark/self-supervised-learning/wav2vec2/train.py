@@ -391,6 +391,9 @@ if __name__ == "__main__":
         valid_dataloader_opts = {"batch_sampler": valid_bsampler}
 
     # Adding objects to trainer.
+    lr = asr_brain.optimizer.param_groups[0]["lr"]
+    for param_group in asr_brain.optimizer.param_groups:
+        param_group["lr"] = lr * 0.2
 
     # Training
     asr_brain.fit(
