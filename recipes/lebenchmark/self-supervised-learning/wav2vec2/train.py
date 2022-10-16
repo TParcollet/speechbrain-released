@@ -105,7 +105,6 @@ class W2VBrain(sb.core.Brain):
     def fit_batch(self, batch):
         """Train the parameters given a single batch in input"""
 
-        print(self.hparams.noam_annealing.current_lr)
         # Here we manage mixed precision
         if self.auto_mix_prec:
             with torch.cuda.amp.autocast():
@@ -121,13 +120,14 @@ class W2VBrain(sb.core.Brain):
 
             if self.step % self.hparams.gradient_accumulation == 0:
                 # gradient clipping & early stop if loss is not fini
-                print("enlo")
                 self.check_gradients(loss)
 
-                self.scaler.unscale_(self.optimizer)
-                self.scaler.step(self.optimizer)
-                self.scaler.update()
-                self.optimizer.zero_grad()
+                if self.hparams.noam_annealing.current_lr < 0.0001:
+                    print(self.hparams.noam_annealing.current_lr)
+                    self.scaler.unscale_(self.optimizer)
+                    self.scaler.step(self.optimizer)
+                    self.scaler.update()
+                    self.optimizer.zero_grad()
 
                 # anneal lr every update
                 self.hparams.noam_annealing(self.optimizer)
