@@ -118,7 +118,11 @@ class W2VBrain(sb.core.Brain):
                 loss / self.hparams.gradient_accumulation
             ).backward()
 
-            if self.step % self.hparams.gradient_accumulation == 0:
+            if (
+                self.step % self.hparams.gradient_accumulation == 0
+                and self.hparams.noam_annealing.current_lr < 0.0001
+            ):
+                print(self.hparams.noam_annealing.current_lr)
                 # gradient clipping & early stop if loss is not fini
                 self.check_gradients(loss)
 
