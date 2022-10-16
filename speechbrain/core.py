@@ -794,6 +794,7 @@ class Brain:
         # Initialize optimizers after parameters are configured
         self.init_optimizers()
         lr = self.optimizer.param_groups[0]["lr"]
+        print(lr)
         for param_group in self.optimizer.param_groups:
             param_group["lr"] = lr * 0.2
 
