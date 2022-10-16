@@ -125,10 +125,10 @@ class W2VBrain(sb.core.Brain):
 
                 self.scaler.unscale_(self.optimizer)
                 self.scaler.step(self.optimizer)
-                if self.hparams.noam_annealing.current_lr < 0.0001:
-                    print(self.hparams.noam_annealing.current_lr)
-                    self.scaler.update()
-                    self.optimizer.zero_grad()
+
+                print(self.hparams.noam_annealing.current_lr)
+                self.scaler.update()
+                self.optimizer.zero_grad()
 
                 # anneal lr every update
                 self.hparams.noam_annealing(self.optimizer)
