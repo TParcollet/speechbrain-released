@@ -105,7 +105,6 @@ class W2VBrain(sb.core.Brain):
     def fit_batch(self, batch):
         """Train the parameters given a single batch in input"""
 
-        print(self.hparams.noam_annealing.current_lr)
         # Here we manage mixed precision
         if self.auto_mix_prec:
             with torch.cuda.amp.autocast():
