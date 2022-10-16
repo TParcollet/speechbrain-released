@@ -799,6 +799,7 @@ class Brain:
         for param_group in self.optimizer.param_groups:
             param_group["lr"] = lr * 0.2
         print("after lr")
+        lr = self.optimizer.param_groups[0]["lr"]
         print(lr)
         # Load latest checkpoint to resume training if interrupted
         if self.checkpointer is not None:
