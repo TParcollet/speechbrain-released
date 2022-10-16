@@ -123,7 +123,6 @@ class W2VBrain(sb.core.Brain):
                 self.check_gradients(loss)
 
                 if self.hparams.noam_annealing.current_lr < 0.0001:
-                    print(self.hparams.noam_annealing.current_lr)
                     self.scaler.unscale_(self.optimizer)
                     self.scaler.step(self.optimizer)
                     self.scaler.update()
