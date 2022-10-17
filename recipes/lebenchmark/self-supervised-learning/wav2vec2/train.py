@@ -144,8 +144,9 @@ class W2VBrain(sb.core.Brain):
                 # gradient clipping & early stop if loss is not fini
                 self.check_gradients(loss)
 
-                self.optimizer.step()
-                self.optimizer.zero_grad()
+                if self.hparams.noam_annealing.current_lr < 0.0001:
+                    self.optimizer.step()
+                    self.optimizer.zero_grad()
 
                 # anneal lr every update
                 self.hparams.noam_annealing(self.optimizer)
