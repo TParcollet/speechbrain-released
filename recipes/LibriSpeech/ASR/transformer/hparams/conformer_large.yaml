@@ -9,9 +9,9 @@
 # ############################################################################
 # Seed needs to be set at top of yaml, before objects with parameters are made
 
-seed: 7775
+seed: 3407
 __set_seed: !apply:torch.manual_seed [!ref <seed>]
-output_folder: !ref results/conformer_small/<seed>
+output_folder: !ref results/conformer_large_v2/<seed>
 wer_file: !ref <output_folder>/wer.txt
 save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
@@ -57,7 +57,7 @@ num_workers: 4
 
 # stages related parameters
 # stage_one_epochs: 90
-lr_adam: 0.0005
+lr_adam: 0.001
 # lr_sgd: 0.000025
 
 # Feature parameters
@@ -125,15 +125,15 @@ len_norm: True
 
 CNN: !new:speechbrain.lobes.models.convolution.ConvolutionFrontEnd
     input_shape: (8, 10, 80)
-    num_blocks: 2
+    num_blocks: 3
     num_layers_per_block: 1
-    out_channels: (64, 32)
-    kernel_sizes: (3, 3)
-    strides: (2, 2)
-    residuals: (False, False)
+    out_channels: (64, 64, 64)
+    kernel_sizes: (5, 5, 1)
+    strides: (2, 2, 1)
+    residuals: (False, False, True)
 
 Transformer: !new:speechbrain.lobes.models.transformer.TransformerASR.TransformerASR # yamllint disable-line rule:line-length
-    input_size: 640
+    input_size: 1280
     tgt_vocab: !ref <output_neurons>
     d_model: !ref <d_model>
     nhead: !ref <nhead>
@@ -187,7 +187,7 @@ model: !new:torch.nn.ModuleList
     - [!ref <CNN>, !ref <Transformer>, !ref <seq_lin>, !ref <ctc_lin>]
 
 # define two optimizers here for two-stage training
-Adam: !name:torch.optim.AdamW
+Adam: !name:torch.optim.Adam
     lr: !ref <lr_adam>
     betas: (0.9, 0.98)
 
@@ -196,7 +196,7 @@ Adam: !name:torch.optim.AdamW
 #    momentum: 0.99
 #    nesterov: True
 
-test_search: !new:speechbrain.decoders.S2STransformerBeamSearch
+valid_search: !new:speechbrain.decoders.S2STransformerBeamSearch
     modules: [!ref <Transformer>, !ref <seq_lin>, !ref <ctc_lin>]
     bos_index: !ref <bos_index>
     eos_index: !ref <eos_index>
@@ -205,11 +205,10 @@ test_search: !new:speechbrain.decoders.S2STransformerBeamSearch
     max_decode_ratio: !ref <max_decode_ratio>
     beam_size: !ref <valid_beam_size>
     ctc_weight: !ref <ctc_weight_decode>
-    using_eos_threshold: !ref <eos_threshold>
-    length_normalization: !ref <len_norm>
-    coverage_penalty: 1.5
+    using_eos_threshold: False
+    length_normalization: False
 
-valid_search: !new:speechbrain.decoders.S2STransformerBeamSearch
+test_search: !new:speechbrain.decoders.S2STransformerBeamSearch
     modules: [!ref <Transformer>, !ref <seq_lin>, !ref <ctc_lin>]
     bos_index: !ref <bos_index>
     eos_index: !ref <eos_index>
@@ -222,8 +221,8 @@ valid_search: !new:speechbrain.decoders.S2STransformerBeamSearch
     lm_modules: !ref <lm_model>
     temperature: 1.15
     temperature_lm: 1.15
-    using_eos_threshold: !ref <eos_threshold>
-    length_normalization: !ref <len_norm>
+    using_eos_threshold: False
+    length_normalization: True
 
 log_softmax: !new:torch.nn.LogSoftmax
     dim: -1

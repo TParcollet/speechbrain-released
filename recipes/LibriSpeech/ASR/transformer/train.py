@@ -145,8 +145,6 @@ class ASR(sb.core.Brain):
                     tokenizer.decode_ids(utt_seq).split(" ") for utt_seq in hyps
                 ]
                 target_words = [wrd.split(" ") for wrd in batch.wrd]
-                print(predicted_words)
-                print(target_words)
                 self.wer_metric.append(ids, predicted_words, target_words)
 
             # compute the accuracy of the one-step-forward prediction
