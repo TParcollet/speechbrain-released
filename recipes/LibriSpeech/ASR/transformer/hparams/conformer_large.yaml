@@ -118,6 +118,8 @@ valid_beam_size: 10
 test_beam_size: 66
 lm_weight: 0.60
 ctc_weight_decode: 0.40
+eos_threshold: False
+len_norm: True
 
 ############################## models ################################
 
@@ -220,8 +222,8 @@ test_search: !new:speechbrain.decoders.S2STransformerBeamSearch
     lm_modules: !ref <lm_model>
     temperature: 1.15
     temperature_lm: 1.15
-    using_eos_threshold: False
-    length_normalization: True
+    using_eos_threshold: !ref <eos_threshold>
+    length_normalization: !ref <len_norm>
 
 log_softmax: !new:torch.nn.LogSoftmax
     dim: -1
