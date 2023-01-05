@@ -47,6 +47,7 @@ test_csv:
 # Please, set your parameters accordingly.
 number_of_epochs: 110
 batch_size: 16 # This works for 2x GPUs with 32GB
+valid_batch_size: 1
 ctc_weight: 0.3
 grad_accumulation_factor: 1
 max_grad_norm: 5.0
@@ -86,10 +87,10 @@ train_dataloader_opts:
     num_workers: !ref <num_workers>
 
 valid_dataloader_opts:
-    batch_size: 1
+    batch_size: !ref <valid_batch_size>
 
 test_dataloader_opts:
-    batch_size: 1
+    batch_size: !ref <valid_batch_size>
 
 ####################### Model parameters ###########################
 # Transformer
