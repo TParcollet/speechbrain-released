@@ -207,8 +207,6 @@ test_search: !new:speechbrain.decoders.S2STransformerBeamSearch
     ctc_weight: !ref <ctc_weight_decode>
     using_eos_threshold: !ref <eos_threshold>
     length_normalization: !ref <len_norm>
-    using_max_attn_shift: True
-    max_attn_shift: 240
     coverage_penalty: 1.5
 
 valid_search: !new:speechbrain.decoders.S2STransformerBeamSearch
