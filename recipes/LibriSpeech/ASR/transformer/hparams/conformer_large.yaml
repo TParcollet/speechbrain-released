@@ -208,6 +208,8 @@ test_search: !new:speechbrain.decoders.S2STransformerBeamSearch
     using_eos_threshold: !ref <eos_threshold>
     length_normalization: !ref <len_norm>
     using_max_attn_shift: True
+    max_attn_shift: 240
+    coverage_penalty: 1.5
 
 valid_search: !new:speechbrain.decoders.S2STransformerBeamSearch
     modules: [!ref <Transformer>, !ref <seq_lin>, !ref <ctc_lin>]
