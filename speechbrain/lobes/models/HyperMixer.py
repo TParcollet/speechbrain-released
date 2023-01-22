@@ -94,6 +94,8 @@ class MixAndMLP(nn.Module):
             out = ln1(out)
             
             out = self.dropout(out)
+            skip_connection = out
+
             out = out.transpose(1, 2)
             # (B, F, T)
             if not return_weights:
@@ -104,11 +106,13 @@ class MixAndMLP(nn.Module):
                 W2.append(w2)
             out = out.transpose(1, 2)
             # (B, T, F)
-            out = masked_input + out
+            out = skip_connection + out
+
+            skip_connection = out
 
             if self.feature_mixing:
                 out = ln2(out)
-                out = masked_input + mlp(out)
+                out = skip_connection + mlp(out)
 
             # pool
             # out = pool(out)
