@@ -203,6 +203,7 @@ class HyperMixerLayer(nn.Module):
         super().__init__()
         self.hyper = HyperNetwork(input_output_dim, hypernet_size, tied=tied)
         self.activation = nn.GELU()
+        self.layer_norm = nn.LayerNorm(input_output_dim)
 
     def forward(self, out, return_weights=False):
 
@@ -212,6 +213,10 @@ class HyperMixerLayer(nn.Module):
 
         # we stick MLP1 together manually
         out = _mlp_pass_from_components(out, W1, W2, self.activation)
+        
+        # apply layer norm on outputs of the TM-MLP
+        out = self.layer_norm(out.transpose(1,2)).transpose(1,2)
+
         if not return_weights:
             return out
         else:
