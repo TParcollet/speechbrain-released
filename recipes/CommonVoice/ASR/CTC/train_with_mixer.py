@@ -115,6 +115,40 @@ class ASR(sb.core.Brain):
             self.cer_metric.append(ids, predicted_words, target_words)
 
         return loss
+    
+    def fit_batch(self, batch):
+
+        should_step = self.step % self.grad_accumulation_factor == 0
+        # Managing automatic mixed precision
+        if self.auto_mix_prec:
+            self.optimizer.zero_grad()
+            with torch.cuda.amp.autocast():
+                outputs = self.compute_forward(batch, sb.Stage.TRAIN)
+                loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
+            self.scaler.scale(loss / self.grad_accumulation_factor).backward()
+            if should_step:
+                self.scaler.unscale_(self.optimizer)
+                if self.check_gradients(loss):
+                    self.scaler.step(self.optimizer)
+                self.scaler.update()
+                self.optimizer_step += 1
+
+                # anneal lr every update
+                self.hparams.noam_annealing(self.optimizer)
+        else:
+            outputs = self.compute_forward(batch, sb.Stage.TRAIN)
+            loss = self.compute_objectives(outputs, batch, sb.Stage.TRAIN)
+            (loss / self.grad_accumulation_factor).backward()
+            if should_step:
+                if self.check_gradients(loss):
+                    self.optimizer.step()
+                self.optimizer.zero_grad()
+                self.optimizer_step += 1
+
+                # anneal lr every update
+                self.hparams.noam_annealing(self.optimizer)
+
+        return loss.detach().cpu()
 
     def evaluate_batch(self, batch, stage):
         """Computations needed for validation/test batches"""
@@ -251,7 +285,52 @@ def dataio_prepare(hparams, tokenizer):
     sb.dataio.dataset.set_output_keys(
         datasets, ["id", "sig", "tokens_bos", "tokens_eos", "tokens"],
     )
-    return train_data, valid_data, test_data
+
+    # Defining tokenizer and loading it
+    tokenizer = SentencePiece(
+        model_dir=hparams["save_folder"],
+        vocab_size=hparams["output_neurons"],
+        annotation_train=hparams["train_csv"],
+        annotation_read="wrd",
+        model_type=hparams["token_type"],
+        character_coverage=hparams["character_coverage"],
+    )
+
+    # 5. If Dynamic Batching is used, we instantiate the needed samplers.
+    train_batch_sampler = None
+    valid_batch_sampler = None
+    if hparams["dynamic_batching"]:
+        from speechbrain.dataio.sampler import DynamicBatchSampler  # noqa
+
+        dynamic_hparams = hparams["dynamic_batch_sampler"]
+        num_buckets = dynamic_hparams["num_buckets"]
+
+        train_batch_sampler = DynamicBatchSampler(
+            train_data,
+            dynamic_hparams["max_batch_len"],
+            num_buckets=num_buckets,
+            length_func=lambda x: x["duration"],
+            shuffle=dynamic_hparams["shuffle_ex"],
+            batch_ordering=dynamic_hparams["batch_ordering"],
+        )
+
+        valid_batch_sampler = DynamicBatchSampler(
+            valid_data,
+            dynamic_hparams["max_batch_len_val"],
+            num_buckets=num_buckets,
+            length_func=lambda x: x["duration"],
+            shuffle=dynamic_hparams["shuffle_ex"],
+            batch_ordering=dynamic_hparams["batch_ordering"],
+        )
+
+    return (
+        train_data,
+        valid_data,
+        test_data,
+        tokenizer,
+        train_batch_sampler,
+        valid_batch_sampler,
+    )
 
 
 if __name__ == "__main__":
@@ -290,16 +369,6 @@ if __name__ == "__main__":
         },
     )
 
-    # Defining tokenizer and loading it
-    tokenizer = SentencePiece(
-        model_dir=hparams["save_folder"],
-        vocab_size=hparams["output_neurons"],
-        annotation_train=hparams["train_csv"],
-        annotation_read="wrd",
-        model_type=hparams["token_type"],
-        character_coverage=hparams["character_coverage"],
-    )
-
     # Create the datasets objects as well as tokenization and encoding :-D
     train_data, valid_data, test_data = dataio_prepare(hparams, tokenizer)
 
@@ -312,16 +381,26 @@ if __name__ == "__main__":
         checkpointer=hparams["checkpointer"],
     )
 
-    # Adding objects to trainer.
+    # adding objects to trainer:
     asr_brain.tokenizer = tokenizer
+    train_dataloader_opts = hparams["train_dataloader_opts"]
+    valid_dataloader_opts = hparams["valid_dataloader_opts"]
 
-    # Training
+    if train_bsampler is not None:
+        train_dataloader_opts = {
+            "batch_sampler": train_bsampler,
+            "num_workers": hparams["num_workers"],
+        }
+    if valid_bsampler is not None:
+        valid_dataloader_opts = {"batch_sampler": valid_bsampler}
+
+     # Training
     asr_brain.fit(
         asr_brain.hparams.epoch_counter,
         train_data,
         valid_data,
-        train_loader_kwargs=hparams["dataloader_options"],
-        valid_loader_kwargs=hparams["test_dataloader_options"],
+        train_loader_kwargs=train_dataloader_opts,
+        valid_loader_kwargs=valid_dataloader_opts,
     )
 
     # Test
