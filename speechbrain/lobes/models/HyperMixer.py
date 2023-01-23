@@ -84,14 +84,18 @@ class MixAndMLP(nn.Module):
         if self.positional_encoding is not None:
             out = out + self.positional_encoding(out)
 
-        masked_input = out
+        #masked_input = out
         W1 = []
         W2 = []
         # masked_input = out * pad_masks
         for ln1, lm, ln2, mlp in zip(self.ln1s, self.lms, self.ln2s, self.mlps):
 
-            out = ln1(masked_input)
+            #out = ln1(masked_input)
+            out = ln1(out)
+            
             out = self.dropout(out)
+            skip_connection = out
+
             out = out.transpose(1, 2)
             # (B, F, T)
             if not return_weights:
@@ -102,11 +106,13 @@ class MixAndMLP(nn.Module):
                 W2.append(w2)
             out = out.transpose(1, 2)
             # (B, T, F)
-            out = masked_input + out
+            out = skip_connection + out
+
+            skip_connection = out
 
             if self.feature_mixing:
                 out = ln2(out)
-                out = masked_input + mlp(out)
+                out = skip_connection + mlp(out)
 
             # pool
             # out = pool(out)
@@ -201,6 +207,7 @@ class HyperMixerLayer(nn.Module):
         super().__init__()
         self.hyper = HyperNetwork(input_output_dim, hypernet_size, tied=tied)
         self.activation = nn.GELU()
+        self.layer_norm = nn.LayerNorm(input_output_dim)
 
     def forward(self, out, return_weights=False):
 
@@ -210,6 +217,10 @@ class HyperMixerLayer(nn.Module):
 
         # we stick MLP1 together manually
         out = _mlp_pass_from_components(out, W1, W2, self.activation)
+        
+        # apply layer norm on outputs of the TM-MLP
+        out = self.layer_norm(out.transpose(1,2)).transpose(1,2)
+
         if not return_weights:
             return out
         else:
@@ -223,12 +234,12 @@ class HyperNetwork(nn.Module):
         super().__init__()
 
         self.tied = tied
-        self.w1_gen = MLP(input_output_dim, hypernet_size)
+        self.w1_gen = MLP(input_output_dim, input_output_dim, output_dim=hypernet_size)
         # self.w1_gen = Conv1d(input_shape=(None, None, input_output_dim), kernel_size=(5), out_channels=hypernet_size)
         if self.tied:
             self.w2_gen = self.w1_gen
         else:
-            self.w2_gen = MLP(input_output_dim, hypernet_size)
+            self.w2_gen = MLP(input_output_dim, input_output_dim, output_dim=hypernet_size)
 
     def forward(self, position_embeddings: torch.Tensor):
         """
@@ -242,7 +253,10 @@ class HyperNetwork(nn.Module):
         return W1, W2
 
 
-def MLP(in_dim: int, h_dim: int) -> nn.Module:
+def MLP(in_dim: int, h_dim: int, output_dim: int = None) -> nn.Module:
+    if output_dim is None:
+        output_dim = in_dim
+
     return nn.Sequential(
         Conv1d(
             input_shape=(None, None, in_dim),
@@ -252,7 +266,7 @@ def MLP(in_dim: int, h_dim: int) -> nn.Module:
         nn.GELU(),
         nn.Linear(in_dim, h_dim, bias=True),
         nn.GELU(),
-        nn.Linear(h_dim, in_dim, bias=True),
+        nn.Linear(h_dim, output_dim, bias=True),
     )
 
 
