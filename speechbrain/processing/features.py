@@ -10,7 +10,7 @@ Example
 -------
 >>> import torch
 >>> from speechbrain.dataio.dataio import read_audio
->>> signal =read_audio('samples/audio_samples/example1.wav')
+>>> signal =read_audio('tests/samples/single-mic/example1.wav')
 >>> signal = signal.unsqueeze(0)
 >>> compute_STFT = STFT(
 ...     sample_rate=16000, win_length=25, hop_length=10, n_fft=400
@@ -836,7 +836,9 @@ class Deltas(torch.nn.Module):
 
         # Derivative estimation (with a fixed convolutional kernel)
         delta_coeff = (
-            torch.nn.functional.conv1d(x, self.kernel, groups=x.shape[1])
+            torch.nn.functional.conv1d(
+                x, self.kernel.to(x.device), groups=x.shape[1]
+            )
             / self.denom
         )
 

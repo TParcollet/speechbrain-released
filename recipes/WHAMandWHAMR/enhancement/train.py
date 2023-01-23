@@ -97,14 +97,6 @@ class Separation(sb.Brain):
                 if self.hparams.limit_training_signal_len:
                     mix, targets = self.cut_signals(mix, targets)
 
-        # torchaudio.save(
-        #     'mix.wav', mix.data.cpu(), self.hparams.sample_rate
-        # )
-
-        # torchaudio.save(
-        #     'targets.wav', targets.squeeze(-1).data.cpu(), self.hparams.sample_rate
-        # )
-
         # Separation
         if self.use_freq_domain:
             mix_w = self.compute_feats(mix)
@@ -241,7 +233,7 @@ class Separation(sb.Brain):
 
         with torch.no_grad():
             predictions, targets = self.compute_forward(mixture, targets, stage)
-            loss = self.compute_objectives(predictions, targets)
+            loss = self.compute_objectives(predictions, targets).mean()
 
         if stage != sb.Stage.TRAIN:
             self.pesq_metric.append(

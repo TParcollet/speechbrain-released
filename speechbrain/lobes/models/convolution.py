@@ -105,7 +105,7 @@ class ConvolutionFrontEnd(Sequential):
         dropout=0.1,
         conv_bias=True,
         padding="same",
-        conv_init="",
+        conv_init=None,
     ):
         super().__init__(input_shape=input_shape)
         for i in range(num_blocks):
@@ -172,10 +172,9 @@ class ConvBlock(torch.nn.Module):
         dropout=0.1,
         conv_bias=True,
         padding="same",
-        conv_init="",
+        conv_init=None,
     ):
         super().__init__()
-
         self.convs = Sequential(input_shape=input_shape)
 
         for i in range(num_layers):
@@ -212,9 +211,9 @@ class ConvBlock(torch.nn.Module):
             self.drop = torch.nn.Dropout(dropout)
 
     def forward(self, x):
+        """ Processes the input tensor x and returns an output tensor."""
         out = self.convs(x)
         if self.reduce_conv:
             out = out + self.reduce_conv(x)
             out = self.drop(out)
-
         return out
