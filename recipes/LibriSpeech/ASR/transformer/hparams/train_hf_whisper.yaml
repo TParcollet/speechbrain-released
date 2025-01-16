@@ -109,6 +109,7 @@ epoch_counter: !new:speechbrain.utils.epoch_loop.EpochCounter
 
 ############################## Models ##########################################
 
+
 whisper: !new:speechbrain.lobes.models.huggingface_transformers.whisper.Whisper
     source: !ref <whisper_hub>
     freeze_encoder: !ref <freeze_encoder>
