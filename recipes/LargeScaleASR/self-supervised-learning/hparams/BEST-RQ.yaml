@@ -15,7 +15,7 @@ train_steps_log: !ref <output_folder>/train_steps_log.txt
 # Logging file per epoch
 train_stage_log: !ref <output_folder>/train_stage_log.txt
 
-tls_subset: small
+tls_subset: large
 hf_hub: speechbrain/LargeScaleASR
 hf_caching_dir: !PLACEHOLDER
 skip_prep: False
@@ -58,7 +58,7 @@ pad_to_divisible_by: 4
 # Transformer
 d_model: 768
 nhead: 12
-num_encoder_layers: 16
+num_encoder_layers: 22
 num_decoder_layers: 0
 d_ffn: 3076
 transformer_dropout: 0.1
@@ -100,7 +100,7 @@ Transformer: !new:speechbrain.lobes.models.transformer.TransformerASR.Transforme
     activation: !ref <activation>
     conformer_activation: !ref <activation>
     encoder_module: conformer
-    attention_type: RelPosMHAXL
+    attention_type: regularMHA
     normalize_before: True
     causal: False
     layerdrop_prob: !ref <encoder_layerdrop>
@@ -132,7 +132,7 @@ optimizer: !name:torch.optim.AdamW
     lr: !ref <lr>
     betas: (0.9, 0.98)
     eps: 0.000000001
-    weight_decay: 0.01
+    weight_decay: 0.005
 
 compute_features: !new:speechbrain.lobes.features.Fbank
     sample_rate: !ref <sample_rate>
@@ -155,8 +155,8 @@ train_stage_logger: !new:speechbrain.utils.train_logger.FileTrainLogger
     save_file: !ref <train_stage_log>
 
 noam_annealing: !new:speechbrain.nnet.schedulers.WarmAndExpDecayLRSchedule
-    lr: !ref <lr_adam>
-    n_warmup_steps: !ref <warmup_steps>
+    lr: !ref <lr>
+    n_warmup_steps: 25000
     total_steps: !ref <optimizer_step_limit>
     decay_factor: 0.05
 
