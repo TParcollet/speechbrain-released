@@ -19,7 +19,6 @@ import speechbrain as sb
 from speechbrain.dataio.dataloader import SaveableDataLoader
 from speechbrain.dataio.sampler import DynamicBatchSampler
 from speechbrain.lobes.models.BESTRQ import brq_mask_collate_fn
-from speechbrain.utils.distributed import run_on_main
 from speechbrain.utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -303,22 +302,6 @@ def main():
         experiment_directory=hparams["output_folder"],
         hyperparams_to_save=hparams_file,
         overrides=overrides,
-    )
-
-    from librispeech_prepare import prepare_librispeech
-
-    run_on_main(
-        prepare_librispeech,
-        kwargs={
-            "data_folder": hparams["data_folder"],
-            "tr_splits": hparams["train_splits"],
-            "dev_splits": hparams["dev_splits"],
-            "te_splits": hparams["test_splits"],
-            "save_folder": hparams["output_folder"],
-            "merge_lst": hparams["train_splits"],
-            "merge_name": "train.csv",
-            "skip_prep": hparams["skip_prep"],
-        },
     )
 
     # Part that matters starts here.
