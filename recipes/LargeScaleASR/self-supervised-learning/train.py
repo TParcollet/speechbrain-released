@@ -43,11 +43,6 @@ class BestRQBrain(sb.core.Brain):
         current_epoch = self.hparams.epoch_counter.current
         feats = self.modules.normalize(feats, wav_lens, epoch=current_epoch)
 
-        ### augment data if necessary
-        if stage == sb.Stage.TRAIN:
-            if hasattr(self.hparams, "augmentation"):
-                feats = self.hparams.augmentation(feats)
-
         divis_by = self.hparams.pad_to_divisible_by
         feats = pad_feats(feats, divis_by)
 
